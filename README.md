@@ -1,4 +1,8 @@
-# OpenClaw Docs
+<p align="center">
+  <img src="assets/clawloop-logo.jpg" alt="ClawLoop" width="600">
+</p>
+
+# ClawLoop — OpenClaw Docs
 
 **Community-driven, AI-elaborated documentation for [Claude Code](https://claude.ai/code) (OpenClaw).**
 
