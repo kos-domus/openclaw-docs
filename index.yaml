@@ -7,7 +7,7 @@
 project:
   name: "openclaw-docs"
   description: "Community-driven, AI-elaborated documentation for Claude Code"
-  repository: "https://github.com/kos-0/openclaw-docs"
+  repository: "https://github.com/kos-domus/openclaw-docs"
   license: "MIT"
 
 structure:
@@ -44,5 +44,5 @@ structure:
 
 fetching:
   docs_index: "docs/index.yaml"
-  raw_base_url: "https://raw.githubusercontent.com/kos-0/openclaw-docs/main/"
+  raw_base_url: "https://raw.githubusercontent.com/kos-domus/openclaw-docs/main/"
   example: "curl -s ${raw_base_url}docs/index.yaml"

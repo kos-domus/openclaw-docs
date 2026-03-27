@@ -38,10 +38,10 @@ Fetch the index for machine-readable doc discovery:
 
 ```bash
 # Get the full index
-curl -s https://raw.githubusercontent.com/kos-0/openclaw-docs/main/docs/index.yaml
+curl -s https://raw.githubusercontent.com/kos-domus/openclaw-docs/main/docs/index.yaml
 
 # Fetch a specific doc
-curl -s https://raw.githubusercontent.com/kos-0/openclaw-docs/main/docs/guides/hooks-configuration.md
+curl -s https://raw.githubusercontent.com/kos-domus/openclaw-docs/main/docs/guides/hooks-configuration.md
 ```
 
 ### Use in Claude Code context
@@ -50,7 +50,7 @@ Add to your `CLAUDE.md`:
 
 ```markdown
 # OpenClaw Reference
-Fetch https://raw.githubusercontent.com/kos-0/openclaw-docs/main/docs/index.yaml
+Fetch https://raw.githubusercontent.com/kos-domus/openclaw-docs/main/docs/index.yaml
 for the documentation index. Fetch individual docs by path as needed.
 ```
 
