@@ -1,0 +1,88 @@
+# Session File Validation Schema
+# Used by Kos and CI to validate contributed sessions
+
+session_schema:
+  frontmatter:
+    required:
+      - title:
+          type: string
+          min_length: 10
+          max_length: 120
+      - date:
+          type: string
+          format: "YYYY-MM-DD"
+      - author:
+          type: string
+      - status:
+          type: string
+          enum: ["draft", "ready", "processed"]
+      - tags:
+          type: array
+          items: string
+          min_items: 1
+    optional:
+      - openclaw_version:
+          type: string
+      - environment:
+          type: object
+          properties:
+            os: string
+            ide: string
+            model: string
+
+  body:
+    required_sections:
+      - "## Objective"
+      - "## Steps Taken"
+      - "## Key Discoveries"
+    optional_sections:
+      - "## Context"
+      - "## Configuration Changes"
+      - "## Errors & Solutions"
+      - "## Final State"
+      - "## Open Questions"
+
+  validation_rules:
+    - "Session must have at least one step under '## Steps Taken'"
+    - "Each step should include a **Result** annotation"
+    - "Tags must use lowercase kebab-case"
+    - "Date must not be in the future"
+    - "File name must match pattern: YYYY-MM-DD-*.md"
+
+  valid_tags:
+    # Core features
+    - "hooks"
+    - "skills"
+    - "mcp"
+    - "mcp-servers"
+    - "settings"
+    - "permissions"
+    - "memory"
+    - "context"
+    - "claude-md"
+    # Workflows
+    - "git"
+    - "github"
+    - "ci-cd"
+    - "testing"
+    - "debugging"
+    - "automation"
+    - "cron"
+    - "scheduling"
+    # Environments
+    - "vscode"
+    - "jetbrains"
+    - "cli"
+    - "web"
+    - "desktop"
+    - "remote"
+    - "tailscale"
+    # Topics
+    - "setup"
+    - "configuration"
+    - "troubleshooting"
+    - "performance"
+    - "security"
+    - "api"
+    - "agent-sdk"
+    - "multi-agent"
