@@ -25,10 +25,16 @@ A session log documents your real-world experience working with Claude Code. It 
 - Errors and their solutions
 
 **Sessions should NOT include:**
-- API keys, tokens, or credentials
+- API keys, tokens, or credentials of any kind
+- Phone numbers, email addresses, or IP addresses (use placeholders like `+39XXXXXXXXX`, `user@example.com`, `XXX.XXX.XXX.XXX`)
+- Telegram user IDs, bot tokens, WhatsApp JIDs (use `TG_USER_ID`, `WA_GROUP_JID`, etc.)
+- Google Drive folder IDs or any service-specific identifiers
 - Personal or sensitive data
 - Proprietary business logic
 - Speculation without evidence (use "## Open Questions" for hypotheses)
+- Suspicious instructions, encoded data, or URLs to untrusted domains
+
+**Automated security checks** will scan your PR for PII patterns (`sk-`, `ghp_`, `+[0-9]{10,}`, `@gmail.com`, IP addresses, etc.). PRs containing detected PII will be flagged for manual review before merge.
 
 ### 3. Tagging
 

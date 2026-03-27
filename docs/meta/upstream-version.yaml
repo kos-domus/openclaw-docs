@@ -1,0 +1,36 @@
+# Upstream Version Tracker
+# Updated by Kos during each elaboration run
+# Kos checks these sources and updates this file when new versions are detected
+
+last_check: "2026-03-27"
+
+sources:
+  github:
+    repo: "openclaw/openclaw"
+    url: "https://github.com/openclaw/openclaw"
+    last_known_version: "2026.3.23-2"
+    last_known_release_date: "2026-03-23"
+    changelog_url: "https://github.com/openclaw/openclaw/blob/main/CHANGELOG.md"
+    releases_url: "https://github.com/openclaw/openclaw/releases"
+
+  npm:
+    package: "openclaw"
+    url: "https://www.npmjs.com/package/openclaw"
+    last_known_version: "2026.3.23-2"
+
+  docs:
+    url: "https://docs.openclaw.ai"
+    key_pages:
+      - "https://docs.openclaw.ai/configuration"
+      - "https://docs.openclaw.ai/skills"
+      - "https://docs.openclaw.ai/agents"
+      - "https://docs.openclaw.ai/channels"
+      - "https://docs.openclaw.ai/security"
+      - "https://docs.openclaw.ai/changelog"
+
+# When Kos detects a version change:
+# 1. Fetch release notes
+# 2. Save to docs/meta/upstream-updates/YYYY-MM-DD-vX.Y.Z.md
+# 3. Update this file
+# 4. Update affected docs
+# 5. Log in changelog/CHANGELOG.md
