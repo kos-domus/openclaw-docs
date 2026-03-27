@@ -8,8 +8,9 @@ Thumbs.db
 *.swp
 *.swo
 
-# Claude Code local
-.claude/
+# Claude Code local (keep commands/, ignore the rest)
+.claude/*
+!.claude/commands/
 
 # Temp
 *.tmp
