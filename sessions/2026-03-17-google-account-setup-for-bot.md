@@ -17,10 +17,10 @@ Creare un account Google dedicato per il bot OpenClaw con accesso completo a Gma
 
 ## Context
 
-- Il bot OpenClaw gira su AceMagic mini PC con Ubuntu, IP pubblico: 77.32.125.1
+- Il bot OpenClaw gira su AceMagic mini PC con Ubuntu, IP pubblico: XX.XX.XXX.X
 - Serve un account Google separato (mai usare account personale per sicurezza)
 - Il bot ha una eSIM dedicata per la verifica SMS
-- Email di recupero del proprietario: rakkiotokosensei@gmail.com
+- Email di recupero del proprietario: owner-recovery@example.com
 
 ## Steps Taken
 
@@ -67,10 +67,10 @@ Creare OAuth 2.0 Client ID e completare il flusso per generare un **refresh toke
 
 **2FA**: Attivata con SMS sulla eSIM dedicata.
 
-**Email di recupero**: rakkiotokosensei@gmail.com
+**Email di recupero**: owner-recovery@example.com
 
 **Restrizioni API Key** (per Places/Maps):
-- Restrizioni applicazione → Indirizzi IP → `77.32.125.1`
+- Restrizioni applicazione → Indirizzi IP → `XX.XX.XXX.X`
 - Restrizioni API → solo Places API, Maps JavaScript API, Geocoding API, Directions API
 
 **Monitoraggio**:
@@ -94,7 +94,7 @@ Creare OAuth 2.0 Client ID e completare il flusso per generare un **refresh toke
 - **Places/Maps usa API Key, non OAuth**: meccanismo di autenticazione diverso, più vulnerabile → restrizione IP necessaria
 - **OAuth scope non read-only**: per operatività completa del bot, serve `https://www.googleapis.com/auth/drive` (non `.readonly`)
 - **Refresh token è permanente**: non scade, revocabile da myaccount.google.com/permissions — è l'"interruttore d'emergenza"
-- **IP pubblico ≠ IP locale**: Google Cloud vede l'IP pubblico del router (77.32.125.1), non quello LAN (192.168.1.87)
+- **IP pubblico ≠ IP locale**: Google Cloud vede l'IP pubblico del router (XX.XX.XXX.X), non quello LAN (192.168.X.XX)
 - **IP geolocalizzazione imprecisa**: IP mostrava Brescia invece di Cisano Bergamasco — normale, non influisce
 - **Verifica IP da terminale**: `curl ifconfig.me` restituisce l'IP pubblico corretto
 - **App in testing mode**: limite ~25 scope OAuth; massimo 100 utenti di test senza verifica Google

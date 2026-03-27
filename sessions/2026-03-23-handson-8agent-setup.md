@@ -17,7 +17,7 @@ Eseguire la configurazione completa degli 8 agenti su OpenClaw direttamente da t
 
 ## Context
 
-- OpenClaw 2026.3.13 running, gateway attivo su LAN 192.168.1.87:18789
+- OpenClaw 2026.3.13 running, gateway attivo su LAN 192.168.X.XX:18789
 - Node 22.22.1, systemd service attivo
 - API Keys pronte: Anthropic, OpenAI, Telegram
 - WhatsApp linked con due gruppi mappati
@@ -29,21 +29,21 @@ Eseguire la configurazione completa degli 8 agenti su OpenClaw direttamente da t
 ### 1. Impostazione variabili d'ambiente
 
 ```bash
-export RAKKI_WA="393403614393@s.whatsapp.net"
-export FAMILY_JID="120363406285133983@g.us"
-export WIP_JID="120363424787771105@g.us"
-export TG_ID="tg:877281564"
+export RAKKI_WA="39XXXXXXXXX1@s.whatsapp.net"
+export FAMILY_JID="WA_GROUP_JID_FAMILY@g.us"
+export WIP_JID="WA_GROUP_JID_WIP@g.us"
+export TG_ID="tg:TG_USER_ID_1"
 export DATA_SETUP="2026-03-23"
 ```
 
 **Dati reali mappati**:
-- Rakki WhatsApp: +393403614393
-- Katia (ragazza): +393495815883
-- Mauri (padre): +393479196887
-- Family stuff group JID: 120363406285133983@g.us
-- Work in progress group JID: 120363424787771105@g.us
-- Rakki Telegram user ID: 877281564 (username: Rakki_Otoko)
-- Secondo Telegram ID: 589106050 (da confermare chi è)
+- Rakki WhatsApp: +39XXXXXXXXX1
+- Katia (ragazza): +39XXXXXXXXX2
+- Mauri (padre): +39XXXXXXXXX3
+- Family stuff group JID: WA_GROUP_JID_FAMILY@g.us
+- Work in progress group JID: WA_GROUP_JID_WIP@g.us
+- Rakki Telegram user ID: TG_USER_ID_1 (username: REDACTED_TG_USERNAME)
+- Secondo Telegram ID: TG_USER_ID_2 (da confermare chi è)
 
 **Result**: Variabili impostate, nessun output = OK.
 

@@ -92,7 +92,7 @@ mcporter call --server google-workspace --tool "drive.createFolder" name="Proget
 mcporter call --server google-workspace --tool "drive.upload" name="report.pdf" path="./report.pdf"
 
 # Condividere un file
-mcporter call --server google-workspace --tool "drive.share" fileId="<id>" email="collaboratore@gmail.com" role="writer"
+mcporter call --server google-workspace --tool "drive.share" fileId="<id>" email="collaborator@example.com" role="writer"
 ```
 
 **Result**: Set completo di operazioni Drive mappate.

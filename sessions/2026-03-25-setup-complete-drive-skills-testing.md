@@ -19,7 +19,7 @@ Completare il setup dell'infrastruttura 8-agenti: configurare Google Drive con s
 
 - OpenClaw 2026.3.23-2 running, gateway attivo
 - 8 agenti registrati con workspace
-- Account operativo agenti: kos.domus@gmail.com (credenziali Google Cloud)
+- Account operativo agenti: bot-account@example.com (credenziali Google Cloud)
 - gws installato in ~/googleworkspace-cli/
 - Tutti i fix binding precedenti applicati
 
@@ -27,7 +27,7 @@ Completare il setup dell'infrastruttura 8-agenti: configurare Google Drive con s
 
 ### 1. Creazione struttura cartelle Google Drive
 
-Account: kos.domus@gmail.com (owner)
+Account: bot-account@example.com (owner)
 
 ```
 Family/
@@ -51,9 +51,9 @@ Work/
 ```
 
 **Permessi condivisione**:
-- Family/ → alessandrobenedetti90@gmail.com + kati.zamboni@gmail.com (writer)
-- WIP/ → alessandrobenedetti90@gmail.com + mauriziobenedetti1201@gmail.com (writer)
-- Work/ → alessandrobenedetti90@gmail.com (writer)
+- Family/ → owner-primary@example.com + family-member1@example.com (writer)
+- WIP/ → owner-primary@example.com + family-member2@example.com (writer)
+- Work/ → owner-primary@example.com (writer)
 
 **Result**: Struttura completa con folder ID reali salvati.
 
@@ -91,7 +91,7 @@ gws-docs, gws-drive, gws-shared, gws-workflow
   "match": {
     "channel": "telegram",
     "accountId": "work",
-    "peer": { "kind": "group", "id": "-1003701546472:topic:3" }
+    "peer": { "kind": "group", "id": "TG_GROUP_ID_WORK:topic:3" }
   }
 }
 ```
@@ -100,19 +100,19 @@ gws-docs, gws-drive, gws-shared, gws-workflow
 
 | Topic | threadId | Formato peer.id |
 |-------|----------|-----------------|
-| General/Master Control | None | `-1003701546472` |
-| CSO | 3 | `-1003701546472:topic:3` |
-| Frontend | 4 | `-1003701546472:topic:4` |
-| Backend | 5 | `-1003701546472:topic:5` |
-| Orch. Architect | 6 | `-1003701546472:topic:6` |
+| General/Master Control | None | `TG_GROUP_ID_WORK` |
+| CSO | 3 | `TG_GROUP_ID_WORK:topic:3` |
+| Frontend | 4 | `TG_GROUP_ID_WORK:topic:4` |
+| Backend | 5 | `TG_GROUP_ID_WORK:topic:5` |
+| Orch. Architect | 6 | `TG_GROUP_ID_WORK:topic:6` |
 
 ### 4. Test completo tutti i canali
 
 | Canale | Agente | Stato | Note |
 |--------|--------|-------|------|
 | WhatsApp gruppo Family | Kai | ✅ | Risponde correttamente |
-| Telegram DM @Kos_OC_bot | Kos (CoS) | ✅ | |
-| Telegram @MrWolf_OC_bot | Mr Wolf | ✅ | Gruppo con Rakki + Mauri |
+| Telegram DM @REDACTED_BOT_1 | Kos (CoS) | ✅ | |
+| Telegram @REDACTED_BOT_3 | Mr Wolf | ✅ | Gruppo con Rakki + Mauri |
 | Telegram Job-desk General | Master Control | ✅ | |
 | Telegram Job-desk CSO | CSO | ✅ | |
 | Telegram Job-desk Frontend | Frontend | ✅ | |
@@ -135,10 +135,10 @@ Tentativo di creare un gruppo broadcast con tutti gli agenti. Il broadcast Teleg
 
 ## Key Discoveries
 
-- **Sintassi topic nei binding**: `"-1003701546472:topic:3"` — il formato `groupId:topic:threadId` è la chiave per il routing per topic
+- **Sintassi topic nei binding**: `"TG_GROUP_ID_WORK:topic:3"` — il formato `groupId:topic:threadId` è la chiave per il routing per topic
 - **Skills selettive per workspace**: Kai non ha bisogno di gws-sheets, Mr Wolf non ha bisogno di gws-gmail — principio del minimo privilegio applicato alle skills
 - **gws-shared è obbligatoria**: base condivisa richiesta da tutte le altre skills gws
-- **Folder ID Google Drive**: ogni cartella ha un ID univoco (es. `1ej1DqhL8FgLCJJjAARCWFKTTM4orE7vH`) — salvarlo nel MEMORY.md dell'agente per riferimento rapido
+- **Folder ID Google Drive**: ogni cartella ha un ID univoco (es. `DRIVE_ID_FAMILY`) — salvarlo nel MEMORY.md dell'agente per riferimento rapido
 - **Broadcast Telegram multi-account non supportato**: non esiste un modo nativo per mandare un messaggio a tutti gli agenti contemporaneamente
 - **Tutti i modelli su gpt-5.4-mini di default**: economico e con tool completi, Claude Max come fallback a $0 aggiuntivo
 - **3 bot Telegram = 3 account separati**: ogni bot è un account Telegram indipendente con il proprio token

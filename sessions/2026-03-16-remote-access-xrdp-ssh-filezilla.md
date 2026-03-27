@@ -17,7 +17,7 @@ Configurare l'accesso remoto completo al mini PC AceMagic (Ubuntu) dal Mac M4: d
 
 ## Context
 
-- Mini PC AceMagic con Ubuntu, connesso via ethernet (192.168.1.87)
+- Mini PC AceMagic con Ubuntu, connesso via ethernet (192.168.X.XX)
 - Mac M4 connesso via WiFi alla stessa rete locale
 - Necessità di controllare il mini PC da remoto e trasferire file (script OpenClaw da Telegram)
 - Mac e AceMagic su stessa rete → ethernet e WiFi non fanno differenza
@@ -34,7 +34,7 @@ sudo systemctl start xrdp
 ```
 
 Client su Mac: **Microsoft Remote Desktop**
-- PC name: `192.168.1.87`
+- PC name: `192.168.X.XX`
 - Credentials: utente e password Ubuntu
 - Port: 3389 (default)
 
@@ -80,8 +80,8 @@ sudo systemctl start ssh
 
 Verifica raggiungibilità da Mac:
 ```bash
-nc -zv 192.168.1.87 3389  # Per xrdp
-nc -zv 192.168.1.87 22     # Per SSH
+nc -zv 192.168.X.XX 3389  # Per xrdp
+nc -zv 192.168.X.XX 22     # Per SSH
 ```
 
 **Result**: SSH funzionante e stabile.
@@ -90,7 +90,7 @@ nc -zv 192.168.1.87 22     # Per SSH
 
 FileZilla Site Manager:
 - **Protocol: SFTP** (NON FTP — errore comune)
-- Host: `192.168.1.87`
+- Host: `192.168.X.XX`
 - Port: `22`
 - Logon Type: Normal
 - User: `kos`
