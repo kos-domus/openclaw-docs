@@ -2,7 +2,7 @@
 title: "Configurazione SOUL.md e USER.md per framework multi-agent gerarchico a 5 agenti"
 date: "2026-03-21"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "skills", "claude-md"]
 openclaw_version: "latest"
 environment:

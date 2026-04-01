@@ -2,7 +2,7 @@
 title: "1Password full integration: CLI setup, secrets migration, service account, Kai verification protocol"
 date: "2026-03-28"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["security", "configuration", "setup", "troubleshooting", "multi-agent", "automation", "claude-md"]
 openclaw_version: "2026.3.23-2"
 environment:

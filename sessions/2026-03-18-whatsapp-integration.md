@@ -2,7 +2,7 @@
 title: "Configurazione WhatsApp per OpenClaw con Baileys e eSIM dedicata"
 date: "2026-03-18"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "automation", "setup", "security"]
 openclaw_version: "latest"
 environment:

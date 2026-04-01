@@ -2,7 +2,7 @@
 title: "Guida completa: installazione Ubuntu su chiavetta USB per mini PC dedicato a OpenClaw"
 date: "2026-03-12"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["setup", "configuration", "cli"]
 openclaw_version: "latest"
 environment:

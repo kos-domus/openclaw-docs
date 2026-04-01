@@ -2,7 +2,7 @@
 title: "Creazione account Google dedicato per bot OpenClaw con sicurezza e OAuth"
 date: "2026-03-17"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "security", "api", "setup"]
 openclaw_version: "latest"
 environment:

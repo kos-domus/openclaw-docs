@@ -2,7 +2,7 @@
 title: "Creazione progetto openclaw-docs: sistema documentale vivente con pipeline Security Agent + Kos"
 date: "2026-03-27"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "cron", "scheduling", "security", "configuration", "setup", "git", "github"]
 openclaw_version: "2026.3.23-2"
 environment:

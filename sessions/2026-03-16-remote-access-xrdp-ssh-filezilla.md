@@ -2,7 +2,7 @@
 title: "Configurazione accesso remoto al mini PC: xrdp, SSH e FileZilla"
 date: "2026-03-16"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["remote", "setup", "configuration"]
 openclaw_version: "latest"
 environment:

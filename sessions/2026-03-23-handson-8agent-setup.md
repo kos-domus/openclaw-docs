@@ -2,7 +2,7 @@
 title: "Setup hands-on: creazione 8 workspace, file .md e openclaw.json su mini PC Ubuntu"
 date: "2026-03-23"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "setup", "cli", "troubleshooting"]
 openclaw_version: "2026.3.13"
 environment:

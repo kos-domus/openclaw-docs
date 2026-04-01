@@ -2,7 +2,7 @@
 title: "Configurazione Telegram supergroup con topics, binding per agente e fix WhatsApp peer routing"
 date: "2026-03-24"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "troubleshooting", "setup"]
 openclaw_version: "2026.3.23-2"
 environment:

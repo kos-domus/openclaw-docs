@@ -2,7 +2,7 @@
 title: "Setup completo: Google Drive struttura, skills gws linkate, tutti i binding testati e funzionanti"
 date: "2026-03-25"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "mcp", "mcp-servers", "setup", "troubleshooting"]
 openclaw_version: "2026.3.23-2"
 environment:

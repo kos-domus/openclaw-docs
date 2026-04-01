@@ -2,7 +2,7 @@
 title: "Installazione Ubuntu su AceMagic e setup iniziale OpenClaw"
 date: "2026-03-13"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["setup", "configuration", "cli"]
 openclaw_version: "latest"
 environment:

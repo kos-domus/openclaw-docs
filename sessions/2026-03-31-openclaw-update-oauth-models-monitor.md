@@ -2,7 +2,7 @@
 title: "OpenClaw v2026.3.28 update, OAuth subscription migration (OpenAI + Google), model selection per agent, OpenClaw Release Monitor"
 date: "2026-03-31"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "security", "api", "multi-agent", "performance", "cron", "scheduling", "setup", "troubleshooting"]
 openclaw_version: "2026.3.28"
 environment:

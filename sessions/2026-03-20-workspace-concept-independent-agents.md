@@ -2,7 +2,7 @@
 title: "Il concetto di Workspace in OpenClaw e agenti indipendenti con isolamento per-canale"
 date: "2026-03-20"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "concepts", "skills", "mcp"]
 openclaw_version: "latest"
 environment:

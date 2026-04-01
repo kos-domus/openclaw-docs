@@ -2,7 +2,7 @@
 title: "Creazione workspace per Chief of Staff (Shikamaru), Family Manager (Kai) e Software Creator (Kos)"
 date: "2026-03-23"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "skills", "claude-md", "automation"]
 openclaw_version: "2026.3.13"
 environment:

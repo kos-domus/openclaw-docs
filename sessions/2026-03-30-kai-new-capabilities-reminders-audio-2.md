@@ -2,7 +2,7 @@
 title: "Kai new capabilities spec: Smart Reminders and Audio Intelligence"
 date: "2026-03-30"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "automation", "configuration", "scheduling", "skills"]
 openclaw_version: "2026.3.23-2"
 environment:

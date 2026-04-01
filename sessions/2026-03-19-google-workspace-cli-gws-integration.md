@@ -2,7 +2,7 @@
 title: "Integrazione Google Workspace CLI (gws) con OpenClaw per Gmail, Drive, Calendar, Docs, Sheets"
 date: "2026-03-19"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "configuration", "setup", "automation"]
 openclaw_version: "latest"
 environment:

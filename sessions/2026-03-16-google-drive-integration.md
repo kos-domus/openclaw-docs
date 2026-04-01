@@ -2,7 +2,7 @@
 title: "Configurazione integrazione Google Drive autonoma per OpenClaw"
 date: "2026-03-16"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "mcp", "mcp-servers", "automation", "remote"]
 openclaw_version: "latest"
 environment:

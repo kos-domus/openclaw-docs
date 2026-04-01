@@ -2,7 +2,7 @@
 title: "Architettura deployment sicuro: Tailscale + Docker sandbox + egress controllato"
 date: "2026-03-23"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["security", "configuration", "tailscale", "setup"]
 openclaw_version: "2026.3.13"
 environment:

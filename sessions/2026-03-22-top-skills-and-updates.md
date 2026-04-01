@@ -2,7 +2,7 @@
 title: "Skills più scaricate su ClawHub, ultimi aggiornamenti OpenClaw e deep-dive skill 3-7"
 date: "2026-03-22"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["skills", "configuration", "mcp-servers", "setup"]
 openclaw_version: "2026.3.13"
 environment:

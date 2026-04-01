@@ -2,7 +2,7 @@
 title: "Kai troubleshooting (reminders, audio, model), Kos OpenClaw Release Monitor"
 date: "2026-03-30"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "troubleshooting", "cron", "scheduling", "configuration", "performance", "setup"]
 openclaw_version: "2026.3.23-2"
 environment:

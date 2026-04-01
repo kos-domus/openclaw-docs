@@ -2,7 +2,7 @@
 title: "Autenticazione Anthropic in OpenClaw: API Key vs Setup Token (abbonamento Max)"
 date: "2026-03-14"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "api", "setup", "troubleshooting"]
 openclaw_version: "latest"
 environment:

@@ -2,7 +2,7 @@
 title: "Architettura multi-agent OpenClaw con channel agents isolati per WhatsApp e Telegram"
 date: "2026-03-20"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "automation", "skills"]
 openclaw_version: "latest"
 environment:

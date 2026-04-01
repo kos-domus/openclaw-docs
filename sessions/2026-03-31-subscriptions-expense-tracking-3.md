@@ -2,7 +2,7 @@
 title: "Subscription expense tracking system: all AI/tech costs centralized for Kos"
 date: "2026-03-31"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "multi-agent", "performance", "automation"]
 openclaw_version: "2026.3.28"
 environment:

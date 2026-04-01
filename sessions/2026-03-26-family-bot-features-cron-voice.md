@@ -2,7 +2,7 @@
 title: "Feature exploration: cron jobs, sub-agents, Drive/PDF, social fetching, voice TTS/STT per family bot"
 date: "2026-03-26"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["skills", "automation", "cron", "configuration", "multi-agent"]
 openclaw_version: "2026.3.23-2"
 environment:
