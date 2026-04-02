@@ -17,8 +17,9 @@ sources:
 - sessions/2026-03-30-kai-reminders-audio-implementation-3.md
 - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
 - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
-last_updated: '2026-04-01'
-version: 4
+- sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
+last_updated: '2026-04-02'
+version: 5
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -62,6 +63,25 @@ For recurring jobs, prefer subscription-backed models and keep per-token API usa
 For daily/weekly monitoring jobs, make the prompt explicitly say what to do when there is no change so the agent can SKIP instead of fabricating output.
 
 Use the same pattern for family briefings, waste reminders, and release monitors: define the data sources, define the fallback behavior, and keep the output short enough to read in chat.
+
+### Exec approvals for autonomous cron jobs
+
+If a cron task needs shell access (`exec`), do not assume chat-based approval will exist at runtime. A Telegram-only cron can dead-end waiting for an approval flow that nobody can answer.
+
+Recommended pattern:
+
+1. Keep the job prompt explicit about which shell work is expected.
+2. Grant only the minimum durable approval surface needed for that agent.
+3. Restart the gateway if approval changes are not picked up immediately.
+
+Example:
+
+```bash
+openclaw approvals allowlist add --agent <agent_id> "*"
+systemctl --user restart openclaw-gateway
+```
+
+Use wildcard approval only when the agent is intentionally trusted for autonomous maintenance. For tighter setups, prefer narrower command scopes.
 
 ### Example Schedules
 

@@ -3,9 +3,9 @@ title: "Common Errors and Solutions"
 slug: "common-errors"
 category: "troubleshooting"
 tags: ["errors", "troubleshooting", "debugging"]
-sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md"]
-last_updated: "2026-04-01"
-version: 3
+sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md"]
+last_updated: "2026-04-02"
+version: 4
 ---
 
 # Common Errors and Solutions
@@ -75,6 +75,9 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | File content truncated during paste | Terminal buffer limit for multi-line paste | Use `python3 -c "open('path','w').write('''content''')"` |
 | Unicode curly quotes cause errors | Claude UI generates typographic quotes | Replace with ASCII: `'` and `"` |
 | LLM suggests nonexistent config params | Model hallucination | Always verify against official documentation |
+| `autoApprove` rejected as invalid config | The key is not part of the OpenClaw schema | Use `openclaw approvals allowlist ...` instead of inventing a JSON flag |
+| Cron job `exec` times out waiting for approval | The job runs in chat without an interactive approval path | Add an explicit allowlist entry for the agent and restart the gateway if needed |
+| `openclaw acp client` fails with `Unexpected token '│'` | ACP startup banner pollutes the JSON stream | Treat it as an upstream ACP runtime bug and wait for a fixed release |
 
 ## Security
 

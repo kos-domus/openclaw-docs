@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-01T11:11:00Z'
+  generated_at: '2026-04-02T05:00:00Z'
   total_docs: 21
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 8
     reference: 3
     troubleshooting: 2
-  sources_processed: 47
+  sources_processed: 48
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -147,8 +147,9 @@ docs:
   - sessions/2026-03-30-kai-reminders-audio-implementation-3.md
   - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
-  last_updated: '2026-04-01'
-  version: 4
+  - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
+  last_updated: '2026-04-02'
+  version: 5
 - title: Google Drive Integration for OpenClaw
   slug: google-drive-integration
   category: guides
@@ -290,8 +291,9 @@ docs:
   - sessions/2026-03-30-kai-reminders-audio-implementation-3.md
   - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
-  last_updated: '2026-04-01'
-  version: 3
+  - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
+  last_updated: '2026-04-02'
+  version: 4
 - title: Integration Issues
   slug: integration-issues
   category: troubleshooting

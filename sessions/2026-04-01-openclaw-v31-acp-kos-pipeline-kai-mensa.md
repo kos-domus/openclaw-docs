@@ -2,7 +2,7 @@
 title: "OpenClaw v2026.3.31 update, ACP status check, Kos docs pipeline automation, Kai school menu system"
 date: "2026-04-01"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "security", "cron", "scheduling", "automation", "multi-agent", "troubleshooting", "permissions"]
 openclaw_version: "2026.3.31"
 environment:

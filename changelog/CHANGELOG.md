@@ -2,6 +2,30 @@
 
 All elaboration runs by Kos are documented here.
 
+## 2026-04-02 — Daily Elaboration Pass
+
+- **1 ready session processed**: `2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md`
+- **Docs updated**:
+  - `docs/guides/cron-jobs-and-automation.md` now documents cron exec approval strategy, allowlist-based autonomy, and gateway restart requirements after approval changes
+  - `docs/troubleshooting/common-errors.md` now includes invalid `autoApprove` config attempts, cron approval dead-ends, and the ACP JSON-stream banner bug
+- **index.yaml**: refreshed timestamp, source coverage, and version counters for the updated docs
+- **Session status**: flipped the processed session from `ready` to `processed`
+- **Upstream consistency check**:
+  - Installed version: `OpenClaw 2026.3.31`
+  - Upstream tracked latest: `2026.4.2`
+  - Result: local install is **behind upstream by one release line**
+- **Upstream notes captured**: added `docs/meta/upstream-updates/2026-04-02-v2026.4.2.md`
+- **Release delta summary added**:
+  - `2026.4.1-beta.1`: approval routing, cron schema handling, pairing/config fixes
+  - `2026.4.2`: `/tasks`, SearXNG web search provider, Bedrock Guardrails, cron per-job tool allowlists, improved exec approval reliability, and multiple gateway/runtime fixes relevant to automation
+- **Actionable discrepancy**: repo metadata now tracks upstream `2026.4.2`, but the host still runs `2026.3.31`; upgrade should be evaluated before relying on the newer cron/approval fixes
+
+### Self-Assessment
+- Clean merge pass: this session reinforced existing automation/troubleshooting docs without needing a new page
+- Upstream hygiene is better now: the repo was stale versus the official changelog, and that drift is now explicit
+- Biggest unresolved gap is operational, not editorial: the docs are aligned to upstream awareness, but the installed OpenClaw version is still behind
+
+
 ## 2026-03-30 — Editorial Sanitization Pass
 
 - **Sanitized**: Normalized all non-standard placeholder identifiers across the docs corpus to consistent neutral forms
