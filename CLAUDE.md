@@ -75,6 +75,34 @@ You are the **documentation elaboration engine**. Your job:
 - Flag contradictions between sessions (config X worked in session A but not B)
 - When uncertain, mark with `> ⚠️ **Unverified**: ...` blockquote
 - Prefer concrete examples over abstract explanations
+- **Accuracy over speed**: double-check commands, flags, and config paths against the actual session logs. If a session shows the exact command that worked, use THAT command, not a paraphrased version.
+- **Detail matters**: include the full command with all flags, not abbreviated versions. Users copy-paste from docs — incomplete commands waste their time.
+- **Real error messages**: when documenting troubleshooting, include the exact error text from sessions, not generic descriptions. People search for error messages.
+- **Version-aware**: always note which OpenClaw version a feature/fix applies to. Behavior changes between versions.
+- **Cross-link aggressively**: if a guide references a concept, link to the concept doc. If a reference doc mentions a gotcha, link to the troubleshooting entry.
+
+### Reference Section Expansion (Priority)
+The `docs/reference/` section needs significant expansion. When processing sessions, actively extract reference-grade content into dedicated docs:
+
+**Target reference docs to create or expand:**
+
+1. **Environment variables** (`environment-variables.md`) — every env var the system depends on: name, purpose, where it's set (op-env.sh, .bashrc, openclaw.json), which agents need it, what breaks without it. Sessions frequently show failures from missing env vars.
+
+2. **Agent fleet reference** (`agent-fleet-reference.md`) — one page per agent: id, display name, model (primary + fallbacks), channel (WhatsApp/Telegram), workspace path, Drive folder + IDs, skills installed, scope boundaries. This info is currently scattered.
+
+3. **Cron and scheduling reference** (`cron-scheduling-reference.md`) — complete `openclaw cron` syntax: `--at`, `--cron`, `--every`, `--session`, `--announce`, `--channel`, `--delete-after-run`, `--agent`, `--tz`. Include the env var wrapping pattern (`bash -c 'source op-env.sh && ...'`). One-shot vs recurring vs recurring with end date.
+
+4. **GWS CLI patterns** (`gws-cli-patterns.md`) — expand beyond basic syntax. Document the gotchas: calendarId in `--params` not `--json`, `+upload` syntax, file search query format, Drive file ID lookup patterns. These trip up agents repeatedly.
+
+5. **Audio pipeline reference** (`audio-pipeline-reference.md`) — the AssemblyAI pipeline: architecture, flags (`--agent`, `--name`, `--skip-summary`, `--language`), output files, per-agent routing, supported formats, fallback behavior, job status/retry.
+
+6. **1Password integration reference** (`1password-integration-reference.md`) — `op read` patterns, vault structure, service account vs interactive auth, `op-env.sh` auto-loading, how agents access secrets at runtime.
+
+7. **SOUL.md anatomy** (`soul-md-reference.md`) — standard sections for OpenClaw agent configuration: Identity, Communication Style, Core Principles, Domains, Google Drive, Google Calendar, Rules, Opinions. What each section does and conventions.
+
+8. **FamilyOS schema reference** (`familyos-schema-reference.md`) — all entity schemas (family_member, expense, contact, event, activity, decision, project, memory, reminder), ID conventions, entity graph relationships.
+
+When processing a session, ask yourself: "Is there a command, config pattern, or technical detail here that someone would look up in isolation?" If yes, it belongs in a reference doc, not buried in a guide.
 
 ## Upstream Sync Protocol
 
