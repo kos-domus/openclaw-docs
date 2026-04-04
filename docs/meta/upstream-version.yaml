@@ -3,7 +3,7 @@
 # Kos checks these sources and updates this file when new versions are detected
 # These are PERMANENT sources — always check before elaboration
 
-last_check: "2026-04-03"
+last_check: "2026-04-04"
 
 sources:
   github:
