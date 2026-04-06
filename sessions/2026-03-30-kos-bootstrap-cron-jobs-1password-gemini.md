@@ -28,7 +28,7 @@ environment:
 
 ### 1. Verified pipeline state
 Checked session statuses, changelog, and docs index. Found:
-- 21 sessions, all still `status: ready` (not flipped to `processed`)
+- 21 sessions, all still `status: processed` (not flipped to `processed`)
 - Kos had run once (March 29) producing 21 docs, but wasn't configured to run automatically
 - No references to openclaw-docs in any of Kos's workspace bootstrap files
 
@@ -40,7 +40,7 @@ Checked session statuses, changelog, and docs index. Found:
 ```markdown
 ## Documentation Engine
 Oltre alla fleet, gestisci la knowledge base in `/home/kos/job-desk/openclaw-docs/`.
-- Leggi le sessioni in `sessions/` con `status: ready`
+- Leggi le sessioni in `sessions/` con `status: processed`
 - Elabori docs strutturati in `docs/` seguendo Diátaxis
 - Aggiorna `docs/index.yaml` dopo ogni elaborazione
 - Logga in `changelog/CHANGELOG.md`
@@ -50,7 +50,7 @@ Oltre alla fleet, gestisci la knowledge base in `/home/kos/job-desk/openclaw-doc
 ```
 
 **HEARTBEAT.md** — Added `### 5. Knowledge Base Elaboration` checklist:
-- Check for `status: ready` sessions
+- Check for `status: processed` sessions
 - Elaborate docs if found
 - Update index, changelog
 - Flip session status

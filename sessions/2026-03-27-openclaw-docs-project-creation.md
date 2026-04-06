@@ -59,7 +59,7 @@ openclaw-docs/
 
 Filtrate e convertite tutte le sessioni di lavoro precedenti in formato strutturato. Copertura: setup Ubuntu, installazione OpenClaw, autenticazione Anthropic, Google Drive/Workspace, WhatsApp/Telegram, multi-agent architecture, security deployment, skills, voice/TTS.
 
-**Result**: 18 sessioni pushate con `status: ready`.
+**Result**: 18 sessioni pushate con `status: processed`.
 
 ### 3. Security audit e sanitizzazione PII
 

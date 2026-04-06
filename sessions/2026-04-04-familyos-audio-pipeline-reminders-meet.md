@@ -2,7 +2,7 @@
 title: "FamilyOS decisions/projects modules, AssemblyAI audio pipeline, reminder system fix, Meet recording workflow"
 date: "2026-04-04"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "automation", "cron", "setup", "memory", "troubleshooting", "security", "scheduling"]
 openclaw_version: "2026.4.2"
 environment:

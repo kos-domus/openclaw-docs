@@ -21,7 +21,7 @@ environment:
 ## Context
 - Kos's OpenClaw Release Monitor flagged v2026.3.31 with 2 critical sandbox escape CVEs
 - ACP extension had bugs in v2026.3.26, user wanted to check if fixed
-- Kos had 7 unprocessed sessions (status: ready) waiting for elaboration
+- Kos had 7 unprocessed sessions (status: processed) waiting for elaboration
 - Kos couldn't execute shell commands via Telegram cron (exec approval required)
 - User received Mar's school lunch menu PDF and wanted it integrated into Kai
 
@@ -51,7 +51,7 @@ The ACP bridge mixes its startup banner (box-drawing characters) into the JSON s
 
 ### 3. Created daily docs elaboration cron job for Kos
 Created `~/.openclaw/workspace-cos/tasks/daily-docs-elaboration.md` with full instructions:
-- Process `status: ready` sessions into Diátaxis docs
+- Process `status: processed` sessions into Diátaxis docs
 - Verify upstream consistency (installed version vs tracked version)
 - Track ALL OpenClaw version updates in changelog (including intermediate versions)
 - Self-assessment after each run
