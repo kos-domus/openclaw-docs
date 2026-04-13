@@ -80,3 +80,22 @@ No session files with `status: ready` were found under `sessions/`, so no Diáta
 ### Self-assessment
 
 Run completed cleanly. No ready-session backlog existed, upstream tracking was already on the newest known version, and this run filled the missing local changelog/update-summary entry for `2026.4.11`. Main follow-up: upgrade local OpenClaw from `2026.4.8` to at least `2026.4.11` and smoke-test ACP, Telegram topic sessions, WhatsApp reactions, and packaged CLI completion generation.
+
+---
+date: 2026-04-13
+type: upstream-check
+---
+### Daily knowledge base run
+
+No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs required content merges today.
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Checked upstream latest release with GitHub: `2026.4.11`
+- Confirmed `docs/meta/upstream-version.yaml` remains aligned to upstream `2026.4.11` and refreshed `last_check: 2026-04-13`
+- Local install is still behind upstream by three releases (`2026.4.9`, `2026.4.10`, and `2026.4.11`)
+
+### Self-assessment
+
+Run completed cleanly. No ready sessions needed elaboration, upstream tracking is still aligned, and today only required a tracker refresh plus the daily audit trail entry. Main follow-up: upgrade the local OpenClaw install from `2026.4.8` to at least `2026.4.11`.
