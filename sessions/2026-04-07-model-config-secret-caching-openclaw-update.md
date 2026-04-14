@@ -2,7 +2,7 @@
 title: "Model config overhaul, secret caching, OpenClaw 2026.4.5 update, context overflow diagnosis"
 date: "2026-04-07"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["configuration", "security", "troubleshooting", "performance", "multi-agent", "automation", "cron"]
 openclaw_version: "2026.4.5"
 environment:

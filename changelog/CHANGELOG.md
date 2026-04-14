@@ -99,3 +99,49 @@ No session files with `status: ready` were found under `sessions/`, so no Diáta
 ### Self-assessment
 
 Run completed cleanly. No ready sessions needed elaboration, upstream tracking is still aligned, and today only required a tracker refresh plus the daily audit trail entry. Main follow-up: upgrade the local OpenClaw install from `2026.4.8` to at least `2026.4.11`.
+
+---
+date: 2026-04-14
+type: documentation-run
+---
+### Daily knowledge base run
+
+Processed nine session files that were marked `status: ready` and promoted their reusable content into new docs.
+
+### Docs created
+
+- `docs/guides/deep-research-pipeline.md`
+- `docs/reference/deep-research-reference.md`
+- `docs/reference/environment-variables.md`
+- `docs/reference/agent-fleet-reference.md`
+- `docs/reference/cron-scheduling-reference.md`
+- `docs/reference/1password-integration-reference.md`
+- `docs/troubleshooting/deep-research-pipeline-issues.md`
+
+### Session processing
+
+- Flipped all processed session files from `ready` to `processed`
+- Updated `docs/index.yaml` metadata and catalog counts
+- Focused extraction on reusable OpenClaw knowledge, especially deep-research architecture, env loading, secret caching, fleet configuration, and scheduling patterns
+- Left project-specific SpesaBot details inside session history when they were product-specific rather than core OpenClaw docs material
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Tracker file `docs/meta/upstream-version.yaml` refreshed with `last_check: 2026-04-14`
+- Tracker still points to upstream latest stable `2026.4.12`
+- Local install is behind upstream by four stable releases: `2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`
+- Added missing upstream summary file: `docs/meta/upstream-updates/2026-04-13-v2026.4.12.md`
+- Also noted that `2026.4.14-beta.1` exists upstream as a prerelease, but this repo continues to track stable releases in the version tracker
+
+### Relevant upstream notes for 2026.4.12
+
+- New optional Active Memory plugin with a dedicated memory sub-agent
+- Experimental MLX speech provider for local Talk Mode on macOS
+- New `openclaw exec-policy` command family for syncing requested exec config with local approvals
+- New `commands.list` RPC for runtime command discovery
+- More plugin, memory, dreaming, and setup reliability work
+
+### Self-assessment
+
+This run was solid. The repo had real session backlog, and I converted the reusable parts into proper reference, guide, and troubleshooting docs instead of dumping project logs into the docs tree. The weak spot is that SpesaBot-specific implementation details were intentionally not expanded into standalone docs because they are downstream product work, not core OpenClaw documentation.

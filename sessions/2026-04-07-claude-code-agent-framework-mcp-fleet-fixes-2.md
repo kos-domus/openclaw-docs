@@ -2,7 +2,7 @@
 title: "Claude Code 5-agent framework, MCP setup, OpenClaw 2026.4.5 fleet fixes, model overhaul, secret caching"
 date: "2026-04-07"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "agent-sdk", "mcp", "mcp-servers", "configuration", "troubleshooting", "security", "performance", "cron", "scheduling", "setup"]
 openclaw_version: "2026.4.5"
 environment:

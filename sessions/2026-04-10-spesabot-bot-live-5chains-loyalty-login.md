@@ -2,7 +2,7 @@
 title: "SpesaBot — Telegram bot live, 5 chains (154 offers), loyalty cards, persistent login setup"
 date: "2026-04-10"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "automation", "configuration", "setup", "testing", "security"]
 openclaw_version: "2026.4.8"
 environment:

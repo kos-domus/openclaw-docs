@@ -2,7 +2,7 @@
 title: "SpesaBot — Project scaffold, PostgreSQL schema, first successful scrape + ingest"
 date: "2026-04-09"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "automation", "configuration", "setup", "multi-agent", "testing"]
 openclaw_version: "2026.4.8"
 environment:

@@ -1,65 +1,46 @@
-# Upstream Version Tracker
-# Updated by Kos during each elaboration run
-# Kos checks these sources and updates this file when new versions are detected
-# These are PERMANENT sources — always check before elaboration
-
-last_check: "2026-04-13"
-
+last_check: '2026-04-14'
 sources:
   github:
-    repo: "openclaw/openclaw"
-    url: "https://github.com/openclaw/openclaw"
-    last_known_version: "2026.4.11"
-    last_known_release_date: "2026-04-12"
+    repo: openclaw/openclaw
+    url: https://github.com/openclaw/openclaw
+    last_known_version: 2026.4.12
+    last_known_release_date: '2026-04-13'
     permanent: true
     check_methods:
-      releases_api: "gh api repos/openclaw/openclaw/releases/latest"
-      tags_api: "gh api repos/openclaw/openclaw/tags --jq '.[0]'"
-      changelog_raw: "https://raw.githubusercontent.com/openclaw/openclaw/main/CHANGELOG.md"
-      docs_folder: "gh api repos/openclaw/openclaw/contents/docs"
+      releases_api: gh api repos/openclaw/openclaw/releases/latest
+      tags_api: gh api repos/openclaw/openclaw/tags --jq '.[0]'
+      changelog_raw: https://raw.githubusercontent.com/openclaw/openclaw/main/CHANGELOG.md
+      docs_folder: gh api repos/openclaw/openclaw/contents/docs
     watch:
-      - CHANGELOG.md
-      - docs/
-      - package.json
-      - src/config/
-
+    - CHANGELOG.md
+    - docs/
+    - package.json
+    - src/config/
   npm:
-    package: "openclaw"
-    url: "https://www.npmjs.com/package/openclaw"
-    last_known_version: "2026.4.11"
+    package: openclaw
+    url: https://www.npmjs.com/package/openclaw
+    last_known_version: 2026.4.12
     permanent: true
     check_methods:
-      npm_view: "npm view openclaw version"
-      npm_info: "npm view openclaw --json"
-
+      npm_view: npm view openclaw version
+      npm_info: npm view openclaw --json
   docs:
-    url: "https://docs.openclaw.ai"
+    url: https://docs.openclaw.ai
     permanent: true
     key_pages:
-      - path: "/configuration"
-        tracks: "settings, config files, environment variables"
-      - path: "/skills"
-        tracks: "ClawHub skills, custom skills, skill API"
-      - path: "/agents"
-        tracks: "agent architecture, multi-agent, workspaces"
-      - path: "/channels"
-        tracks: "WhatsApp, Telegram, Discord integrations"
-      - path: "/security"
-        tracks: "auth, encryption, credential management"
-      - path: "/changelog"
-        tracks: "release notes, breaking changes, deprecations"
-      - path: "/mcp"
-        tracks: "MCP server configuration, tool providers"
-      - path: "/hooks"
-        tracks: "lifecycle hooks, event hooks, automation"
-
-# Sync Protocol:
-# 1. Run check_methods for each source
-# 2. Compare versions with last_known_version
-# 3. If new version detected:
-#    a. Fetch release notes / diff
-#    b. Save to docs/meta/upstream-updates/YYYY-MM-DD-vX.Y.Z.md
-#    c. Update this file (last_known_version, last_check)
-#    d. Update affected docs with new information
-#    e. Flag breaking changes in changelog/CHANGELOG.md
-# 4. Even if no version change, check key_pages for content updates
+    - path: /configuration
+      tracks: settings, config files, environment variables
+    - path: /skills
+      tracks: ClawHub skills, custom skills, skill API
+    - path: /agents
+      tracks: agent architecture, multi-agent, workspaces
+    - path: /channels
+      tracks: WhatsApp, Telegram, Discord integrations
+    - path: /security
+      tracks: auth, encryption, credential management
+    - path: /changelog
+      tracks: release notes, breaking changes, deprecations
+    - path: /mcp
+      tracks: MCP server configuration, tool providers
+    - path: /hooks
+      tracks: lifecycle hooks, event hooks, automation

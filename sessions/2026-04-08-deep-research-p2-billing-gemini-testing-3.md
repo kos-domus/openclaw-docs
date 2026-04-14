@@ -2,7 +2,7 @@
 title: "Deep Research — P2 hardening, LLM billing fix (Gemini CLI primary), full product test"
 date: "2026-04-08"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "automation", "security", "performance", "configuration", "testing", "troubleshooting"]
 openclaw_version: "2026.4.5"
 environment:

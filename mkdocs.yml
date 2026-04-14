@@ -75,6 +75,7 @@ nav:
       - Skills & Slash Commands: guides/skills-and-slash-commands.md
       - 1Password Secrets: guides/1password-secrets-management.md
       - Cron Jobs & Automation: guides/cron-jobs-and-automation.md
+      - Deep Research Pipeline: guides/deep-research-pipeline.md
   - Concepts:
       - Multi-Agent Architecture: concepts/multi-agent-architecture.md
       - Workspace Isolation: concepts/workspace-isolation.md
@@ -85,6 +86,12 @@ nav:
       - Settings: reference/claude-code-settings.md
       - GWS CLI Reference: reference/gws-cli-reference.md
       - MCP Servers: reference/mcp-servers.md
+      - Deep Research Reference: reference/deep-research-reference.md
+      - Environment Variables: reference/environment-variables.md
+      - Agent Fleet Reference: reference/agent-fleet-reference.md
+      - Cron & Scheduling Reference: reference/cron-scheduling-reference.md
+      - 1Password Integration Reference: reference/1password-integration-reference.md
   - Troubleshooting:
       - Common Errors: troubleshooting/common-errors.md
       - Integration Issues: troubleshooting/integration-issues.md
+      - Deep Research Pipeline Issues: troubleshooting/deep-research-pipeline-issues.md

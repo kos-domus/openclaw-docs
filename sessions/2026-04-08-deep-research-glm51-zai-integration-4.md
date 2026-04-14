@@ -2,7 +2,7 @@
 title: "Deep Research — GLM-5.1 (Z.AI) as primary LLM, subscription billing verified"
 date: "2026-04-08"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "automation", "configuration", "api", "performance"]
 openclaw_version: "2026.4.5"
 environment:

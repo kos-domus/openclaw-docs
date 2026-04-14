@@ -2,7 +2,7 @@
 title: "Deep Research — Vision OCR for image-heavy sites, supermarket flyer test, forceVision config"
 date: "2026-04-09"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["mcp", "mcp-servers", "automation", "configuration", "api", "troubleshooting"]
 openclaw_version: "2026.4.5"
 environment:

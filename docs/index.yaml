@@ -1,13 +1,13 @@
 meta:
-  generated_at: '2026-04-02T05:00:00Z'
-  total_docs: 21
+  generated_at: '2026-04-14T05:20:00Z'
+  total_docs: 28
   categories:
     concepts: 5
     getting-started: 3
-    guides: 8
-    reference: 3
-    troubleshooting: 2
-  sources_processed: 48
+    guides: 9
+    reference: 8
+    troubleshooting: 3
+  sources_processed: 90
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -36,19 +36,6 @@ docs:
   - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
-- title: Multi-Agent Architecture in OpenClaw
-  slug: multi-agent-architecture
-  category: concepts
-  tags:
-  - multi-agent
-  - architecture
-  - channels
-  - isolation
-  sources:
-  - sessions/2026-03-20-multi-agent-architecture.md
-  - sessions/2026-03-23-handson-8agent-setup.md
-  last_updated: '2026-03-30'
-  version: 2
 - title: Building a Semantic Data Layer on Google Drive
   slug: semantic-data-layer
   category: concepts
@@ -60,6 +47,19 @@ docs:
   - architecture
   sources:
   - sessions/2026-03-28-familyos-database-kai-1password.md
+  last_updated: '2026-03-30'
+  version: 2
+- title: Multi-Agent Architecture in OpenClaw
+  slug: multi-agent-architecture
+  category: concepts
+  tags:
+  - multi-agent
+  - architecture
+  - channels
+  - isolation
+  sources:
+  - sessions/2026-03-20-multi-agent-architecture.md
+  - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
 - title: Workspace Isolation
@@ -150,6 +150,24 @@ docs:
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   last_updated: '2026-04-02'
   version: 5
+- title: Deep Research Pipeline
+  slug: deep-research-pipeline
+  category: guides
+  tags:
+  - deep-research
+  - mcp
+  - automation
+  - playwright
+  - firecrawl
+  - llm
+  sources:
+  - sessions/2026-04-08-deep-research-pipeline-phase1-build.md
+  - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
+  - sessions/2026-04-08-deep-research-glm51-zai-integration-4.md
+  - sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md
+  - sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md
+  last_updated: '2026-04-14'
+  version: 1
 - title: Google Drive Integration for OpenClaw
   slug: google-drive-integration
   category: guides
@@ -192,6 +210,18 @@ docs:
   - sessions/2026-03-23-tailscale-security-deployment.md
   last_updated: '2026-03-30'
   version: 2
+- title: Setting Up a WhatsApp Bot with OpenClaw
+  slug: whatsapp-bot
+  category: guides
+  tags:
+  - whatsapp
+  - channels
+  - configuration
+  - baileys
+  sources:
+  - sessions/2026-03-18-whatsapp-integration.md
+  last_updated: '2026-03-30'
+  version: 2
 - title: Skills and Slash Commands
   slug: skills-and-slash-commands
   category: guides
@@ -217,18 +247,33 @@ docs:
   - sessions/2026-03-24-telegram-supergroup-binding-fix.md
   last_updated: '2026-03-30'
   version: 2
-- title: Setting Up a WhatsApp Bot with OpenClaw
-  slug: whatsapp-bot
-  category: guides
+- title: 1Password Integration Reference
+  slug: 1password-integration-reference
+  category: reference
   tags:
-  - whatsapp
-  - channels
-  - configuration
-  - baileys
+  - 1password
+  - secrets
+  - security
+  - reference
   sources:
-  - sessions/2026-03-18-whatsapp-integration.md
-  last_updated: '2026-03-30'
-  version: 2
+  - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
+  - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
+  last_updated: '2026-04-14'
+  version: 1
+- title: Agent Fleet Reference
+  slug: agent-fleet-reference
+  category: reference
+  tags:
+  - agents
+  - multi-agent
+  - models
+  - reference
+  - fleet
+  sources:
+  - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
+  - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
+  last_updated: '2026-04-14'
+  version: 1
 - title: Claude Code Settings Reference
   slug: claude-code-settings
   category: reference
@@ -242,6 +287,54 @@ docs:
   - sessions/2026-03-20-workspace-concept-independent-agents.md
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
   last_updated: '2026-03-29'
+  version: 1
+- title: Cron and Scheduling Reference
+  slug: cron-scheduling-reference
+  category: reference
+  tags:
+  - cron
+  - scheduling
+  - automation
+  - reference
+  sources:
+  - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
+  - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
+  - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
+  last_updated: '2026-04-14'
+  version: 1
+- title: Deep Research Reference
+  slug: deep-research-reference
+  category: reference
+  tags:
+  - deep-research
+  - mcp
+  - cli
+  - reference
+  - research
+  sources:
+  - sessions/2026-04-08-deep-research-pipeline-phase1-build.md
+  - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
+  - sessions/2026-04-08-deep-research-glm51-zai-integration-4.md
+  - sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md
+  - sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md
+  last_updated: '2026-04-14'
+  version: 1
+- title: Environment Variables Reference
+  slug: environment-variables
+  category: reference
+  tags:
+  - environment
+  - configuration
+  - secrets
+  - 1password
+  - mcp
+  sources:
+  - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
+  - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
+  - sessions/2026-04-08-deep-research-pipeline-phase1-build.md
+  - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
+  - sessions/2026-04-08-deep-research-glm51-zai-integration-4.md
+  last_updated: '2026-04-14'
   version: 1
 - title: GWS CLI Command Reference
   slug: gws-cli-reference
@@ -294,6 +387,23 @@ docs:
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   last_updated: '2026-04-02'
   version: 4
+- title: Deep Research Pipeline Issues
+  slug: deep-research-pipeline-issues
+  category: troubleshooting
+  tags:
+  - deep-research
+  - troubleshooting
+  - mcp
+  - gemini
+  - zai
+  sources:
+  - sessions/2026-04-08-deep-research-pipeline-phase1-build.md
+  - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
+  - sessions/2026-04-08-deep-research-glm51-zai-integration-4.md
+  - sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md
+  - sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md
+  last_updated: '2026-04-14'
+  version: 1
 - title: Integration Issues
   slug: integration-issues
   category: troubleshooting
@@ -310,4 +420,3 @@ docs:
   - sessions/2026-03-28-1password-full-integration-2.md
   last_updated: '2026-03-30'
   version: 2
-processed docs
