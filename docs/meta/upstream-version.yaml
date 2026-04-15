@@ -1,10 +1,10 @@
-last_check: '2026-04-14'
+last_check: '2026-04-15'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.4.12
-    last_known_release_date: '2026-04-13'
+    last_known_version: 2026.4.14
+    last_known_release_date: '2026-04-14'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -19,7 +19,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.4.12
+    last_known_version: 2026.4.14
     permanent: true
     check_methods:
       npm_view: npm view openclaw version

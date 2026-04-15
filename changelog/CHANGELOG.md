@@ -145,3 +145,30 @@ Processed nine session files that were marked `status: ready` and promoted their
 ### Self-assessment
 
 This run was solid. The repo had real session backlog, and I converted the reusable parts into proper reference, guide, and troubleshooting docs instead of dumping project logs into the docs tree. The weak spot is that SpesaBot-specific implementation details were intentionally not expanded into standalone docs because they are downstream product work, not core OpenClaw documentation.
+
+---
+date: 2026-04-15
+type: upstream-check
+---
+### Daily knowledge base run
+
+No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs required content merges today.
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Checked upstream latest release with GitHub and npm: `2026.4.14`
+- Confirmed `docs/meta/upstream-version.yaml` now tracks upstream `2026.4.14` with `last_check: 2026-04-15`
+- Recorded upstream summary in `docs/meta/upstream-updates/2026-04-15-v2026.4.14.md`
+- Local install is still behind upstream by five stable releases (`2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`, and `2026.4.14`; no `2026.4.13` stable release was published)
+
+### Relevant upstream notes for 2026.4.14
+
+- GPT-5.4 and Codex compatibility improved, including forward-compat support for `gpt-5.4-pro`
+- Telegram forum topics now preserve human-readable topic names more consistently
+- Security hardening landed for gateway config patching, browser SSRF enforcement, allowlists, and attachment path checks
+- Reliability fixes landed across subagents, cron, browser CDP, session routing, media handling, and provider/proxy integrations
+
+### Self-assessment
+
+Clean run. No ready-session backlog today, but the upstream audit mattered because the tracker had moved to `2026.4.14` and the repo was missing the release summary entry. Biggest follow-up is still obvious: local OpenClaw is lagging hard on `2026.4.8`, so an upgrade plus smoke tests for subagents, Telegram topics, cron, browser, and provider flows would be worth doing soon.
