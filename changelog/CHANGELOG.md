@@ -198,3 +198,29 @@ No session files with `status: ready` were found under `sessions/`, so there was
 ### Self-assessment
 
 This was a clean no-op rerun. No session backlog existed, upstream tracking was already current, and I verified that the repo did not miss a newer stable release after the earlier `2026-04-15` audit. The only real follow-up is still the same one: upgrade the local OpenClaw install from `2026.4.8` when convenient.
+
+
+---
+date: 2026-04-16
+type: upstream-check
+---
+### Daily knowledge base run
+
+No session files with `status: ready` were found under `sessions/`, so no Diátaxis content merges or session status flips were needed today.
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Checked upstream latest release with GitHub and npm: `2026.4.14`
+- Confirmed `docs/meta/upstream-version.yaml` remains aligned to upstream `2026.4.14` and refreshed `last_check: 2026-04-16`
+- Confirmed there is still no newer stable release beyond `2026.4.14`, and no missing intermediate stable versions after the already tracked gap
+- Local install remains behind upstream by five stable releases: `2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`, and `2026.4.14`
+
+### Relevant upstream notes
+
+- No new OpenClaw stable release landed since the previous check
+- The current latest stable is still `2026.4.14`, with the same headline themes: GPT-5.4/Codex compatibility improvements, Telegram forum topic-name persistence, SSRF and config hardening, and broad reliability fixes across subagents, cron, browser/CDP, routing, and media handling
+
+### Self-assessment
+
+Clean maintenance run. There was no docs backlog to elaborate, the upstream tracker is still correct, and the repo already had the needed release summary for `2026.4.14`. The only real follow-up is still upgrading the local OpenClaw install from `2026.4.8`.
