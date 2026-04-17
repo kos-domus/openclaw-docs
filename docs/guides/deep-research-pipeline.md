@@ -9,8 +9,11 @@ sources:
   - "sessions/2026-04-08-deep-research-glm51-zai-integration-4.md"
   - "sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md"
   - "sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md"
-last_updated: "2026-04-14"
-version: 1
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery.md"
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery-2.md"
+  - "sessions/2026-04-16-spesify-pipeline-images-matching-ui.md"
+last_updated: "2026-04-17"
+version: 2
 ---
 
 # Deep Research Pipeline
@@ -74,6 +77,7 @@ Use this order by default:
 1. **Playwright** for normal pages, because it is local and effectively free.
 2. **Firecrawl** when the page is too JS-heavy or Playwright returns thin content.
 3. **Vision OCR** when the real data is inside images, flyers, or scanned documents.
+4. **Secondary API enrichment** when the page or PDF gives you text but not the structured fields you actually need, such as product images or normalized metadata.
 
 ### Why Playwright first
 
@@ -82,6 +86,27 @@ It cut costs and still handled many real-world sites. Parallel batches of two pa
 ### When to force vision
 
 A page can contain thousands of characters of useless navigation text while the actual data lives inside images. For those sites, add a per-site `forceVision: true` flag instead of relying on content-length heuristics.
+
+### When browser state matters more than raw HTML
+
+Some useful endpoints only appear after a real page load, active cookies, or in-browser JavaScript tabs. The later sessions showed a reliable pattern:
+
+- launch Playwright with a persistent profile when the target depends on a logged-in or warmed-up session
+- intercept network requests during the normal UI flow instead of guessing hidden APIs
+- call discovered JSON endpoints from `page.evaluate()` when the endpoint depends on browser cookies or bootstrapped state
+- treat static HTML as incomplete if the site renders key links only after hydration
+
+This pattern worked well for store locators, flyer discovery, and other portals where the real data source existed behind a browser-backed API rather than in the initial document.
+
+### Secondary enrichment is often the highest-ROI step
+
+Some sources expose enough text to parse prices but not enough metadata to build a good downstream experience. The processed sessions showed a useful split:
+
+- parse the primary source for authoritative price and validity data
+- enrich from a secondary structured source when available, for example to attach product images, categories, or IDs
+- keep enrichment optional so ingestion still works when the secondary source fails
+
+That approach avoids overfitting the parser while still improving downstream data quality.
 
 ## LLM provider strategy
 
@@ -96,6 +121,7 @@ Important details:
 - Z.AI has separate coding and regular endpoints, and only the coding endpoint is covered by the Coding Pro subscription.
 - GPT-5.x style APIs require `max_completion_tokens`, not `max_tokens`.
 - Gemini CLI is good for rich extraction but can intermittently hit capacity errors.
+- For batch matching or enrichment workloads, keep a real fallback chain because provider 429s and intermittent 5xxs are normal under load.
 
 ## MCP tool surface
 
@@ -128,6 +154,8 @@ Do not ship a research fetcher without these protections:
 - Use protocol learning to reduce repeated expensive extraction.
 - Treat search as a separate concern. The sessions strongly recommended SearXNG as the next high-ROI improvement.
 - Store result histories so agents can diff changes instead of re-reading raw outputs every time.
+- Distinguish between text-layer PDFs and image-only documents early. If `pdftotext` yields clean text, stay in the text pipeline. If not, switch to vision or OCR instead of fighting regexes against garbage output.
+- For multi-page or multi-category sources, aggregate before final ingest if cleanup is campaign-scoped. Ingesting one page at a time can silently delete earlier pages from the same run.
 
 ## Related docs
 

@@ -9,8 +9,11 @@ sources:
   - "sessions/2026-04-08-deep-research-glm51-zai-integration-4.md"
   - "sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md"
   - "sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md"
-last_updated: "2026-04-14"
-version: 1
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery.md"
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery-2.md"
+  - "sessions/2026-04-16-spesify-pipeline-images-matching-ui.md"
+last_updated: "2026-04-17"
+version: 2
 ---
 
 # Deep Research Pipeline Issues
@@ -56,3 +59,33 @@ version: 1
 **Cause**: provider capacity, not necessarily your local setup.
 
 **Fix**: keep the fallback chain intact and log the provider issue instead of treating it as a parsing bug.
+
+## Playwright finds the wrong input or tab and discovery stalls
+
+**Cause**: complex sites often render duplicate controls, hidden header search bars, or JS-only tabs that do not match the visible flow you expected.
+
+**Fix**: prefer URL-parameter navigation or direct page-state setup, then inspect network traffic from the working UI flow instead of fighting brittle selectors.
+
+## A regional asset gets filtered as the wrong store
+
+**Cause**: the filter assumes every valid document URL must contain the target city or store slug.
+
+**Fix**: reject only assets that clearly mention a known different city or store. Shared regional documents often omit the local slug entirely.
+
+## Ingest succeeds but only the last page or category survives
+
+**Cause**: each partial ingest cleans the same campaign before re-inserting, so later pages wipe earlier ones.
+
+**Fix**: aggregate multi-page or multi-category results first, then run a single ingest for the whole campaign.
+
+## PDF parsing works, but product images or metadata are still missing
+
+**Cause**: the text source is authoritative for prices but does not carry images, IDs, or other structured fields.
+
+**Fix**: add a secondary enrichment step from a structured API when available, and keep it optional so the base ingest still completes.
+
+## A service works in the terminal but fails under systemd or another non-interactive runner
+
+**Cause**: secrets or runtime variables were only loaded in an interactive shell.
+
+**Fix**: source a cached env file or explicit environment block in the service definition, and verify the child process inherits it at startup.

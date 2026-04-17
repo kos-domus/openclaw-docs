@@ -2,7 +2,7 @@
 title: "SpesaBot/Spesify: images pipeline, Migross chain, canonical matching, UI branding"
 date: "2026-04-16"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "api", "scheduling", "configuration", "setup", "debugging", "performance"]
 openclaw_version: ""
 environment:

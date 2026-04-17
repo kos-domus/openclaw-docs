@@ -9,8 +9,11 @@ sources:
   - "sessions/2026-04-08-deep-research-glm51-zai-integration-4.md"
   - "sessions/2026-04-08-deep-research-p2-billing-gemini-testing-3.md"
   - "sessions/2026-04-09-deep-research-vision-ocr-glm-supermarket-test.md"
-last_updated: "2026-04-14"
-version: 1
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery.md"
+  - "sessions/2026-04-15-conad-flyer-parser-and-discovery-2.md"
+  - "sessions/2026-04-16-spesify-pipeline-images-matching-ui.md"
+last_updated: "2026-04-17"
+version: 2
 ---
 
 # Deep Research Reference
@@ -53,6 +56,9 @@ tools/deep-research/
 | `forceVision` | Force screenshot plus vision extraction even if text exists |
 | `extractionMode` | Single object or array-style extraction |
 | `maxItemsPerPage` | Upper bound for product-style array extraction |
+| persistent browser profile path | Reuse cookies and authenticated state for JS-heavy portals |
+| secondary enrichment source | Optional follow-up API or dataset for images, IDs, or metadata |
+| dedupe key | Stable key for merging repeated products or repeated page hits |
 
 ### Runtime controls
 
@@ -61,6 +67,8 @@ tools/deep-research/
 | `RESEARCH_JOB_TIMEOUT` | Overall per-job timeout |
 | access tiers | Full, standard, or request-level usage |
 | reliability threshold | Skip sites below roughly 30 percent after repeated failures |
+| provider fallback chain | Ordered extraction or matching fallbacks when one model rate-limits |
+| batch size | Keep LLM-assisted normalization and matching below timeout or 429 thresholds |
 
 ## Known tool families
 
@@ -127,6 +135,7 @@ Use screenshots for:
 - supermarket flyers
 - scanned PDF pages
 - image-heavy offer aggregators
+- loyalty or promo layouts where text exists but the visual layout hides the product boundaries
 
 Typical implementation details from the sessions:
 
@@ -134,6 +143,27 @@ Typical implementation details from the sessions:
 - base64 payload cap around 2 MB
 - viewport-only fallback if the screenshot is too large
 - explicit prompt to read prices, percentages, brands, and weights
+- fall back to OCR or vision only after checking whether the PDF already has a usable text layer
+
+## Browser-backed discovery patterns
+
+The processed sessions added a few practical reference patterns:
+
+- discover hidden endpoints by observing Playwright network traffic during the real user flow
+- call session-dependent JSON APIs from the page context when cookie/bootstrap state matters
+- do not trust city-name or slug matching alone for filtering shared regional assets
+- keep separate filtering for clearly wrong assets versus generic region-wide assets
+- aggregate repeated source pages into one ingest unit when downstream cleanup is keyed by campaign or chain
+
+## Enrichment patterns
+
+If the primary fetch gives partial data, enrich in a second step:
+
+- primary source: authoritative prices, dates, or product text
+- enrichment source: images, categories, EANs, canonical names, or store metadata
+- merge key: normalized product name plus brand and quantity when available
+
+Keep enrichment best-effort. Do not make the whole run fail because product images or extra metadata were unavailable.
 
 ## Search and planning
 

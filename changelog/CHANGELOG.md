@@ -227,29 +227,41 @@ Clean maintenance run. There was no docs backlog to elaborate, the upstream trac
 
 ---
 date: 2026-04-17
-type: upstream-check
+type: documentation-run
 ---
 ### Daily knowledge base run
 
-No session files with `status: ready` were found under `sessions/`, so no Diátaxis content merges, `docs/index.yaml` updates, or session status flips were needed today.
+Processed three session files that were still marked `status: ready` and merged only the reusable, OpenClaw-adjacent patterns into the docs set.
+
+### Docs updated
+
+- **Updated**: `deep-research-pipeline` — added guidance for browser-backed discovery, persistent-profile flows, enrichment APIs, text-layer versus vision decisions, and campaign-safe aggregation
+- **Updated**: `deep-research-reference` — added reference patterns for persistent browser profiles, secondary enrichment sources, batching, dedupe keys, and browser-session API discovery
+- **Updated**: `deep-research-pipeline-issues` — documented selector drift, regional asset filtering, campaign wipeouts from partial ingest, optional enrichment, and non-interactive env failures
+- **Updated**: `environment-variables` — added the stable `op-env-cached.sh` sourcing pattern for non-interactive services
+- **Sources**: `sessions/2026-04-15-conad-flyer-parser-and-discovery.md`, `sessions/2026-04-15-conad-flyer-parser-and-discovery-2.md`, `sessions/2026-04-16-spesify-pipeline-images-matching-ui.md`
+
+### Session processing
+
+- Flipped all three processed session files from `ready` to `processed`
+- Refreshed `docs/index.yaml` metadata and source links
+- Deliberately did **not** create downstream product docs for SpesaBot-specific business logic, because that would pollute the OpenClaw knowledge base with app-specific details
 
 ### Upstream consistency check
 
 - Checked installed CLI version with `openclaw --version`: `2026.4.8`
-- Checked upstream latest release with GitHub and npm: `2026.4.15`
+- Checked upstream latest release with GitHub releases and npm: `2026.4.15`
 - Confirmed `docs/meta/upstream-version.yaml` now tracks upstream `2026.4.15` with `last_check: 2026-04-17`
 - Recorded upstream summary in `docs/meta/upstream-updates/2026-04-17-v2026.4.15.md`
 - Local install remains behind upstream by six stable releases: `2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`, `2026.4.14`, and `2026.4.15`
 
 ### Relevant upstream notes for 2026.4.15
 
-- Anthropic defaults now point at Claude Opus 4.7, and bundled image understanding follows that path too
-- Gemini text-to-speech landed in the bundled Google plugin, including voice selection and telephony-friendly audio output
-- Control UI gained a Model Auth status card for OAuth health and rate-limit pressure
-- `memory-lancedb` can now store indexes on cloud object storage instead of local disk only
-- Experimental local-model lean mode can shrink default tool/context weight for weaker local setups
-- A large security and reliability sweep landed across tool trust boundaries, approvals redaction, workspace-file safety, replay recovery, cron delivery, Codex sessions, startup reloads, Telegram/WhatsApp flows, and provider failover handling
+- Bundled Google TTS support, updated Anthropic defaults, and a new model-auth status card in the Control UI
+- Significant security hardening around tool collisions, media embedding, file/path access, approval redaction, `memory_get`, and auth reload behavior
+- Broad reliability fixes across Codex, cron announce delivery, replay recovery, Telegram documents, WhatsApp reconnects, BlueBubbles catchup, and plugin cache invalidation
 
 ### Self-assessment
 
-Clean no-backlog run. No ready sessions needed elaboration, but the upstream audit was worth doing because `2026.4.15` shipped after the previous daily check and the tracker needed to move. Main follow-up is obvious: the local install is still stuck on `2026.4.8`, so upgrading and then smoke-testing Codex/ACP, cron, channels, speech/TTS, and memory flows would be the sensible next step.
+This run was useful, but it needed restraint. The ready sessions were mostly downstream retail-product work, so the right move was to extract only the durable OpenClaw patterns, especially browser-backed discovery, enrichment strategy, batching, and non-interactive env loading. The weak spot is that these sessions still mix framework learnings with app-specific implementation details, which makes daily elaboration slower than it should be.
+

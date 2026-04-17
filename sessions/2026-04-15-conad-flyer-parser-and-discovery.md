@@ -2,7 +2,7 @@
 title: "Built Conad weekly flyer parser and automated PDF discovery"
 date: "2026-04-15"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "configuration", "testing"]
 openclaw_version: ""
 environment:

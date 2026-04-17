@@ -9,8 +9,9 @@ sources:
   - "sessions/2026-04-08-deep-research-pipeline-phase1-build.md"
   - "sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md"
   - "sessions/2026-04-08-deep-research-glm51-zai-integration-4.md"
-last_updated: "2026-04-14"
-version: 1
+  - "sessions/2026-04-16-spesify-pipeline-images-matching-ui.md"
+last_updated: "2026-04-17"
+version: 2
 ---
 
 # Environment Variables Reference
@@ -43,6 +44,18 @@ If OpenClaw, MCP servers, cron jobs, or child processes need a secret, make sure
 ### Why
 
 Repeated `op read` calls during every restart caused rate-limit loops when combined with `Restart=always`.
+
+### Service pattern that held up
+
+For user services or non-interactive runners, a stable pattern was:
+
+```bash
+set -a
+source ~/.openclaw/op-env-cached.sh
+set +a
+```
+
+This keeps startup deterministic and avoids depending on interactive shell initialization. If the service still fails, check that the cached file contains the same variable names the app expects, not just equivalent values under different names.
 
 ## Non-interactive shell gotcha
 

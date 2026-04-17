@@ -2,7 +2,7 @@
 title: "Conad flyer: dynamic store discovery via API + all VR stores + loyalty flyer support"
 date: "2026-04-15"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "api", "configuration", "testing"]
 openclaw_version: ""
 environment:
