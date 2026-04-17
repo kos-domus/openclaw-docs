@@ -224,3 +224,32 @@ No session files with `status: ready` were found under `sessions/`, so no Diáta
 ### Self-assessment
 
 Clean maintenance run. There was no docs backlog to elaborate, the upstream tracker is still correct, and the repo already had the needed release summary for `2026.4.14`. The only real follow-up is still upgrading the local OpenClaw install from `2026.4.8`.
+
+---
+date: 2026-04-17
+type: upstream-check
+---
+### Daily knowledge base run
+
+No session files with `status: ready` were found under `sessions/`, so no Diátaxis content merges, `docs/index.yaml` updates, or session status flips were needed today.
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Checked upstream latest release with GitHub and npm: `2026.4.15`
+- Confirmed `docs/meta/upstream-version.yaml` now tracks upstream `2026.4.15` with `last_check: 2026-04-17`
+- Recorded upstream summary in `docs/meta/upstream-updates/2026-04-17-v2026.4.15.md`
+- Local install remains behind upstream by six stable releases: `2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`, `2026.4.14`, and `2026.4.15`
+
+### Relevant upstream notes for 2026.4.15
+
+- Anthropic defaults now point at Claude Opus 4.7, and bundled image understanding follows that path too
+- Gemini text-to-speech landed in the bundled Google plugin, including voice selection and telephony-friendly audio output
+- Control UI gained a Model Auth status card for OAuth health and rate-limit pressure
+- `memory-lancedb` can now store indexes on cloud object storage instead of local disk only
+- Experimental local-model lean mode can shrink default tool/context weight for weaker local setups
+- A large security and reliability sweep landed across tool trust boundaries, approvals redaction, workspace-file safety, replay recovery, cron delivery, Codex sessions, startup reloads, Telegram/WhatsApp flows, and provider failover handling
+
+### Self-assessment
+
+Clean no-backlog run. No ready sessions needed elaboration, but the upstream audit was worth doing because `2026.4.15` shipped after the previous daily check and the tracker needed to move. Main follow-up is obvious: the local install is still stuck on `2026.4.8`, so upgrading and then smoke-testing Codex/ACP, cron, channels, speech/TTS, and memory flows would be the sensible next step.
