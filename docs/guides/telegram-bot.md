@@ -10,8 +10,11 @@ tags:
 - troubleshooting
 sources:
 - sessions/2026-03-24-telegram-supergroup-binding-fix.md
-last_updated: '2026-03-30'
-version: 2
+- sessions/2026-04-17-spesify-security-ux-stores-launch.md
+- sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
+- sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+last_updated: '2026-04-18'
+version: 3
 ---
 
 # Telegram Bot Setup and Supergroup Topics
@@ -127,6 +130,37 @@ The **General** topic has `threadId=None` — it's the default thread of the sup
   }
 }
 ```
+
+
+## Telegram Mini App Companion Web Apps
+
+If your Telegram bot opens a companion web app or Mini App, treat the Telegram chat bot and the web surface as two separate integration layers. The most durable patterns from the processed sessions were:
+
+- keep bot commands that expose sensitive data private-chat only
+- validate Telegram `initData`, but do not reject repeated use of the same signed payload inside one active Mini App session
+- allow a much longer `auth_date` window than a normal one-shot login flow, because users keep Mini Apps open for a long time
+- persist user preferences locally as a fallback when Telegram auth is temporarily unavailable
+- use cache-busting query strings on static assets because Telegram WebView aggressively caches CSS and JS
+
+### Location access inside Telegram WebView
+
+Do not assume `navigator.geolocation` will behave like a normal browser. A more reliable pattern is:
+
+1. try Telegram `LocationManager` first
+2. set an explicit timeout so the UI cannot hang forever
+3. fall back to browser geolocation for non-Telegram testing
+4. reset loading state on both success and failure paths
+
+### Navigation and screen design
+
+Mini Apps with more than a few sections get cramped fast. The sessions showed that a sidebar or drawer scales better than a bottom tab bar once you go past four or five screens.
+
+### Security notes for Mini Apps
+
+- keep rate limiting on the API even if traffic initially looks small
+- cap all `limit`-style query parameters server-side
+- use security headers, but test CSP carefully because Telegram-hosted web UIs often rely on small inline handlers during early builds
+- never store sensitive bot-side data unencrypted at rest
 
 ## Multiple Bots for Multiple Contexts
 

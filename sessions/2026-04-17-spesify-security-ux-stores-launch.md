@@ -2,7 +2,7 @@
 title: "Spesify: security hardening, UX polish, store filtering, Carte tab, and user testing"
 date: "2026-04-17"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["security", "api", "configuration", "debugging", "troubleshooting", "automation", "web", "setup"]
 openclaw_version: ""
 environment:

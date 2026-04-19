@@ -2,7 +2,7 @@
 title: "Spesify: nearby offers feed, store drill-down, watchlist notifications (Opus 4.7)"
 date: "2026-04-18"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["api", "automation", "web", "debugging", "testing", "scheduling", "configuration"]
 openclaw_version: ""
 environment:

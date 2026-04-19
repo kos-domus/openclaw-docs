@@ -265,3 +265,42 @@ Processed three session files that were still marked `status: ready` and merged 
 
 This run was useful, but it needed restraint. The ready sessions were mostly downstream retail-product work, so the right move was to extract only the durable OpenClaw patterns, especially browser-backed discovery, enrichment strategy, batching, and non-interactive env loading. The weak spot is that these sessions still mix framework learnings with app-specific implementation details, which makes daily elaboration slower than it should be.
 
+
+
+---
+date: 2026-04-19
+type: documentation-run
+---
+### Daily knowledge base run
+
+Processed three session files that were marked `status: ready` and merged only the reusable OpenClaw-adjacent patterns into the docs set.
+
+### Docs updated
+
+- **Updated**: `guides/telegram-bot.md` — added Telegram Mini App companion patterns for auth reuse, WebView caching, `LocationManager`, sidebar navigation, and API security basics
+- **Updated**: `troubleshooting/integration-issues.md` — added Mini App auth replay pitfalls, WebView location hangs, CSP/Helmet regressions, user-mode systemd hardening limits, and post-pipeline wrapper gotchas
+- **Updated**: `guides/cron-jobs-and-automation.md` — added post-run follow-up chaining and idempotent notification-daemon patterns
+- **Sources**: `sessions/2026-04-17-spesify-security-ux-stores-launch.md`, `sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md`, `sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md`
+
+### Session processing
+
+- Flipped all three processed session files from `ready` to `processed`
+- Refreshed `docs/index.yaml` metadata and source links
+- Deliberately kept product-specific Spesify business logic out of the docs set and extracted only the durable integration and automation patterns
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Checked upstream stable release line with GitHub releases and npm: `2026.4.15`
+- Confirmed `docs/meta/upstream-version.yaml` still correctly tracks stable upstream `2026.4.15` and refreshed `last_check: 2026-04-19`
+- Local install remains behind upstream by six stable releases: `2026.4.9`, `2026.4.10`, `2026.4.11`, `2026.4.12`, `2026.4.14`, and `2026.4.15`
+
+### New upstream prerelease observed
+
+- GitHub now also shows prerelease `2026.4.19-beta.1` (published `2026-04-19`)
+- Headline changes in that beta: cross-agent subagent/channel-account routing fixes, safer Telegram callback watermark handling, better remote CDP diagnostics and loopback alias handling, and corrected Codex context-usage reporting
+- No newer stable release than `2026.4.15` was published at the time of this run
+
+### Self-assessment
+
+Good run. The source sessions were mostly downstream app work, but there were still solid reusable lessons around Telegram Mini Apps, WebView quirks, cron chaining, and service hardening. The extraction stayed disciplined instead of turning the knowledge base into product notes.

@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-17T05:10:00Z'
+  generated_at: '2026-04-19T05:02:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 93
+  sources_processed: 96
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -148,8 +148,9 @@ docs:
   - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
-  last_updated: '2026-04-02'
-  version: 5
+  - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+  last_updated: '2026-04-18'
+  version: 6
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -248,8 +249,11 @@ docs:
   - troubleshooting
   sources:
   - sessions/2026-03-24-telegram-supergroup-binding-fix.md
-  last_updated: '2026-03-30'
-  version: 2
+  - sessions/2026-04-17-spesify-security-ux-stores-launch.md
+  - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
+  - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+  last_updated: '2026-04-18'
+  version: 3
 - title: 1Password Integration Reference
   slug: 1password-integration-reference
   category: reference
@@ -428,5 +432,8 @@ docs:
   - sessions/2026-03-18-whatsapp-integration.md
   - sessions/2026-03-24-telegram-supergroup-binding-fix.md
   - sessions/2026-03-28-1password-full-integration-2.md
-  last_updated: '2026-03-30'
-  version: 2
+  - sessions/2026-04-17-spesify-security-ux-stores-launch.md
+  - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
+  - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+  last_updated: '2026-04-18'
+  version: 3

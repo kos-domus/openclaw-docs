@@ -18,8 +18,9 @@ sources:
 - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
 - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
 - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
-last_updated: '2026-04-02'
-version: 5
+- sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+last_updated: '2026-04-18'
+version: 6
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -103,6 +104,36 @@ Use wildcard approval only when the agent is intentionally trusted for autonomou
 **Periodic watchers**:
 - Urgent email monitor (every 20 minutes)
 - Calendar check for next 2 hours (every hour)
+
+
+### Post-run follow-up tasks
+
+A useful automation pattern is chaining a best-effort follow-up after the main scheduled job, for example:
+
+- scrape or ingest data
+- compute matches or alerts
+- send user notifications
+
+Important detail: do **not** use `exec` on the main script if you need later steps in the same wrapper. Once `exec` replaces the shell, the wrapper cannot continue.
+
+```bash
+node runner.js
+node notify-watches.js || echo "Notifications failed (non-fatal)"
+```
+
+This keeps the primary job authoritative while making notifications or summaries opportunistic instead of fatal.
+
+### Notification daemon pattern
+
+For recurring user alerts, the processed sessions showed a durable pattern:
+
+1. keep a durable watch table or other subscription state
+2. dedupe sent alerts in a separate table or log
+3. limit matches per run to avoid flooding users
+4. insert a small send delay to stay under channel rate limits
+5. make the notifier idempotent with `NOT EXISTS` or unique constraints
+
+That gives you scheduled notifications without re-sending the same event on every cron tick.
 
 ## Sub-Agents
 

@@ -2,7 +2,7 @@
 title: "Spesify: sidebar navigation, profile registration, search relevance, chain info, home screen"
 date: "2026-04-17"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["web", "api", "security", "debugging", "troubleshooting", "configuration"]
 openclaw_version: ""
 environment:

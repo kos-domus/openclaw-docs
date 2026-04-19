@@ -13,8 +13,11 @@ sources:
 - sessions/2026-03-18-whatsapp-integration.md
 - sessions/2026-03-24-telegram-supergroup-binding-fix.md
 - sessions/2026-03-28-1password-full-integration-2.md
-last_updated: '2026-03-30'
-version: 2
+- sessions/2026-04-17-spesify-security-ux-stores-launch.md
+- sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
+- sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
+last_updated: '2026-04-18'
+version: 3
 ---
 
 # Integration Issues
@@ -150,6 +153,43 @@ When sourcing `op-env.sh` from `.bashrc`:
 - Ensure `OP_SERVICE_ACCOUNT_TOKEN` is set **before** any `op read` calls
 - Avoid `set -euo pipefail` in the sourced script (causes silent failures)
 - Expect 3–5 second startup delay for multiple `op read` calls
+
+
+### Mini App auth works once, then every later request fails
+
+**Cause**: replay protection is blocking legitimate reuse of Telegram `initData` inside the same Mini App session. Telegram signs one payload that can stay active for the whole session.
+
+**Fix**: verify the Telegram signature, but do not treat repeated use of the same valid payload as an attack inside that active session. Also use a realistic `auth_date` window for long-lived Mini App sessions.
+
+### Mini App preferences keep resetting
+
+**Cause**: preferences are tied only to strict Telegram-authenticated API writes, so any auth hiccup wipes the user experience.
+
+**Fix**: keep dual persistence. Save server-side when auth is available, but also keep a local fallback such as `localStorage` for UI continuity.
+
+### GPS or location-based UI hangs forever inside Telegram
+
+**Cause**: Telegram WebView location flows can stall, and plain browser geolocation may be unavailable or denied.
+
+**Fix**: try Telegram `LocationManager` first, add an explicit timeout, then fall back to `navigator.geolocation` for browser testing. Always clear loading state on both success and failure paths.
+
+### CSP suddenly breaks every `onclick` handler in the web app
+
+**Cause**: Helmet CSP defaults can block inline script attributes with `script-src-attr 'none'`.
+
+**Fix**: either remove inline handlers entirely or explicitly account for them during the transition. The processed sessions used delegated event listeners where possible and only relaxed `scriptSrcAttr` when needed to unblock the UI.
+
+### A service works manually but crashes in user-mode systemd after hardening
+
+**Cause**: some hardening directives that look reasonable on paper are not compatible with a user-mode systemd service or with the runtime stack you are launching.
+
+**Fix**: keep the hardening set modest and verify each directive in the real target mode. `NoNewPrivileges=yes` and `PrivateTmp=yes` held up, while more aggressive directives caused startup failures in the processed sessions.
+
+### Pipeline wrapper cannot run follow-up steps after the main script
+
+**Cause**: the wrapper uses `exec` on the main process, so the shell never reaches the later commands.
+
+**Fix**: call the main process normally, then chain the follow-up step explicitly. This pattern mattered for post-pipeline notifications and other best-effort automation tasks.
 
 ## General Integration Debugging
 
