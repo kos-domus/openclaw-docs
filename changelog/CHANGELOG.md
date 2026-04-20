@@ -304,3 +304,24 @@ Processed three session files that were marked `status: ready` and merged only t
 ### Self-assessment
 
 Good run. The source sessions were mostly downstream app work, but there were still solid reusable lessons around Telegram Mini Apps, WebView quirks, cron chaining, and service hardening. The extraction stayed disciplined instead of turning the knowledge base into product notes.
+
+---
+date: 2026-04-20
+type: documentation-run
+---
+### Daily knowledge base run
+
+- No session files were marked `status: ready`, so no docs content needed elaboration today
+- Refreshed `docs/index.yaml` metadata timestamp to reflect the maintenance run
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.8`
+- Confirmed `docs/meta/upstream-version.yaml` still tracks upstream stable `2026.4.15`
+- Refreshed `last_check: 2026-04-20` and recorded the currently installed local CLI version for comparison
+- No newer stable release than `2026.4.15` was observed during this run
+- Local install is still behind known stable upstream (`2026.4.9` through `2026.4.15`, excluding `2026.4.13` which was not part of the tracked stable line)
+
+### Self-assessment
+
+Clean maintenance-only run. No new source sessions meant no risk of polluting the docs set with low-signal material, and the only useful work was keeping the upstream tracking metadata honest. The weak spot is still the mismatch between installed local CLI and the tracked upstream stable line, but that belongs to upgrade ops, not docs elaboration.
