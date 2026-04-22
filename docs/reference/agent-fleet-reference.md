@@ -6,8 +6,9 @@ tags: ["agents", "multi-agent", "models", "reference", "fleet"]
 sources:
   - "sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md"
   - "sessions/2026-04-07-model-config-secret-caching-openclaw-update.md"
-last_updated: "2026-04-14"
-version: 1
+  - "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md"
+last_updated: "2026-04-22"
+version: 2
 ---
 
 # Agent Fleet Reference
@@ -42,6 +43,9 @@ Anthropic CLI failures and invalid Gemini model IDs poisoned fallback chains. Th
 - Large workspaces and oversized skill docs inflate context for every run.
 - Agents need hard boundaries on workspace size, memory size, and loaded docs.
 - Continuous-improvement and workspace-cleanup rules belong in agent bootstrap files, not in ad hoc operator memory.
+- Pick each agent's primary model based on the paying account or quota owner, not one global "best model" default. That keeps expensive plans attached only to the workflows that truly need them.
+- Auth declarations and actual credentials are separate in multi-agent fleets. A profile stub in `openclaw.json` does not magically propagate fresh OAuth tokens into every agent workspace.
+- Shared OAuth refresh tokens across multiple busy agents are a footgun. Per-agent logins or provider paths without single-use refresh-token races are safer.
 
 ## Claude Code side fleet
 

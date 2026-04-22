@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-20T05:15:00Z'
+  generated_at: '2026-04-22T05:05:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 96
+  sources_processed: 98
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -98,8 +98,9 @@ docs:
   - multi-agent
   sources:
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
-  last_updated: '2026-03-29'
-  version: 1
+  - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
+  last_updated: '2026-04-22'
+  version: 2
 - title: Hardware and OS Setup for OpenClaw
   slug: hardware-and-os-setup
   category: getting-started
@@ -279,8 +280,9 @@ docs:
   sources:
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
   - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
-  last_updated: '2026-04-14'
-  version: 1
+  - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
+  last_updated: '2026-04-22'
+  version: 2
 - title: Claude Code Settings Reference
   slug: claude-code-settings
   category: reference
@@ -396,8 +398,9 @@ docs:
   - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
-  last_updated: '2026-04-02'
-  version: 4
+  - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
+  last_updated: '2026-04-22'
+  version: 5
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting

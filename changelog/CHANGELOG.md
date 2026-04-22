@@ -325,3 +325,42 @@ type: documentation-run
 ### Self-assessment
 
 Clean maintenance-only run. No new source sessions meant no risk of polluting the docs set with low-signal material, and the only useful work was keeping the upstream tracking metadata honest. The weak spot is still the mismatch between installed local CLI and the tracked upstream stable line, but that belongs to upgrade ops, not docs elaboration.
+
+---
+date: 2026-04-22
+type: documentation-run
+---
+### Daily knowledge base run
+
+Processed two session files that were marked `status: ready`. One produced durable OpenClaw docs updates; the other was intentionally logged as product-specific and kept out of the docs tree.
+
+### Docs updated
+
+- **Updated**: `docs/getting-started/first-run-verification.md` — added explicit post-upgrade gateway restart verification and a quick ACP smoke-test note
+- **Updated**: `docs/troubleshooting/common-errors.md` — marked the ACP stdout banner bug as fixed in `2026.4.15` and documented the `models auth login --set-default`, plugin-version, and `doctor --repair` service-overwrite gotchas
+- **Updated**: `docs/reference/agent-fleet-reference.md` — added model-ownership and per-agent OAuth token lessons for multi-agent fleets
+- **Source promoted**: `sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md`
+- **Source intentionally not promoted**: `sessions/2026-04-20-spesify-conad-image-mismatch-fix.md` because it is downstream product logic, not reusable OpenClaw documentation
+
+### Session processing
+
+- Flipped both ready session files from `ready` to `processed`
+- Refreshed `docs/index.yaml` metadata and source catalog
+- Kept the docs set clean by extracting only durable framework/operator lessons
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.15`
+- Checked upstream latest release with GitHub and npm: `2026.4.21`
+- Updated `docs/meta/upstream-version.yaml` to track upstream `2026.4.21` with `last_check: 2026-04-22`
+- Recorded upstream summaries in `docs/meta/upstream-updates/2026-04-22-v2026.4.20.md` and `docs/meta/upstream-updates/2026-04-22-v2026.4.21.md`
+- Local install is behind upstream by two stable releases: `2026.4.20` and `2026.4.21`
+
+### Relevant upstream notes for 2026.4.20 and 2026.4.21
+
+- `2026.4.20` strengthened default prompts, pruned oversized session stores by default, split cron runtime state into `jobs-state.json`, improved pairing diagnostics, and landed a huge sweep of fixes across exec, Codex, plugins, browser, Telegram, cron, and channel reliability
+- `2026.4.21` switched bundled image generation defaults to `gpt-image-2`, let `openclaw doctor` repair bundled plugin runtime dependencies, tightened owner-only command enforcement, and shipped smaller Slack/browser/npm fixes
+
+### Self-assessment
+
+Good run. The upgrade session had real operator-grade lessons worth preserving, especially around post-upgrade activation, ACP verification, auth-profile footguns, and multi-agent token behavior. I kept the Spesify scrape fix out of the docs on purpose, which was the right restraint.

@@ -3,9 +3,9 @@ title: "First Run Verification: Testing Your Full Setup"
 slug: "first-run-verification"
 category: "getting-started"
 tags: ["setup", "verification", "testing", "multi-agent"]
-sources: ["sessions/2026-03-25-setup-complete-drive-skills-testing.md"]
-last_updated: "2026-03-29"
-version: 1
+sources: ["sessions/2026-03-25-setup-complete-drive-skills-testing.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md"]
+last_updated: "2026-04-22"
+version: 2
 ---
 
 # First Run Verification: Testing Your Full Setup
@@ -21,12 +21,20 @@ After installing OpenClaw, configuring authentication, and setting up channels, 
 ## Step 1: Verify Gateway and Agents
 
 ```bash
-# Check gateway status
+# Check installed CLI and the running gateway
+openclaw --version
 openclaw status
 
 # List registered agents with their bindings
 openclaw agents list --bindings
 ```
+
+If you just ran `npm install -g openclaw@latest`, do not stop here: restart the gateway service too. The new CLI on disk does **not** activate until the running gateway process is restarted.
+
+```bash
+openclaw gateway restart
+```
+
 
 You should see your agents listed with their workspace paths and channel bindings. If no agents appear, you need to register them first with `openclaw agents add`.
 
@@ -87,6 +95,17 @@ Skills are loaded via symlinks. If a skill isn't being invoked by the agent, che
 1. The symlink exists and points to a valid directory
 2. `gws-shared` is linked (required base dependency for all GWS skills)
 3. The gateway was restarted after adding skills: `openclaw gateway restart`
+
+## Step 4.5: Quick ACP Smoke Test
+
+If you use ACP clients such as VS Code extensions, confirm the stream is healthy after upgrades:
+
+```bash
+# Should print JSON-RPC data on stdout, not ASCII banners
+openclaw acp --help
+```
+
+On current releases, the old ACP banner-pollution issue is fixed. If ACP still fails, check auth and gateway logs before blaming the client.
 
 ## Step 5: Multi-Agent Routing Verification
 
