@@ -364,3 +364,41 @@ Processed two session files that were marked `status: ready`. One produced durab
 ### Self-assessment
 
 Good run. The upgrade session had real operator-grade lessons worth preserving, especially around post-upgrade activation, ACP verification, auth-profile footguns, and multi-agent token behavior. I kept the Spesify scrape fix out of the docs on purpose, which was the right restraint.
+
+---
+date: 2026-04-24
+type: documentation-run
+---
+### Daily knowledge base run
+
+Processed one session file marked `status: ready` and extracted only the reusable operator lesson instead of promoting downstream app logic into the docs set.
+
+### Docs updated
+
+- **Updated**: `docs/troubleshooting/common-errors.md` — added a recovery pattern for accidentally overwritten files using Claude Code JSONL transcripts, plus the follow-up rule that `src/` must remain the source of truth rather than `dist/`
+- **Source promoted**: `sessions/2026-04-23-spesify-major-rebuild-fixes.md`
+
+### Session processing
+
+- Flipped the processed session file from `ready` to `processed`
+- Refreshed `docs/index.yaml` metadata and source catalog
+- Kept the docs tree clean by refusing to turn Spesify-specific ingest, schema, and UI logic into fake OpenClaw documentation
+
+### Upstream consistency check
+
+- Checked installed CLI version with `openclaw --version`: `2026.4.15`
+- Checked upstream latest release with GitHub and npm: `2026.4.22`
+- Confirmed `docs/meta/upstream-version.yaml` already tracks upstream `2026.4.22` with `last_check: 2026-04-24`
+- Recorded missing upstream summary in `docs/meta/upstream-updates/2026-04-24-v2026.4.22.md`
+- Local install remains behind upstream (`2026.4.15` vs `2026.4.22`)
+
+### Relevant upstream notes for 2026.4.22
+
+- xAI gained image generation, TTS, STT, and realtime transcription support, while Deepgram, ElevenLabs, and Mistral also gained more voice-call and transcription coverage
+- The TUI now supports local embedded mode without a Gateway, onboarding can auto-install missing plugins, and `/models add` can register models from chat without a restart
+- Diagnostics exports, GPT-5 overlay unification, Codex/ACP work, cron and MCP cleanup, and broad channel reliability fixes make this a significant operator release
+- Operator-impactful changes include the removal of Codex auth import from `~/.codex` during onboarding and the removal of the legacy `OPENCLAW_CODEX_APP_SERVER_GUARDIAN` shortcut
+
+### Self-assessment
+
+This was the right kind of disciplined run. The source session was mostly product work, but there was one durable recovery pattern worth preserving, and I kept the rest out of the docs instead of padding the knowledge base with irrelevant app details. The only real follow-up is operational, not editorial: the local CLI is still behind upstream by several releases.

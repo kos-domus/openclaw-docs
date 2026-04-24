@@ -3,9 +3,9 @@ title: "Common Errors and Solutions"
 slug: "common-errors"
 category: "troubleshooting"
 tags: ["errors", "troubleshooting", "debugging"]
-sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md"]
-last_updated: "2026-04-22"
-version: 5
+sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md", "sessions/2026-04-23-spesify-major-rebuild-fixes.md"]
+last_updated: "2026-04-24"
+version: 6
 ---
 
 # Common Errors and Solutions
@@ -91,6 +91,20 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | OAuth flow won't complete on headless server | No browser available | Use SSH tunnel: `ssh -L 8080:localhost:8080 user@server` |
 
 ## General Debugging
+
+### Recover an overwritten file from Claude Code transcripts
+
+If a file was accidentally overwritten during a Claude Code assisted session, the local JSONL transcript can act as a last-resort recovery log.
+
+| Error | Cause | Solution |
+|-------|-------|---------|
+| A working file was overwritten and only generated output survived | The real source of truth lived in a build or `dist/` directory, and the edit history was not committed | Inspect `~/.claude/projects/.../*.jsonl` for earlier `Read`, `Write`, and `Edit` captures, reconstruct the last known good content from those transcript chunks, then move the canonical source back into version-controlled `src/` files instead of keeping it only in generated output |
+
+Practical lessons from the recovery session:
+
+- treat transcript recovery as emergency fallback, not normal workflow
+- never keep the only editable copy of a UI or config inside `dist/` or other generated directories
+- after recovery, update build scripts so `src/` is authoritative and generated output is disposable
 
 ```bash
 # Check system health

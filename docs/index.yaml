@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-22T05:05:00Z'
+  generated_at: '2026-04-24T05:08:13Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 98
+  sources_processed: 99
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -399,8 +399,9 @@ docs:
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
-  last_updated: '2026-04-22'
-  version: 5
+  - sessions/2026-04-23-spesify-major-rebuild-fixes.md
+  last_updated: '2026-04-24'
+  version: 6
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting
