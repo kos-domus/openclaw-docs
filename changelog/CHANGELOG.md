@@ -1,3 +1,28 @@
+## 2026-04-25 - OpenClaw 2026.4.23 Update
+
+### OpenClaw Core Update (v2026.4.23)
+
+Nuove versioni di OpenClaw (fino alla 2026.4.23) sono state rilasciate, ma la versione locale installata è ancora la 2026.4.15.
+
+#### Breaking Changes:
+- **Models**: Default model per OpenAI image generation aggiornato a `gpt-image-2`.
+- **Cron**: Cron runtime state separato in `jobs-state.json`.
+
+#### New Features:
+- Migliorato l'onboarding/setup wizard.
+- Costi stimati migliorati e supporto per Moonshot Kimi.
+- I nested agent lanes sono ora limitati per target session.
+
+#### Fixes:
+- **Security**: Fissata vulnerabilità (GHSA-c28g-vh7m-fm7v) sui comandi owner-enforced, bloccato `NODE_OPTIONS` per MCP stdio.
+- **Dependencies**: `openclaw doctor` ora ripara meglio le dipendenze runtime dei plugin.
+- **Stability**: Pruning aggressivo del session store per prevenire OOM errors. Fixes per plugin Anthropic, cron delivery, e Telegram callbacks.
+
+---
+
+### Self-assessment:
+Ho verificato la presenza di sessioni `ready` in `sessions/` ma non ne ho trovate (SKIP docs generation). Ho controllato la consistenza upstream rilevando un disallineamento: la versione installata è 2026.4.15 mentre l'ultima release upstream è 2026.4.23. Ho aggiornato `upstream-version.yaml` di conseguenza, inserito le note di rilascio riassuntive nel `CHANGELOG.md` e committato.
+
 ---
 date: 2026-04-10
 type: upstream-check
