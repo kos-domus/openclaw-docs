@@ -1,27 +1,42 @@
-## 2026-04-25 - OpenClaw 2026.4.23 Update
+## 2026-04-27 - Processed Saas Delivery Receipts session + upstream aligned
 
-### OpenClaw Core Update (v2026.4.23)
+### Processed
+- `sessions/2026-04-25-saas-delivery-receipts-prototype-and-stack-pivot.md` — flipped `status: ready` → `processed` after review.
 
-Nuove versioni di OpenClaw (fino alla 2026.4.23) sono state rilasciate, ma la versione locale installata è ancora la 2026.4.15.
+### Docs impact
+- No core OpenClaw docs were updated from this session. The session is valuable, but its durable content is downstream-project-specific (Sacchitalia / ESOLVER / JSAPP architecture, extraction harness milestones, client-side stack tradeoffs) rather than reusable OpenClaw knowledge.
+- Confirmed that the AJV `NodeNext`/ESM interop note is technically useful but still too generic for this repository unless the same pattern starts showing up across OpenClaw-facing docs or sessions.
 
-#### Breaking Changes:
-- **Models**: Default model per OpenAI image generation aggiornato a `gpt-image-2`.
-- **Cron**: Cron runtime state separato in `jobs-state.json`.
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.4.24`
+- Checked upstream latest release with GitHub and npm: `2026.4.24`
+- Refreshed `docs/meta/upstream-version.yaml` to `last_check: 2026-04-27` and `checked_at: 2026-04-27`
+- No new upstream stable releases landed since the previous check, so no new `docs/meta/upstream-updates/` note was needed
 
-#### New Features:
-- Migliorato l'onboarding/setup wizard.
-- Costi stimati migliorati e supporto per Moonshot Kimi.
-- I nested agent lanes sono ora limitati per target session.
+### Housekeeping
+- Refreshed `docs/index.yaml` metadata timestamp so the catalog reflects the current elaboration run
 
-#### Fixes:
-- **Security**: Fissata vulnerabilità (GHSA-c28g-vh7m-fm7v) sui comandi owner-enforced, bloccato `NODE_OPTIONS` per MCP stdio.
-- **Dependencies**: `openclaw doctor` ora ripara meglio le dipendenze runtime dei plugin.
-- **Stability**: Pruning aggressivo del session store per prevenire OOM errors. Fixes per plugin Anthropic, cron delivery, e Telegram callbacks.
+### Self-assessment
+- Good restraint here: I processed the ready session and kept the docs repo clean instead of forcing project-specific material into OpenClaw documentation just to "extract something".
+- The repo is now consistent again: no lingering `ready` session from Apr 25, upstream tracking is current, and yesterday's 4.24 docs changes remain ready to ship.
+- Follow-up worth considering later: define a formal policy for `processed-without-doc-changes` sessions so this edge case is explicit rather than implied.
 
----
+## 2026-04-26 - Cross-provider fallback rule + 4.24 upstream
 
-### Self-assessment:
-Ho verificato la presenza di sessioni `ready` in `sessions/` ma non ne ho trovate (SKIP docs generation). Ho controllato la consistenza upstream rilevando un disallineamento: la versione installata è 2026.4.15 mentre l'ultima release upstream è 2026.4.23. Ho aggiornato `upstream-version.yaml` di conseguenza, inserito le note di rilascio riassuntive nel `CHANGELOG.md` e committato.
+### Updated
+- `reference/agent-fleet-reference.md` (v2 → v3) — added "Cross-provider fallback rule" section with three-tier template (critical / standard / background); added "OpenAI Codex auth fragility" subsection; flagged the Apr 25 Gemini saturation incident; expanded tags with `fallback`, `providers`.
+- `troubleshooting/common-errors.md` (v6 → v8) — new "Channels and Providers" section opening with a "Diagnostic principle: check the gateway before the channel" subsection (recipe + real example from the bonjour-induced WhatsApp 499 incident), followed by entries for WhatsApp 499 reconnect loop, Codex `refresh_token_reused` / `credential unavailable`, Gemini `All models failed` saturation. Each entry has diagnostic checks, recovery procedure, and cross-links to the agent fleet doc.
+
+### Added
+- `meta/upstream-updates/2026-04-26-v2026.4.24.md` — captures the local install gap (4.15 → 4.24), security floor at 4.23, breaking change on plugin SDK / tool-result middleware, smoke-test commands, and back-references to the three open ops issues.
+
+### Sources
+- `memory/reports/openclaw-monitor/2026-04-26.md` (Kos daily ops report — Apr 25 wrap-up + Apr 26 upstream scan)
+
+### Self-assessment
+- Doc cross-linking (fleet ↔ troubleshooting ↔ upstream) tightened: each operational lesson has exactly one canonical home with back-links from related docs.
+- "All models failed" promoted from implicit fleet-doc lesson to an explicit error entry so future search hits land on copy-pasteable recovery instead of discussion.
+- Open question: should Kos monitor reports get their own session-class folder under `sessions/` or stay as `memory/reports/...` references? Currently cited as sources but outside the session-validation pipeline.
 
 ## 2026-04-25 - OpenClaw 2026.4.23 Update
 

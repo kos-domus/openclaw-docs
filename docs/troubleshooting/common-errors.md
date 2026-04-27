@@ -3,9 +3,9 @@ title: "Common Errors and Solutions"
 slug: "common-errors"
 category: "troubleshooting"
 tags: ["errors", "troubleshooting", "debugging"]
-sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md", "sessions/2026-04-23-spesify-major-rebuild-fixes.md"]
-last_updated: "2026-04-24"
-version: 6
+sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md", "sessions/2026-04-23-spesify-major-rebuild-fixes.md", "memory/reports/openclaw-monitor/2026-04-26.md", "sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md"]
+last_updated: "2026-04-26"
+version: 8
 ---
 
 # Common Errors and Solutions
@@ -81,6 +81,82 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | `openclaw models auth login --set-default` silently changes the fleet default model | The flag updates the auth profile **and** rewrites `agents.defaults.model.primary` to the provider's latest bundled model | Use `openclaw models auth login --provider <provider> --method <method>` without `--set-default` unless you explicitly want to change fleet-wide default routing |
 | `plugin requires OpenClaw >=...` appears during config reload | The npm package on disk is newer than the running gateway process, or the host is genuinely behind plugin minimum version requirements | Upgrade if needed, then restart the gateway. `npm install -g openclaw@latest` alone does not switch the live runtime |
 | `openclaw doctor --repair` wants to rewrite a custom gateway service | Doctor detected manual edits such as wrapper scripts, env sourcing, or service drop-ins | Do **not** force repair blindly. Review the unit first, or you can wipe the custom startup path that injects secrets or local env |
+
+## Channels and Providers
+
+### Diagnostic principle: check the gateway before the channel
+
+When a channel symptom recurs on a regular interval — WhatsApp 499s every ~30 min, Telegram silent gaps every ~5 min, etc. — **check gateway uptime first**. A regular cadence is almost never a provider-side timeout. It's almost always:
+
+- systemd restart backoff (`Restart=on-failure` defaults: 100ms → 1s → 10s → 30s → 1min → 5min → 30min)
+- a watchdog plugin re-initialising on a fixed schedule
+- a credential refresh hitting the same expiry every cycle
+
+Recipe before touching any channel credential:
+
+```bash
+# 1. Has the gateway been restarting?
+systemctl --user show openclaw-gateway.service \
+  -p NRestarts -p ActiveEnterTimestamp --no-pager
+
+# If NRestarts is non-zero or ActiveEnterTimestamp is recent, the gateway
+# itself is the suspect — not the channel. Pull the logs:
+journalctl --user -u openclaw-gateway.service --since "1 hour ago" \
+  | grep -E "Unhandled|exited|FAILURE|Scheduled restart"
+
+# 2. Was a stability bundle written?
+ls -lt ~/.openclaw/logs/stability/ | head -5
+
+# 3. Only after ruling out gateway-level crashes, inspect the channel:
+journalctl --user -u openclaw-gateway.service --since "1 hour ago" \
+  | grep -i <channel-name>
+```
+
+Real example from 2026-04-26: the WhatsApp 499 reconnect loop reported by Kos was downstream of a bonjour plugin crash that triggered `Scheduled restart job, restart counter is at N`. Each gateway restart re-initialised the WhatsApp provider mid-handshake; the resulting reconnect attempts surfaced as 499s at the channel layer. Disabling the failing plugin fixed the WhatsApp symptom without re-pairing the Baileys session.
+
+> ⚠️ **Don't delete a Baileys session, rotate a Telegram token, or re-login OAuth on a channel that's recurring at a fixed cadence until you've ruled out a gateway-side restart loop.** You'll spend the credential rotation budget on a symptom and the underlying cause will reproduce within minutes.
+
+### WhatsApp reconnect loop (status 499)
+
+| Symptom | Cause | Recovery |
+|---|---|---|
+| WhatsApp channel logs `connection closed status=499` and reconnects every ~30 minutes; inbound message count stays at zero | Baileys session secret has been invalidated server-side (typically: another device logged in with the same number, or the QR pairing was revoked). The gateway keeps retrying the same dead session | Stop the WhatsApp channel, delete the cached Baileys session (`~/.openclaw/wa-session-<agent>/` or the path defined in `openclaw.json` channel config), restart the channel, scan a fresh QR from the linked-devices screen on the phone |
+
+Diagnostic checks before deleting the session:
+
+```bash
+# 1. Confirm the loop is auth, not network
+openclaw logs --channel whatsapp --since 1h | grep -E '499|qr|paired|disconnected'
+
+# 2. Check the session file timestamp — if it's days old and never refreshed
+#    after the last 499, the secret is dead
+ls -la ~/.openclaw/wa-session-*/creds.json
+
+# 3. Verify the device is still paired on the phone (Settings → Linked devices)
+```
+
+> ⚠️ **Don't simply restart the gateway.** A dead Baileys session reproduces the loop instantly. The fix is re-pairing, not a process bounce.
+
+### OpenAI Codex auth failures
+
+| Error string | Cause | Recovery |
+|---|---|---|
+| `refresh_token_reused` | The same Codex refresh token was used by two agent processes simultaneously, and OpenAI invalidated the family on the second use | `openclaw auth refresh codex` from a single process; if it still fails, delete the cached token (`~/.config/openclaw/codex-*.json`) and run `openclaw models auth login --provider openai-codex` |
+| `credential unavailable` | The auth profile in `openclaw.json` references credentials that were never propagated to that worker's workspace | Re-run the login per-agent: `OPENCLAW_AGENT=<agent> openclaw models auth login --provider openai-codex` |
+
+Prevention:
+
+- **One refresh token per worker.** If multiple agents need Codex, give each its own auth profile rather than sharing one.
+- **Pair Codex-primary jobs with a non-Codex fallback.** A single Codex auth blip otherwise fails the whole job. See [Agent Fleet Reference — Cross-provider fallback rule](../reference/agent-fleet-reference.md#cross-provider-fallback-rule-apr-25-2026).
+- **Daily auth health check** in Kos or equivalent ops agent — a `refresh_token_reused` once is recoverable, twice in a day is the signal to redesign the sharing.
+
+### Gemini saturation: "All models failed"
+
+| Symptom | Cause | Recovery |
+|---|---|---|
+| Job exits with `All models failed`, every model in the chain returned 5xx or rate-limit | The fallback chain is all Gemini variants and the provider is regionally saturated | Add a non-Gemini fallback (Codex-mini or Anthropic Sonnet 4.6) at the bottom of the chain. Re-run the job after ~30 min if the saturation is transient |
+
+> ⚠️ **A two-Gemini chain is not a fallback chain.** Every entry on the cross-provider fallback table in the [Agent Fleet Reference](../reference/agent-fleet-reference.md#cross-provider-fallback-rule-apr-25-2026) is for this exact scenario. Apply that template to any job whose failure has a real cost.
 
 ## Security
 

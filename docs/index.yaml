@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-24T05:08:13Z'
+  generated_at: '2026-04-27T06:15:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -277,12 +277,16 @@ docs:
   - models
   - reference
   - fleet
+  - fallback
+  - providers
   sources:
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
   - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
   - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
-  last_updated: '2026-04-22'
-  version: 2
+  - memory/reports/openclaw-monitor/2026-04-26.md
+  - sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md
+  last_updated: '2026-04-26'
+  version: 3
 - title: Claude Code Settings Reference
   slug: claude-code-settings
   category: reference
@@ -400,8 +404,10 @@ docs:
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
   - sessions/2026-04-23-spesify-major-rebuild-fixes.md
-  last_updated: '2026-04-24'
-  version: 6
+  - memory/reports/openclaw-monitor/2026-04-26.md
+  - sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md
+  last_updated: '2026-04-26'
+  version: 8
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting
