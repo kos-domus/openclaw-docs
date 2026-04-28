@@ -1,3 +1,28 @@
+## 2026-04-28 - SKIP docs merge, tracked upstream 2026.4.25 and 2026.4.26
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Confirmed the newly present `sessions/2026-04-27-fleet-multi-agent-tasks-obsidian-vault-mcp-integration.md` is already marked `status: processed`, so it did not belong to today's elaboration queue.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.4.24`
+- Checked upstream latest release with GitHub and npm: `2026.4.26`
+- Confirmed `docs/meta/upstream-version.yaml` now tracks `last_check: 2026-04-28`, upstream `2026.4.26`, and local `2026.4.24`
+- Local install is behind upstream by two stable releases: `2026.4.25` and `2026.4.26`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-04-28-v2026.4.25.md`
+- `docs/meta/upstream-updates/2026-04-28-v2026.4.26.md`
+
+### Relevant upstream notes
+- `2026.4.25`: major TTS expansion, persisted plugin-registry/cold-start cleanup, broader OpenTelemetry coverage, browser/control-ui/install hardening, and fixes across WhatsApp, Bonjour, ACP/Codex, hidden runtime context handling, and package update reliability.
+- `2026.4.26`: Google Live browser Talk transport, Cerebras provider, new `openclaw migrate` import flows, better raw config diffing, and fixes for `sessions_spawn` model overrides, explicit ACP spawns, cron model fail-closed behavior, WhatsApp proxy-aware QR login, and Bonjour hostname defaults.
+
+### Self-assessment
+- Clean restraint today: no forced doc merge just to make the run feel busy.
+- The valuable work was upstream bookkeeping — the repo now captures both skipped stable releases instead of silently jumping from 4.24 to 4.26.
+- Main follow-up: plan the local upgrade from `2026.4.24` to `2026.4.26`, especially for WhatsApp, Bonjour, cron model enforcement, and subagent model-override fixes.
+
 ## 2026-04-27 - Processed Saas Delivery Receipts session + upstream aligned
 
 ### Processed
