@@ -1,3 +1,25 @@
+## 2026-04-30 - SKIP docs merge, tracked upstream 2026.4.27
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diataxis docs were updated and no session status flips were needed.
+- Confirmed the untracked `sessions/2026-04-28-excalidraw-toolkit-and-spec-dsl.md` is already marked `status: processed`, so it did not belong to today's elaboration queue.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.4.24`
+- Checked upstream latest release with GitHub and npm: `2026.4.27` (released 2026-04-29)
+- Confirmed `docs/meta/upstream-version.yaml` already tracks `last_check: 2026-04-30`, upstream `2026.4.27`, and local `2026.4.24`
+- Local install is behind upstream by one tracked stable release: `2026.4.27`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-04-30-v2026.4.27.md`
+
+### Relevant upstream notes
+- `2026.4.27`: Codex Computer Use setup with `/codex computer-use status/install`, DeepInfra bundled provider, Tencent Yuanbao and QQBot channel expansions, plugin manifest-first model catalogs (reducing Gateway boot work), operator-managed outbound proxy routing, broad Plugin SDK testing migration to focused subpaths, and fixes across device pairing, Telegram multi-bot approvals, Slack socket/media stalls, gateway startup prewarm, auto-reply drain timeouts, and CLI update/status reliability.
+
+### Self-assessment
+- Clean maintenance run. The only valuable work was capturing the 2026.4.27 release notes, which is a significant release with new providers, channels, and plugin SDK restructuring.
+- The local CLI gap (2026.4.24 vs 2026.4.27) is narrower than past runs but still worth tracking for upgrade planning.
+
 ## 2026-04-28 - SKIP docs merge, tracked upstream 2026.4.25 and 2026.4.26
 
 ### Daily knowledge base run
