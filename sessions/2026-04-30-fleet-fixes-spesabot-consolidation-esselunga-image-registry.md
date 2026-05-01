@@ -2,7 +2,7 @@
 title: "Fleet morning fixes (Telegram, Kai briefing, daily memory, MC Todo, staggering) + SpesaBot consolidation, Esselunga per-store fan-out, expiry feature, cross-chain image registry"
 date: "2026-04-30"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["cron", "scheduling", "automation", "multi-agent", "debugging", "troubleshooting", "memory", "configuration", "git"]
 openclaw_version: "2026.4.8"
 environment:

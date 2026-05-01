@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-04-27T06:15:00Z'
+  generated_at: '2026-05-01T05:30:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 99
+  sources_processed: 102
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -150,8 +150,9 @@ docs:
   - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-  last_updated: '2026-04-18'
-  version: 6
+  - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+  last_updated: '2026-05-01'
+  version: 7
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -253,8 +254,10 @@ docs:
   - sessions/2026-04-17-spesify-security-ux-stores-launch.md
   - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-  last_updated: '2026-04-18'
-  version: 3
+  - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+  - sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
+  last_updated: '2026-05-01'
+  version: 5
 - title: 1Password Integration Reference
   slug: 1password-integration-reference
   category: reference
@@ -313,8 +316,9 @@ docs:
   - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
   - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
-  last_updated: '2026-04-14'
-  version: 1
+  - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+  last_updated: '2026-05-01'
+  version: 2
 - title: Deep Research Reference
   slug: deep-research-reference
   category: reference
@@ -364,8 +368,9 @@ docs:
   sources:
   - sessions/2026-03-19-google-workspace-cli-gws-integration.md
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
-  last_updated: '2026-03-29'
-  version: 1
+  - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+  last_updated: '2026-05-01'
+  version: 2
 - title: MCP Servers and Tool Integration
   slug: mcp-servers
   category: reference
@@ -406,8 +411,10 @@ docs:
   - sessions/2026-04-23-spesify-major-rebuild-fixes.md
   - memory/reports/openclaw-monitor/2026-04-26.md
   - sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md
-  last_updated: '2026-04-26'
-  version: 8
+  - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+  - sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
+  last_updated: '2026-05-01'
+  version: 10
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting

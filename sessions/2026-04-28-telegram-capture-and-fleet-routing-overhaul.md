@@ -2,7 +2,7 @@
 title: "Telegram Capture topic, MC redirect to work group, weekly Inbox triage cron, agent identifying prefixes, per-agent Obsidian vault access"
 date: "2026-04-28"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "automation", "cron", "agent-sdk", "memory", "context", "scheduling"]
 openclaw_version: "2026.4.24"
 environment:

@@ -13,8 +13,10 @@ sources:
 - sessions/2026-04-17-spesify-security-ux-stores-launch.md
 - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
 - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-last_updated: '2026-04-18'
-version: 3
+- sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+- sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
+last_updated: '2026-05-01'
+version: 5
 ---
 
 # Telegram Bot Setup and Supergroup Topics
@@ -132,6 +134,23 @@ The **General** topic has `threadId=None` — it's the default thread of the sup
 ```
 
 
+## Topic-scoped group routing
+
+For Telegram supergroups with topics, the durable peer format is:
+
+```text
+<group_chat_id>:topic:<thread_id>
+```
+
+Example: `-1001234567890:topic:80`
+
+Two real-world caveats matter here:
+
+1. `openclaw agents bind --bind ...` does **not** currently expose peer-scoped topic binding in a convenient CLI shape. If you need one exact topic routed to one agent, edit `bindings[]` directly in `openclaw.json`.
+2. Because the gateway re-serializes `openclaw.json` on graceful shutdown, make config edits with the safe sequence: **stop gateway → edit config → start gateway**.
+
+For capture-style inbox topics, that direct binding approach is the reliable path today.
+
 ## Telegram Mini App Companion Web Apps
 
 If your Telegram bot opens a companion web app or Mini App, treat the Telegram chat bot and the web surface as two separate integration layers. The most durable patterns from the processed sessions were:
@@ -162,6 +181,19 @@ Mini Apps with more than a few sections get cramped fast. The sessions showed th
 - use security headers, but test CSP carefully because Telegram-hosted web UIs often rely on small inline handlers during early builds
 - never store sensitive bot-side data unencrypted at rest
 
+## Delivery account matters as much as chat ID
+
+In multi-bot fleets, a Telegram `chat_id` being valid is **not** enough. The sending bot also has to be a member of the target group or supergroup.
+
+A recurring ops failure looked like this:
+
+- the work bot was in the Job-desk group
+- the default bot was **not**
+- a cron job kept the correct `chat_id` but sent with the wrong `accountId`
+- Telegram answered `chat not found`, which looked like a migration or deleted-chat problem
+
+When a scheduled message fails but manual delivery from another bot works, check the job's `delivery.accountId` before debugging group migrations or rebinding the agent.
+
 ## Multiple Bots for Multiple Contexts
 
 Since topic-based routing isn't natively supported, a practical pattern is using separate bot accounts for different contexts:
@@ -183,6 +215,8 @@ Each bot is an independent Telegram account with its own token.
 | Wrong agent responds | Binding overlap | Remove generic bindings before adding specific ones |
 | "Skipped bindings already claimed" | Another agent's broad binding catches the message first | Make bindings more specific or reorder them |
 | Can't read topic thread IDs | Gateway consuming updates | Stop gateway first, then query Bot API directly |
+| `chat not found` on sends even though the group exists | Wrong Telegram `accountId`; the sending bot is not actually in the target group | Verify which bot token the job uses, then send through the account that is a member of that chat |
+| `openclaw agents bind --bind ...` seems to accept a topic target but the binding becomes too broad | The CLI bind helper does not really support peer-scoped topic syntax in that form | Edit `bindings[]` directly in `openclaw.json` and restart the gateway with a stop/edit/start sequence |
 
 ## What's Next
 

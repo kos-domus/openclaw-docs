@@ -1,3 +1,35 @@
+## 2026-05-01 - Processed fleet/Telegram docs sessions + tracked upstream 2026.4.29
+
+### Processed
+- `sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md` — flipped `status: ready` → `processed` and extracted durable OpenClaw lessons into the docs.
+- `sessions/2026-04-29-sacchitalia-ddt-pipeline-and-backend-mvp.md` — flipped `status: ready` → `processed` after review, but did **not** promote core docs because the reusable value was mostly downstream-product-specific rather than OpenClaw-specific.
+- `sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md` — flipped `status: ready` → `processed` and extracted the durable Telegram topic-routing lessons into the docs.
+
+### Docs impact
+- `docs/guides/cron-jobs-and-automation.md` (v6 → v7) — added two durable patterns: staggering dependent morning jobs and using stdout redirection instead of `gws drive files get -o` for text responses in unattended cron wrappers.
+- `docs/reference/cron-scheduling-reference.md` (v1 → v2) — added dependency-aware scheduling and the "bootstrap empty state outside the main job" pattern for noisy-but-optional files like daily memory.
+- `docs/reference/gws-cli-reference.md` (v1 → v2) — documented the binary-only reality of `gws drive files get -o <path>`.
+- `docs/guides/telegram-bot.md` (v3 → v5) — documented both the `delivery.accountId` / bot-membership trap behind misleading Telegram `chat not found` errors and the current direct-config pattern for topic-scoped Telegram bindings.
+- `docs/troubleshooting/common-errors.md` (v8 → v10) — added concrete error entries for GWS text downloads, Telegram wrong-account delivery, recurring daily-memory `ENOENT` noise, CLI bind over-broadness on topics, and `SOUL.md` bootstrap truncation.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.4.24`
+- Checked official upstream latest release: `2026.4.29` (GitHub release published 2026-04-30; npm tracker also on `2026.4.29`)
+- Refreshed `docs/meta/upstream-version.yaml` to `last_check: 2026-05-01` / `checked_at: 2026-05-01`
+- Local install is behind upstream by four stable releases: `2026.4.25`, `2026.4.26`, `2026.4.27`, and `2026.4.29`
+- There is **no** stable `2026.4.28` release tag to track, so the gap is real even though the numbering skips
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-01-v2026.4.29.md`
+
+### Relevant upstream notes
+- `2026.4.29`: active-run steering defaults, people-aware memory/wiki features, NVIDIA provider onboarding, richer startup diagnostics, broad channel reliability fixes, and a key operator-impactful change where restrictive profiles no longer implicitly inherit `tools.exec` or `tools.fs`.
+
+### Self-assessment
+- Good extraction today: the Apr 30 and Apr 28 sessions had real reusable OpenClaw knowledge, and I promoted only the durable ops patterns instead of dragging product-specific details into this repo.
+- Also glad I did **not** force the Sacchitalia session into core docs. It had useful engineering work, but almost all of it belongs to the downstream product, not the OpenClaw knowledge base.
+- Main follow-up: before upgrading local OpenClaw, smoke-test every agent that uses a restrictive tool profile, because `2026.4.29` removes the old implicit `exec` / `fs` widening.
+
 ## 2026-04-30 - SKIP docs merge, tracked upstream 2026.4.27
 
 ### Daily knowledge base run

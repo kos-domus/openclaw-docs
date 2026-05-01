@@ -19,8 +19,9 @@ sources:
 - sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md
 - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
 - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-last_updated: '2026-04-18'
-version: 6
+- sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
+last_updated: '2026-05-01'
+version: 7
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -105,6 +106,38 @@ Use wildcard approval only when the agent is intentionally trusted for autonomou
 - Urgent email monitor (every 20 minutes)
 - Calendar check for next 2 hours (every hour)
 
+
+### Staggering dependent jobs
+
+When multiple LLM-heavy cron jobs run in the same morning window, do not stack them on the same minute just because the schedule looks tidy. Real-world sessions showed three failure modes when everything fired at 07:00:
+
+- provider bursts and rate-limit pressure
+- race conditions between producer and consumer jobs
+- misleading flakiness when a downstream job reads files that an upstream job has not written yet
+
+A better pattern is **causal staggering**:
+
+- keep the document-producing job first
+- move dependent summary or follow-up jobs 10-20 minutes later
+- leave lightweight reminder-only jobs on the crowded minute if they do not compete for the same model budget
+
+Example from a working fleet:
+
+- 06:30 — daily briefing writes the Obsidian daily note
+- 06:50 — family briefing reads refreshed inputs
+- 07:10 — morning to-do synthesis reads the daily note plus specialist reports
+- 07:30 — docs elaboration runs after the earlier operator-facing traffic
+
+### Text vs binary downloads inside cron wrappers
+
+If a cron job shells out to `gws drive files get`, remember that `-o <path>` is reliable for **binary** responses, not generic JSON/text payloads. For text-like responses, redirect stdout instead:
+
+```bash
+gws drive files get --params '{"fileId":"...","alt":"media"}' \
+  > /path/to/output.json 2>/dev/null
+```
+
+This matters in unattended jobs because the next step often assumes the file exists. With `-o` on text responses, the command can look successful while the follow-up `read` fails with `ENOENT`.
 
 ### Post-run follow-up tasks
 

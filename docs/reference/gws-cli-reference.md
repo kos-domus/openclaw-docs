@@ -3,9 +3,12 @@ title: "GWS CLI Command Reference"
 slug: "gws-cli-reference"
 category: "reference"
 tags: ["gws", "google-workspace", "cli", "reference"]
-sources: ["sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-25-setup-complete-drive-skills-testing.md"]
-last_updated: "2026-03-29"
-version: 1
+sources:
+  - "sessions/2026-03-19-google-workspace-cli-gws-integration.md"
+  - "sessions/2026-03-25-setup-complete-drive-skills-testing.md"
+  - "sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md"
+last_updated: "2026-05-01"
+version: 2
 ---
 
 # GWS CLI Command Reference
@@ -64,6 +67,8 @@ gws drive files update --params '{"fileId": "FILE_ID"}' \
 ```
 
 > ⚠️ **`--upload` requires relative paths from the current working directory.** Absolute paths or paths outside the cwd will fail. Always `cd` into the project directory first.
+
+> ⚠️ **`gws drive files get -o <path>` is not a generic save-to-file flag.** In practice it is reliable for binary responses; JSON or other text payloads still go to stdout. For cron jobs or shell wrappers, redirect stdout (`> file.json`) when downloading text content.
 
 ## Gmail Commands
 

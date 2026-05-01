@@ -3,9 +3,29 @@ title: "Common Errors and Solutions"
 slug: "common-errors"
 category: "troubleshooting"
 tags: ["errors", "troubleshooting", "debugging"]
-sources: ["sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md", "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md", "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md", "sessions/2026-03-19-google-workspace-cli-gws-integration.md", "sessions/2026-03-23-handson-8agent-setup.md", "sessions/2026-03-28-1password-full-integration-2.md", "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md", "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md", "sessions/2026-03-31-subscriptions-expense-tracking-3.md", "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md", "sessions/2026-03-30-kai-reminders-audio-implementation-3.md", "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md", "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md", "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md", "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md", "sessions/2026-04-23-spesify-major-rebuild-fixes.md", "memory/reports/openclaw-monitor/2026-04-26.md", "sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md"]
-last_updated: "2026-04-26"
-version: 8
+sources:
+  - "sessions/2026-03-12-ubuntu-usb-setup-for-openclaw.md"
+  - "sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md"
+  - "sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md"
+  - "sessions/2026-03-19-google-workspace-cli-gws-integration.md"
+  - "sessions/2026-03-23-handson-8agent-setup.md"
+  - "sessions/2026-03-28-1password-full-integration-2.md"
+  - "sessions/2026-03-30-kos-bootstrap-cron-jobs-1password-gemini.md"
+  - "sessions/2026-03-31-openclaw-update-oauth-models-monitor.md"
+  - "sessions/2026-03-31-subscriptions-expense-tracking-3.md"
+  - "sessions/2026-03-30-kai-new-capabilities-reminders-audio-2.md"
+  - "sessions/2026-03-30-kai-reminders-audio-implementation-3.md"
+  - "sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md"
+  - "sessions/2026-03-31-kai-cron-briefings-waste-calendar-memory-2.md"
+  - "sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md"
+  - "sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md"
+  - "sessions/2026-04-23-spesify-major-rebuild-fixes.md"
+  - "memory/reports/openclaw-monitor/2026-04-26.md"
+  - "sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md"
+  - "sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md"
+  - "sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md"
+last_updated: "2026-05-01"
+version: 10
 ---
 
 # Common Errors and Solutions
@@ -37,6 +57,7 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | "Google hasn't verified this app" | App in testing mode | Click Advanced → Go to (app name) (unsafe) |
 | GWS `--upload` fails with path error | `--upload` requires relative paths from cwd | `cd` into the project directory first |
 | Skills not detected by OpenClaw | Missing symlinks or `gws-shared` | Verify symlinks with `ls -la ~/.openclaw/skills/`, ensure `gws-shared` is linked, restart gateway |
+| `gws drive files get -o output.json` succeeds but the file is missing | `-o` only writes binary responses; JSON/text payloads still go to stdout | Redirect stdout instead: `gws drive files get ... > output.json 2>/dev/null` |
 
 ## Channel Configuration
 
@@ -47,8 +68,10 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | Telegram bot doesn't respond in group | Privacy mode enabled in BotFather | `/setprivacy → Disable` |
 | "not-allowed" in Telegram logs | Group not in allowlist | Add group ID to `allowGroups` in channel config |
 | "Skipped bindings already claimed" | Broad binding from another agent matches first | Make bindings more specific or reorder |
+| `Telegram send failed: chat not found` for a cron job, but another bot can write to the same group | The job is sending with the wrong `accountId`; that bot is not in the target chat | Check `delivery.accountId`, confirm the intended bot is a member of the group, then retry with the correct account |
 | Can't find Telegram topic thread IDs | Gateway consumes polling updates | Stop gateway → send messages → query Bot API → restart |
 | `threadId` in binding causes "Invalid input" | OpenClaw schema doesn't support `threadId` in peer | Bind the entire group to one orchestrator agent |
+| `openclaw agents bind --bind ...topic...` creates a binding that is broader than expected | The CLI bind helper accepts channel/account shorthand, not real peer-scoped topic routing | Stop the gateway, edit `bindings[]` directly in `openclaw.json` with the exact `<group_id>:topic:<thread_id>` peer, then start the gateway again |
 
 ## 1Password CLI
 
@@ -81,6 +104,8 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | `openclaw models auth login --set-default` silently changes the fleet default model | The flag updates the auth profile **and** rewrites `agents.defaults.model.primary` to the provider's latest bundled model | Use `openclaw models auth login --provider <provider> --method <method>` without `--set-default` unless you explicitly want to change fleet-wide default routing |
 | `plugin requires OpenClaw >=...` appears during config reload | The npm package on disk is newer than the running gateway process, or the host is genuinely behind plugin minimum version requirements | Upgrade if needed, then restart the gateway. `npm install -g openclaw@latest` alone does not switch the live runtime |
 | `openclaw doctor --repair` wants to rewrite a custom gateway service | Doctor detected manual edits such as wrapper scripts, env sourcing, or service drop-ins | Do **not** force repair blindly. Review the unit first, or you can wipe the custom startup path that injects secrets or local env |
+| `read failed: ENOENT ... memory/<today>.md` appears at the same time every day | Session bootstrap preloads recent daily memory files and logs the miss even though the runtime can proceed | Pre-create empty daily files before the reset/startup window (for example with a small systemd timer). Empty files are skipped cleanly and silence the noise |
+| `workspace bootstrap file SOUL.md is ... truncating in injected context` | The bootstrap file exceeded the runtime size cap, so later instructions never reach the agent | Move infrequent procedures into separate `procedures/*.md` files and keep `SOUL.md` lean enough that critical routing instructions stay above the truncation line |
 
 ## Channels and Providers
 
