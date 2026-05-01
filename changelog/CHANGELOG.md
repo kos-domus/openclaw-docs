@@ -1,3 +1,22 @@
+## 2026-05-01 - Upgraded local OpenClaw to 2026.4.29
+
+### Upgrade
+- Local install: **2026.4.24 → 2026.4.29** (single-hop, four stable releases skipped)
+- Pre-flight smoke test: confirmed the breaking change "restrictive profiles
+  `minimal`/`messaging` no longer inherit `tools.exec`/`tools.fs`" does NOT
+  impact this fleet. 6/8 agents (orchestrator, cso, frontend-specialist,
+  backend-expert, orchestration-architect, wip) use the `coding` profile,
+  which retains fs+exec. The other 2 (cos, family) have explicit
+  `tools.allow` arrays that bypass profile inheritance entirely. Zero
+  agents on `minimal` or `messaging`.
+- Procedure: backup `openclaw.json` → stop gateway → `npm install -g openclaw@2026.4.29`
+  → start gateway → smoke test.
+- Post-upgrade state: gateway active, 8/8 agents registered, 51/51 cron
+  jobs preserved, 9/9 routing bindings intact, zero errors in journal.
+- `docs/meta/upstream-version.yaml`: bumped `installed.local_cli_version`
+  to 2026.4.29 + recorded `upgraded_from`/`upgraded_at` for trace.
+- Backup retained at `~/.openclaw/openclaw.json.before-2026.4.29`.
+
 ## 2026-05-01 - Processed fleet/Telegram docs sessions + tracked upstream 2026.4.29
 
 ### Processed
