@@ -11,8 +11,10 @@ tags:
 sources:
 - sessions/2026-03-16-remote-access-xrdp-ssh-filezilla.md
 - sessions/2026-03-23-tailscale-security-deployment.md
-last_updated: '2026-03-30'
-version: 2
+- sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+- sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+last_updated: '2026-05-03'
+version: 3
 ---
 
 # Remote Access: SSH, xRDP, and Tailscale
@@ -126,6 +128,33 @@ Install Tailscale on your phone/laptop and access the server via its Tailscale I
 ```bash
 ssh user@<tailnet_host>
 ```
+
+
+## SSH tunnel pattern for localhost-only services
+
+A common secure pattern is to keep admin or debug services bound to `127.0.0.1` on the OpenClaw host, then reach them from your laptop only when needed through SSH over Tailscale.
+
+```bash
+ssh -N -L <LOCAL_PORT>:localhost:<REMOTE_PORT> user@<tailnet-host>
+```
+
+Example: exposing a graph UI or local dashboard that intentionally listens only on the mini-PC's loopback interface. This keeps the service off the LAN and public internet without forcing a permanent reverse proxy or Tailscale Serve rule.
+
+Use this pattern when access is occasional and operator-only. If the service needs permanent multi-device access, then a more explicit publishing path may be cleaner.
+
+### SSH keepalive for long operator sessions
+
+If your interactive admin session dies after a few idle minutes during long review loops, add a keepalive block to your local SSH config:
+
+```sshconfig
+Host openclaw-mini
+  HostName 100.x.y.z
+  User your-user
+  ServerAliveInterval 60
+  ServerAliveCountMax 30
+```
+
+That pattern is especially helpful for manual maintenance tasks, long-running CLI loops, or multi-terminal workflows that combine `ssh` and `scp`.
 
 ## Security Architecture
 

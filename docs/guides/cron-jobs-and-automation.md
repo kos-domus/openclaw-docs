@@ -20,8 +20,10 @@ sources:
 - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
 - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
 - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
-last_updated: '2026-05-01'
-version: 7
+- sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+- sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+last_updated: '2026-05-03'
+version: 8
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -138,6 +140,35 @@ gws drive files get --params '{"fileId":"...","alt":"media"}' \
 ```
 
 This matters in unattended jobs because the next step often assumes the file exists. With `-o` on text responses, the command can look successful while the follow-up `read` fails with `ENOENT`.
+
+
+### Patch cron jobs in place
+
+When an existing job needs prompt surgery, prefer editing it in place over delete-and-recreate churn. The durable operator pattern is:
+
+1. back up the cron state file before a batch of changes
+2. use `openclaw cron edit <job-id> --message ...` for prompt-only updates
+3. treat the next scheduled run as the real verification event
+
+Why it matters:
+
+- job ids stay stable
+- schedules and delivery bindings remain intact
+- the gateway hot-reloads the updated payload
+- you can compare the first live run against the old behavior without re-plumbing the job
+
+### The first real run is part of implementation
+
+A cron job is not "done" when the config saves. It is done after the **first real scheduled execution** proves that routing, inputs, permissions, and delivery all work together.
+
+Use the first run to validate:
+
+- the upstream files or notes actually exist when the job fires
+- delivery reaches the intended chat/account
+- downstream readers are not running before the producer job finishes
+- the output is actionable rather than just technically successful
+
+That first production run often surfaces issues you will not see in a manual dry run, especially for morning briefings, summary jobs, and multi-step cron chains.
 
 ### Post-run follow-up tasks
 

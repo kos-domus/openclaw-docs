@@ -1,11 +1,19 @@
 ---
-title: "MCP Servers and Tool Integration"
-slug: "mcp-servers"
-category: "reference"
-tags: ["mcp", "tools", "integration", "configuration"]
-sources: ["sessions/2026-03-16-google-drive-integration.md", "sessions/2026-03-22-top-skills-and-updates.md", "sessions/2026-03-25-setup-complete-drive-skills-testing.md"]
-last_updated: "2026-03-29"
-version: 1
+title: MCP Servers and Tool Integration
+slug: mcp-servers
+category: reference
+tags:
+- mcp
+- tools
+- integration
+- configuration
+sources:
+- sessions/2026-03-16-google-drive-integration.md
+- sessions/2026-03-22-top-skills-and-updates.md
+- sessions/2026-03-25-setup-complete-drive-skills-testing.md
+- sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+last_updated: '2026-05-03'
+version: 2
 ---
 
 # MCP Servers and Tool Integration
@@ -85,6 +93,39 @@ OpenClaw v2026.3.13 introduced the ContextEngine plugin API with full lifecycle 
 | `afterTurn` | After response sent | Save state, update memory |
 
 This enables custom memory strategies (RAG, summarization, external vector stores) without modifying OpenClaw core.
+
+
+## Scope and launcher patterns
+
+Real deployments often need two decisions beyond "which MCP server?": **where the server is registered** and **how its secrets are injected**.
+
+### User-scope vs project-scope
+
+| Scope | When to use it | Example |
+|---|---|---|
+| user-scope | shared tools you want available across many repos | Playwright, Context7, Firecrawl, Obsidian |
+| project-scope | repo-specific tools or experimental local services | a custom project MCP, temporary debug servers |
+
+Durable rule: if the MCP server is part of your general operator toolkit, register it once at user scope. If it depends on one repo's code, config, or secrets, keep it project-local.
+
+### Secret-wrapper launcher pattern
+
+Do not embed paid API keys directly in persistent MCP config files when a small wrapper will do. A safer pattern is:
+
+1. store the secret in a dedicated file with restrictive permissions (`0600`)
+2. launch the MCP server through a wrapper script with restrictive permissions (`0700`)
+3. have the wrapper export the environment variable and `exec` the real server
+4. keep the MCP config pointing only to the wrapper path
+
+Example wrapper:
+
+```bash
+#!/usr/bin/env bash
+export FIRECRAWL_API_KEY="$(cat ~/.openclaw/credentials/firecrawl-api-key)"
+exec npx firecrawl-mcp
+```
+
+This does **not** eliminate all exposure risk — the host user can still read the file — but it keeps the key out of chat transcripts, shell history, and long-lived JSON config.
 
 ## Security Considerations
 

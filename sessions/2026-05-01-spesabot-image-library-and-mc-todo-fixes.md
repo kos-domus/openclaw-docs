@@ -2,7 +2,7 @@
 title: "SpesaBot — image library extension (Despar vision + fuzzy match + manual fill workflows) + MC Todo fixes (pipeline timeout, frontend micro-bugs, /admin/health)"
 date: "2026-05-01"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "cron", "scheduling", "debugging", "troubleshooting", "configuration", "remote", "tailscale", "cli", "skills", "git", "security"]
 openclaw_version: "2026.4.24"
 environment:

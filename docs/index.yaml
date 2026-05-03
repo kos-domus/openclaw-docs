@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-05-01T05:30:00Z'
+  generated_at: '2026-05-03T05:30:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 102
+  sources_processed: 128
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -151,8 +151,10 @@ docs:
   - sessions/2026-04-01-openclaw-v31-acp-kos-pipeline-kai-mensa.md
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
-  last_updated: '2026-05-01'
-  version: 7
+  - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+  - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+  last_updated: '2026-05-03'
+  version: 8
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -214,8 +216,10 @@ docs:
   sources:
   - sessions/2026-03-16-remote-access-xrdp-ssh-filezilla.md
   - sessions/2026-03-23-tailscale-security-deployment.md
-  last_updated: '2026-03-30'
-  version: 2
+  - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+  - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+  last_updated: '2026-05-03'
+  version: 3
 - title: Setting Up a WhatsApp Bot with OpenClaw
   slug: whatsapp-bot
   category: guides
@@ -238,8 +242,9 @@ docs:
   - security
   sources:
   - sessions/2026-03-22-top-skills-and-updates.md
-  last_updated: '2026-03-30'
-  version: 2
+  - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+  last_updated: '2026-05-03'
+  version: 3
 - title: Telegram Bot Setup and Supergroup Topics
   slug: telegram-bot
   category: guides
@@ -383,8 +388,9 @@ docs:
   - sessions/2026-03-16-google-drive-integration.md
   - sessions/2026-03-22-top-skills-and-updates.md
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
-  last_updated: '2026-03-29'
-  version: 1
+  - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
+  last_updated: '2026-05-03'
+  version: 2
 - title: Common Errors and Solutions
   slug: common-errors
   category: troubleshooting

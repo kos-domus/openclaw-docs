@@ -1,10 +1,10 @@
-last_check: '2026-05-01'
+last_check: '2026-05-03'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.4.29
-    last_known_release_date: '2026-04-30'
+    last_known_version: 2026.5.2
+    last_known_release_date: '2026-05-02'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -19,7 +19,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.4.29
+    last_known_version: 2026.5.2
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -46,16 +46,26 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.4.29
-  checked_at: '2026-05-01'
+  checked_at: '2026-05-03'
   upgraded_from: 2026.4.24
   upgraded_at: '2026-05-01T10:25:00+02:00'
-  upgrade_notes: |
-    Upgraded from 2026.4.24 → 2026.4.29 in a single hop. Pre-flight smoke
+  upgrade_notes: 'Upgraded from 2026.4.24 → 2026.4.29 in a single hop. Pre-flight
+    smoke
+
     test of agent profiles confirmed the breaking change in 2026.4.29
+
     (restrictive profiles `minimal`/`messaging` no longer inherit
+
     `tools.exec` / `tools.fs` implicitly) does NOT impact this fleet —
+
     6/8 agents use the `coding` profile which retains fs+exec by design,
+
     the other 2 (cos, family) have explicit `tools.allow` lists.
+
     Post-upgrade verification: gateway active, 8/8 agents registered,
+
     51/51 cron jobs preserved, 9/9 routing bindings intact, no errors
+
     in journal.
+
+    '

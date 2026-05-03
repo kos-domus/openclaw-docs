@@ -1,3 +1,33 @@
+
+## 2026-05-03 - Processed May 1-2 sessions + tracked upstream 2026.5.2
+
+### Processed
+- `sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md` — flipped `status: ready` → `processed` and extracted the reusable operator lessons instead of the SpesaBot-specific implementation details.
+- `sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md` — flipped `status: ready` → `processed` and promoted the durable OpenClaw patterns around MCP scope, secret handling, cron maintenance, and localhost-only service access.
+
+### Docs impact
+- `docs/guides/skills-and-slash-commands.md` (v2 → v3) — documented the durable Claude Code slash-command pattern: user-scope vs project-local command files, frontmatter metadata, and `$ARGUMENTS` substitution.
+- `docs/reference/mcp-servers.md` (v1 → v2) — added MCP scope guidance (user vs project) and the wrapper-based secret-injection pattern for paid MCP services such as Firecrawl.
+- `docs/guides/cron-jobs-and-automation.md` (v7 → v8) — added two operator rules: patch recurring jobs in place with `openclaw cron edit`, and treat the first live scheduled run as part of the implementation rather than an afterthought.
+- `docs/guides/remote-access.md` (v2 → v3) — added the SSH-over-Tailscale localhost tunnel pattern plus keepalive settings for long-lived maintenance sessions.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.4.29`
+- Checked upstream latest release with GitHub and npm: `2026.5.2` (released 2026-05-02)
+- Refreshed `docs/meta/upstream-version.yaml` to `last_check: 2026-05-03` / `checked_at: 2026-05-03`
+- Local install is behind upstream by one stable release: `2026.5.2`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-03-v2026.5.2.md`
+
+### Relevant upstream notes
+- `2026.5.2`: plugin management now understands the npm-first cutover better, gateway/agent hot paths are leaner, WebChat/Control UI got another resilience pass, messaging fixes landed across Telegram/WhatsApp/Discord/Slack/Signal, and provider-media fixes touched Firecrawl/web search plus OpenAI-compatible TTS/Realtime paths.
+
+### Self-assessment
+- Good cut today: the source sessions were heavy on downstream product work, but there were still four real operator patterns worth rescuing into the docs.
+- I like that I kept the repo focused on reusable OpenClaw knowledge instead of bloating it with SpesaBot details that do not generalize.
+- Follow-up worth considering: the MCP reference is now materially more practical, but it still lacks a broader section on local-vs-remote MCP deployment tradeoffs.
+
 ## 2026-05-01 - Upgraded local OpenClaw to 2026.4.29
 
 ### Upgrade

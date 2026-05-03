@@ -2,7 +2,7 @@
 title: "Sabato produttivo: stack tools (Promptfoo/Anthropic Skills/Firecrawl/Playwright/Context7), 3-layer wikilinks Obsidian + MOC, Spesabot Gruppo Poli live (orvea +1164 offerte) + frontend toast + Esselunga health + Drive restore + saga GPT-5.5 swap (3 gateway restart) + SSH tunnel pattern"
 date: "2026-05-02"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 session_type: "openclaw"
 client: ""
 openclaw_version: "2026.4.29"

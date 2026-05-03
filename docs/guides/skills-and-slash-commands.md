@@ -9,8 +9,9 @@ tags:
 - security
 sources:
 - sessions/2026-03-22-top-skills-and-updates.md
-last_updated: '2026-03-30'
-version: 2
+- sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
+last_updated: '2026-05-03'
+version: 3
 ---
 
 # Skills and Slash Commands
@@ -118,6 +119,29 @@ Three variants available:
 - `elevenlabs-cli` — Full suite: TTS + STT + voice cloning
 
 Supports inline directives to change voice mid-response.
+
+
+## Claude Code slash commands
+
+OpenClaw operators often pair skills with lightweight Claude Code slash commands for repetitive local workflows. The durable pattern from the processed sessions is:
+
+- `~/.claude/commands/<name>.md` → user-scope command, available across projects
+- `<project>/.claude/commands/<name>.md` → project-local command
+- optional frontmatter can declare metadata such as `description` and `argument-hint`
+- the markdown body is the prompt template the agent receives
+- `$ARGUMENTS` is replaced with the text typed after `/command`
+
+Minimal example:
+
+```md
+---
+description: Quick status check
+argument-hint: [optional-target]
+---
+Return a short status report for $ARGUMENTS.
+```
+
+Use slash commands for repeatable operator prompts, but keep the actual durable procedures in version-controlled docs or skills instead of burying business logic only in local command files.
 
 ## OpenClaw Updates (v2026.3.13)
 
