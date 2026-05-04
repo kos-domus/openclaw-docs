@@ -22,8 +22,9 @@ sources:
 - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
 - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
 - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
-last_updated: '2026-05-03'
-version: 8
+- sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
+last_updated: '2026-05-04'
+version: 9
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -198,6 +199,21 @@ For recurring user alerts, the processed sessions showed a durable pattern:
 5. make the notifier idempotent with `NOT EXISTS` or unique constraints
 
 That gives you scheduled notifications without re-sending the same event on every cron tick.
+
+### Stateful failure monitors should acknowledge only after delivery
+
+If you build a cron-adjacent watcher that alerts on failed services or stale pipelines, do not mark the failure as "already notified" before the outbound message actually succeeds.
+
+The durable pattern is:
+
+1. detect the failure state
+2. send the alert
+3. persist the notification marker **only after** the channel confirms delivery
+4. clear the marker automatically when the service recovers
+
+That protects you from the ugly case where Telegram, WhatsApp, or some other delivery layer is down at the same moment as the real failure. If you write the marker too early, the alert is lost and the next poll stays silent.
+
+Related deployment rule: when you install a new watcher against a service that is **already failed**, pre-seed the watcher state with the current failure marker so the first poll does not spam a fake "new" incident.
 
 ## Sub-Agents
 

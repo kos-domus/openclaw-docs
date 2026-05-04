@@ -8,8 +8,9 @@ sources:
   - "sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md"
   - "sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md"
   - "sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md"
-last_updated: "2026-05-01"
-version: 2
+  - "sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md"
+last_updated: "2026-05-04"
+version: 3
 ---
 
 # Cron and Scheduling Reference
@@ -59,6 +60,16 @@ This prevents three common failure classes:
 Some recurring jobs depend on files that are optional but noisy when missing, such as `memory/<today>.md`. If the runtime tolerates empty files, pre-create them with a small systemd timer or wrapper script before the main agent reset window instead of teaching every cron prompt to defend against `ENOENT`.
 
 That pattern keeps the chat-facing jobs focused on real work while low-value housekeeping stays outside the agent loop.
+
+## Failure-monitor state rules
+
+For systemd timers or external wrappers that behave like cron-based monitors:
+
+- persist the "already alerted" marker only after the notification channel confirms success
+- clear the marker automatically on recovery so the next real failure can page again
+- when deploying the monitor onto an already-failed service, pre-seed the state file with the current failure marker to avoid first-run alert spam
+
+This is the simplest reliable pattern for local service watchdogs that page into Telegram or other chat channels.
 
 ## When to choose systemd instead of OpenClaw cron
 

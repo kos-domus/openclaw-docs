@@ -1,3 +1,23 @@
+## 2026-05-04 - Processed May 3 session + upstream/local install aligned on 2026.5.2
+
+### Processed
+- `sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md` — flipped `status: ready` → `processed` and extracted only the durable OpenClaw-adjacent automation lessons instead of pulling Spesify product implementation into the core docs set.
+
+### Docs impact
+- `docs/guides/cron-jobs-and-automation.md` (v8 → v9) — added the delivery-safe failure-monitor pattern: persist the "already notified" marker only after the outbound alert succeeds, clear it on recovery, and pre-seed state when deploying onto an already-failed service.
+- `docs/reference/cron-scheduling-reference.md` (v2 → v3) — added the reference version of the same watchdog-state rule for systemd timer / cron-adjacent monitors.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked upstream latest release with GitHub and npm: `2026.5.2` (released 2026-05-02)
+- Refreshed `docs/meta/upstream-version.yaml` to `last_check: 2026-05-04` / `checked_at: 2026-05-04`
+- Local install is now aligned with upstream. The tracker had been stale on `2026.4.29`, so this run records the first verified aligned state on `2026.5.2`.
+- No newer stable OpenClaw release landed since the previous check, so no new `docs/meta/upstream-updates/` note was needed.
+
+### Self-assessment
+- Good restrained run: the source session was mostly downstream Spesify work, but the watchdog notification-state pattern was worth rescuing because it generalizes cleanly to OpenClaw operators.
+- Glad we caught the quoted `status: "ready"` session instead of falsely calling this a SKIP.
+
 
 ## 2026-05-03 - Processed May 1-2 sessions + tracked upstream 2026.5.2
 

@@ -2,7 +2,7 @@
 title: "Sabato monstre: OrchArch P1 chiuso (matching fix + monitor + etl_runs) + Spesify UI overhaul 4-slice (Lista+Avvisi unificati, card enriched, Esplora universale, drawer 12→5) + emoji fix + 2 spunti strategici (B2B + cloud) registrati"
 date: "2026-05-03"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 session_type: "openclaw"
 client: ""
 openclaw_version: "2026.4.29"

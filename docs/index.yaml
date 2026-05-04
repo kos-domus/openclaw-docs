@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-05-03T05:30:00Z'
+  generated_at: '2026-05-04T05:30:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 128
+  sources_processed: 129
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -153,8 +153,9 @@ docs:
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
   - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
   - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
-  last_updated: '2026-05-03'
-  version: 8
+  - sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
+  last_updated: '2026-05-04'
+  version: 9
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -322,8 +323,9 @@ docs:
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
   - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
-  last_updated: '2026-05-01'
-  version: 2
+  - sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
+  last_updated: '2026-05-04'
+  version: 3
 - title: Deep Research Reference
   slug: deep-research-reference
   category: reference
