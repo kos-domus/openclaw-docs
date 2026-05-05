@@ -1,3 +1,28 @@
+## 2026-05-05 - SKIP docs merge, tracked upstream 2026.5.3 and 2026.5.3-1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked upstream latest GitHub/npm version: `2026.5.3-1` (published 2026-05-04)
+- Confirmed the intermediate stable release `2026.5.3` also landed since the last check
+- Refreshed `docs/meta/upstream-version.yaml` to `last_check: 2026-05-05` / `checked_at: 2026-05-05`
+- Local install is now behind upstream by the newly released `2026.5.3` line and its npm hotfix `2026.5.3-1`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-05-v2026.5.3.md`
+- `docs/meta/upstream-updates/2026-05-05-v2026.5.3-1.md`
+
+### Relevant upstream notes
+- `2026.5.3`: major plugin lifecycle hardening for the npm-first world, gateway lazy-load/perf work, new file-transfer plugin/tools, shared progress streaming mode, `/steer`, and a ton of channel/runtime fixes. Biggest operator-impactful change: invalid config now fails closed instead of being auto-restored at gateway startup.
+- `2026.5.3-1`: small but useful hotfix that stops false-positive install-scanner blocks on official bundled plugin packages.
+
+### Self-assessment
+- Clean SKIP run: no forced doc merge, just the maintenance that actually mattered.
+- Important catch today: `2026.5.3` is not just a routine patch — the fail-closed config behavior and plugin lifecycle churn make it worth a deliberate upgrade smoke test instead of a blind bump.
+
+
 ## 2026-05-04 - Processed May 3 session + upstream/local install aligned on 2026.5.2
 
 ### Processed
