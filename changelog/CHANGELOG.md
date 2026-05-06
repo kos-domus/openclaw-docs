@@ -1,3 +1,26 @@
+## 2026-05-06 - SKIP docs merge, tracked upstream 2026.5.4
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked upstream latest GitHub/npm version: `2026.5.4` (published 2026-05-05)
+- Refreshed `docs/meta/upstream-version.yaml` verification timestamp and `docs/index.yaml` catalog timestamp for this run
+- Local install remains behind upstream: local `2026.5.2` vs upstream `2026.5.4`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-06-v2026.5.4.md`
+
+### Relevant upstream notes
+- `2026.5.4`: another big operator-facing drop — Google Meet/Twilio voice path got much better, plugin install/update repair kept hardening for the npm-first plugin world, gateway/plugin hot paths got leaner, and a huge pile of fixes landed across Telegram, WhatsApp, Discord, Slack, Codex/OpenAI, cron/session handling, approvals, and Windows/macOS service edges.
+- Biggest practical upgrade angle for us: it looks safer and smoother for plugin lifecycle + messaging reliability, but it is still big enough that it deserves smoke tests instead of a blind bump.
+
+### Self-assessment
+- Clean SKIP run again: no fake doc work, just real repo maintenance.
+- Worth noting: the tracker already knew about `2026.5.4`, but the changelog and upstream-notes folder did not. Glad I closed that bookkeeping gap before it turns into silent drift.
+
+
 ## 2026-05-05 - SKIP docs merge, tracked upstream 2026.5.3 and 2026.5.3-1
 
 ### Daily knowledge base run
