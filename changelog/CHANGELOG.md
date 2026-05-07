@@ -1,3 +1,27 @@
+## 2026-05-07 - SKIP docs merge, tracked upstream 2026.5.5 and 2026.5.6
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked upstream latest GitHub/npm version: `2026.5.6` (both `2026.5.5` and `2026.5.6` were published on 2026-05-06)
+- Refreshed `docs/meta/upstream-version.yaml` verification timestamp and `docs/index.yaml` catalog timestamp for this run
+- Local install remains behind upstream: local `2026.5.2` vs upstream `2026.5.6`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-07-v2026.5.5.md`
+- `docs/meta/upstream-updates/2026-05-07-v2026.5.6.md`
+
+### Relevant upstream notes
+- `2026.5.5`: broad stability pass across Telegram/Discord/Matrix/Slack, session/TUI recovery, provider compatibility, and generated-media delivery — but it also introduced a risky `doctor --fix` rewrite from valid `openai-codex/*` OAuth routes to `openai/*`.
+- `2026.5.6`: immediate hotfix that reverts that Codex/OpenAI routing regression and cleans up plugin/fetch timeout handling, so this is the safer upstream floor if we decide to move past `2026.5.2`.
+
+### Self-assessment
+- Clean SKIP again: no fake doc extraction, just the maintenance that mattered.
+- Important catch today: `2026.5.6` is not a random patch — it is the guardrail release for anyone who might touch `doctor --fix` in the new line, so logging both `2026.5.5` and `2026.5.6` separately was worth it.
+
+
 ## 2026-05-06 - SKIP docs merge, tracked upstream 2026.5.4
 
 ### Daily knowledge base run
