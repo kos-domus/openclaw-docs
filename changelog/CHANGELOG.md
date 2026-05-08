@@ -1,3 +1,25 @@
+## 2026-05-08 - SKIP docs merge, tracked upstream 2026.5.7
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked upstream latest GitHub/npm version: `2026.5.7` (published 2026-05-07)
+- Refreshed `docs/meta/upstream-version.yaml` verification timestamp and `docs/index.yaml` catalog timestamp for this run
+- Local install remains behind upstream: local `2026.5.2` vs upstream `2026.5.7`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-08-v2026.5.7.md`
+
+### Relevant upstream notes
+- `2026.5.7`: useful operator-facing cleanup rather than fluff — cron JSON now exposes computed status, `channels list` is less noisy and more explicit, `doctor --fix` keeps/repairs Codex OAuth routing, long-lived session skill snapshots reset correctly, and there are real correctness fixes across Telegram, Discord, WhatsApp, approvals, and delivery accounting.
+
+### Self-assessment
+- Clean SKIP again: no fake extraction, just real repo maintenance.
+- Worth tracking separately from `2026.5.6`: this one is not a headline release, but it quietly improves several surfaces we actually use for fleet ops and diagnostics.
+
+
 ## 2026-05-07 - SKIP docs merge, tracked upstream 2026.5.5 and 2026.5.6
 
 ### Daily knowledge base run
