@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-05-08T05:30:00Z'
+  generated_at: '2026-05-09T05:30:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 129
+  sources_processed: 132
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -244,8 +244,11 @@ docs:
   sources:
   - sessions/2026-03-22-top-skills-and-updates.md
   - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
-  last_updated: '2026-05-03'
-  version: 3
+  - sessions/2026-05-08-excalidraw-skill-fase-1a-1b.md
+  - sessions/2026-05-08-excalidraw-skill-fase-1b-patch-logo-corpus.md
+  - sessions/2026-05-08-excalidraw-skill-aliases-population.md
+  last_updated: '2026-05-09'
+  version: 4
 - title: Telegram Bot Setup and Supergroup Topics
   slug: telegram-bot
   category: guides

@@ -1,4 +1,4 @@
-last_check: '2026-05-08'
+last_check: '2026-05-09'
 sources:
   github:
     repo: openclaw/openclaw
@@ -46,7 +46,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.2
-  checked_at: '2026-05-08T05:30:00Z'
+  checked_at: '2026-05-09T05:30:00Z'
   upgraded_from: 2026.4.29
   upgraded_at: '2026-05-04T05:30:00Z'
   upgrade_notes: 'Tracker refreshed after verification that the local CLI is already

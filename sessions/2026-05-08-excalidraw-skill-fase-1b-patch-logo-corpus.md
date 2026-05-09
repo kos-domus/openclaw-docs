@@ -2,7 +2,7 @@
 title: "Excalidraw skill Fase 1b: patch engine + logo embed + corpus extension + VS Code remote editing setup"
 date: "2026-05-08"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["skills", "configuration", "vscode", "automation", "remote", "setup"]
 session_type: "openclaw"
 client: ""

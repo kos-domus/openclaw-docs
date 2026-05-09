@@ -10,8 +10,11 @@ tags:
 sources:
 - sessions/2026-03-22-top-skills-and-updates.md
 - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
-last_updated: '2026-05-03'
-version: 3
+- sessions/2026-05-08-excalidraw-skill-fase-1a-1b.md
+- sessions/2026-05-08-excalidraw-skill-fase-1b-patch-logo-corpus.md
+- sessions/2026-05-08-excalidraw-skill-aliases-population.md
+last_updated: '2026-05-09'
+version: 4
 ---
 
 # Skills and Slash Commands
@@ -142,6 +145,36 @@ Return a short status report for $ARGUMENTS.
 ```
 
 Use slash commands for repeatable operator prompts, but keep the actual durable procedures in version-controlled docs or skills instead of burying business logic only in local command files.
+
+## Pattern: build skills as reasoning + deterministic helpers
+
+The durable pattern from the processed Excalidraw skill sessions is to split the skill into two layers:
+
+- **reasoning layer in `SKILL.md`** — the agent interprets natural-language intent, chooses the workflow, and decides which helper to call
+- **deterministic helper layer in local scripts/modules** — small CLIs or importable functions apply the actual transformation repeatably
+
+This architecture worked especially well for visual-artifact generation:
+
+- `build` script for first-pass artifact creation
+- `revise` script for deterministic patch application
+- asset loaders for reusable corpora (for example icon/logo libraries)
+- catalog/listing helpers for opaque datasets that need human or model review before aliasing
+
+The practical rule is simple: let the model decide *what* should change, but make a deterministic helper perform *how* the file changes. That keeps iteration fast without forcing runtime API calls inside the helper itself.
+
+## Pattern: expect iterative artifact loops
+
+For skills that generate visual or other inspectable artifacts, iteration is not failure — it is the normal workflow. A strong skill should support this loop cleanly:
+
+1. generate an initial artifact
+2. inspect it in the native editor/viewer
+3. describe the delta in natural language
+4. re-run a deterministic patch or rebuild step
+
+Two durable operator lessons came out of that work:
+
+- avoid hardcoded layout constants scattered across helpers; once a canvas or layout preset changes, stale magic numbers become recurring regression bugs
+- if the artifact has an editor-specific custom view (for example `.excalidraw` in VS Code), associate the file extension with the right custom editor so review happens inline instead of falling back to raw JSON/text
 
 ## OpenClaw Updates (v2026.3.13)
 

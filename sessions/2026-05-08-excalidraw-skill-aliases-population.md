@@ -2,7 +2,7 @@
 title: "Excalidraw skill: 83 SEMANTIC_ALIASES popolati + 100% corpus coverage + bug fix CANVAS_W"
 date: "2026-05-08"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["skills", "configuration", "vscode", "automation", "remote", "memory"]
 session_type: "openclaw"
 client: ""

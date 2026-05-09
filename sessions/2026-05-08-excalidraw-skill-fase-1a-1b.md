@@ -2,7 +2,7 @@
 title: "Excalidraw Diagrams Skill — Fase 1a kick-off + Fase 1b direction-horizontal + 7 iterazioni visive"
 date: "2026-05-08"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["skills", "claude-md", "automation", "configuration"]
 session_type: "openclaw"
 client: ""

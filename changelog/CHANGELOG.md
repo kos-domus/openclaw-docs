@@ -1,3 +1,27 @@
+## 2026-05-09 - Processed Excalidraw skill sessions + verified upstream drift remains
+
+### Processed
+- `sessions/2026-05-08-excalidraw-skill-fase-1a-1b.md` — flipped `status: ready` → `processed` and extracted the reusable skill-engineering patterns instead of the downstream Excalidraw implementation detail flood.
+- `sessions/2026-05-08-excalidraw-skill-fase-1b-patch-logo-corpus.md` — flipped `status: ready` → `processed` and merged the durable reasoning-vs-deterministic-helper pattern into the skills guide.
+- `sessions/2026-05-08-excalidraw-skill-aliases-population.md` — flipped `status: ready` → `processed` and kept only the operator lessons that generalize beyond this single skill.
+
+### Docs impact
+- `docs/guides/skills-and-slash-commands.md` (v3 → v4) — added the durable pattern for custom skills that pair natural-language reasoning with deterministic local helpers, plus the iterative artifact-review loop and inline custom-editor association lesson.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked official upstream latest release with GitHub and npm: `2026.5.7` (published 2026-05-07)
+- Refreshed `docs/meta/upstream-version.yaml` verification timestamp and `docs/index.yaml` catalog timestamp for this run
+- Local install remains behind upstream: local `2026.5.2` vs upstream `2026.5.7`
+- No newer stable OpenClaw release landed since the previous check, so no new `docs/meta/upstream-updates/` note was needed
+
+### Relevant upstream notes
+- `2026.5.7`: still the current upstream head. Biggest practical operator takeaways remain the safer ClawHub/plugin publish recovery path, JSON cron status exposure for external tooling, less noisy `channels list`, skill snapshot reset on `/new` and `sessions.reset`, the `doctor --fix` repair for Codex OAuth route regressions introduced in `2026.5.5`, and a pile of real fixes across Telegram, WhatsApp, Discord, approvals, cron delivery, and transcript rollover.
+
+### Self-assessment
+- Good restrained extraction: these sessions had a ton of product-specific Excalidraw work, but only one docs page really deserved to move.
+- The useful win was not “diagram generation” itself; it was the repeatable skill-design pattern underneath it.
+
 ## 2026-05-08 - SKIP docs merge, tracked upstream 2026.5.7
 
 ### Daily knowledge base run
