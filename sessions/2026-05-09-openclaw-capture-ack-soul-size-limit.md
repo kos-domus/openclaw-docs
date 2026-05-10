@@ -2,7 +2,7 @@
 title: "OpenClaw Capture topic ACK ripristinato + scoperta hard limit 12000 chars su SOUL.md"
 date: "2026-05-09"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "configuration", "troubleshooting", "memory", "context"]
 session_type: "openclaw"
 client: ""

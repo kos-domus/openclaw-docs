@@ -11,8 +11,9 @@ tags:
 sources:
 - sessions/2026-03-21-soul-user-md-multiagent-framework.md
 - sessions/2026-03-23-handson-8agent-setup.md
-last_updated: '2026-03-30'
-version: 2
+- sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
+last_updated: '2026-05-10'
+version: 3
 ---
 
 # Bootstrap Files: CLAUDE.md, AGENTS.md, SOUL.md, and More
@@ -118,7 +119,13 @@ Every bootstrap file is loaded into the prompt at session start. This has a dire
 - **Context window**: Bootstrap files consume space that could be used for conversation
 - **Latency**: Larger prompts take longer to process
 
-**Best practice**: Keep bootstrap files concise and focused. If a file exceeds ~200 lines, consider whether all of it is necessary for every session.
+There is also a practical runtime ceiling to care about: if a bootstrap file grows too large, OpenClaw can truncate it before injection. In the processed field session that surfaced this clearly, `SOUL.md` was truncated once it crossed roughly **12,000 characters**, which meant instructions appended near the end simply stopped reaching the agent even though the file on disk looked correct.
+
+**Best practice**:
+- Keep critical routing and behavior rules near the top of the file.
+- Treat **~11,000 characters per bootstrap file** as a safe operating target, not just a style preference.
+- Move infrequent or detailed workflows into `procedures/*.md` files and have the agent read them on demand instead of stuffing everything into `SOUL.md` or `MEMORY.md`.
+- If a behavior mysteriously stops working after a prompt edit, check the gateway logs for bootstrap truncation before blaming the model.
 
 ## What's Next
 

@@ -1,3 +1,30 @@
+## 2026-05-10 - Processed capture ACK / bootstrap truncation session + tracked 2026.5.9-beta.1
+
+### Processed
+- `sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md` — flipped `status: ready` → `processed` and extracted the durable operator lessons instead of preserving the one-off Capture topic story verbatim.
+
+### Docs impact
+- `docs/concepts/bootstrap-files.md` (v2 → v3) — documented the practical bootstrap-file truncation ceiling, the “keep critical rules near the top” rule, and the pattern of offloading long workflows into `procedures/*.md`.
+- `docs/guides/telegram-bot.md` (v5 → v6) — added the outbound forum-topic rule: numeric supergroup chat id + explicit topic `thread_id`, never a human alias target.
+- `docs/troubleshooting/common-errors.md` (v10 → v11) — tightened the bootstrap truncation error entry with the observed ~12k-char limit and added the `Unknown target "..."` Telegram topic send failure pattern.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.2`
+- Checked official upstream releases with GitHub and npm: stable still `2026.5.7` (2026-05-07), plus new beta `2026.5.9-beta.1` (2026-05-09)
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+- Local install remains behind stable upstream: local `2026.5.2` vs stable `2026.5.7`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-10-v2026.5.9-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.9-beta.1`: big beta with real operator signal — `/think default` and `/fast default`, `openclaw path`, better runtime/model identity exposure, more ACP/plugin/channel delivery plumbing, and another broad pass over Telegram, Discord voice/realtime, sessions, restarts, and diagnostics.
+- Operator-impactful watch items: BlueBubbles-backed iMessage is removed in favor of `channels.imessage`, and the supported Node 22 floor moves to `22.16+`.
+
+### Self-assessment
+- Good extraction: the useful part was not “Capture ACK came back,” it was the repeatable lesson that oversized bootstrap files silently eat late instructions.
+- Also glad I promoted the Telegram topic-send caveat into the guide instead of leaving it buried in one troubleshooting anecdote.
+
 ## 2026-05-09 - Processed Excalidraw skill sessions + verified upstream drift remains
 
 ### Processed

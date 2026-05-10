@@ -24,8 +24,9 @@ sources:
   - "sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md"
   - "sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md"
   - "sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md"
-last_updated: "2026-05-01"
-version: 10
+  - "sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md"
+last_updated: "2026-05-10"
+version: 11
 ---
 
 # Common Errors and Solutions
@@ -105,7 +106,8 @@ Aggregated error catalog from real-world OpenClaw deployments.
 | `plugin requires OpenClaw >=...` appears during config reload | The npm package on disk is newer than the running gateway process, or the host is genuinely behind plugin minimum version requirements | Upgrade if needed, then restart the gateway. `npm install -g openclaw@latest` alone does not switch the live runtime |
 | `openclaw doctor --repair` wants to rewrite a custom gateway service | Doctor detected manual edits such as wrapper scripts, env sourcing, or service drop-ins | Do **not** force repair blindly. Review the unit first, or you can wipe the custom startup path that injects secrets or local env |
 | `read failed: ENOENT ... memory/<today>.md` appears at the same time every day | Session bootstrap preloads recent daily memory files and logs the miss even though the runtime can proceed | Pre-create empty daily files before the reset/startup window (for example with a small systemd timer). Empty files are skipped cleanly and silence the noise |
-| `workspace bootstrap file SOUL.md is ... truncating in injected context` | The bootstrap file exceeded the runtime size cap, so later instructions never reach the agent | Move infrequent procedures into separate `procedures/*.md` files and keep `SOUL.md` lean enough that critical routing instructions stay above the truncation line |
+| `workspace bootstrap file SOUL.md is ... truncating in injected context` | The bootstrap file exceeded the runtime size cap (observed in practice at roughly 12,000 characters per file), so later instructions never reach the agent | Move infrequent procedures into separate `procedures/*.md` files, keep critical rules near the top, and treat ~11,000 characters per bootstrap file as the safe target |
+| `Unknown target "..."` when an agent tries to post back into a Telegram topic | The agent used a human alias or vague group name as the outbound target instead of the numeric supergroup chat id, or omitted the topic thread id | Send to the numeric Telegram chat id and include the exact topic `thread_id`; otherwise the send can fail or land in the default forum topic |
 
 ## Channels and Providers
 

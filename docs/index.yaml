@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-05-09T05:30:00Z'
+  generated_at: '2026-05-10T05:30:00Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -7,7 +7,7 @@ meta:
     guides: 9
     reference: 8
     troubleshooting: 3
-  sources_processed: 132
+  sources_processed: 136
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -34,6 +34,20 @@ docs:
   sources:
   - sessions/2026-03-21-soul-user-md-multiagent-framework.md
   - sessions/2026-03-23-handson-8agent-setup.md
+  - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
+  last_updated: '2026-05-10'
+  version: 3
+- title: Multi-Agent Architecture in OpenClaw
+  slug: multi-agent-architecture
+  category: concepts
+  tags:
+  - multi-agent
+  - architecture
+  - channels
+  - isolation
+  sources:
+  - sessions/2026-03-20-multi-agent-architecture.md
+  - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
 - title: Building a Semantic Data Layer on Google Drive
@@ -47,19 +61,6 @@ docs:
   - architecture
   sources:
   - sessions/2026-03-28-familyos-database-kai-1password.md
-  last_updated: '2026-03-30'
-  version: 2
-- title: Multi-Agent Architecture in OpenClaw
-  slug: multi-agent-architecture
-  category: concepts
-  tags:
-  - multi-agent
-  - architecture
-  - channels
-  - isolation
-  sources:
-  - sessions/2026-03-20-multi-agent-architecture.md
-  - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
 - title: Workspace Isolation
@@ -221,18 +222,6 @@ docs:
   - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
   last_updated: '2026-05-03'
   version: 3
-- title: Setting Up a WhatsApp Bot with OpenClaw
-  slug: whatsapp-bot
-  category: guides
-  tags:
-  - whatsapp
-  - channels
-  - configuration
-  - baileys
-  sources:
-  - sessions/2026-03-18-whatsapp-integration.md
-  last_updated: '2026-03-30'
-  version: 2
 - title: Skills and Slash Commands
   slug: skills-and-slash-commands
   category: guides
@@ -265,8 +254,21 @@ docs:
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
   - sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
-  last_updated: '2026-05-01'
-  version: 5
+  - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
+  last_updated: '2026-05-10'
+  version: 6
+- title: Setting Up a WhatsApp Bot with OpenClaw
+  slug: whatsapp-bot
+  category: guides
+  tags:
+  - whatsapp
+  - channels
+  - configuration
+  - baileys
+  sources:
+  - sessions/2026-03-18-whatsapp-integration.md
+  last_updated: '2026-03-30'
+  version: 2
 - title: 1Password Integration Reference
   slug: 1password-integration-reference
   category: reference
@@ -424,8 +426,9 @@ docs:
   - sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
   - sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
-  last_updated: '2026-05-01'
-  version: 10
+  - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
+  last_updated: '2026-05-10'
+  version: 11
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting

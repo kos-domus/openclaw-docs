@@ -15,8 +15,9 @@ sources:
 - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
 - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
 - sessions/2026-04-28-telegram-capture-and-fleet-routing-overhaul.md
-last_updated: '2026-05-01'
-version: 5
+- sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
+last_updated: '2026-05-10'
+version: 6
 ---
 
 # Telegram Bot Setup and Supergroup Topics
@@ -150,6 +151,28 @@ Two real-world caveats matter here:
 2. Because the gateway re-serializes `openclaw.json` on graceful shutdown, make config edits with the safe sequence: **stop gateway → edit config → start gateway**.
 
 For capture-style inbox topics, that direct binding approach is the reliable path today.
+
+### Outbound sends to forum topics
+
+When an agent needs to send a message back into a Telegram supergroup topic, the durable rule is:
+
+- use the **numeric group chat id** as the target
+- include the exact `thread_id` / `message_thread_id` for the topic
+- do **not** use a human alias like `"Job-desk"` as the outbound target
+
+In practice, the safe mental model is:
+
+```text
+target = <numeric_supergroup_chat_id>
+thread_id = <topic_id>
+```
+
+Two easy footguns:
+
+1. If you send to an alias name instead of the numeric chat id, OpenClaw can reject the send with an `Unknown target ...` style error.
+2. If you omit the topic id, the message can land in the forum's default/general topic instead of the intended workflow topic.
+
+That matters for capture ACK flows, moderation topics, and any multi-agent setup where one wrong reply in General creates noise or breaks user trust.
 
 ## Telegram Mini App Companion Web Apps
 
