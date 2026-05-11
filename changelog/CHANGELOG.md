@@ -1,3 +1,32 @@
+## 2026-05-11 - SKIP docs merge, stable upstream aligned, tracked 2026.5.10 beta line
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked the full session set with a frontmatter scan; only `_template.md` is non-processed, and it is correctly still `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked GitHub releases and npm stable line: stable upstream is still `2026.5.7`
+- Confirmed the upstream docs tree is still present and healthy in the canonical repo
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+- Stable line is now aligned: local `2026.5.7` == GitHub/npm stable `2026.5.7`
+- New prereleases landed since the previous check: `2026.5.10-beta.1`, `2026.5.10-beta.2`, and `2026.5.10-beta.3`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-11-v2026.5.10-beta.1.md`
+- `docs/meta/upstream-updates/2026-05-11-v2026.5.10-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-11-v2026.5.10-beta.3.md`
+
+### Relevant upstream notes
+- `2026.5.10-beta.1`: first serious beta on the next line — QA/Mantis Telegram automation, more Discord realtime voice work, stronger CLI/onboarding guidance, and a meaningful Codex-tooling ownership shift.
+- `2026.5.10-beta.2`: mostly beta hardening — plugin-aware `gateway status --deep`, ACP backend readiness truthfulness, stricter OpenAI-compatible replay sanitation, and safer restart/config reload behavior.
+- `2026.5.10-beta.3`: the most operator-relevant of the set — `/context map`, provider-level `localService`, major Slack surface work, more Codex/Plugin SDK movement, and a broad pass over Telegram/WhatsApp/Gateway/Control UI correctness.
+
+### Self-assessment
+- Clean SKIP, no fake doc extraction.
+- The useful catch today is that the stable mismatch is gone: the repo tracker had drifted behind reality, but the local install is actually aligned on `2026.5.7`.
+- Still worth watching the `2026.5.10` beta train closely: there is a lot of real operator value in it, but also enough SDK/Codex/runtime churn that I would not treat it like a casual bump.
+
 ## 2026-05-10 - Processed capture ACK / bootstrap truncation session + tracked 2026.5.9-beta.1
 
 ### Processed

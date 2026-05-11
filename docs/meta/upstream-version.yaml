@@ -1,12 +1,12 @@
-last_check: '2026-05-10'
+last_check: '2026-05-11'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.7
     last_known_release_date: '2026-05-07'
-    last_known_beta_version: 2026.5.9-beta.1
-    last_known_beta_release_date: '2026-05-09'
+    last_known_beta_version: 2026.5.10-beta.3
+    last_known_beta_release_date: '2026-05-11'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -47,18 +47,8 @@ sources:
     - path: /hooks
       tracks: lifecycle hooks, event hooks, automation
 installed:
-  local_cli_version: 2026.5.2
-  checked_at: '2026-05-10T05:30:00Z'
-  upgraded_from: 2026.4.29
-  upgraded_at: '2026-05-04T05:30:00Z'
-  upgrade_notes: 'Tracker refreshed after verification that the local CLI is already
-    aligned on 2026.5.2. The previous repo-tracked upgrade was 2026.4.24 → 2026.4.29
-    in a single hop. Pre-flight smoke test of agent profiles confirmed the breaking
-    change in 2026.4.29 (restrictive profiles `minimal`/`messaging` no longer inherit
-    `tools.exec` / `tools.fs` implicitly) does NOT impact this fleet — 6/8 agents
-    use the `coding` profile which retains fs+exec by design, the other 2 (cos, family)
-    have explicit `tools.allow` lists. Post-upgrade verification for 2026.4.29: gateway
-    active, 8/8 agents registered, 51/51 cron jobs preserved, 9/9 routing bindings
-    intact, no errors in journal. This 2026-05-04 update records the first docs-repo
-    verification that the installed CLI is now 2026.5.2; the exact upgrade moment
-    was not previously logged here. '
+  local_cli_version: 2026.5.7
+  checked_at: '2026-05-11T05:30:00Z'
+  upgraded_from: 2026.5.2
+  upgraded_at: '2026-05-11T05:30:00Z'
+  upgrade_notes: 'Tracker refreshed after verification that the local CLI is already aligned on 2026.5.7. The prior docs-repo tracker still showed 2026.5.2, so this run records the first verified aligned state on 2026.5.7. Exact upgrade timing was not previously logged here. Docs folder and npm stable line also remain aligned with the GitHub release line.'
