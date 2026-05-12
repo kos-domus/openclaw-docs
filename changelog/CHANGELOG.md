@@ -1,3 +1,29 @@
+## 2026-05-12 - SKIP docs merge, stable aligned, tracked 2026.5.10-beta.4 and beta.5
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked the session frontmatter directly; the queue is still clean and `_template.md` remains correctly outside the processing flow.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked official upstream releases with GitHub and npm: stable is still `2026.5.7`
+- Confirmed the local install is aligned with stable upstream: local `2026.5.7` == GitHub/npm stable `2026.5.7`
+- Refreshed `docs/meta/upstream-version.yaml` verification timestamp for this run
+- New prereleases landed since the previous changelog entry: `2026.5.10-beta.4` and `2026.5.10-beta.5`
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-12-v2026.5.10-beta.4.md`
+- `docs/meta/upstream-updates/2026-05-12-v2026.5.10-beta.5.md`
+
+### Relevant upstream notes
+- `2026.5.10-beta.4`: this is the dense one — `/context map`, provider-level `localService`, pnpm 11, major Slack surface work, more honest diagnostics, and a lot of Telegram/WhatsApp/Cron/Gateway correctness work.
+- `2026.5.10-beta.5`: reads like the freshest checkpoint of the same broad beta line rather than a new thematic jump; same operator-relevant areas, with continued cleanup around delivery, auth continuity, transcript memory pressure, retries, and model-routing correctness.
+
+### Self-assessment
+- Clean SKIP again: no fake doc extraction, just the upstream bookkeeping that actually mattered.
+- Useful catch today: stable is still aligned, so the only reason to touch the repo was the beta train moving again.
+- I would still treat the `2026.5.10` line as worth watching, not worth blind-upgrading.
+
 ## 2026-05-11 - SKIP docs merge, stable upstream aligned, tracked 2026.5.10 beta line
 
 ### Daily knowledge base run

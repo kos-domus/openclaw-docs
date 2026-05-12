@@ -1,11 +1,11 @@
-last_check: '2026-05-11'
+last_check: '2026-05-12'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.7
     last_known_release_date: '2026-05-07'
-    last_known_beta_version: 2026.5.10-beta.3
+    last_known_beta_version: 2026.5.10-beta.5
     last_known_beta_release_date: '2026-05-11'
     permanent: true
     check_methods:
@@ -48,7 +48,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-11T05:30:00Z'
+  checked_at: '2026-05-12T05:30:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
   upgrade_notes: 'Tracker refreshed after verification that the local CLI is already aligned on 2026.5.7. The prior docs-repo tracker still showed 2026.5.2, so this run records the first verified aligned state on 2026.5.7. Exact upgrade timing was not previously logged here. Docs folder and npm stable line also remain aligned with the GitHub release line.'
