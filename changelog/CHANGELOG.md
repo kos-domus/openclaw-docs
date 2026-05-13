@@ -1,3 +1,33 @@
+## 2026-05-13 - SKIP docs merge, stable aligned, tracked 2026.5.12 beta line
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked the frontmatter queue directly: 60 sessions are already `processed`, `_template.md` is still correctly `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.7`
+- Checked GitHub releases: stable is still `2026.5.7`, while the beta head moved to `2026.5.12-beta.4`
+- Confirmed local stable alignment remains clean: local `2026.5.7` == GitHub/npm stable `2026.5.7`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-13-v2026.5.12-beta.1.md`
+- `docs/meta/upstream-updates/2026-05-13-v2026.5.12-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-13-v2026.5.12-beta.3.md`
+- `docs/meta/upstream-updates/2026-05-13-v2026.5.12-beta.4.md`
+
+### Relevant upstream notes
+- `2026.5.12-beta.1`: useful operator additions — `cron.get`, per-sender tool policy, more session-lineage exposure, and the same broad `/context map` + `localService` beta line.
+- `2026.5.12-beta.2`: quick hardening pass with better visible fallback failure behavior, better OpenAI-compatible stream handling, and cleaner subagent exec wake behavior.
+- `2026.5.12-beta.3`: mainly a freshness checkpoint in the same line, not a distinct thematic jump.
+- `2026.5.12-beta.4`: the most relevant checkpoint so far — Codex migration/runtime fix, Telegram HTML preservation, WhatsApp debounce-close handling, tighter Telegram topic-context isolation, and better plugin install fallback on older npm.
+
+### Self-assessment
+- Clean SKIP: no fake doc extraction, just the repo maintenance that actually mattered.
+- Good catch today: stable is still perfectly aligned, but the beta train moved fast enough that skipping the intermediate notes would have been sloppy.
+- If we ever test this line, beta.4 is the checkpoint I would read first.
+
 ## 2026-05-12 - SKIP docs merge, stable aligned, tracked 2026.5.10-beta.4 and beta.5
 
 ### Daily knowledge base run
