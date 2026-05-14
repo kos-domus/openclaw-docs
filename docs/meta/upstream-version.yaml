@@ -1,11 +1,11 @@
-last_check: '2026-05-13'
+last_check: '2026-05-14'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.7
     last_known_release_date: '2026-05-07'
-    last_known_beta_version: 2026.5.12-beta.4
+    last_known_beta_version: 2026.5.12-beta.6
     last_known_beta_release_date: '2026-05-13'
     permanent: true
     check_methods:
@@ -48,7 +48,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-13T05:30:00Z'
+  checked_at: '2026-05-14T02:00:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
   upgrade_notes: Tracker refreshed after verification that the local CLI is already

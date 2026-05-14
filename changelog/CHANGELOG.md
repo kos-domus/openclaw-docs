@@ -1,3 +1,29 @@
+## 2026-05-14 - SKIP docs merge, stable aligned, tracked 2026.5.12-beta.5 and beta.6
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked the frontmatter queue directly: 60 sessions are already `processed`, and `_template.md` remains the only non-processed file as expected.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.7`
+- Checked GitHub releases: stable is still `2026.5.7`, while the beta head moved to `2026.5.12-beta.6`
+- Confirmed local stable alignment remains clean: local `2026.5.7` == GitHub/npm stable `2026.5.7`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-14-v2026.5.12-beta.5.md`
+- `docs/meta/upstream-updates/2026-05-14-v2026.5.12-beta.6.md`
+
+### Relevant upstream notes
+- `2026.5.12-beta.5`: good hardening pass across approvals, transcript redaction, config mutation safety, Telegram/WhatsApp reliability, and model-fallback behavior when streams stall.
+- `2026.5.12-beta.6`: freshest checkpoint in the same line, with more practical fixes around `sessions_send` bootstrap, plugin install safety, Telegram HTML/localized commands, and clearer OpenAI-compatible validation.
+
+### Self-assessment
+- Clean SKIP again: no fake doc extraction, just the repo maintenance that actually mattered.
+- Good catch today: the tracker file had already been partially refreshed, but the changelog and upstream-notes folder were still behind the real beta head.
+- If we touch this beta line later, beta.6 is the first note worth reading.
+
 ## 2026-05-13 - SKIP docs merge, stable aligned, tracked 2026.5.12 beta line
 
 ### Daily knowledge base run
