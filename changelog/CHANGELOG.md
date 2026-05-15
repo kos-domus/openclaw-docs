@@ -1,3 +1,32 @@
+## 2026-05-15 - SKIP docs merge, upstream stable moved to 2026.5.12, tracked new beta head
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: everything actionable is already `processed`, and `_template.md` stays correctly on `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.12`
+- Checked GitHub releases: stable moved to `2026.5.12` on 2026-05-14, and the beta head is now `2026.5.14-beta.1`
+- Confirmed local install is now behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.12`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-15-v2026.5.12.md`
+- `docs/meta/upstream-updates/2026-05-15-v2026.5.12-beta.7.md`
+- `docs/meta/upstream-updates/2026-05-15-v2026.5.12-beta.8.md`
+- `docs/meta/upstream-updates/2026-05-15-v2026.5.14-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.12`: this is the important one. Stable upstream jumped from `2026.5.7` to `2026.5.12`, with the biggest operator-relevant themes around plugin/install hardening, stronger transcript/tool-result redaction, Telegram durability, better model-stall fallback, and more optional capability/plugin externalization.
+- `2026.5.12-beta.7` and `beta.8`: these read like the final stabilization passes before stable — more install/config/auth cleanup, richer reply/session correctness, and notably stronger Telegram ingress behavior.
+- `2026.5.14-beta.1`: fresh next-line beta. Early signal is consistent with the current direction: slimmer core, more optional plugins, safer config/update behavior, and continued session/runtime cleanup.
+
+### Self-assessment
+- Clean SKIP, no fake doc extraction.
+- Good catch today: the tracker file had already drifted forward, but the changelog and upstream notes were still missing the stable jump to `2026.5.12` and the newest beta checkpoints.
+- Net result: repo bookkeeping is aligned again, and the only real mismatch left is the local CLI staying one stable release train behind upstream.
+
 ## 2026-05-14 - SKIP docs merge, stable aligned, tracked 2026.5.12-beta.5 and beta.6
 
 ### Daily knowledge base run
