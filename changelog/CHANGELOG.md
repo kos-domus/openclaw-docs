@@ -1,3 +1,29 @@
+## 2026-05-16 - SKIP docs merge, local stable still behind, tracked 2026.5.14-beta.2 and 2026.5.16-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter with a direct parser instead of filename assumptions: `60` sessions are already `processed`, and `_template.md` remains correctly outside the flow as `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked GitHub releases and npm stable line: stable is still `2026.5.12`
+- New prereleases landed after the previous docs run: `2026.5.14-beta.2` and `2026.5.16-beta.1`
+- Confirmed local install is still behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.12`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-16-v2026.5.14-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-16-v2026.5.16-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.14-beta.2`: operator-heavy beta checkpoint. The parts worth caring about are per-agent bootstrap size/context overrides, visible/auditable `sessions_spawn` task delivery, WhatsApp lifecycle reactions, and a real reliability sweep across Telegram, cron, doctor, and plugin/channel status.
+- `2026.5.16-beta.1`: less flashy but very relevant to us — skill snapshot reuse got smarter, isolated cron fallback policy got fixed, Telegram recovery got another hardening pass, and Codex/MCP scoping keeps getting less sloppy.
+
+### Self-assessment
+- Clean SKIP again: no fake doc extraction, just the maintenance that actually mattered.
+- Good catch today: yesterday's tracker already knew about `2026.5.16-beta.1`, but the changelog and upstream-notes folder were still missing both the intermediate `2026.5.14-beta.2` step and the new beta-line note.
+- State is consistent now; the only real drift left is the local CLI still sitting one stable release behind.
+
 ## 2026-05-15 - SKIP docs merge, upstream stable moved to 2026.5.12, tracked new beta head
 
 ### Daily knowledge base run

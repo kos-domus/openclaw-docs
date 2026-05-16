@@ -1,12 +1,12 @@
-last_check: '2026-05-15'
+last_check: '2026-05-16'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.12
     last_known_release_date: '2026-05-14'
-    last_known_beta_version: 2026.5.14-beta.1
-    last_known_beta_release_date: '2026-05-14'
+    last_known_beta_version: 2026.5.16-beta.1
+    last_known_beta_release_date: '2026-05-16'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -48,11 +48,11 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-15T05:30:00Z'
+  checked_at: '2026-05-16T05:30:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: Local CLI is still on 2026.5.7 while upstream stable moved to 2026.5.12
-    on 2026-05-14. Delta is now one stable release plus the new beta line 2026.5.14-beta.1.
-    Latest stable emphasizes plugin/install hardening, security/provenance improvements,
-    Telegram durability, and ongoing externalization of optional providers/plugins
-    including WhatsApp-adjacent distribution patterns through ClawHub/npm.
+  upgrade_notes: Local CLI is still on 2026.5.7 while upstream stable remains 2026.5.12
+    and the beta line advanced through 2026.5.14-beta.2 to 2026.5.16-beta.1.
+    Delta is still one stable release, with fresh operator-relevant movement around
+    cron/subagent fallback policy, Telegram durability, MCP/Codex runtime scoping,
+    startup/bootstrap controls, and continued plugin-first distribution patterns.
