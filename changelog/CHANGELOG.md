@@ -1,3 +1,31 @@
+## 2026-05-17 - SKIP docs merge, local stable still behind, tracked 2026.5.16 beta.2/.3/.4
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filename drift: `60` sessions are `processed`, and `_template.md` remains the only intentional non-processed file.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked GitHub releases and npm stable line: stable is still `2026.5.12`
+- New prereleases landed after the previous docs run: `2026.5.16-beta.2`, `2026.5.16-beta.3`, and `2026.5.16-beta.4`
+- Confirmed local install is still behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.12`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-17-v2026.5.16-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-17-v2026.5.16-beta.3.md`
+- `docs/meta/upstream-updates/2026-05-17-v2026.5.16-beta.4.md`
+
+### Relevant upstream notes
+- `2026.5.16-beta.2`: mostly reliability and maintenance hardening — Telegram restart replay, safer update/doctor repair on externalized plugins/channels, stronger malformed-state recovery, and cron isolated-run fallback finally respecting configured model fallback policy.
+- `2026.5.16-beta.3`: more operator correctness than feature theater — auth/diagnostic redaction, better Telegram announce targeting, stricter session scoping and usage accounting, plus restart/startup and Codex timeout behavior cleanup.
+- `2026.5.16-beta.4`: the meaningful checkpoint in this beta line — audit suppressions, parent-review handoffs for delegated/subagent work, xAI OAuth, `openclaw cron run --wait`, restart trace logs, resolvedSkills warm-cache reuse, and another solid pass over Telegram/session/gateway correctness.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the repo maintenance that actually mattered.
+- Good catch today: stable did **not** move, but the beta line moved fast enough that skipping the intermediate notes would have made the tracker sloppy.
+- State is aligned again; the only real drift left is the local CLI still sitting one stable release behind.
+
 ## 2026-05-16 - SKIP docs merge, local stable still behind, tracked 2026.5.14-beta.2 and 2026.5.16-beta.1
 
 ### Daily knowledge base run
