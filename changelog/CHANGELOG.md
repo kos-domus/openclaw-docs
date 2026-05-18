@@ -1,3 +1,30 @@
+## 2026-05-18 - SKIP docs merge, local stable still behind, tracked 2026.5.16-beta.5 and beta.6
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filename drift: `0` ready, `60` processed, and `_template.md` still correctly `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked GitHub releases and npm stable line: stable is still `2026.5.12`
+- New prereleases landed after the previous docs run: `2026.5.16-beta.5` and `2026.5.16-beta.6`
+- Confirmed local install is still behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.12`
+- Confirmed the upstream docs tree is still present in the canonical repo
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-17-v2026.5.16-beta.5.md`
+- `docs/meta/upstream-updates/2026-05-18-v2026.5.16-beta.6.md`
+
+### Relevant upstream notes
+- `2026.5.16-beta.5`: dense maintenance drop with real operator signal around plugin tooling (`defineToolPlugin`, plugin build/validate/init), safer update/restart behavior, stronger Codex/OpenAI compaction and OAuth routing, and another serious pass over subagent completion delivery.
+- `2026.5.16-beta.6`: freshest beta head, worth tracking because it adds browser dialog handling, tighter fail-closed Codex policy enforcement, better Telegram long-poll durability, and more gateway/subagent lifecycle hardening.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the repo maintenance that actually mattered.
+- Good catch today: stable still did not move, but we had two meaningful beta checkpoints to capture, and beta.6 is enough of an operator-facing bump that skipping it would have made the tracker lazy.
+- State is aligned again; the only real drift left is the local CLI still sitting one stable release behind.
+
 ## 2026-05-17 - SKIP docs merge, local stable still behind, tracked 2026.5.16 beta.2/.3/.4
 
 ### Daily knowledge base run

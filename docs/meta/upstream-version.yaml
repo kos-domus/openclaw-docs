@@ -1,12 +1,12 @@
-last_check: '2026-05-17'
+last_check: '2026-05-18'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.12
     last_known_release_date: '2026-05-14'
-    last_known_beta_version: 2026.5.16-beta.4
-    last_known_beta_release_date: '2026-05-17'
+    last_known_beta_version: 2026.5.16-beta.6
+    last_known_beta_release_date: '2026-05-18'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -48,12 +48,12 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-17T05:30:00Z'
+  checked_at: '2026-05-18T05:30:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
   upgrade_notes: Local CLI is still on 2026.5.7 while upstream stable remains 2026.5.12
-    and the beta line advanced through 2026.5.16-beta.2, beta.3, and beta.4.
+    and the beta line advanced through 2026.5.16-beta.5 and beta.6.
     Delta is still one stable release, with fresh operator-relevant movement around
-    cron run --wait, startup/restart tracing, audit suppressions, subagent parent
-    review handoffs, Telegram durability, session scoping, auth redaction, and
-    plugin/channel preservation.
+    browser dialog handling, Telegram polling durability, Codex/OpenAI runtime
+    safety, subagent delivery correctness, plugin tooling, and managed update/
+    restart resilience.
