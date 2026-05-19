@@ -1,3 +1,32 @@
+## 2026-05-19 - SKIP docs merge, stable jumped to 2026.5.18, tracked beta bridge to 2026.5.19-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filename drift: `0` ready, `60` processed, and `_template.md` still correctly `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.18`
+- Checked GitHub releases: new versions since the last docs run are `2026.5.18-beta.1`, stable `2026.5.18`, and `2026.5.19-beta.1`
+- Confirmed the upstream docs tree is still present in the canonical repo
+- Local install is now further behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.18`
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-19-v2026.5.18-beta.1.md`
+- `docs/meta/upstream-updates/2026-05-19-v2026.5.18.md`
+- `docs/meta/upstream-updates/2026-05-19-v2026.5.19-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.18-beta.1`: first real checkpoint of the new line — browser dialog control, typed plugin tooling, restart trace visibility, and another solid pass over Telegram/subagent delivery correctness.
+- `2026.5.18`: this is the important one. Stable moved from `2026.5.12` to `2026.5.18`, and the operator-relevant center of gravity is runtime hardening: Telegram topic/poll durability, subagent completion routing, plugin lifecycle tooling, restart behavior, and Codex/OpenAI safety.
+- `2026.5.19-beta.1`: fresh beta head right after the stable cut; same direction, but still worth tracking for bounded-fix discipline, more QA/runtime parity gating, and smaller WhatsApp/CLI/subagent maintenance passes.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the upstream bookkeeping that actually mattered.
+- Good catch today: stable finally moved, and skipping the beta bridge between `2026.5.16-beta.6` and `2026.5.19-beta.1` would have made the tracker sloppy.
+- Repo state is aligned again; the only real drift left is the local CLI still sitting well behind stable.
+
 ## 2026-05-18 - SKIP docs merge, local stable still behind, tracked 2026.5.16-beta.5 and beta.6
 
 ### Daily knowledge base run

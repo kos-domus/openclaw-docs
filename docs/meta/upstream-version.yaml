@@ -1,11 +1,11 @@
-last_check: '2026-05-18'
+last_check: '2026-05-19'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.5.12
-    last_known_release_date: '2026-05-14'
-    last_known_beta_version: 2026.5.16-beta.6
+    last_known_version: 2026.5.18
+    last_known_release_date: '2026-05-18'
+    last_known_beta_version: 2026.5.19-beta.1
     last_known_beta_release_date: '2026-05-18'
     permanent: true
     check_methods:
@@ -21,7 +21,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.5.12
+    last_known_version: 2026.5.18
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -48,12 +48,12 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-18T05:30:00Z'
+  checked_at: '2026-05-19T05:30:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: Local CLI is still on 2026.5.7 while upstream stable remains 2026.5.12
-    and the beta line advanced through 2026.5.16-beta.5 and beta.6.
-    Delta is still one stable release, with fresh operator-relevant movement around
-    browser dialog handling, Telegram polling durability, Codex/OpenAI runtime
-    safety, subagent delivery correctness, plugin tooling, and managed update/
-    restart resilience.
+  upgrade_notes: Local CLI is still on 2026.5.7 while upstream stable advanced to 2026.5.18
+    and the beta line already moved to 2026.5.19-beta.1. Delta is now a real stable
+    step, with fresh operator-relevant movement around browser dialog handling,
+    plugin tooling (`defineToolPlugin`, build/validate/init), Telegram topic/polling
+    durability, subagent completion delivery, restart traces, and the Node 22.19
+    floor / image-build args changes that can bite infra if ignored.
