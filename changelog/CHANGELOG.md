@@ -1,3 +1,31 @@
+## 2026-05-20 - SKIP docs merge, tracked 2026.5.19-beta.2 plus fresh alpha head, local stable still behind
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready, `60` processed, and `_template.md` still correctly `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.18`
+- Checked GitHub releases: the tracker was stale against reality, so this run captured the missing `2026.5.19-beta.2` checkpoint and the new `2026.5.19-alpha.1` head.
+- Confirmed the upstream docs tree is still present in the canonical repo.
+- Local install remains behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.18`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-20-v2026.5.19-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-20-v2026.5.19-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.5.19-beta.2`: same post-`2026.5.18` direction, but tighter — richer restart-cost attribution, same Node `22.19` floor, same plugin/browser/delivery hardening story.
+- `2026.5.19-alpha.1`: early signal only, but still worth logging because it adds faster gateway startup overlap, trusted admin HTTP RPC QR-login control, and a bit more managed-skills/runtime-control surface.
+- Stable did **not** move today: the real drift is still the same stable gap from local `2026.5.7` to upstream `2026.5.18`.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the bookkeeping that actually mattered.
+- Good catch today: the tracker metadata claimed a fresh check, but it had still missed both `2026.5.19-beta.2` and the alpha head. Fixed now.
+- Repo is consistent again; the only meaningful mismatch left is the local CLI staying well behind stable upstream.
+
 ## 2026-05-19 - SKIP docs merge, stable jumped to 2026.5.18, tracked beta bridge to 2026.5.19-beta.1
 
 ### Daily knowledge base run
