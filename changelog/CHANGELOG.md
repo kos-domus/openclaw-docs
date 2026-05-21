@@ -1,3 +1,32 @@
+## 2026-05-21 - SKIP docs merge, stable moved to 2026.5.19, beta head to 2026.5.20-beta.1, and missed 2026.5.16-beta.7 was backfilled
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready, `60` processed, and `_template.md` still correctly `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.19`
+- Checked GitHub releases: stable moved to `2026.5.19`, the beta head is now `2026.5.20-beta.1`, and the tracker audit also found the previously missed `2026.5.16-beta.7` checkpoint.
+- Confirmed the upstream docs tree is still present in the canonical repo.
+- Local install remains behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.19`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-21-v2026.5.16-beta.7.md`
+- `docs/meta/upstream-updates/2026-05-21-v2026.5.19.md`
+- `docs/meta/upstream-updates/2026-05-21-v2026.5.20-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.16-beta.7`: worth backfilling because it is where the Node `22.19` floor and the new image-build-arg story became unavoidable, plus it carried real restart-trace and delivery hardening that fed the later stable line.
+- `2026.5.19`: this is the important one. Stable moved again, and the practical themes are Node-floor compatibility, plugin/tooling maturity, better restart observability, tighter Telegram/subagent delivery behavior, and continued Codex/OpenAI runtime hardening.
+- `2026.5.20-beta.1`: fresh beta head, mostly same direction, but with useful watch items around the Policy plugin, xAI device-code auth, Discord voice behavior, Cron correctness, and a Baileys bump for WhatsApp.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the repo maintenance that actually mattered.
+- Good catch today: the tracker had already drifted forward, but the changelog and upstream-notes folder were still missing the stable `2026.5.19` cut, the new beta head, and the skipped `2026.5.16-beta.7` bridge. Fixed now.
+- Repo state is consistent again; the only meaningful mismatch left is the local CLI still sitting well behind stable upstream.
+
 ## 2026-05-20 - SKIP docs merge, tracked 2026.5.19-beta.2 plus fresh alpha head, local stable still behind
 
 ### Daily knowledge base run
