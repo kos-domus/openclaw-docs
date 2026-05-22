@@ -1,3 +1,32 @@
+## 2026-05-22 - SKIP docs merge, stable moved to 2026.5.20, beta head to 2026.5.20-beta.2, alpha head to 2026.5.21-alpha.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready and `60` processed. The template file remains intentionally outside the processing queue.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.20`
+- Checked GitHub releases: stable moved to `2026.5.20`, the beta head is now `2026.5.20-beta.2`, and a fresh alpha head is visible at `2026.5.21-alpha.1`.
+- Confirmed the upstream docs tree is still present in the canonical repo.
+- Local install remains behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.20`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-22-v2026.5.20.md`
+- `docs/meta/upstream-updates/2026-05-22-v2026.5.20-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-22-v2026.5.21-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.5.20`: this is the important one. Stable moved again, and the most practical operator takeaways are the bundled Policy plugin, the removal of the old skill-wrapper auto-allow compatibility path, xAI device-code OAuth for headless setups, and continued cron/subagent/WhatsApp/runtime hardening.
+- `2026.5.20-beta.2`: mostly valuable as the final checkpoint confirming what just landed in stable, especially around policy, Discord voice/realtime, and the same skill/runtime hardening story.
+- `2026.5.21-alpha.1`: early signal only, but worth logging so the tracker stays honest about the next line already moving.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the upstream bookkeeping that actually mattered.
+- Good catch today: the tracker file had already drifted forward, but the repo was still missing the actual release-note artifacts and changelog entry for the stable `2026.5.20` move plus the new beta/alpha heads.
+- Repo state is consistent again; the only meaningful mismatch left is the local CLI still sitting well behind stable upstream.
+
 ## 2026-05-21 - SKIP docs merge, stable moved to 2026.5.19, beta head to 2026.5.20-beta.1, and missed 2026.5.16-beta.7 was backfilled
 
 ### Daily knowledge base run

@@ -1,14 +1,14 @@
-last_check: '2026-05-21'
+last_check: '2026-05-22'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.5.19
-    last_known_release_date: '2026-05-20'
-    last_known_beta_version: 2026.5.20-beta.1
+    last_known_version: 2026.5.20
+    last_known_release_date: '2026-05-21'
+    last_known_beta_version: 2026.5.20-beta.2
     last_known_beta_release_date: '2026-05-21'
-    last_known_alpha_version: 2026.5.19-alpha.1
-    last_known_alpha_release_date: '2026-05-20'
+    last_known_alpha_version: 2026.5.21-alpha.1
+    last_known_alpha_release_date: '2026-05-21'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -23,7 +23,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.5.19
+    last_known_version: 2026.5.20
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -50,7 +50,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-21T05:30:00Z'
+  checked_at: '2026-05-22T05:30:00Z'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: Local CLI is now behind the new stable 2026.5.19 and the beta head 2026.5.20-beta.1. Operator-relevant movement includes the Node 22.19 floor, approvals hardening, WhatsApp/Baileys updates in main, continued Codex/OpenAI runtime consolidation, skill/plugin install and validation tooling, ClawHub path-prefix fixes, and ongoing security hardening around config writes, secret handling, and plugin trust.
+  upgrade_notes: Local CLI is now behind the new stable 2026.5.20, the beta head 2026.5.20-beta.2, and the visible alpha/dev tag 2026.5.21-alpha.1. Operator-relevant movement includes the Node 22.19 floor, removal of the legacy skill-wrapper auto-allow compatibility path, approvals hardening, WhatsApp/Baileys updates, the bundled Policy plugin, continued Codex/OpenAI runtime consolidation, and ongoing security hardening around config writes, secret handling, and plugin trust.
