@@ -1,3 +1,30 @@
+## 2026-05-23 - SKIP docs merge, stable still 2026.5.20, captured tag-only 2026.5.22-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready, `60` processed, and `_template.md` still correctly stays on `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.20`
+- Checked GitHub latest release: still `2026.5.20`
+- Checked GitHub top tag: now `2026.5.22-beta.1`
+- Confirmed the upstream docs tree is still present in the canonical repo.
+- Confirmed upstream mainline `CHANGELOG.md` has already opened the `2026.5.22` train even though there is still no matching GitHub prerelease page or npm publish for that beta tag.
+- Local install remains behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.20`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-23-v2026.5.22-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.22-beta.1`: the important thing is not a stable cut yet, but the next train is clearly moving. The practical takeaways are tighter default sub-agent context inheritance, a big docs/troubleshooting sweep, model-listing auth prewarm for speed, package lock/shrinkwrap hardening, and more runtime/channel reliability cleanup.
+
+### Self-assessment
+- Clean SKIP again: no fake docs churn, just the upstream bookkeeping that actually mattered.
+- Good catch today: the tracker YAML already knew about the new beta tag, but the repo was still missing the actual release-note artifact and changelog entry for it.
+- Repo state is consistent again; the only meaningful mismatch left is the local CLI still sitting well behind stable upstream.
+
 ## 2026-05-22 - SKIP docs merge, stable moved to 2026.5.20, beta head to 2026.5.20-beta.2, alpha head to 2026.5.21-alpha.1
 
 ### Daily knowledge base run
