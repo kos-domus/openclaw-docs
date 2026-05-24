@@ -1,3 +1,30 @@
+## 2026-05-24 - SKIP docs merge, stable moved to 2026.5.22, npm caught up, prerelease head is 2026.5.24-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready, `60` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.7`
+- Checked npm stable line: `2026.5.22`
+- Checked GitHub latest release: `2026.5.22` published `2026-05-24`
+- Checked GitHub tag head: `v2026.5.24-beta.1`; beta/alpha tag-only trains are visible ahead of stable (`2026.5.24-beta.1`, `2026.5.23-alpha.1`).
+- Confirmed upstream docs tree is still present in the canonical repo (`48` entries via GitHub contents API).
+- Local install remains behind stable upstream: local `2026.5.7` vs GitHub/npm stable `2026.5.22`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-24-v2026.5.22.md`
+
+### Relevant upstream notes
+- `2026.5.22`: stable moved and npm is now aligned. Operator signal is mostly runtime hardening rather than flashy features: faster Gateway startup/hot paths, Meeting Notes as an external source plugin, realtime run steering from WebUI/Discord voice, adaptive image compression, and a very dense docs/runbook sweep for Telegram, Cron, SecretRef, Codex, media, and gateway troubleshooting.
+- `2026.5.24-beta.1`: tag head is ahead of GitHub release pages, so watch it but do not treat it as the production target yet.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits and no status churn.
+- Good catch today: yesterday's metadata already anticipated `2026.5.22`, but the actual stable GitHub release and npm publish landed overnight; captured the stable artifact properly.
+- Repo state is consistent again; the only meaningful mismatch left is local CLI `2026.5.7` lagging stable `2026.5.22`.
+
 ## 2026-05-23 - SKIP docs merge, stable still 2026.5.20, captured tag-only 2026.5.22-beta.1
 
 ### Daily knowledge base run
@@ -1123,3 +1150,5 @@ Processed one session file marked `status: ready` and extracted only the reusabl
 ### Self-assessment
 
 This was the right kind of disciplined run. The source session was mostly product work, but there was one durable recovery pattern worth preserving, and I kept the rest out of the docs instead of padding the knowledge base with irrelevant app details. The only real follow-up is operational, not editorial: the local CLI is still behind upstream by several releases.
+
+

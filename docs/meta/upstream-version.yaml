@@ -1,16 +1,16 @@
-last_check: '2026-05-23'
+last_check: '2026-05-24'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.5.20
-    last_known_release_date: '2026-05-21'
-    last_known_beta_version: 2026.5.20-beta.2
-    last_known_beta_release_date: '2026-05-21'
-    last_known_alpha_version: 2026.5.21-alpha.1
-    last_known_alpha_release_date: '2026-05-21'
-    last_known_prerelease_tag: 2026.5.22-beta.1
-    last_known_prerelease_tag_date: '2026-05-23'
+    last_known_version: 2026.5.22
+    last_known_release_date: '2026-05-24'
+    last_known_beta_version: 2026.5.24-beta.1
+    last_known_beta_release_date: '2026-05-24'
+    last_known_alpha_version: 2026.5.23-alpha.1
+    last_known_alpha_release_date: '2026-05-24'
+    last_known_prerelease_tag: 2026.5.24-beta.1
+    last_known_prerelease_tag_date: '2026-05-24'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,13 +25,13 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.5.20
+    last_known_version: 2026.5.22
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
       npm_info: npm view openclaw --json
   docs:
-    url: https://docs.openclaw.ai
+    url: "https://docs.openclaw.ai"
     permanent: true
     key_pages:
     - path: /configuration
@@ -52,7 +52,11 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.7
-  checked_at: '2026-05-23T05:30:00Z'
+  checked_at: '2026-05-24T07:31:08+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: Local CLI is behind stable 2026.5.20 by four stable releases. No new stable GitHub release or npm publish landed on 2026-05-23, but the top upstream tag is now 2026.5.22-beta.1 and upstream mainline CHANGELOG content has already opened the 2026.5.22 train. Operator-relevant movement still centers on the bundled Policy plugin, reduced default sub-agent bootstrap context, provider/model listing performance prewarm, package lock/shrinkwrap hardening, sender-owner tool-gating cleanup, and continued WhatsApp/Cron/Codex/runtime reliability work.
+  upgrade_notes: 'Local CLI is behind GitHub/npm stable 2026.5.22. Stable 2026.5.22
+    landed on 2026-05-24; validate in staging before production upgrade. Key operator-relevant
+    changes: gateway startup/hot-path performance caching, Meeting Notes external source plugin,
+    realtime consult steering/cancel/status, adaptive image compression, dense Telegram/Cron/SecretRef
+    docs hardening, package-size cleanup, and continued sub-agent context inheritance tightening.'
