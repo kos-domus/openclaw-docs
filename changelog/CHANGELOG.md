@@ -1151,4 +1151,43 @@ Processed one session file marked `status: ready` and extracted only the reusabl
 
 This was the right kind of disciplined run. The source session was mostly product work, but there was one durable recovery pattern worth preserving, and I kept the rest out of the docs instead of padding the knowledge base with irrelevant app details. The only real follow-up is operational, not editorial: the local CLI is still behind upstream by several releases.
 
+---
+
+## 2026-05-27 — Daily docs run
+
+---
+date: 2026-05-27
+type: documentation-run
+---
+
+### Session processing
+
+**SKIP** — zero sessions with `status: ready`. All 60 sessions remain `processed`. Template file is `draft` (by design).
+
+### Upstream consistency check
+
+- **Stable**: 2026.5.22 (unchanged since 2026-05-24)
+- **New betas tracked** (3 since last check):
+  - `2026.5.24-beta.2` (2026-05-24) — major: reply delivery perf, voice/Talk maturity, Sharp→Rastermill, cron default 8 concurrent runs, session security hardening, named auth profiles
+  - `2026.5.25-beta.1` (2026-05-26) — Alpine musl support, OpenRouter context limits fix, MCP `tools/list` timeout bounding, Windows native support
+  - `2026.5.26-beta.1` (2026-05-26) — consolidates all 2026.5.2x streams: Telegram reliability, iMessage fixes, observability (Activity tab, OTel spans), Codex auth/profile, memory degradation prevention
+- **Local CLI**: 2026.5.7 (still behind stable 2026.5.22 by 15 releases)
+- **Docs updated**:
+  - `docs/meta/upstream-updates/2026-05-27-v2026.5.24-beta.2.md` — new
+  - `docs/meta/upstream-updates/2026-05-27-v2026.5.25-beta.1.md` — new
+  - `docs/meta/upstream-updates/2026-05-27-v2026.5.26-beta.1.md` — new
+  - `docs/meta/upstream-version.yaml` — updated `last_check`, beta versions, upgrade notes
+- **index.yaml**: unchanged (no new docs in Diátaxis tree)
+
+### Self-assessment
+
+No editorial work needed today — the knowledge base is clean and all sessions are processed. The upstream tracking is the real deliverable: three beta releases in three days with significant operator-relevant changes. The most impactful changes for our setup:
+
+1. **Sharp→Rastermill** — removes a heavy native dependency, smaller footprint
+2. **Cron default 8 concurrent runs** — directly improves our scheduled automations
+3. **Session security hardening** — linear matcher for allowlists, no more regex backtracking
+4. **Named auth profiles** — relevant for the multi-provider setup we run (OpenRouter + Gemini direct + OpenAI direct)
+
+The local CLI gap (2026.5.7 vs 2026.5.22 stable) is growing. Recommend scheduling an upgrade when the next stable drops, as the beta stream is dense and likely close to a 2026.5.27+ stable.
+
 
