@@ -1,16 +1,16 @@
-last_check: '2026-05-27'
+last_check: '2026-05-29'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.5.22
-    last_known_release_date: '2026-05-24'
-    last_known_beta_version: 2026.5.26-beta.1
-    last_known_beta_release_date: '2026-05-26'
-    last_known_alpha_version: 2026.5.23-alpha.1
-    last_known_alpha_release_date: '2026-05-24'
-    last_known_prerelease_tag: 2026.5.26-beta.1
-    last_known_prerelease_tag_date: '2026-05-26'
+    last_known_version: 2026.5.27
+    last_known_release_date: '2026-05-28'
+    last_known_beta_version: 2026.5.28-beta.1
+    last_known_beta_release_date: '2026-05-29'
+    last_known_alpha_version: 2026.5.28-alpha.1
+    last_known_alpha_release_date: '2026-05-28'
+    last_known_prerelease_tag: 2026.5.28-beta.1
+    last_known_prerelease_tag_date: '2026-05-29'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,13 +25,13 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.5.22
+    last_known_version: 2026.5.27
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
       npm_info: npm view openclaw --json
   docs:
-    url: "https://docs.openclaw.ai"
+    url: https://docs.openclaw.ai
     permanent: true
     key_pages:
     - path: /configuration
@@ -51,12 +51,12 @@ sources:
     - path: /hooks
       tracks: lifecycle hooks, event hooks, automation
 installed:
-  local_cli_version: 2026.5.7
-  checked_at: '2026-05-27T07:32:38+02:00'
+  local_cli_version: 2026.5.22
+  checked_at: '2026-05-29T07:32:51+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: 'Local CLI is behind GitHub/npm stable 2026.5.22. Three new betas
-    tracked (2026.5.24-beta.2, 2026.5.25-beta.1, 2026.5.26-beta.1) with major operator-relevant
-    changes: reply delivery perf, voice/Talk maturity, Sharp→Rastermill, cron default
-    concurrent runs, session security hardening, Alpine support, named auth profiles.
-    Plan upgrade when stable catches up.'
+  upgrade_notes: 'Local CLI is now 2026.5.22, behind GitHub/npm stable 2026.5.27.
+    Tracked stable 2026.5.26 and 2026.5.27 plus prerelease/tag signals through 2026.5.28-beta.1.
+    Main operator themes: stricter security/content boundaries, Codex/runtime recovery,
+    durable channel delivery, Gateway hot-path caching, and bounded OAuth/local-service
+    failure modes.'

@@ -1,5 +1,5 @@
 meta:
-  generated_at: '2026-05-24T05:32:58Z'
+  generated_at: '2026-05-29T05:32:52Z'
   total_docs: 28
   categories:
     concepts: 5
@@ -22,6 +22,7 @@ docs:
   - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/concepts/agent-fleet-design.md
 - title: 'Bootstrap Files: CLAUDE.md, AGENTS.md, SOUL.md, and More'
   slug: bootstrap-files
   category: concepts
@@ -37,6 +38,7 @@ docs:
   - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
   last_updated: '2026-05-10'
   version: 3
+  path: docs/concepts/bootstrap-files.md
 - title: Multi-Agent Architecture in OpenClaw
   slug: multi-agent-architecture
   category: concepts
@@ -50,6 +52,7 @@ docs:
   - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/concepts/multi-agent-architecture.md
 - title: Building a Semantic Data Layer on Google Drive
   slug: semantic-data-layer
   category: concepts
@@ -63,6 +66,7 @@ docs:
   - sessions/2026-03-28-familyos-database-kai-1password.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/concepts/semantic-data-layer.md
 - title: Workspace Isolation
   slug: workspace-isolation
   category: concepts
@@ -77,6 +81,7 @@ docs:
   - sessions/2026-03-23-handson-8agent-setup.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/concepts/workspace-isolation.md
 - title: 'Authentication: API Keys vs Setup Tokens'
   slug: authentication
   category: getting-started
@@ -89,6 +94,7 @@ docs:
   - sessions/2026-03-14-anthropic-auth-apikey-vs-setuptoken.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/getting-started/authentication.md
 - title: 'First Run Verification: Testing Your Full Setup'
   slug: first-run-verification
   category: getting-started
@@ -102,6 +108,7 @@ docs:
   - sessions/2026-04-20-openclaw-upgrade-4.15-gateway-restart.md
   last_updated: '2026-04-22'
   version: 2
+  path: docs/getting-started/first-run-verification.md
 - title: Hardware and OS Setup for OpenClaw
   slug: hardware-and-os-setup
   category: getting-started
@@ -115,6 +122,7 @@ docs:
   - sessions/2026-03-13-acemagic-ubuntu-openclaw-install.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/getting-started/hardware-and-os-setup.md
 - title: 1Password Secrets Management for OpenClaw
   slug: 1password-secrets-management
   category: guides
@@ -131,6 +139,7 @@ docs:
   - sessions/2026-03-30-kai-fixes-kos-openclaw-monitor-4.md
   last_updated: '2026-04-01'
   version: 4
+  path: docs/guides/1password-secrets-management.md
 - title: Cron Jobs, Sub-Agents, and Automation
   slug: cron-jobs-and-automation
   category: guides
@@ -157,6 +166,7 @@ docs:
   - sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
   last_updated: '2026-05-04'
   version: 9
+  path: docs/guides/cron-jobs-and-automation.md
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -178,6 +188,7 @@ docs:
   - sessions/2026-04-16-spesify-pipeline-images-matching-ui.md
   last_updated: '2026-04-17'
   version: 2
+  path: docs/guides/deep-research-pipeline.md
 - title: Google Drive Integration for OpenClaw
   slug: google-drive-integration
   category: guides
@@ -191,6 +202,7 @@ docs:
   - sessions/2026-03-17-google-account-setup-for-bot.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/guides/google-drive-integration.md
 - title: Google Workspace CLI (GWS) Integration
   slug: google-workspace-cli
   category: guides
@@ -206,6 +218,7 @@ docs:
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/guides/google-workspace-cli.md
 - title: 'Remote Access: SSH, xRDP, and Tailscale'
   slug: remote-access
   category: guides
@@ -222,6 +235,7 @@ docs:
   - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
   last_updated: '2026-05-03'
   version: 3
+  path: docs/guides/remote-access.md
 - title: Skills and Slash Commands
   slug: skills-and-slash-commands
   category: guides
@@ -238,6 +252,7 @@ docs:
   - sessions/2026-05-08-excalidraw-skill-aliases-population.md
   last_updated: '2026-05-09'
   version: 4
+  path: docs/guides/skills-and-slash-commands.md
 - title: Telegram Bot Setup and Supergroup Topics
   slug: telegram-bot
   category: guides
@@ -257,6 +272,7 @@ docs:
   - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
   last_updated: '2026-05-10'
   version: 6
+  path: docs/guides/telegram-bot.md
 - title: Setting Up a WhatsApp Bot with OpenClaw
   slug: whatsapp-bot
   category: guides
@@ -269,6 +285,7 @@ docs:
   - sessions/2026-03-18-whatsapp-integration.md
   last_updated: '2026-03-30'
   version: 2
+  path: docs/guides/whatsapp-bot.md
 - title: 1Password Integration Reference
   slug: 1password-integration-reference
   category: reference
@@ -282,6 +299,7 @@ docs:
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
   last_updated: '2026-04-14'
   version: 1
+  path: docs/reference/1password-integration-reference.md
 - title: Agent Fleet Reference
   slug: agent-fleet-reference
   category: reference
@@ -301,6 +319,7 @@ docs:
   - sessions/2026-04-26-openclaw-4.24-upgrade-bonjour-and-fleet-fallback.md
   last_updated: '2026-04-26'
   version: 3
+  path: docs/reference/agent-fleet-reference.md
 - title: Claude Code Settings Reference
   slug: claude-code-settings
   category: reference
@@ -315,6 +334,7 @@ docs:
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
   last_updated: '2026-03-29'
   version: 1
+  path: docs/reference/claude-code-settings.md
 - title: Cron and Scheduling Reference
   slug: cron-scheduling-reference
   category: reference
@@ -331,6 +351,7 @@ docs:
   - sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
   last_updated: '2026-05-04'
   version: 3
+  path: docs/reference/cron-scheduling-reference.md
 - title: Deep Research Reference
   slug: deep-research-reference
   category: reference
@@ -351,6 +372,7 @@ docs:
   - sessions/2026-04-16-spesify-pipeline-images-matching-ui.md
   last_updated: '2026-04-17'
   version: 2
+  path: docs/reference/deep-research-reference.md
 - title: Environment Variables Reference
   slug: environment-variables
   category: reference
@@ -369,6 +391,7 @@ docs:
   - sessions/2026-04-16-spesify-pipeline-images-matching-ui.md
   last_updated: '2026-04-17'
   version: 2
+  path: docs/reference/environment-variables.md
 - title: GWS CLI Command Reference
   slug: gws-cli-reference
   category: reference
@@ -383,6 +406,7 @@ docs:
   - sessions/2026-04-30-fleet-fixes-spesabot-consolidation-esselunga-image-registry.md
   last_updated: '2026-05-01'
   version: 2
+  path: docs/reference/gws-cli-reference.md
 - title: MCP Servers and Tool Integration
   slug: mcp-servers
   category: reference
@@ -398,6 +422,7 @@ docs:
   - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
   last_updated: '2026-05-03'
   version: 2
+  path: docs/reference/mcp-servers.md
 - title: Common Errors and Solutions
   slug: common-errors
   category: troubleshooting
@@ -429,6 +454,7 @@ docs:
   - sessions/2026-05-09-openclaw-capture-ack-soul-size-limit.md
   last_updated: '2026-05-10'
   version: 11
+  path: docs/troubleshooting/common-errors.md
 - title: Deep Research Pipeline Issues
   slug: deep-research-pipeline-issues
   category: troubleshooting
@@ -449,6 +475,7 @@ docs:
   - sessions/2026-04-16-spesify-pipeline-images-matching-ui.md
   last_updated: '2026-04-17'
   version: 2
+  path: docs/troubleshooting/deep-research-pipeline-issues.md
 - title: Integration Issues
   slug: integration-issues
   category: troubleshooting
@@ -468,5 +495,4 @@ docs:
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
   last_updated: '2026-04-18'
   version: 3
-
-
+  path: docs/troubleshooting/integration-issues.md

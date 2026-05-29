@@ -1,3 +1,37 @@
+## 2026-05-29 - SKIP docs merge, upstream caught up to stable 2026.5.27 and prerelease 2026.5.28-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly instead of trusting filenames: `0` ready, `60` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.22 (a374c3a)`
+- Checked npm stable line: `2026.5.27`
+- Checked GitHub latest stable release: `2026.5.27` published `2026-05-28`.
+- Checked GitHub prerelease/tag head: `2026.5.28-beta.1`; tag-only alpha checkpoints `2026.5.27-alpha.1` and `2026.5.28-alpha.1` were also captured as watch signals.
+- Confirmed upstream docs tree is still present in the canonical repo (`48` entries via GitHub contents API).
+- Local install is behind stable upstream: local `2026.5.22 (a374c3a)` vs GitHub/npm stable `2026.5.27`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.26-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.26.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.27-alpha.1.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.27-beta.1.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.27.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.28-alpha.1.md`
+- `docs/meta/upstream-updates/2026-05-29-v2026.5.28-beta.1.md`
+
+### Relevant upstream notes
+- `2026.5.26`: stable landed the large runtime/channel/voice/security train previously tracked in beta; local CLI has since upgraded to this family but remains behind current stable.
+- `2026.5.27`: important production target. Main operator takeaways are stronger group-prompt/content boundaries, safer command/runtime rejects, more reliable Codex app-server behavior, durable Telegram/channel delivery, OpenAI-compatible embedding providers, and faster Gateway/reply hot paths.
+- `2026.5.28-beta.1`: prerelease head. Watch for subagent cwd/workspace separation, prompt-local hook context, session lock release on timeout abort, safer outbound hook/session identity handling, mobile/chat refreshes, and stricter bounded OAuth/local-service paths.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits and no status churn.
+- Good catch today: two stable cuts and several prerelease/tag checkpoints landed since the last recorded upstream run, while the local CLI moved from `2026.5.7` to `2026.5.22` but still trails stable.
+- Repo state is consistent; remaining follow-up is operational, not docs ingestion: plan/track a local OpenClaw upgrade from `2026.5.22` to `2026.5.27` when convenient.
+
 ## 2026-05-24 - SKIP docs merge, stable moved to 2026.5.22, npm caught up, prerelease head is 2026.5.24-beta.1
 
 ### Daily knowledge base run
