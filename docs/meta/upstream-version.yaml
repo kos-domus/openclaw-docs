@@ -1,16 +1,16 @@
-last_check: '2026-05-29'
+last_check: '2026-05-31'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.5.27
-    last_known_release_date: '2026-05-28'
-    last_known_beta_version: 2026.5.28-beta.1
-    last_known_beta_release_date: '2026-05-29'
-    last_known_alpha_version: 2026.5.28-alpha.1
-    last_known_alpha_release_date: '2026-05-28'
-    last_known_prerelease_tag: 2026.5.28-beta.1
-    last_known_prerelease_tag_date: '2026-05-29'
+    last_known_version: 2026.5.28
+    last_known_release_date: '2026-05-30'
+    last_known_beta_version: 2026.5.30-beta.2
+    last_known_beta_release_date: '2026-05-31'
+    last_known_alpha_version: 2026.5.31-alpha.1
+    last_known_alpha_release_date: '2026-05-31'
+    last_known_prerelease_tag: 2026.5.31-alpha.1
+    last_known_prerelease_tag_date: '2026-05-31'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.5.27
+    last_known_version: 2026.5.28
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -52,11 +52,12 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.22
-  checked_at: '2026-05-29T07:32:51+02:00'
+  checked_at: '2026-05-31T07:04:05+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: 'Local CLI is now 2026.5.22, behind GitHub/npm stable 2026.5.27.
-    Tracked stable 2026.5.26 and 2026.5.27 plus prerelease/tag signals through 2026.5.28-beta.1.
-    Main operator themes: stricter security/content boundaries, Codex/runtime recovery,
-    durable channel delivery, Gateway hot-path caching, and bounded OAuth/local-service
-    failure modes.'
+  upgrade_notes: 'Local CLI is 2026.5.22, behind GitHub/npm stable 2026.5.28. Tracked
+    stable 2026.5.28, beta releases through 2026.5.30-beta.1, and tag-only prerelease
+    signals through 2026.5.31-alpha.1. Main operator themes: runtime/session-lock
+    recovery, channel delivery hardening, cron retry compatibility, Skill Workshop
+    proposal governance, Workboard, external plugin packaging, and bounded provider/channel
+    timers.'

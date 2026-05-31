@@ -1,3 +1,40 @@
+## 2026-05-31 - SKIP docs merge, upstream caught up to stable 2026.5.28 and prerelease tags through 2026.5.31-alpha.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `60` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.22 (a374c3a)`.
+- Checked npm stable line: `2026.5.28`.
+- Checked GitHub latest stable release: `2026.5.28` published `2026-05-30`.
+- Checked GitHub prerelease releases: `2026.5.30-beta.1` published `2026-05-31`.
+- Checked GitHub tag head: `2026.5.31-alpha.1`; tag-only prerelease signals also include `2026.5.30-beta.2` and `2026.5.29-alpha.1`.
+- Confirmed upstream docs tree is still present in the canonical repo via GitHub contents API; direct `docs.openclaw.ai` fetch returned HTTP 403, so GitHub remains the reliable official-source check for this cron environment.
+- Local install remains behind stable upstream: local `2026.5.22 (a374c3a)` vs GitHub/npm stable `2026.5.28`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.28-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.28-beta.3.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.28-beta.4.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.28.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.29-alpha.1.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.30-beta.1.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.30-beta.2.md`
+- `docs/meta/upstream-updates/2026-05-31-v2026.5.31-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.5.28`: stable target. Main operator takeaways are safer runtime/session-lock cleanup, stronger Telegram/WhatsApp/channel delivery behavior, stricter cron/browser/Gateway validation, provider timeout bounds, ClawPDF encrypted PDF extraction, GitHub Copilot/Codex Supervisor surfaces, Workboard, and external Copilot/Tokenjuice plugin packaging.
+- `2026.5.30-beta.1`: prerelease head with high fleet relevance: guarded Skill Workshop proposal lifecycle, Workboard orchestration primitives, SecretRef provider manifests, cron migration compatibility, transient model-rate-limit retries, and broader bounded channel/provider timers.
+- `2026.5.29-alpha.1`, `2026.5.30-beta.2`, and `2026.5.31-alpha.1`: tag-only prerelease signals; tracked for awareness, not treated as production targets.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits and no status churn.
+- Good catch today: upstream moved from stable `2026.5.27` to `2026.5.28`, accumulated three missed 2026.5.28 beta checkpoints, and opened the 2026.5.30/2026.5.31 prerelease line.
+- Ambiguity handled: direct official-docs fetch is 403 from this environment, so consistency was verified through the official GitHub release, tags, changelog, and docs tree instead.
+- Follow-up remains operational, not documentation ingestion: local OpenClaw CLI is still `2026.5.22` and should be upgraded/tested against stable `2026.5.28` when convenient.
+
 ## 2026-05-29 - SKIP docs merge, upstream caught up to stable 2026.5.27 and prerelease 2026.5.28-beta.1
 
 ### Daily knowledge base run
