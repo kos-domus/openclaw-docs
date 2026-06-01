@@ -1,3 +1,36 @@
+## 2026-06-01 - SKIP docs merge, upstream prerelease advanced to 2026.5.31-beta.4
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `60` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.22 (a374c3a)`.
+- Checked npm stable line: `2026.5.28`.
+- Checked GitHub latest stable release: `2026.5.28` published `2026-05-30`.
+- Checked GitHub prerelease releases: `2026.5.31-beta.1`, `2026.5.31-beta.2`, `2026.5.31-beta.3`, and `2026.5.31-beta.4`; the current prerelease head is `2026.5.31-beta.4` published `2026-06-01`.
+- Checked GitHub tag head: `2026.5.31-beta.4`.
+- Confirmed upstream docs tree is still present in the canonical repo via GitHub contents API; direct `docs.openclaw.ai` fetch still returns HTTP 403 in this cron environment, so GitHub remains the reliable official-source check.
+- Local install remains behind stable upstream: local `2026.5.22 (a374c3a)` vs GitHub/npm stable `2026.5.28`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-01-v2026.5.31-beta.1.md`
+- `docs/meta/upstream-updates/2026-06-01-v2026.5.31-beta.2.md`
+- `docs/meta/upstream-updates/2026-06-01-v2026.5.31-beta.3.md`
+- `docs/meta/upstream-updates/2026-06-01-v2026.5.31-beta.4.md`
+
+### Relevant upstream notes
+- `2026.5.31-beta.1` / `beta.2`: continue the runtime/session recovery, media retry, channel-delivery, Workboard, SecretRef, external plugin packaging, and bounded provider/plugin timer train.
+- `2026.5.31-beta.3`: adds Tailscale Serve service-name binding, Communication notification settings, safer `agents add`, and more reliable progress drafts across Discord, Telegram, Slack, Matrix, and Teams.
+- `2026.5.31-beta.4`: current prerelease head; expands Skill Workshop Control UI/proposal governance, provider/model metadata, OpenRouter SQLite model caching, Copilot Claude 1M metadata, and SQLite-backed monitor/install ledgers.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits and no status churn.
+- Upstream stable did not move, but prerelease releases advanced materially from `2026.5.31-alpha.1` to `2026.5.31-beta.4`; captured each beta as a distinct operator artifact.
+- Ambiguity handled: official docs site remains 403 from cron, so consistency was verified through official GitHub releases, tags, changelog, and docs tree.
+- Follow-up remains operational, not documentation ingestion: local OpenClaw CLI is still `2026.5.22` and should be upgraded/tested against stable `2026.5.28` when convenient.
+
 ## 2026-05-31 - SKIP docs merge, upstream caught up to stable 2026.5.28 and prerelease tags through 2026.5.31-alpha.1
 
 ### Daily knowledge base run
