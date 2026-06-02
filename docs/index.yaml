@@ -1,13 +1,13 @@
 meta:
-  generated_at: '2026-06-01T05:32:48Z'
-  total_docs: 28
+  generated_at: '2026-06-02T05:34:57Z'
+  total_docs: 29
   categories:
     concepts: 5
     getting-started: 3
     guides: 9
-    reference: 8
+    reference: 9
     troubleshooting: 3
-  sources_processed: 136
+  sources_processed: 140
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -250,8 +250,9 @@ docs:
   - sessions/2026-05-08-excalidraw-skill-fase-1a-1b.md
   - sessions/2026-05-08-excalidraw-skill-fase-1b-patch-logo-corpus.md
   - sessions/2026-05-08-excalidraw-skill-aliases-population.md
-  last_updated: '2026-05-09'
-  version: 4
+  - sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+  last_updated: '2026-06-02'
+  version: 5
   path: docs/guides/skills-and-slash-commands.md
 - title: Telegram Bot Setup and Supergroup Topics
   slug: telegram-bot
@@ -382,6 +383,7 @@ docs:
   - secrets
   - 1password
   - mcp
+  - telemetry
   sources:
   - sessions/2026-04-07-model-config-secret-caching-openclaw-update.md
   - sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md
@@ -389,8 +391,9 @@ docs:
   - sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md
   - sessions/2026-04-08-deep-research-glm51-zai-integration-4.md
   - sessions/2026-04-16-spesify-pipeline-images-matching-ui.md
-  last_updated: '2026-04-17'
-  version: 2
+  - sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+  last_updated: '2026-06-02'
+  version: 3
   path: docs/reference/environment-variables.md
 - title: GWS CLI Command Reference
   slug: gws-cli-reference
@@ -423,6 +426,21 @@ docs:
   last_updated: '2026-05-03'
   version: 2
   path: docs/reference/mcp-servers.md
+- title: Third-Party CLI Tool Evaluation and Vendor Gate
+  slug: third-party-cli-tool-gate
+  category: reference
+  tags:
+  - security
+  - cli
+  - vendor
+  - telemetry
+  - supply-chain
+  - tools
+  sources:
+  - sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+  last_updated: '2026-06-02'
+  version: 1
+  path: docs/reference/third-party-cli-tool-gate.md
 - title: Common Errors and Solutions
   slug: common-errors
   category: troubleshooting
@@ -485,6 +503,8 @@ docs:
   - whatsapp
   - telegram
   - 1password
+  - vendor-tools
+  - telemetry
   sources:
   - sessions/2026-03-16-google-drive-integration.md
   - sessions/2026-03-18-whatsapp-integration.md
@@ -493,6 +513,7 @@ docs:
   - sessions/2026-04-17-spesify-security-ux-stores-launch.md
   - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
   - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-  last_updated: '2026-04-18'
-  version: 3
+  - sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+  last_updated: '2026-06-02'
+  version: 4
   path: docs/troubleshooting/integration-issues.md

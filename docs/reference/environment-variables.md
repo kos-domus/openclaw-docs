@@ -2,7 +2,7 @@
 title: "Environment Variables Reference"
 slug: "environment-variables"
 category: "reference"
-tags: ["environment", "configuration", "secrets", "1password", "mcp"]
+tags: ["environment", "configuration", "secrets", "1password", "mcp", "telemetry"]
 sources:
   - "sessions/2026-04-07-model-config-secret-caching-openclaw-update.md"
   - "sessions/2026-04-07-claude-code-agent-framework-mcp-fleet-fixes-2.md"
@@ -10,8 +10,9 @@ sources:
   - "sessions/2026-04-08-deep-research-phases-2-3-security-review-2.md"
   - "sessions/2026-04-08-deep-research-glm51-zai-integration-4.md"
   - "sessions/2026-04-16-spesify-pipeline-images-matching-ui.md"
-last_updated: "2026-04-17"
-version: 2
+  - "sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md"
+last_updated: "2026-06-02"
+version: 3
 ---
 
 # Environment Variables Reference
@@ -56,6 +57,18 @@ set +a
 ```
 
 This keeps startup deterministic and avoids depending on interactive shell initialization. If the service still fails, check that the cached file contains the same variable names the app expects, not just equivalent values under different names.
+
+## Third-party CLI telemetry variables
+
+Telemetry kill switches must be verified against the actual runtime, not copied from adjacent projects. A wrapper installed through one ecosystem can launch a binary written in another language, making legacy config files inert.
+
+For `ingestr` v1.x, the durable setting is:
+
+```bash
+export INGESTR_DISABLE_TELEMETRY=true
+```
+
+Set it in the parent environment for the job or service that launches the CLI. Do not rely on `~/.dlt/config.toml` for the Go-based ingestr binary.
 
 ## Non-interactive shell gotcha
 

@@ -13,8 +13,9 @@ sources:
 - sessions/2026-05-08-excalidraw-skill-fase-1a-1b.md
 - sessions/2026-05-08-excalidraw-skill-fase-1b-patch-logo-corpus.md
 - sessions/2026-05-08-excalidraw-skill-aliases-population.md
-last_updated: '2026-05-09'
-version: 4
+- sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+last_updated: '2026-06-02'
+version: 5
 ---
 
 # Skills and Slash Commands
@@ -87,6 +88,25 @@ Skills with vague descriptions in their SKILL.md file may not be invoked correct
 - **Good**: "Retrieve a detailed company dossier from Crunchbase"
 
 Specific keywords help the model understand when to invoke the skill.
+
+
+## Evaluating OSS tool lists and third-party skills
+
+Treat viral lists and broad recommendation dumps as discovery inputs, not implementation queues. A practical filter is:
+
+1. Split the list into one item per candidate.
+2. Check fit, maturity, license, setup cost, and whether it solves a current workflow bottleneck.
+3. Promote only the top one or two items to a time-boxed pilot.
+4. Require a security/vendor gate before any tool touches client data or installs code into a live agent environment.
+
+Good default rules:
+
+- **one active pilot at a time**;
+- **Watch is not Todo**;
+- third-party skills and code generators need sandbox testing before live installation;
+- adversarial prompt collections are defensive threat-intelligence sources, not normal prompt-engineering playbooks.
+
+For the full gate, see [Third-Party CLI Tool Evaluation and Vendor Gate](../reference/third-party-cli-tool-gate.md).
 
 ## Notable Skill Deep-Dives
 

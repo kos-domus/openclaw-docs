@@ -2,7 +2,7 @@
 title: "Valutazione portfolio OSS (Co-CEO, 20 progetti) + adozione ingestr con vendor-gate CSO + check pliny.gg"
 date: "2026-06-01"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "security", "cli", "automation", "agent-sdk", "troubleshooting"]
 session_type: "openclaw"
 openclaw_version: ""

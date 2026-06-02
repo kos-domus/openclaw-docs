@@ -1,5 +1,37 @@
 ## 2026-06-01 - SKIP docs merge, upstream prerelease advanced to 2026.5.31-beta.4
 
+## 2026-06-02 - Processed OSS tool evaluation session + tracked 2026.6 prereleases
+
+### Processed
+- `sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md` — flipped `status: ready` → `processed` and extracted reusable external-tool evaluation, ingestr telemetry, vendor-gate, and codegen/adversarial-tool parking lessons.
+
+### Docs impact
+- `docs/reference/third-party-cli-tool-gate.md` (new) — documents the ruthless OSS evaluation funnel, vendor-gate checklist, runtime reality check, safe CLI adoption pattern, and park criteria for codegen/adversarial tools.
+- `docs/reference/environment-variables.md` (v2 → v3) — added the verified `INGESTR_DISABLE_TELEMETRY=true` pattern and the rule to validate telemetry kill switches against the actual runtime.
+- `docs/troubleshooting/integration-issues.md` (v3 → v4) — added third-party CLI troubleshooting for inert telemetry config, wrapper/binary vulnerability-scan false negatives, and codegen tools that require live installs.
+- `docs/guides/skills-and-slash-commands.md` (v4 → v5) — added the OSS-list triage rule: one active pilot, Watch is not Todo, sandbox third-party skills/code generators, and treat adversarial prompt sets as defensive threat intelligence.
+- `docs/index.yaml` regenerated from frontmatter.
+
+### Upstream consistency check
+- Checked local CLI with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked GitHub latest stable release and npm: both remain `2026.5.28`; local install is now aligned with stable.
+- Checked official docs homepage: HTTP 200.
+- Checked GitHub releases/tags and raw upstream changelog: prerelease releases advanced to `2026.6.1-beta.2`; newest tag-only prerelease signal is `2026.6.2-alpha.1`, with a raw changelog section already present.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-02-v2026.6.1-beta.1.md`
+- `docs/meta/upstream-updates/2026-06-02-v2026.6.1-beta.2.md`
+- `docs/meta/upstream-updates/2026-06-02-v2026.6.2-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.6.x` prerelease line: stronger interrupted-run and CLI runtime recovery, broader request/timer bounds across providers/channels/media, Skill Workshop governance/UI, Workboard orchestration, SecretRef/plugin manifest work, external Copilot/Tokenjuice packaging, and more SQLite-backed runtime state.
+
+### Self-assessment
+- Good cut: the session looked like a project-evaluation narrative, but the durable value was the external-tool vendor-gate pattern, not the individual list of shiny repos.
+- I kept ingestr as an example of runtime/telemetry verification without turning this public repo into a client ETL playbook.
+- Upstream check is clean: stable is aligned locally, while prerelease artifacts are explicitly marked watch signals rather than upgrade targets.
+
+
 ### Daily knowledge base run
 - No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
 - Re-checked frontmatter directly: `0` ready, `60` processed, and `_template.md` remains `draft`.

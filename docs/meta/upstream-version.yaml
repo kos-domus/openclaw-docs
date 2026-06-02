@@ -1,16 +1,16 @@
-last_check: '2026-06-01'
+last_check: '2026-06-02'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.5.28
     last_known_release_date: '2026-05-30'
-    last_known_beta_version: 2026.5.31-beta.4
+    last_known_beta_version: 2026.6.1-beta.2
     last_known_beta_release_date: '2026-06-01'
-    last_known_alpha_version: 2026.5.31-alpha.1
-    last_known_alpha_release_date: '2026-05-31'
-    last_known_prerelease_tag: 2026.5.31-beta.4
-    last_known_prerelease_tag_date: '2026-06-01'
+    last_known_alpha_version: 2026.6.2-alpha.1
+    last_known_alpha_release_date: '2026-06-02'
+    last_known_prerelease_tag: 2026.6.2-alpha.1
+    last_known_prerelease_tag_date: '2026-06-02'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -51,13 +51,12 @@ sources:
     - path: /hooks
       tracks: lifecycle hooks, event hooks, automation
 installed:
-  local_cli_version: 2026.5.22
-  checked_at: '2026-06-01T07:32:48+02:00'
+  local_cli_version: 2026.5.28
+  checked_at: '2026-06-02T07:35:23+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: 'Local CLI is 2026.5.22, behind GitHub/npm stable 2026.5.28. No ready
-    sessions were ingested on 2026-06-01. Upstream stable remains 2026.5.28 while
-    prerelease releases advanced through 2026.5.31-beta.4. Main operator themes: runtime/session
-    recovery, channel delivery hardening, Tailscale/Gateway setup, safer agents add,
-    Skill Workshop governance/UI, Workboard, external plugin packaging, SQLite-backed
-    monitor state, and bounded provider/channel timers.'
+  upgrade_notes: Local CLI is aligned with GitHub/npm stable 2026.5.28. Processed
+    one ready session on external OSS/CLI evaluation, ingestr vendor gating, telemetry
+    kill-switch verification, and codegen/adversarial-tool parking. Upstream stable
+    remains 2026.5.28 while prerelease releases advanced through 2026.6.1-beta.2 and
+    tag-only alpha 2026.6.2-alpha.1.

@@ -8,6 +8,8 @@ tags:
 - whatsapp
 - telegram
 - 1password
+- vendor-tools
+- telemetry
 sources:
 - sessions/2026-03-16-google-drive-integration.md
 - sessions/2026-03-18-whatsapp-integration.md
@@ -16,8 +18,9 @@ sources:
 - sessions/2026-04-17-spesify-security-ux-stores-launch.md
 - sessions/2026-04-17-spesify-sidebar-profile-search-chaininfo-2.md
 - sessions/2026-04-18-spesify-nearby-store-drilldown-watchlist.md
-last_updated: '2026-04-18'
-version: 3
+- sessions/2026-06-01-oss-tool-evals-ingestr-adoption.md
+last_updated: '2026-06-02'
+version: 4
 ---
 
 # Integration Issues
@@ -190,6 +193,36 @@ When sourcing `op-env.sh` from `.bashrc`:
 **Cause**: the wrapper uses `exec` on the main process, so the shell never reaches the later commands.
 
 **Fix**: call the main process normally, then chain the follow-up step explicitly. This pattern mattered for post-pipeline notifications and other best-effort automation tasks.
+
+## Third-Party CLI and Vendor Tool Issues
+
+### Telemetry config appears disabled, but the tool still has its own network path
+
+**Cause**: the installed package is a wrapper around a different runtime than the docs or legacy project suggest. For example, an install path that looks Python-based can still launch a Go binary with its own telemetry path.
+
+**Fix**:
+1. Identify the actual executable with `which <tool>` and inspect the wrapper if present.
+2. Check strings, docs, or source for the real telemetry environment variable or config flag.
+3. Export the kill switch in the parent runtime environment before launching the job.
+4. Record the kill switch in the tool register and re-check it on every version bump.
+
+For `ingestr` v1.x, use `INGESTR_DISABLE_TELEMETRY=true`; `~/.dlt/config.toml` is not sufficient for the Go binary.
+
+### Vulnerability scan returns a clean result for an obviously wrapped tool
+
+**Cause**: the scanner targeted the wrapper environment rather than the executable that will run in production. A mostly empty Python virtualenv can hide the real Go/Rust/Node/native binary risk.
+
+**Fix**:
+1. Locate the real executable.
+2. Scan the executable, rootfs, container image, or release artifact that actually runs.
+3. Classify CVEs by topology and data exposure rather than severity alone.
+4. Pin the version and re-scan before every bump.
+
+### A code generator looks useful but wants to install third-party runtime material live
+
+**Cause**: generator tools often blur the line between operator helper, installed skill, and code that may be shipped downstream.
+
+**Fix**: park the tool until an explicit approval and a codegen-specific security review are complete. Test in an isolated workspace first, especially when the tool wants to install skills or MCP servers into the live environment.
 
 ## General Integration Debugging
 
