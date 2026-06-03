@@ -1,3 +1,32 @@
+## 2026-06-03 - SKIP docs merge, upstream alpha tags advanced to 2026.6.3-alpha.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.5.28`.
+- Checked GitHub latest stable release: `2026.5.28` published `2026-05-30`.
+- Checked GitHub prerelease releases: latest release page remains `2026.6.1-beta.2` published `2026-06-01`.
+- Checked GitHub tag head: `2026.6.3-alpha.1`; new tag-only alpha signal `2026.6.2-alpha.2` also appeared since the prior run.
+- Checked official docs homepage: HTTP 200, and confirmed the upstream docs tree still has `48` entries via GitHub contents API.
+- Local install remains aligned with stable upstream: local `2026.5.28` vs GitHub/npm stable `2026.5.28`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-03-v2026.6.2-alpha.2.md`
+- `docs/meta/upstream-updates/2026-06-03-v2026.6.3-alpha.1.md`
+
+### Relevant upstream notes
+- Raw upstream changelog now exposes a `2026.6.2` section: runtime/session recovery, steadier Telegram/WhatsApp/iMessage/Slack/Discord/Teams/Google Chat/Meet/mobile delivery, bounded provider/plugin timers, Skill Workshop governance/UI, Workboard, SecretRef plugin manifests, external Copilot/Tokenjuice packaging, and more SQLite-backed runtime state.
+- The new `2026.6.2-alpha.2` and `2026.6.3-alpha.1` tags remain tag-only prerelease signals; monitor, do not treat them as production upgrade targets.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake docs edits and no session churn.
+- Good upstream catch: stable did not move, but the tag head advanced twice beyond yesterday's `2026.6.2-alpha.1`; I captured both as watch artifacts rather than over-promoting unreleased behavior.
+- Consistency check improved today: direct official docs fetch returned HTTP 200, so GitHub tree fallback was corroborating rather than replacing the official docs check.
+
 ## 2026-06-01 - SKIP docs merge, upstream prerelease advanced to 2026.5.31-beta.4
 
 ## 2026-06-02 - Processed OSS tool evaluation session + tracked 2026.6 prereleases

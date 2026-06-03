@@ -1,4 +1,4 @@
-last_check: '2026-06-02'
+last_check: '2026-06-03'
 sources:
   github:
     repo: openclaw/openclaw
@@ -7,10 +7,10 @@ sources:
     last_known_release_date: '2026-05-30'
     last_known_beta_version: 2026.6.1-beta.2
     last_known_beta_release_date: '2026-06-01'
-    last_known_alpha_version: 2026.6.2-alpha.1
-    last_known_alpha_release_date: '2026-06-02'
-    last_known_prerelease_tag: 2026.6.2-alpha.1
-    last_known_prerelease_tag_date: '2026-06-02'
+    last_known_alpha_version: 2026.6.3-alpha.1
+    last_known_alpha_release_date: '2026-06-03'
+    last_known_prerelease_tag: 2026.6.3-alpha.1
+    last_known_prerelease_tag_date: '2026-06-03'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -52,11 +52,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.28
-  checked_at: '2026-06-02T07:35:23+02:00'
+  checked_at: '2026-06-03T06:00:00+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: Local CLI is aligned with GitHub/npm stable 2026.5.28. Processed
-    one ready session on external OSS/CLI evaluation, ingestr vendor gating, telemetry
-    kill-switch verification, and codegen/adversarial-tool parking. Upstream stable
-    remains 2026.5.28 while prerelease releases advanced through 2026.6.1-beta.2 and
-    tag-only alpha 2026.6.2-alpha.1.
+  upgrade_notes: Local CLI remains aligned with GitHub/npm stable 2026.5.28. No ready sessions were found. Upstream stable remains 2026.5.28 while tag-only alpha prerelease signals advanced through 2026.6.3-alpha.1; docs.openclaw.ai returned HTTP 200 in this cron run.
