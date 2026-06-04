@@ -1,3 +1,35 @@
+## 2026-06-04 - SKIP docs merge, upstream stable advanced to 2026.6.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.1`.
+- Checked GitHub latest stable release: `2026.6.1` published `2026-06-03`.
+- Checked GitHub prerelease releases: latest release page is `2026.6.2-beta.1` published `2026-06-03`; `2026.6.1-beta.3` also appeared since the prior run and was superseded by stable `2026.6.1`.
+- Checked GitHub tag head: `2026.6.4-alpha.1`, an annotated tag-only alpha signal dated `2026-06-04`.
+- Checked official docs homepage: HTTP 200, and confirmed the upstream docs tree still has `48` entries via GitHub contents API.
+- Local install is now behind stable upstream: local `2026.5.28` vs GitHub/npm stable `2026.6.1`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-04-v2026.6.1-beta.3.md`
+- `docs/meta/upstream-updates/2026-06-04-v2026.6.1.md`
+- `docs/meta/upstream-updates/2026-06-04-v2026.6.2-beta.1.md`
+- `docs/meta/upstream-updates/2026-06-04-v2026.6.4-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.6.1` is now stable: better interrupted tool-call/session recovery, steadier multi-channel delivery, more bounded provider/plugin timers, improved Skill Workshop Control UI, Workboard, SecretRef plugin manifests, external Copilot/Tokenjuice packaging, SQLite-backed monitor/install state, and expanded provider/model metadata.
+- `2026.6.2-beta.1` introduces prerelease operator install policy changes for plugin/skill installs plus broader channel, security/config recovery, gateway, Codex, provider, model, and memory hardening.
+- `2026.6.4-alpha.1` remains a tag-only prerelease signal; monitor, do not act.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake docs edits and no status churn.
+- Upstream check found a real stable movement from `2026.5.28` to `2026.6.1`; I captured the stable release separately from prerelease/tag-only signals to avoid mixing upgrade targets with watch-only notes.
+- The main follow-up is operational rather than documentation ingestion: local OpenClaw remains on `2026.5.28`, so the fleet should upgrade/test before local docs rely on 2026.6.1 behavior.
+
 ## 2026-06-03 - SKIP docs merge, upstream alpha tags advanced to 2026.6.3-alpha.1
 
 ### Daily knowledge base run
