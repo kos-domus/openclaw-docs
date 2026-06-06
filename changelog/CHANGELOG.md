@@ -1,3 +1,32 @@
+## 2026-06-06 - SKIP docs merge, upstream prerelease advanced to 2026.6.5-beta.1 and alpha tag to 2026.6.6-alpha.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.1`.
+- Checked GitHub latest stable release: `2026.6.1` published `2026-06-03`; stable did not move today.
+- Checked GitHub prerelease releases: latest release page is `2026.6.5-beta.1` published `2026-06-06`.
+- Checked GitHub tag head: `2026.6.6-alpha.1`, an annotated tag-only alpha signal dated `2026-06-06`.
+- Checked official docs homepage: HTTP 200, and confirmed the upstream docs tree still has `48` entries via GitHub contents API.
+- Local install remains behind stable upstream: local `2026.5.28` vs GitHub/npm stable `2026.6.1`.
+- Refreshed `docs/meta/upstream-version.yaml` and `docs/index.yaml` timestamps for this run.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-06-v2026.6.5-beta.1.md`
+- `docs/meta/upstream-updates/2026-06-06-v2026.6.6-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.6.5-beta.1` is a prerelease watch signal: QQBot strips raw reasoning scaffolding, MCP rich-tool-result materialization is safer, Anthropic extended-thinking recovery improves after cache expiry/Gateway restart, Parallel becomes a bundled `web_search` provider, auth/plugin state is more SQLite-backed, and upgrade/service paths gained more guardrails.
+- `2026.6.6-alpha.1` remains a tag-only prerelease signal; monitor, do not act.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits and no status churn.
+- Upstream check found prerelease movement only; I kept stable `2026.6.1` separate from beta and tag-only alpha signals so the docs do not imply an upgrade target that has not stabilized.
+- The main follow-up remains operational rather than documentation ingestion: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.1`.
+
 ## 2026-06-04 - SKIP docs merge, upstream stable advanced to 2026.6.1
 
 ### Daily knowledge base run
