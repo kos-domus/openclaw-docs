@@ -1,12 +1,12 @@
-last_check: '2026-06-06'
+last_check: '2026-06-07'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.6.1
     last_known_release_date: '2026-06-03'
-    last_known_beta_version: 2026.6.5-beta.1
-    last_known_beta_release_date: '2026-06-06'
+    last_known_beta_version: 2026.6.5-beta.2
+    last_known_beta_release_date: '2026-06-07'
     last_known_alpha_version: 2026.6.6-alpha.1
     last_known_alpha_release_date: '2026-06-06'
     last_known_prerelease_tag: 2026.6.6-alpha.1
@@ -52,10 +52,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.28
-  checked_at: '2026-06-06T07:33:07+02:00'
+  checked_at: '2026-06-07T07:32:21+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: No ready sessions were found. Upstream stable remains 2026.6.1 on
-    GitHub and npm while local CLI remains 2026.5.28; prerelease release head advanced
-    to 2026.6.5-beta.1 and tag-only alpha signal advanced to 2026.6.6-alpha.1. docs.openclaw.ai
-    returned HTTP 200 in this cron run.
+  upgrade_notes: No ready sessions were found. Upstream stable remains 2026.6.1 on GitHub and npm while local CLI remains 2026.5.28; prerelease release head advanced to 2026.6.5-beta.2 and tag-only alpha signal remains 2026.6.6-alpha.1. docs.openclaw.ai homepage returned HTTP 200 in this cron run; /changelog returned 404, so release-note consistency used GitHub releases/tags plus the official docs tree. Hermes runtime operationally behind upstream v2026.6.5.
