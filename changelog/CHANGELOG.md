@@ -1,3 +1,35 @@
+## 2026-06-10 - SKIP docs merge, upstream stable advanced to 2026.6.5 and alpha tag to 2026.6.10-alpha.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.5`; npm beta dist-tag is `2026.6.5-beta.6`.
+- Checked GitHub latest stable release: `2026.6.5` published `2026-06-09`; stable advanced from the previously tracked `2026.6.1`.
+- Checked GitHub prerelease releases: latest release page is `2026.6.5-beta.6` published `2026-06-09`.
+- Checked GitHub tag head: `2026.6.10-alpha.1`, an annotated tag-only alpha signal dated `2026-06-10`.
+- Direct official docs fetches returned HTTP 403 in this cron environment, so release-note consistency used GitHub releases/tags, npm dist-tags, GitHub advisories, and the official docs tree (`48` entries via GitHub contents API).
+- Local install remains behind stable upstream: local `2026.5.28` vs GitHub/npm stable `2026.6.5`.
+- Refreshed `docs/meta/upstream-version.yaml` for this run; `docs/index.yaml` was left untouched because no Diátaxis docs changed.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-10-v2026.6.5.md`
+- `docs/meta/upstream-updates/2026-06-10-v2026.6.5-beta.6.md`
+- `docs/meta/upstream-updates/2026-06-10-v2026.6.10-alpha.1.md`
+
+### Relevant upstream notes
+- `2026.6.5` is now the stable production line: QQBot reasoning stripping, MCP rich-result materialization, Anthropic extended-thinking recovery, bundled Parallel `web_search`, Vertex/model resolution fixes, Matrix/Google Chat/channel hardening, durable auth/plugin install state, cron/service migration hardening, and WhatsApp reload/startup fixes are the main operator-facing changes.
+- `2026.6.5-beta.6` is retained as prerelease provenance only because stable `2026.6.5` is now available.
+- `2026.6.10-alpha.1` is tag-only and ahead of published release-page detail; monitor, do not act.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits, no index churn, and no session status churn.
+- Upstream check found real stable movement today; I separated stable `2026.6.5`, superseded beta `2026.6.5-beta.6`, and tag-only alpha `2026.6.10-alpha.1` so the docs point at the right upgrade target without promoting alpha behavior.
+- Ambiguity handled: direct official docs fetches are HTTP 403 from cron today, so I treated GitHub releases/tags, npm dist-tags, GitHub advisories, and the official docs tree as the authoritative consistency path.
+- Main follow-up is operational: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.5`.
+
 ## 2026-06-09 - SKIP docs merge, upstream beta advanced to 2026.6.5-beta.5 and alpha tag to 2026.6.9-alpha.1
 
 ### Daily knowledge base run
