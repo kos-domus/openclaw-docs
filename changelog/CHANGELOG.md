@@ -1,3 +1,34 @@
+## 2026-06-11 - SKIP docs merge, upstream beta advanced to 2026.6.6-beta.1 and alpha tag to 2026.6.10-alpha.2
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.5`; npm beta dist-tag remains `2026.6.5-beta.6`.
+- Checked GitHub latest stable release: `2026.6.5` published `2026-06-09`; stable did not move today.
+- Checked GitHub prerelease releases: latest release page is `2026.6.6-beta.1` published `2026-06-10`.
+- Checked GitHub tag head: `2026.6.10-alpha.2`, an annotated tag-only alpha signal dated `2026-06-10`.
+- Direct official docs fetches returned HTTP 403 in this cron environment, so release-note consistency used GitHub releases/tags, npm dist-tags, GitHub advisories, and the official docs tree (`48` entries via GitHub contents API).
+- Local install remains behind stable upstream: local `2026.5.28` vs GitHub/npm stable `2026.6.5`.
+- Refreshed `docs/meta/upstream-version.yaml` for this run; `docs/index.yaml` was left untouched because no Diátaxis docs changed.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-11-v2026.6.6-beta.1.md`
+- `docs/meta/upstream-updates/2026-06-11-v2026.6.10-alpha.2.md`
+
+### Relevant upstream notes
+- `2026.6.6-beta.1` is a GitHub prerelease watch signal: security boundaries tightened across transcripts, sandbox binds, host env inheritance, MCP stdio, Codex HTTP, native search, elevated sender checks, loopback tools, Discord moderation, Teams group actions, and exec approval timeout behavior now fails closed.
+- Telegram, iMessage, browser/CDP, MCP Streamable HTTP/OAuth/SSE handling, provider/model metadata, and Control UI startup/first-reply paths all gained prerelease hardening.
+- `2026.6.10-alpha.2` is tag-only and ahead of published release-page detail; monitor, do not act.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits, no index churn, and no session status churn.
+- Upstream check found prerelease movement only; I kept stable `2026.6.5`, GitHub beta `2026.6.6-beta.1`, npm beta `2026.6.5-beta.6`, and tag-only alpha `2026.6.10-alpha.2` separate so the docs do not imply a new production upgrade target.
+- Ambiguity handled: direct official docs fetches are HTTP 403 from cron today, so I treated GitHub releases/tags, npm dist-tags, GitHub advisories, and the official docs tree as the authoritative consistency path.
+- Main follow-up remains operational rather than documentation ingestion: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.5`.
+
 ## 2026-06-10 - SKIP docs merge, upstream stable advanced to 2026.6.5 and alpha tag to 2026.6.10-alpha.1
 
 ### Daily knowledge base run
