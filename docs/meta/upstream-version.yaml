@@ -1,12 +1,12 @@
-last_check: '2026-06-11'
+last_check: '2026-06-12'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.6.5
     last_known_release_date: '2026-06-09'
-    last_known_beta_version: 2026.6.6-beta.1
-    last_known_beta_release_date: '2026-06-10'
+    last_known_beta_version: 2026.6.6-beta.2
+    last_known_beta_release_date: '2026-06-12'
     last_known_alpha_version: 2026.6.10-alpha.2
     last_known_alpha_release_date: '2026-06-10'
     last_known_prerelease_tag: 2026.6.10-alpha.2
@@ -52,11 +52,13 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.28
-  checked_at: '2026-06-11T04:02:26.495903+02:00'
+  checked_at: '2026-06-12T07:32:38+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
   upgrade_notes: Upstream stable remains 2026.6.5 on GitHub/npm while local CLI remains
-    2026.5.28. New GitHub beta 2026.6.6-beta.1 carries security-boundary tightening
-    and exec approval fail-closed behavior; latest tag-only alpha is 2026.6.10-alpha.2.
-    GitHub advisories checked; local CLI is above May 2026 patched floors but behind
-    stable.
+    2026.5.28. GitHub/npm beta advanced to 2026.6.6-beta.2 with security-boundary
+    tightening, safer Telegram/iMessage delivery, browser/MCP hardening, Control UI
+    latency improvements, OpenRouter OAuth onboarding, and exec approval fail-closed
+    behavior. Latest tag-only alpha remains 2026.6.10-alpha.2. GitHub advisories checked;
+    local CLI is above May 2026 patched floors but behind stable. ClawHub registry advanced
+    to 0.21.0 with trusted-publisher OIDC management.
