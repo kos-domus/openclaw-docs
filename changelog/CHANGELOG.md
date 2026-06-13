@@ -1,3 +1,34 @@
+## 2026-06-13 - SKIP docs merge, upstream stable advanced to 2026.6.6
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.6`; npm beta dist-tag remains `2026.6.6-beta.2`.
+- Checked GitHub latest stable release: `2026.6.6` published `2026-06-12`; stable advanced from the previously tracked `2026.6.5`.
+- Checked GitHub prerelease releases: latest release page remains `2026.6.6-beta.2` published `2026-06-12`.
+- Checked GitHub tag head: `2026.6.10-alpha.2`, still a tag-only alpha signal dated `2026-06-10`.
+- Official docs consistency: `docs.openclaw.ai` homepage plus `/configuration`, `/skills`, `/channels`, `/security`, and `/mcp` returned HTTP 200; `/agents`, `/changelog`, and `/hooks` returned 404, so missing pages were corroborated through GitHub releases/tags and the official docs tree (`48` entries via GitHub contents API).
+- GitHub security advisories endpoint returned `30` entries; local CLI is above the May 2026 patched floors but still behind stable upstream.
+- ClawHub remains `0.21.0`, published `2026-06-12`; tracked as ecosystem context, not a new Diátaxis doc change.
+- Refreshed `docs/meta/upstream-version.yaml` for this run; `docs/index.yaml` was left untouched because no Diátaxis docs changed.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-13-v2026.6.6.md`
+
+### Relevant upstream notes
+- `2026.6.6` is now the stable production upgrade candidate: security boundaries tightened across transcripts, sandbox binds, host env inheritance, MCP stdio, Codex HTTP, native search, loopback tools, Discord/Teams, and exec approvals fail-closed.
+- Telegram/iMessage delivery, browser/CDP, MCP Streamable HTTP/OAuth/SSE handling, provider/model metadata, Control UI startup/first-reply paths, and cron cancellation/no-deliver recovery all gained stable-release hardening.
+- `2026.6.6-beta.2` remains the latest beta release page and `2026.6.10-alpha.2` remains tag-only; neither supersedes the stable upgrade signal.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits, no index churn, and no session status churn.
+- Upstream check found real stable movement; I captured it as a meta upstream artifact rather than merging release notes into task docs without a local upgrade/validation session.
+- Consistency path was stronger than prior runs: direct official docs pages were partly reachable today, and the 404 pages were cross-checked through GitHub releases/tags plus the docs tree API.
+- Main follow-up remains operational rather than documentation ingestion: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.6`.
+
 ## 2026-06-12 - SKIP docs merge, upstream beta advanced to 2026.6.6-beta.2
 
 ### Daily knowledge base run
