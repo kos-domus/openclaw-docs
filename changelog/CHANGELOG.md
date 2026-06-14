@@ -1,3 +1,36 @@
+## 2026-06-14 - SKIP docs merge, upstream beta advanced to 2026.6.8-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+- `docs/index.yaml` was left untouched because no generated Diátaxis docs changed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.6`; npm beta dist-tag is `2026.6.7-beta.1`.
+- Checked GitHub latest stable release: `2026.6.6` published `2026-06-12`; stable did not move today.
+- Checked GitHub prerelease releases: latest release page advanced to `2026.6.8-beta.1` published `2026-06-13`.
+- Checked GitHub tag head: `2026.6.10-alpha.2`, still a tag-only alpha signal dated `2026-06-10`.
+- Official docs consistency: `docs.openclaw.ai` homepage plus `/configuration`, `/skills`, `/channels`, `/security`, and `/mcp` returned HTTP 200; `/agents`, `/changelog`, and `/hooks` returned 404, so missing pages were corroborated through GitHub releases/tags and the official docs tree (`48` entries via GitHub contents API).
+- GitHub security advisories endpoint returned `30` entries; local OpenClaw is above the May 2026 patched floors but still behind stable upstream.
+- Adjacent tool versions observed for context: local Claude Code `2.1.76`, Hermes Agent `v0.14.0`, and ClawHub CLI `v0.8.0`; npm reports ClawHub package `0.21.0` modified `2026-06-12`.
+- Refreshed `docs/meta/upstream-version.yaml` for this run; `docs/index.yaml` was left untouched because no Diátaxis docs changed.
+
+### New upstream release notes captured
+- `docs/meta/upstream-updates/2026-06-14-v2026.6.8-beta.1.md`
+
+### Relevant upstream notes
+- `2026.6.8-beta.1` is a GitHub prerelease watch signal: Telegram and WhatsApp delivery got richer structured-output handling, Agent/Gateway recovery improved around DMs, generated media, yielded subagents/cron media, heartbeat dedupe, and selector rejection.
+- Provider/model handling added GLM-5.2, Claude Haiku 4.5 catalog rows, OpenRouter/Vertex provider-prefix normalization, managed SecretRef auth, bounded model browsing, and Claude 4.5 Copilot tool-streaming safety.
+- `/usage` and reply payload hooks gained a native footer renderer, default templates, credential-aware limits, partial-count handling, and broken-template warnings.
+- GitHub beta `2026.6.8-beta.1`, npm beta `2026.6.7-beta.1`, stable `2026.6.6`, and tag-only alpha `2026.6.10-alpha.2` are deliberately tracked as separate lines.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits, no index churn, and no session status churn.
+- Upstream check found prerelease movement only; I kept the GitHub beta, npm beta, stable, and tag-only alpha channels separate so the docs do not imply a new production upgrade target.
+- Official docs were partly reachable again, with the same missing `/agents`, `/changelog`, and `/hooks` paths corroborated through GitHub release/tag and docs-tree APIs.
+- Main follow-up remains operational rather than documentation ingestion: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.6`.
+
 ## 2026-06-13 - SKIP docs merge, upstream stable advanced to 2026.6.6
 
 ### Daily knowledge base run
