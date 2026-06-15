@@ -1,3 +1,35 @@
+## 2026-06-15 - SKIP docs merge, npm beta converged on 2026.6.8-beta.1
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, `61` processed, and `_template.md` remains `draft`.
+- `docs/index.yaml` was left untouched because no generated Diátaxis docs changed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.6`; npm beta dist-tag advanced to `2026.6.8-beta.1`, converging with the GitHub beta release.
+- Checked GitHub latest stable release: `2026.6.6` published `2026-06-12`; stable did not move today.
+- Checked GitHub prerelease releases: latest release page remains `2026.6.8-beta.1` published `2026-06-14`.
+- Checked GitHub tag head: `2026.6.10-alpha.2`, still a tag-only alpha signal dated `2026-06-10`.
+- Official docs consistency: `docs.openclaw.ai` homepage plus `/configuration`, `/skills`, `/channels`, `/security`, and `/mcp` returned HTTP 200; `/agents`, `/changelog`, and `/hooks` returned 404, so missing pages were corroborated through GitHub releases/tags and the official docs tree (`48` entries via GitHub contents API).
+- GitHub security advisories endpoint returned `30` entries; local OpenClaw is above the May 2026 patched floors but still behind stable upstream.
+- Adjacent tool versions observed for context: local Claude Code `2.1.76`, Hermes Agent `v0.14.0`, and ClawHub CLI `v0.8.0`; npm reports ClawHub package `0.21.0`.
+- Refreshed `docs/meta/upstream-version.yaml` for this run; `docs/index.yaml` was left untouched because no Diátaxis docs changed.
+
+### New upstream release notes captured
+- None. The only movement was npm beta dist-tag convergence on the already captured `docs/meta/upstream-updates/2026-06-14-v2026.6.8-beta.1.md` artifact.
+
+### Relevant upstream notes
+- Stable remains `2026.6.6`; local OpenClaw remains `2026.5.28`, so the operational mismatch persists.
+- npm beta and GitHub prerelease are now aligned on `2026.6.8-beta.1`; this is still a prerelease watch signal, not a production upgrade target.
+- Latest GitHub tag remains `2026.6.10-alpha.2` and is still treated as tag-only alpha: monitor, do not act.
+
+### Self-assessment
+- Clean SKIP on session ingestion: no fake Diátaxis edits, no index churn, and no session status churn.
+- Upstream check found beta-channel metadata convergence only; I reused the existing release-note artifact instead of duplicating a docs/meta file for the same prerelease.
+- Official docs were partly reachable again, with the same missing `/agents`, `/changelog`, and `/hooks` paths corroborated through GitHub release/tag and docs-tree APIs.
+- Main follow-up remains operational rather than documentation ingestion: local OpenClaw is still on `2026.5.28`, behind stable `2026.6.6`.
+
 ## 2026-06-14 - SKIP docs merge, upstream beta advanced to 2026.6.8-beta.1
 
 ### Daily knowledge base run
