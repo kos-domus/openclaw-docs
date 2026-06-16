@@ -1694,4 +1694,34 @@ No editorial work needed today — the knowledge base is clean and all sessions 
 
 The local CLI gap (2026.5.7 vs 2026.5.22 stable) is growing. Recommend scheduling an upgrade when the next stable drops, as the beta stream is dense and likely close to a 2026.5.27+ stable.
 
+---
+
+## 2026-06-16 — Daily docs run
+
+---
+date: 2026-06-16
+type: documentation-run
+---
+
+### Session processing
+
+**SKIP** — zero sessions with `status: ready`. No Diátaxis docs changed, no session statuses were flipped, and `docs/index.yaml` was intentionally left untouched to avoid no-op metadata churn.
+
+### Upstream consistency check
+
+- **Stable**: `2026.6.6` on GitHub latest release and npm `latest` (unchanged).
+- **Beta**: GitHub prerelease and npm `beta` both advanced/converged on `2026.6.8-beta.2` (published 2026-06-16).
+- **Tag-only alpha**: latest GitHub tag advanced to `v2026.6.15-alpha.1`; GitHub release lookup returned 404, so this is tracked as a monitor-only prerelease signal.
+- **Local CLI**: `OpenClaw 2026.5.28 (e932160)`, still behind current stable hardening.
+- **Official docs**: homepage, `/configuration`, `/skills`, `/channels`, `/security`, and `/mcp` returned HTTP 200; `/agents`, `/changelog`, and `/hooks` returned HTTP 404. GitHub docs contents API reported 48 entries.
+- **Security/advisory check**: GitHub security advisories endpoint returned 30 entries; local OpenClaw remains above the May patched floors but behind stable. Adjacent tools observed: Claude Code `2.1.76`, Hermes Agent `v0.14.0` (2110 commits behind), ClawHub CLI `0.8.0` vs npm `0.22.0`.
+
+### Docs/meta updated
+
+- **Added**: `docs/meta/upstream-updates/2026-06-16-v2026.6.8-beta.2-and-v2026.6.15-alpha.1.md` — upstream tracking note for beta convergence plus tag-only alpha signal.
+- **Updated**: `docs/meta/upstream-version.yaml` — refreshed `last_check`, beta, alpha/tag-only metadata, local tool observations, official-docs status, and adjacent tool notes.
+
+### Self-assessment
+
+Clean maintenance run. The queue had no ready sessions, so the right move was not to touch the Diátaxis docs or index. The useful work was grounding upstream state against GitHub releases/tags, npm dist-tags, official docs HTTP status, local CLI versions, and GitHub advisories. The only ambiguity is the `v2026.6.15-alpha.1` tag: without a release page or npm alpha dist-tag movement, it stays a watch signal, not actionable documentation.
 
