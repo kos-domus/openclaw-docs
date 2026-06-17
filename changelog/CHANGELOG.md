@@ -1724,4 +1724,35 @@ type: documentation-run
 ### Self-assessment
 
 Clean maintenance run. The queue had no ready sessions, so the right move was not to touch the Diátaxis docs or index. The useful work was grounding upstream state against GitHub releases/tags, npm dist-tags, official docs HTTP status, local CLI versions, and GitHub advisories. The only ambiguity is the `v2026.6.15-alpha.1` tag: without a release page or npm alpha dist-tag movement, it stays a watch signal, not actionable documentation.
+---
+
+## 2026-06-17 — Daily docs run
+
+---
+date: 2026-06-17
+type: documentation-run
+---
+
+### Session processing
+
+**SKIP** — zero sessions with `status: ready`. No session statuses were flipped, no generated Diátaxis docs changed, and `docs/index.yaml` was intentionally left untouched to avoid no-op metadata churn.
+
+### Upstream consistency check
+
+- **Stable**: GitHub latest release and npm `latest` advanced/converged on `2026.6.8` (published 2026-06-16).
+- **Beta**: npm `beta` remains `2026.6.8-beta.2`; GitHub prerelease history still shows `v2026.6.8-beta.2` as the latest prerelease release before the new stable.
+- **Tag-only alpha**: latest GitHub tag remains `v2026.6.15-alpha.1`; commit date is 2026-06-15 and no release page was observed, so it remains monitor-only.
+- **Local CLI**: `OpenClaw 2026.5.28 (e932160)`, still behind the June stable hardening line.
+- **Official docs**: homepage, `/configuration`, `/skills`, `/channels`, `/security`, and `/mcp` returned HTTP 200; `/agents`, `/changelog`, and `/hooks` returned HTTP 404. GitHub docs contents API reported 48 entries.
+- **Security/advisory check**: GitHub security advisories endpoint returned 30 entries; local OpenClaw remains above the May patched floors but behind the latest stable. Adjacent tools observed for context: Claude Code `2.1.76`, Hermes Agent `0.14.0`, and ClawHub CLI `0.8.0` vs npm `0.22.0`.
+
+### Docs/meta updated
+
+- **Added**: `docs/meta/upstream-updates/2026-06-17-v2026.6.8.md` — upstream tracking note for the stable `2026.6.8` advance.
+- **Updated**: `docs/meta/upstream-version.yaml` — refreshed `last_check`, stable release metadata, local check timestamp, tag-only alpha dates, and upgrade notes.
+- **Unchanged**: `docs/index.yaml` — no generated Diátaxis docs changed.
+
+### Self-assessment
+
+Good no-session maintenance run. The queue was clean, so the right editorial choice was to leave the Diátaxis docs and machine index alone. The useful work was grounding the new stable `2026.6.8` against GitHub releases, npm dist-tags, official docs HTTP status, local CLI version, and advisory metadata. The main ambiguity remains upstream’s tag-only alpha cadence: without a release page or npm alpha movement, it stays a watch signal rather than actionable documentation.
 

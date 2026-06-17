@@ -1,16 +1,16 @@
-last_check: '2026-06-16'
+last_check: '2026-06-17'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.6.6
-    last_known_release_date: '2026-06-12'
+    last_known_version: 2026.6.8
+    last_known_release_date: '2026-06-16'
     last_known_beta_version: 2026.6.8-beta.2
     last_known_beta_release_date: '2026-06-16'
     last_known_alpha_version: 2026.6.15-alpha.1
-    last_known_alpha_release_date: '2026-06-16'
+    last_known_alpha_release_date: '2026-06-15'
     last_known_prerelease_tag: 2026.6.15-alpha.1
-    last_known_prerelease_tag_date: '2026-06-16'
+    last_known_prerelease_tag_date: '2026-06-15'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.6.6
+    last_known_version: 2026.6.8
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -52,14 +52,12 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.28
-  checked_at: '2026-06-16T07:32:15+02:00'
+  checked_at: '2026-06-17T07:32:25+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: 'Stable remains 2026.6.6; local CLI remains 2026.5.28 and is still
-    behind the security-boundaries stable. npm beta advanced to 2026.6.8-beta.2; latest
-    GitHub tag advanced to v2026.6.15-alpha.1. Docs homepage/configuration/skills/channels/security/mcp
-    returned 200 while /agents, /changelog, /hooks returned 404. GitHub advisories
-    checked: OpenClaw local 2026.5.28 is above May patched floors but behind stable
-    hardening. Adjacent alerts: Claude Code local 2.1.76 is below GHSA-fg94 patched
-    floor 2.1.163; Hermes Agent v0.14.0 is 2110 commits behind; ClawHub CLI 0.8.0
-    is behind npm 0.22.0 and 0.22.0 removes clawhub sync.'
+  upgrade_notes: 'Stable advanced to 2026.6.8; local CLI remains 2026.5.28 and is
+    behind. npm beta remains 2026.6.8-beta.2; latest GitHub tag is v2026.6.15-alpha.1.
+    OpenClaw advisories checked: local 2026.5.28 is above May patched floors but behind
+    June stable hardening. Adjacent alerts: Claude Code local 2.1.76 is below patched
+    floors 2.1.84 and 2.1.163; Hermes Agent local 0.14.0 is behind npm 0.16.0; ClawHub
+    CLI 0.8.0 is behind npm 0.22.0 and 0.22.0 removes clawhub sync.'
