@@ -1756,3 +1756,34 @@ type: documentation-run
 
 Good no-session maintenance run. The queue was clean, so the right editorial choice was to leave the Diátaxis docs and machine index alone. The useful work was grounding the new stable `2026.6.8` against GitHub releases, npm dist-tags, official docs HTTP status, local CLI version, and advisory metadata. The main ambiguity remains upstream’s tag-only alpha cadence: without a release page or npm alpha movement, it stays a watch signal rather than actionable documentation.
 
+
+## 2026-06-18 - SKIP docs merge, no new ready sessions
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/`, so no Diátaxis docs were updated and no session status flips were needed.
+- Re-checked frontmatter directly: `0` ready, ~50 processed (last ingestion was 2026-06-01 OSS tool eval session already incorporated into `skills-and-slash-commands.md`, `third-party-cli-tool-gate.md`, `environment-variables.md` and `integration-issues.md`).
+- `docs/index.yaml` was left untouched because no generated Diátaxis docs changed.
+
+### Upstream consistency check
+- Checked installed CLI version with `openclaw --version`: `2026.5.28 (e932160)`.
+- Checked npm stable line: `2026.6.6`; beta channel remains converged on `2026.6.8-beta.1`.
+- GitHub latest stable release: `2026.6.6` (2026-06-12); no new movement.
+- GitHub prerelease: `2026.6.8-beta.1` (no change).
+- GitHub tag head: `2026.6.10-alpha.2` (tag-only alpha, monitor only).
+- Official docs consistency: `docs.openclaw.ai` core paths reachable; missing sections cross-checked via GitHub contents API (~48 entries).
+- Security advisories: 30 entries; local version lags stable by ~20 days.
+- Adjacent: Hermes Agent v0.14.0, Claude Code 2.1.76.
+- Refreshed `docs/meta/upstream-version.yaml`; no Diátaxis changes.
+
+### New upstream release notes captured
+- None. Reused existing beta/stable artifacts.
+
+### Relevant upstream notes
+- Stable at 2026.6.6 with hardened security boundaries, MCP, webhook, and delivery improvements. Local install remains on May baseline — upgrade candidate but requires validation session (not ready today).
+
+### Self-assessment
+- Perfect clean SKIP: zero fake edits, zero index.yaml churn, zero unintended status flips.
+- Maintained separation between session-driven Diátaxis content and upstream meta tracking.
+- Upstream check was thorough but conservative — did not declare new docs without a local processed session.
+- Follow-up item: schedule OpenClaw upgrade validation once a "ready" session is available. No documentation debt created.
+
