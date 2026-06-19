@@ -1,4 +1,4 @@
-last_check: '2026-06-17'
+last_check: '2026-06-19'
 sources:
   github:
     repo: openclaw/openclaw
@@ -30,6 +30,21 @@ sources:
     check_methods:
       npm_view: npm view openclaw version
       npm_info: npm view openclaw --json
+  hermes_agent:
+    repo: NousResearch/hermes-agent
+    url: https://github.com/NousResearch/hermes-agent
+    last_known_version: 0.16.0
+    last_known_tag: v2026.6.5
+    last_known_release_date: '2026-06-05'
+    permanent: true
+    check_methods:
+      releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
+      tags_api: gh api repos/NousResearch/hermes-agent/tags --jq '.[0]'
+    watch:
+    - run_agent.py
+    - agent/
+    - gateway/
+    - skills/
   docs:
     url: https://docs.openclaw.ai
     permanent: true
@@ -52,12 +67,14 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.5.28
-  checked_at: '2026-06-17T07:32:25+02:00'
+  checked_at: '2026-06-19T06:00:00+02:00'
   upgraded_from: 2026.5.2
   upgraded_at: '2026-05-11T05:30:00Z'
-  upgrade_notes: 'Stable advanced to 2026.6.8; local CLI remains 2026.5.28 and is
-    behind. npm beta remains 2026.6.8-beta.2; latest GitHub tag is v2026.6.15-alpha.1.
-    OpenClaw advisories checked: local 2026.5.28 is above May patched floors but behind
-    June stable hardening. Adjacent alerts: Claude Code local 2.1.76 is below patched
-    floors 2.1.84 and 2.1.163; Hermes Agent local 0.14.0 is behind npm 0.16.0; ClawHub
-    CLI 0.8.0 is behind npm 0.22.0 and 0.22.0 removes clawhub sync.'
+  hermes_version: 0.14.0
+  hermes_tag: v2026.5.16
+  upgrade_notes: 'OpenClaw stable at 2026.6.8; local CLI remains 2026.5.28 — 4 stable
+    releases behind. Hermes Agent v0.16.0 (v2026.6.5) is the latest; local is v0.14.0
+    (v2026.5.16) — 4 stable releases behind, 2199 commits behind main. No new security
+    advisories since 2026-05-28 batch (30 total, 9 HIGH). Adjacent: ClawHub CLI 0.22.0
+    npm. New models: GLM-5.2, Claude Haiku 4.5, deepseek-v4-flash, MiniMax-M3 1M ctx,
+    qwen3.7-plus, Kimi K2.7 Code, Gemma 4.'
