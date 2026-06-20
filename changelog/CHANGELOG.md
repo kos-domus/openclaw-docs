@@ -1,3 +1,24 @@
+## 2026-06-20 - SKIP docs merge, local CLI upgraded to 2026.6.8, upstream tracking refreshed
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/` (0 ready, ~50 processed, `_template.md` remains draft). No Diátaxis docs were updated and no session status flips were needed.
+- `docs/index.yaml` was left untouched because no generated Diátaxis docs changed.
+
+### Upstream consistency check
+- **Local CLI upgraded**: `openclaw --version` now reports `2026.6.8 (844f405)` — was 2026.5.28 yesterday. Now fully in sync with stable.
+- npm stable: `2026.6.8` (unchanged). npm beta advanced to `2026.6.9-beta.1` (was 2026.6.8-beta.2).
+- GitHub latest stable: `v2026.6.8` (2026-06-16, unchanged). GitHub latest tag: `v2026.6.19-alpha.2` (advanced from v2026.6.15-alpha.1).
+- GitHub prereleases: `v2026.6.9-beta.1` (2026-06-19) is the newest beta.
+- **Hermes Agent**: latest release `v2026.6.19` (2026-06-19). Local remains `v0.14.0 (v2026.5.16)` — 2542 commits behind main.
+- Security advisories: **100 total** (21 HIGH, 69 MEDIUM, 10 LOW) — significant increase from prior baseline of 30.
+- Docs site: `docs.openclaw.ai` reachable (200). `/configuration` and `/skills` return 200. `/agents` returns 404 (content moved to `/multi-agent` which returns 200). `/changelog` redirects (308) with trailing slash.
+- Updated: `docs/meta/upstream-version.yaml` — refreshed last_check, local CLI version, beta/alpha tracking, Hermes tag, security advisory counts, and upgrade notes.
+
+### Self-assessment
+
+Clean SKIP on session elaboration — no ready sessions to process. The meaningful finding today is the local CLI upgrade to 2026.6.8, which closes the version gap that had been flagged for weeks. The security advisory jump from 30 to 100 is notable but likely reflects expanded CVE triage rather than a sudden vulnerability spike; worth flagging to Rakki. Hermes Agent remains stale (v0.14.0 vs v2026.6.19, 2542 commits behind) — this is the primary upgrade debt. No documentation changes were needed since no new sessions were elaborated.
+
+
 ## 2026-06-15 - SKIP docs merge, npm beta converged on 2026.6.8-beta.1
 
 ### Daily knowledge base run
