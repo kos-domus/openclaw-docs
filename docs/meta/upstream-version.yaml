@@ -1,10 +1,10 @@
-last_check: '2026-06-20'
+last_check: '2026-06-21'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.6.8
-    last_known_release_date: '2026-06-16'
+    last_known_version: 2026.6.9
+    last_known_release_date: '2026-06-21'
     last_known_beta_version: 2026.6.9-beta.1
     last_known_beta_release_date: '2026-06-19'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.6.8
+    last_known_version: 2026.6.9
     last_known_beta: 2026.6.9-beta.1
     permanent: true
     check_methods:
@@ -34,7 +34,7 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.16.0
+    last_known_version: 0.17.0
     last_known_tag: v2026.6.19
     last_known_release_date: '2026-06-19'
     permanent: true
@@ -68,15 +68,14 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-06-20T07:00:00+02:00'
+  checked_at: '2026-06-21T07:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.14.0
   hermes_tag: v2026.5.16
-  upgrade_notes: 'OpenClaw local CLI upgraded to 2026.6.8 on 2026-06-19 — now in sync
-    with stable. Hermes Agent latest is v2026.6.19 (2026-06-19); local remains v0.14.0
-    (v2026.5.16) — 2542 commits behind main. npm beta advanced to 2026.6.9-beta.1.
-    GitHub alpha head at v2026.6.19-alpha.2. Security advisories: 100 total (21 HIGH,
-    69 MEDIUM, 10 LOW) — significant increase from prior 30. New models: GLM-5.2,
-    Claude Haiku 4.5, deepseek-v4-flash, MiniMax-M3 1M ctx, qwen3.7-plus, Kimi K2.7
-    Code, Gemma 4.'
+  upgrade_notes: 'OpenClaw 2026.6.9 stable released 2026-06-21 (422 PRs since 2026.6.8). Local CLI
+    at 2026.6.8 — 1 stable behind. Hermes Agent latest is v0.17.0 (v2026.6.19); local
+    remains v0.14.0 (v2026.5.16) — 3 stable releases behind. Active dev on Hermes main:
+    auth failover on 401/403, background delegation fan-out, compression abort on auth
+    failure. npm latest: 2026.6.9, beta: 2026.6.9-beta.1. Security advisories: OpenClaw
+    30 GHSA (10 HIGH, 18 MEDIUM, 2 LOW), Hermes 0 — no change.'
