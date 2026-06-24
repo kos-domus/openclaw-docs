@@ -1832,3 +1832,18 @@ Good no-session maintenance run. The queue was clean, so the right editorial cho
 - No new docs or major changes beyond meta refresh (already committed in prior runs or minimal).
 - Repository clean.
 
+## 2026-06-24 - SKIP docs merge, upstream advanced (OpenClaw v2026.6.10 released today)
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/` (0 ready, ~62 processed). No Diátaxis docs were updated and no session status flips were needed.
+- `docs/index.yaml` was left untouched (last generated 2026-06-06).
+
+### Upstream consistency check
+- Local OpenClaw CLI: `2026.6.8 (844f405)` — stable release `v2026.6.10` published today (2026-06-24).
+- npm stable: advanced to `2026.6.10`.
+- Hermes Agent: latest `v2026.6.19` (unchanged since 2026-06-19). Local remains on `v0.14.0` (v2026.5.16) — still ~3 releases behind.
+- Docs site: `docs.openclaw.ai` reachable. Key pages (`/configuration`, `/skills`, `/mcp`) return 200.
+- Updated `docs/meta/upstream-version.yaml` with today's release data.
+
+### Self-assessment
+Clean daily run with no new sessions to elaborate. The real signal is the fresh stable release of OpenClaw v2026.6.10 today — local CLI should be upgraded soon to stay current. Hermes debt remains the larger gap. No docs churn, no false positives in processing pipeline. Consistent with previous SKIP runs.
