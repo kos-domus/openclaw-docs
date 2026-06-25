@@ -1,10 +1,10 @@
-last_check: '2026-06-23'
+last_check: 2026-06-25
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.6.9
-    last_known_release_date: '2026-06-21'
+    last_known_version: 2026.6.10
+    last_known_release_date: '2026-06-24'
     last_known_beta_version: 2026.6.9-beta.1
     last_known_beta_release_date: '2026-06-19'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.6.9
+    last_known_version: 2026.6.10
     last_known_beta: 2026.6.9-beta.1
     permanent: true
     check_methods:
@@ -74,15 +74,15 @@ installed:
   hermes_version: 0.14.0
   hermes_tag: v2026.5.16
   upgrade_notes: "OpenClaw 2026.6.9 stable released 2026-06-21 (422 PRs since 2026.6.8).\
-    \ Local CLI at 2026.6.8 \u2014 1 stable behind. Hermes Agent latest is v0.17.0\
+    \ Local CLI at 2026.6.8 \u2014 now in sync. Hermes Agent latest is v0.17.0\
     \ (v2026.6.19); local remains v0.14.0 (v2026.5.16) \u2014 3 stable releases behind.\
     \ Active dev on Hermes main: auth failover on 401/403, background delegation fan-out,\
-    \ compression abort on auth failure. npm latest: 2026.6.9, beta: 2026.6.9-beta.1.\
+    \ compression abort on auth failure. npm latest: 2026.6.10, beta: 2026.6.9-beta.1.\
     \ Security advisories: OpenClaw 30 GHSA (10 HIGH, 18 MEDIUM, 2 LOW), Hermes 0\
     \ \u2014 no change."
 github:
-  last_known_version: 2026.6.9
-  last_known_release_date: '2026-06-21'
+  last_known_version: 2026.6.10
+  last_known_release_date: '2026-06-24'
   last_known_beta_version: 2026.6.10-beta.2
   last_known_beta_release_date: '2026-06-22'
 hermes_agent:
