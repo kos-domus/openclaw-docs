@@ -1,4 +1,4 @@
-last_check: 2026-06-25
+last_check: 2026-06-27
 sources:
   github:
     repo: openclaw/openclaw
@@ -68,24 +68,29 @@ sources:
       tracks: lifecycle hooks, event hooks, automation
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-06-21T07:00:00+02:00'
+  checked_at: '2026-06-27T03:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
-  hermes_version: 0.14.0
-  hermes_tag: v2026.5.16
-  upgrade_notes: "OpenClaw 2026.6.9 stable released 2026-06-21 (422 PRs since 2026.6.8).\
-    \ Local CLI at 2026.6.8 \u2014 now in sync. Hermes Agent latest is v0.17.0\
-    \ (v2026.6.19); local remains v0.14.0 (v2026.5.16) \u2014 3 stable releases behind.\
-    \ Active dev on Hermes main: auth failover on 401/403, background delegation fan-out,\
-    \ compression abort on auth failure. npm latest: 2026.6.10, beta: 2026.6.9-beta.1.\
-    \ Security advisories: OpenClaw 30 GHSA (10 HIGH, 18 MEDIUM, 2 LOW), Hermes 0\
-    \ \u2014 no change."
+  hermes_version: 0.17.0
+  hermes_tag: v2026.6.19
+  hermes_main_behind: 870
+  upgrade_notes: "OpenClaw v2026.6.10 stable released 2026-06-24 (automatic fast mode,\
+    \ Z.ai GLM-5 routing fixes, provider catalog improvements). Local CLI at 2026.6.8\
+    \ \u2014 now 2 versions behind (6.9 + 6.10). Hermes Agent upgraded to v0.17.0\
+    \ (v2026.6.19) \u2014 IN SYNC with upstream. Main branch 870 commits ahead \u2014\
+    \ next release brewing. OpenClaw beta: v2026.6.11-beta.1 (Slack relay, Mattermost\
+    \ /oc_queue, per-DM model overrides). npm latest: 2026.6.10, beta: 2026.6.11-beta.1.\
+    \ Security advisories: OpenClaw 30 GHSA (10 HIGH, 18 MEDIUM, 2 LOW, all from 2026-05-28),\
+    \ Hermes 0 \u2014 no change since last check."
 github:
   last_known_version: 2026.6.10
   last_known_release_date: '2026-06-24'
-  last_known_beta_version: 2026.6.10-beta.2
-  last_known_beta_release_date: '2026-06-22'
+  last_known_beta_version: 2026.6.11-beta.1
+  last_known_beta_release_date: '2026-06-24'
 hermes_agent:
   last_known_version: 0.17.0
   last_known_tag: v2026.6.19
   last_known_release_date: '2026-06-19'
+  alpha_tags:
+  - v2026.6.20-alpha.1
+  - v2026.6.21-alpha.1
