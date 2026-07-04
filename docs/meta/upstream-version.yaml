@@ -1,4 +1,4 @@
-last_check: 2026-06-30
+last_check: 2026-07-04
 sources:
   github:
     repo: openclaw/openclaw
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.17.0
-    last_known_tag: v2026.6.19
-    last_known_release_date: '2026-06-19'
+    last_known_version: 0.18.0
+    last_known_tag: v2026.7.1
+    last_known_release_date: '2026-07-01'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -74,23 +74,21 @@ installed:
   hermes_version: 0.17.0
   hermes_tag: v2026.6.19
   hermes_main_behind: 870
-  upgrade_notes: "OpenClaw v2026.6.10 stable released 2026-06-24 (automatic fast mode,\
-    \ Z.ai GLM-5 routing fixes, provider catalog improvements). Local CLI at 2026.6.8\
-    \ \u2014 now 2 versions behind (6.9 + 6.10). Hermes Agent upgraded to v0.17.0\
-    \ (v2026.6.19) \u2014 IN SYNC with upstream. Main branch 870 commits ahead \u2014\
-    \ next release brewing. OpenClaw beta: v2026.6.11-beta.1 (Slack relay, Mattermost\
-    \ /oc_queue, per-DM model overrides). npm latest: 2026.6.10, beta: 2026.6.11-beta.1.\
-    \ Security advisories: OpenClaw 30 GHSA (10 HIGH, 18 MEDIUM, 2 LOW, all from 2026-05-28),\
-    \ Hermes 0 \u2014 no change since last check."
+  upgrade_notes: "Hermes Agent v0.18.0 (v2026.7.1) 'The Judgment Release' released 2026-07-01\
+    \ — MoA first-class, self-verification, /learn, /journey, background delegation\
+    \ fan-out, scale-to-zero gateway, Google Vertex AI. 1720 commits, 998 PRs, 949\
+    \ issues closed, P0/P1 zero. Local Hermes at 0.17.0 — 2132 commits behind. OpenClaw\
+    \ v2026.6.11 stable (30 Jun) — local CLI at 2026.6.8, 3 versions behind. New beta\
+    \ v2026.7.1-beta.1 (GPT-5.6 support). npm: latest 2026.6.11, beta 2026.7.1-beta.1.\
+    \ Security: 30 GHSA (22 HIGH, 8 MEDIUM), 12 net new HIGH this cycle. Hermes: 0\
+    \ advisories."
 github:
-  last_known_version: 2026.6.10
-  last_known_release_date: '2026-06-24'
-  last_known_beta_version: 2026.6.11-beta.1
-  last_known_beta_release_date: '2026-06-24'
+  last_known_version: 2026.6.11
+  last_known_release_date: '2026-06-30'
+  last_known_beta_version: 2026.7.1-beta.1
+  last_known_beta_release_date: '2026-07-02'
 hermes_agent:
-  last_known_version: 0.17.0
-  last_known_tag: v2026.6.19
-  last_known_release_date: '2026-06-19'
-  alpha_tags:
-  - v2026.6.20-alpha.1
-  - v2026.6.21-alpha.1
+  last_known_version: 0.18.0
+  last_known_tag: v2026.7.1
+  last_known_release_date: '2026-07-01'
+  alpha_tags: []

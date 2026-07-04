@@ -1875,3 +1875,18 @@ Clean SKIP run. The primary value today was refreshing the upstream tracking met
 ### Self-assessment
 Clean daily run. Zero new sessions to process. Pipeline healthy, no false positives detected in status scanning. Documentation Engine idle but consistent. No git changes committed today.
 
+
+---
+
+## 2026-07-04 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — nessuna elaborazione docs necessaria.
+
+**Upstream version check:** Il file `docs/meta/upstream-version.yaml` è stato aggiornato dal cron di release monitoring. cambiamenti chiave:
+
+- **Hermes Agent** v0.17.0 → **v0.18.0** (v2026.7.1, "The Judgment Release", 2026-07-01): MoA first-class, self-verification, /learn, /journey, background delegation fan-out, scale-to-zero gateway, Google Vertex AI. 1720 commit, 998 PR, 949 issue chiuse, P0/P1 a zero. Locale fermo a 0.17.0 — **2132 commit di ritardo**.
+- **OpenClaw** v2026.6.10 → **v2026.6.11** stable (30 giu). Beta: v2026.7.1-beta.1 (GPT-5.6 support). Locale a 2026.6.8 — 3 versioni dietro.
+- **Security:** 30 GHSA per OpenClaw (22 HIGH, 8 MEDIUM — 12 HIGH net-new questo ciclo). Hermes: 0 advisories.
+
+**Self-assessment:** KB in stato consistente. Nessuna sessione in coda. L'update upstream indica che Hermes v0.18.0 è un release importante (feature MoA + self-verification) — Rakki dovrebbe valutare l'upgrade del runtime locale. Il divario con upstream si allarga (2132 commit); bassa urgenza ma da pianificare.
+
