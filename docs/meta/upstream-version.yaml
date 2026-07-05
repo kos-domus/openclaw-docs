@@ -1,4 +1,4 @@
-last_check: 2026-07-04
+last_check: 2026-07-05
 sources:
   github:
     repo: openclaw/openclaw
@@ -74,14 +74,15 @@ installed:
   hermes_version: 0.17.0
   hermes_tag: v2026.6.19
   hermes_main_behind: 870
-  upgrade_notes: "Hermes Agent v0.18.0 (v2026.7.1) 'The Judgment Release' released 2026-07-01\
+  upgrade_notes: "Hermes Agent v0.18.0 (v2026.7.1) 'The Judgment Release' (Jul 1)\
     \ — MoA first-class, self-verification, /learn, /journey, background delegation\
     \ fan-out, scale-to-zero gateway, Google Vertex AI. 1720 commits, 998 PRs, 949\
-    \ issues closed, P0/P1 zero. Local Hermes at 0.17.0 — 2132 commits behind. OpenClaw\
-    \ v2026.6.11 stable (30 Jun) — local CLI at 2026.6.8, 3 versions behind. New beta\
-    \ v2026.7.1-beta.1 (GPT-5.6 support). npm: latest 2026.6.11, beta 2026.7.1-beta.1.\
-    \ Security: 30 GHSA (22 HIGH, 8 MEDIUM), 12 net new HIGH this cycle. Hermes: 0\
-    \ advisories."
+    \ issues closed, P0/P1 zero. Local Hermes still at 0.17.0 — 2206 commits behind\
+    \ (1 major behind). OpenClaw v2026.6.11 stable (Jun 30) — local CLI at 2026.6.8,\
+    \ 3 versions behind; 15 security advisories (12 HIGH) in v2026.6.11 not applied\
+    \ locally. Beta v2026.7.1-beta.1 (Jul 2): GPT-5.6, openclaw attach, Telegram Codex,\
+    \ event-driven cron, iOS 26. npm: latest 2026.6.11, beta 2026.7.1-beta.1. Security:\
+    \ 30 GHSA total (22 HIGH, 8 MEDIUM), no new since last cycle. Hermes: 0 advisories."
 github:
   last_known_version: 2026.6.11
   last_known_release_date: '2026-06-30'
