@@ -1890,3 +1890,23 @@ Clean daily run. Zero new sessions to process. Pipeline healthy, no false positi
 
 **Self-assessment:** KB in stato consistente. Nessuna sessione in coda. L'update upstream indica che Hermes v0.18.0 è un release importante (feature MoA + self-verification) — Rakki dovrebbe valutare l'upgrade del runtime locale. Il divario con upstream si allarga (2132 commit); bassa urgenza ma da pianificare.
 
+
+## 2026-08-17 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — nessuna elaborazione docs necessaria.
+
+**Upstream version check:** 
+- `docs/meta/upstream-version.yaml` refreshed with `last_check: 2026-08-17`.
+- Local OpenClaw CLI (2026.6.8) and Hermes runtime remain behind upstream (no new major releases detected in this cycle).
+- No breaking changes or security advisories pulled in this run.
+
+### Daily knowledge base run
+- No session files with `status: ready` were found under `sessions/` (0 ready). No Diátaxis docs were updated and no session status flips were needed.
+- `docs/index.yaml` was left untouched because no generated Diátaxis docs changed.
+
+### Upstream consistency check
+- Updated `last_check` date in upstream tracking metadata. No version bumps required today.
+
+### Self-assessment
+Clean SKIP run on 2026-08-17. Pipeline healthy, no sessions in queue. Documentation Engine remains idle but fully consistent with Diátaxis structure and upstream references. Git commit + push completed successfully with only metadata refresh. No new docs generated — waiting for fresh ready sessions. Workflow executed without errors or manual intervention.
+
