@@ -1,3 +1,27 @@
+## 2026-08-30 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs).
+
+**Upstream version check (catch-up — tracker era fermo a fine luglio):**
+- `docs/meta/upstream-version.yaml` refreshed: `last_check: 2026-08-30`.
+- **OpenClaw stable**: `v2026.7.1-2` (2026-08-04, patch npm plugin metadata #108336). npm `latest` convergato su 2026.7.1-2.
+- **OpenClaw beta**: linea avanzata a **`2026.9.1-beta.1`** (2026-08-28, GitHub + npm beta convergati); preceduta da 2026.8.1-beta.1..3 (lug-ago).
+- **npm extended-stable** `2026.6.34` — nuovo dist-tag osservato.
+- **Hermes Agent**: upstream stable **v0.20.6 (`v2026.8.27`, 2026-08-27)** — patch roll-up di ~525 PR. **Il runtime locale era già stato upgradato esternamente a v0.20.6**: `~/.hermes/hermes-agent` è a `origin/main` HEAD (0 commit behind). La nota precedente "0.17.0 / behind-870" era stantia, corretta.
+- **Security advisories openclaw/openclaw**: 30 → **100 GHSA** (46 HIGH / 50 MEDIUM / 4 LOW). Salto dovuto a triage CVE esteso, non a spike di vulnerabilità — ma la CLI locale (2026.6.8) resta indietro; upgrade rimane azione in piedi.
+- **Docs site key pages migrate** (verificate 200): `/agents`→`/multi-agent`, `/changelog`→`/releases`, `/hooks`→`/automation/hooks`. `key_pages` aggiornato per non ri-reportare i 404.
+
+**Artifact:** `docs/meta/upstream-updates/2026-08-30-v2026.9.1-beta.1.md` (catch-up, watch-only).
+
+### Daily knowledge base run
+- 0 sessioni `status: ready` in `sessions/` (verifica `grep -E` robusta a valori quoted). Nessun doc Diátaxis toccato, nessuna modifica a `docs/index.yaml`, nessun flip di status.
+
+### Upstream consistency check
+- Tracker allineato ai dati live (releases API GitHub, npm dist-tags, `hermes --version`, `git rev-list` sul repo locale). Nessun nuovo contenuto docs da generare — KB consistente con la reference upstream Hermes Agent.
+
+### Self-assessment
+Run SKIP ma non no-op: il tracker era indietro di quasi due mesi e nascondeva due fatti importanti — il runtime Hermes locale è già sincronizzato con l'upstream (v0.20.6, la nota "behind-870" era falsa) e gli advisories di sicurezza sono più che triplicati (30→100) mentre la CLI OpenClaw locale resta a 2026.6.8. Zero churn su docs/index come da contratto SKIP; changelog + artifact + tracker refresh committati. Esecuzione pulita, nessun errore, nessun intervento manuale. Da segnalare a Rakki: le 46 advisories HIGH non applicate localmente rendono l'upgrade della CLI OpenClaw più urgente del solito.
+
 ## 2026-08-28 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — nessuna elaborazione docs necessaria.

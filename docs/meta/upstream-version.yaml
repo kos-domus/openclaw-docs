@@ -1,16 +1,16 @@
-last_check: '2026-08-28'
+last_check: '2026-08-30'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.7.1-2
     last_known_release_date: '2026-08-04'
-    last_known_beta_version: 2026.7.1-beta.1
-    last_known_beta_release_date: '2026-07-02'
+    last_known_beta_version: 2026.9.1-beta.1
+    last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: 2026.6.19-alpha.2
-    last_known_prerelease_tag_date: '2026-06-19'
+    last_known_prerelease_tag: 2026.9.1-beta.1
+    last_known_prerelease_tag_date: '2026-08-28'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,8 +25,9 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.6.11
-    last_known_beta: 2026.7.1-beta.1
+    last_known_version: 2026.7.1-2
+    last_known_beta: 2026.9.1-beta.1
+    last_known_extended_stable: 2026.6.34
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -34,9 +35,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.18.0
-    last_known_tag: v2026.7.1
-    last_known_release_date: '2026-07-01'
+    last_known_version: 0.20.6
+    last_known_tag: v2026.8.27
+    last_known_release_date: '2026-08-27'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -54,34 +55,34 @@ sources:
       tracks: settings, config files, environment variables
     - path: /skills
       tracks: ClawHub skills, custom skills, skill API
-    - path: /agents
-      tracks: agent architecture, multi-agent, workspaces
+    - path: /multi-agent
+      tracks: agent architecture, multi-agent, workspaces (migrated from /agents)
     - path: /channels
       tracks: WhatsApp, Telegram, Discord integrations
     - path: /security
       tracks: auth, encryption, credential management
-    - path: /changelog
-      tracks: release notes, breaking changes, deprecations
+    - path: /releases
+      tracks: release notes, breaking changes, deprecations (migrated from /changelog)
     - path: /mcp
       tracks: MCP server configuration, tool providers
-    - path: /hooks
-      tracks: lifecycle hooks, event hooks, automation
+    - path: /automation/hooks
+      tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-08-25T07:31:00+02:00'
+  checked_at: '2026-08-30T07:38:54+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
-  hermes_version: 0.17.0
-  hermes_tag: v2026.6.19
-  hermes_main_behind: 870
-  upgrade_notes: "Hermes Agent v0.18.0 (v2026.7.1) 'The Judgment Release' (Jul 1) — MoA first-class, self-verification, /learn, /journey, background delegation fan-out, scale-to-zero gateway, Google Vertex AI. 1720 commits, 998 PRs, 949 issues closed, P0/P1 zero. Local Hermes still at 0.17.0 — 2206 commits behind (1 major behind). OpenClaw v2026.6.11 stable (Jun 30) — local CLI at 2026.6.8, 3 versions behind; 15 security advisories (12 HIGH) in v2026.6.11 not applied locally. Beta v2026.7.1-beta.1 (Jul 2): GPT-5.6, openclaw attach, Telegram Codex, event-driven cron, iOS 26. npm: latest 2026.6.11, beta 2026.7.1-beta.1. Security: 30 GHSA total (22 HIGH, 8 MEDIUM), no new since last cycle. Hermes: 0 advisories."
+  hermes_version: 0.20.6
+  hermes_tag: v2026.8.27
+  hermes_main_behind: 0
+  upgrade_notes: "Local Hermes runtime upgraded externally to v0.20.6 (v2026.8.27, Aug 27) — install at ~/.hermes/hermes-agent is at origin/main HEAD, zero commits behind upstream. OpenClaw stable is v2026.7.1-2 (Aug 4 patch; npm latest converged). Local OpenClaw CLI still 2026.6.8 — behind npm extended-stable 2026.6.34 and stable 2026.7.1-2. Beta line advanced: 2026.8.1-beta.1..3 (Jul-Aug) then 2026.9.1-beta.1 (Aug 28, npm beta converged). Alpha line stale since 2026.6.19-alpha.2. Security advisories grew to 100 GHSA (46 HIGH, 50 MEDIUM, 4 LOW) — large jump from 30 last cycle reflects expanded triage; unapplied locally on CLI 2026.6.8. Docs site: /agents→/multi-agent, /changelog→/releases, /hooks→/automation/hooks all verified 200."
 github:
-  last_known_version: 2026.6.11
-  last_known_release_date: '2026-06-30'
-  last_known_beta_version: 2026.7.1-beta.1
-  last_known_beta_release_date: '2026-07-02'
+  last_known_version: 2026.7.1-2
+  last_known_release_date: '2026-08-04'
+  last_known_beta_version: 2026.9.1-beta.1
+  last_known_beta_release_date: '2026-08-28'
 hermes_agent:
-  last_known_version: 0.18.0
-  last_known_tag: v2026.7.1
-  last_known_release_date: '2026-07-01'
+  last_known_version: 0.20.6
+  last_known_tag: v2026.8.27
+  last_known_release_date: '2026-08-27'
   alpha_tags: []
