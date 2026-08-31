@@ -1,4 +1,29 @@
-## 2026-08-30 — Daily KB Processing (automated)
+## 2026-08-31 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**⚠️ STABLE ADVANCE rilevato e tracciato: OpenClaw `v2026.8.1` promosso stable oggi (2026-08-31 03:30 UTC).**
+- GitHub release live + npm `latest` convergato su 2026.8.1 (dist-tags: `latest` 2026.8.1, `beta` 2026.9.1-beta.1, `extended-stable` 2026.6.34).
+- La promotion completa il segnale "pending" del run precedente: tag finalizzato Aug 30 23:53 UTC, release 404 alle 04:03 CEST di stamattina, live alle 07:31 CEST. Sequenza tag→release→npm normale, non anomalia.
+- **Artifact**: `docs/meta/upstream-updates/2026-08-31-v2026.8.1.md` (stable advance, con breaking changes e decisioni di upgrade).
+- **Tracker**: `docs/meta/upstream-version.yaml` aggiornato (stable GitHub/npm/github → 2026.8.1, `checked_at` 07:31, `hermes_main_behind` 33→68). Nota: il tracker aveva modifiche uncommitted dalle 04:03 di stamattina (probabile run interrotto o Release Monitor) — verificate contro i dati live prima di fidarsi, come da lezione 2026-08-30.
+
+**Contenuto rilevante della release (per operatori):**
+- **2 breaking migrations** via `openclaw doctor --fix`: rimozione plugin OpenProse + `/prose`; migrazione route `codex/*`→`openai/*` (provider config, sessioni, automation routes).
+- **Defaults cambiati**: grounded dreaming ON, self-learning ON, session reset conserva le conversazioni, concorrenza CPU-scaled 8-16.
+- **Deprecation gates SDK subpath dal 2026-09-01** (domani) per plugin esterni.
+- CLI locale 2026.6.8 ora **tre minor lines** dietro (6.8→7.1-2→8.1) con 100 advisories non applicate — upgrade da pianificare, non blind bump.
+
+**Upstream consistency check:**
+- Advisories flat a 100 GHSA (46 HIGH / 50 MEDIUM / 4 LOW) — nessun nuovo questo ciclo.
+- Hermes Agent: v0.20.6 locale, origin/main ora +68 commit avanti (a9c783f, fix desktop group-holds) — era +33 stamattina alle 04:03.
+- Docs site: tutte le 8 key pages HTTP 200.
+- Nessun nuovo contenuto docs da generare senza sessioni ready o decisione di upgrade locale.
+
+### Self-assessment
+Run SKIP per l'ingestion ma con evento significativo: stable advance v2026.8.1 con breaking changes multiplicativi per un fleet che usa provider OpenAI subscription-backed. Esecuzione pulita: discovery robusta (`grep -E` quoted-proof), verifica live PRIMA di fidarsi del tracker uncommitted (che descriveva la promotion come ancora pending — corretto con dati freschi), zero churn su docs/index come da contratto SKIP. `memories/` untracked lasciato fuori dal commit (artifact Release Monitor, non parte di questo run). Da segnalare a Rakki: l'upgrade della CLI OpenClaw è ora bloccato su una decisione, non su una mancanza di informazioni — le due migrazioni breaking vanno pianificate con la chain v5 OAuth in mente.
+
+
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs).
 

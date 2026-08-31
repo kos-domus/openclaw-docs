@@ -1,10 +1,10 @@
-last_check: '2026-08-30'
+last_check: '2026-08-31'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.7.1-2
-    last_known_release_date: '2026-08-04'
+    last_known_version: 2026.8.1
+    last_known_release_date: '2026-08-31'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.7.1-2
+    last_known_version: 2026.8.1
     last_known_beta: 2026.9.1-beta.1
     last_known_extended_stable: 2026.6.34
     permanent: true
@@ -69,16 +69,16 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-08-30T07:38:54+02:00'
+  checked_at: '2026-08-31T07:31:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 0
-  upgrade_notes: "Local Hermes runtime upgraded externally to v0.20.6 (v2026.8.27, Aug 27) — install at ~/.hermes/hermes-agent is at origin/main HEAD, zero commits behind upstream. OpenClaw stable is v2026.7.1-2 (Aug 4 patch; npm latest converged). Local OpenClaw CLI still 2026.6.8 — behind npm extended-stable 2026.6.34 and stable 2026.7.1-2. Beta line advanced: 2026.8.1-beta.1..3 (Jul-Aug) then 2026.9.1-beta.1 (Aug 28, npm beta converged). Alpha line stale since 2026.6.19-alpha.2. Security advisories grew to 100 GHSA (46 HIGH, 50 MEDIUM, 4 LOW) — large jump from 30 last cycle reflects expanded triage; unapplied locally on CLI 2026.6.8. Docs site: /agents→/multi-agent, /changelog→/releases, /hooks→/automation/hooks all verified 200."
+  hermes_main_behind: 68
+  upgrade_notes: "STABLE ADVANCE: v2026.8.1 promoted 2026-08-31 03:30 UTC — GitHub release live, npm latest converged (was 404-pending at 04:03 CEST check; tag→release→npm completed within hours). Two breaking migrations on upgrade: OpenProse plugin removal (doctor --fix) and codex/*→openai/* route migration (doctor --fix). Defaults changed: grounded dreaming on, self-learning on, session reset keeps conversations, CPU-scaled concurrency 8-16. SDK subpath deprecation gates 2026-09-01. Local CLI 2026.6.8 now three minor lines behind (6.8→7.1-2→8.1) with 100 unapplied advisories — upgrade planning needed, not a blind bump. Beta line: 2026.9.1-beta.1 (Aug 28). Alpha stale. Advisories flat 100 GHSA (46H/50M/4L). Hermes: v0.20.6 installed, origin/main now +68 ahead (a9c783f Aug 31, desktop group-holds) — was +33 at 04:03 check. Docs site: all 8 key pages 200."
 github:
-  last_known_version: 2026.7.1-2
-  last_known_release_date: '2026-08-04'
+  last_known_version: 2026.8.1
+  last_known_release_date: '2026-08-31'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
