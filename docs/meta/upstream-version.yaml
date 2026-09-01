@@ -1,4 +1,4 @@
-last_check: '2026-08-31'
+last_check: '2026-09-01'
 sources:
   github:
     repo: openclaw/openclaw
@@ -35,9 +35,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.20.6
-    last_known_tag: v2026.8.27
-    last_known_release_date: '2026-08-27'
+    last_known_version: 0.21.0
+    last_known_tag: v2026.8.31
+    last_known_release_date: '2026-08-31'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -69,20 +69,20 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-08-31T07:31:00+02:00'
+  checked_at: '2026-09-01T07:30:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 68
-  upgrade_notes: "STABLE ADVANCE: v2026.8.1 promoted 2026-08-31 03:30 UTC — GitHub release live, npm latest converged (was 404-pending at 04:03 CEST check; tag→release→npm completed within hours). Two breaking migrations on upgrade: OpenProse plugin removal (doctor --fix) and codex/*→openai/* route migration (doctor --fix). Defaults changed: grounded dreaming on, self-learning on, session reset keeps conversations, CPU-scaled concurrency 8-16. SDK subpath deprecation gates 2026-09-01. Local CLI 2026.6.8 now three minor lines behind (6.8→7.1-2→8.1) with 100 unapplied advisories — upgrade planning needed, not a blind bump. Beta line: 2026.9.1-beta.1 (Aug 28). Alpha stale. Advisories flat 100 GHSA (46H/50M/4L). Hermes: v0.20.6 installed, origin/main now +68 ahead (a9c783f Aug 31, desktop group-holds) — was +33 at 04:03 check. Docs site: all 8 key pages 200."
+  hermes_main_behind: 454
+  upgrade_notes: "2026-09-01: HERMES v0.21.0 'Pantheon' (v2026.8.31, Aug 31 19:29 UTC) released — installed 0.20.6. Verified deltas: v0.20.6→v0.21.0 tag-to-tag = 911 commits; local HEAD 359 behind tag; origin/main advanced to 454 ahead of local (73 was pre-fetch stale ref, 68 was yesterday). Rollup ~5800 commits/~2475 PR since v0.20.0 (per release notes); highlights: cron memory+continuity, live subagent steering, hermes peer bot-to-bot DMs, Bot Mode, MCP command center, desktop browser drive, 6 new providers, security hardening (protected instruction files, redaction sweep, Blender MCP removed after upstream compromise). No breaking migration for git installs; plan 'hermes update' + gateway restart. OpenClaw stable unchanged (2026.8.1, npm converged). Blog post 'OpenClaw 2.0, Accidentally' confirmed live on openclaw.ai/blog (launch narrative: 933 contributors, 16k+ PRs, browser app rebuilt, shared cloud sessions). SDK subpath deprecation gates NOW ACTIVE (2026-09-01) — no impact locally (no custom OpenClaw plugins). Dependabot alerts API 403 without admin:repo_hook scope (advisories 100 GHSA: 46H/50M/4L as last verified). Docs site: all 8 key pages 200."
 github:
   last_known_version: 2026.8.1
   last_known_release_date: '2026-08-31'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
-  last_known_version: 0.20.6
-  last_known_tag: v2026.8.27
-  last_known_release_date: '2026-08-27'
+  last_known_version: 0.21.0
+  last_known_tag: v2026.8.31
+  last_known_release_date: '2026-08-31'
   alpha_tags: []

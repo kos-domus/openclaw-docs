@@ -1,3 +1,24 @@
+## 2026-09-01 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Evento: Hermes Agent v0.21.0 'Pantheon' (v2026.8.31, Aug 31 19:29 UTC) — upstream release rilevata e tracciata.**
+- Tracker `docs/meta/upstream-version.yaml` aggiornato: hermes last_known_version 0.20.6 → **0.21.0**, tag v2026.8.31, release date 2026-08-31.
+- **Correzione claim verificati**: il diff uncommitted delle 04:05 (run interrotto / Release Monitor) claimava "911 commits behind tag, repo 73 behind main". Verifica live: 911 è il **delta tag-to-tag** v0.20.6→v0.21.0; il locale è **359 behind il tag**; e "73 behind main" era un ref stale pre-fetch — dopo `git fetch`, origin/main è **454 ahead**. Tutti e tre i numeri ora nel tracker con semantica esplicita.
+- Rollup ~5800 commits / ~2475 PR since v0.20.0 (confermato dalle release notes ufficiali). Highlight operatori-rilevanti: cron memory+continuity, live subagent steering, `hermes peer` bot-to-bot DMs, Bot Mode, MCP command center, 6 nuovi provider, security hardening (protected instruction files, redaction sweep, Blender MCP rimosso dopo compromise upstream).
+- Nessuna breaking migration per installazioni git → azione pianificata: `hermes update` + gateway restart (non eseguita da questo run — fuori scope docs, decisione Rakki).
+
+**Upstream consistency check:**
+- OpenClaw stable fermo a `v2026.8.1` (GitHub + npm `latest` convergati); beta `2026.9.1-beta.1` (Aug 28); alpha stale. CLI locale sempre 2026.6.8 (tre minor lines dietro).
+- Advisories flat a 100 GHSA (46 HIGH / 50 MEDIUM / 4 LOW). Dependabot API 403 senza scope `admin:repo_hook` — count non verificabile via gh, 100 resta last-known.
+- Blog post 'OpenClaw 2.0, Accidentally' confermato live su openclaw.ai/blog (933 contributors, 16k+ PRs, browser app rebuilt).
+- SDK subpath deprecation gates attivi da oggi (2026-09-01) — nessun impatto locale (zero plugin OpenClaw custom).
+- Docs site: tutte le 8 key pages HTTP 200 (incluse /releases e /releases/2026.8.1).
+
+### Self-assessment
+Run SKIP per l'ingestion ma con verifica approfondita: il tracker conteneva un diff uncommitted dalle 04:05 che descriveva la release Hermes 0.21.0 con numeri errati/ambigui — "911 behind tag" era in realtà il tag-to-tag delta, e "73 behind main" era misurato su ref stale. Il fetch ha rivelato il valore reale (454). Entrambe le discrepanze corrette con semantica esplicita prima del commit: nessun claim non verificato entra nel repo. Zero churn su docs/index come da contratto SKIP. Un inciampo gestito: una patch `upgrade_notes` mal costruita ha introdotto testo duplicato/corrotto per un turno — rilevato dal diff, ripristinato immediatamente, risultato finale pulito (verificato riga per riga). `memories/` untracked lasciato fuori dal commit (artifact Release Monitor). Da segnalare a Rakki: Hermes 0.21.0 è un upgrade non-breaking che porta esattamente le feature che questa fleet usa (cron memory per i daily run, steering dei subagenti) — `hermes update` + restart gateway è basso rischio e alto valore.
+
+
 ## 2026-08-31 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
