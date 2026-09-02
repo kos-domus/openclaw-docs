@@ -1,10 +1,10 @@
-last_check: '2026-09-01'
+last_check: '2026-09-02'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.8.1
-    last_known_release_date: '2026-08-31'
+    last_known_version: 2026.8.2
+    last_known_release_date: '2026-09-01'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.8.1
+    last_known_version: 2026.8.2
     last_known_beta: 2026.9.1-beta.1
     last_known_extended_stable: 2026.6.34
     permanent: true
@@ -69,16 +69,16 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-01T07:30:00+02:00'
+  checked_at: '2026-09-02T04:03:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 454
-  upgrade_notes: "2026-09-01: HERMES v0.21.0 'Pantheon' (v2026.8.31, Aug 31 19:29 UTC) released — installed 0.20.6. Verified deltas: v0.20.6→v0.21.0 tag-to-tag = 911 commits; local HEAD 359 behind tag; origin/main advanced to 454 ahead of local (73 was pre-fetch stale ref, 68 was yesterday). Rollup ~5800 commits/~2475 PR since v0.20.0 (per release notes); highlights: cron memory+continuity, live subagent steering, hermes peer bot-to-bot DMs, Bot Mode, MCP command center, desktop browser drive, 6 new providers, security hardening (protected instruction files, redaction sweep, Blender MCP removed after upstream compromise). No breaking migration for git installs; plan 'hermes update' + gateway restart. OpenClaw stable unchanged (2026.8.1, npm converged). Blog post 'OpenClaw 2.0, Accidentally' confirmed live on openclaw.ai/blog (launch narrative: 933 contributors, 16k+ PRs, browser app rebuilt, shared cloud sessions). SDK subpath deprecation gates NOW ACTIVE (2026-09-01) — no impact locally (no custom OpenClaw plugins). Dependabot alerts API 403 without admin:repo_hook scope (advisories 100 GHSA: 46H/50M/4L as last verified). Docs site: all 8 key pages 200."
+  hermes_main_behind: 658
+  upgrade_notes: "2026-09-02: OpenClaw stable 2026.8.2 released (Sep 1, 16:00 UTC — after yesterday's check). Consolidation release: Linux desktop companion (.deb/AppImage, system tray Quick Chat), Sharp 0.35.4 security bump (image decoding vulns), safer upgrades/recovery, cron robustness fixes, reply completion after tool work, voice reliability, session visibility default change (unsandboxed same-agent sessions now see each other — set tools.sessions.visibility if shared-agent), MCP response size limits, Hermes migration tooling fix (upstream actively maintains OpenClaw→Hermes bridge). Local CLI stays 2026.6.8 (KB reference only). Hermes: still 0.20.6 installed vs 0.21.0 tag; local repo now 658 behind origin/main (main +299 commits since v0.21.0, fast pace post-Pantheon; behind-tag unchanged at 359). Upgrade pending — run 'hermes update' + gateway restart. No new security advisories (100 GHSA total: 46H/50M/4L unchanged since Jun 30)."
 github:
-  last_known_version: 2026.8.1
-  last_known_release_date: '2026-08-31'
+  last_known_version: 2026.8.2
+  last_known_release_date: '2026-09-01'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:

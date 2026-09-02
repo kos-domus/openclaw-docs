@@ -1,3 +1,22 @@
+## 2026-09-02 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**⚠️ STABLE ADVANCE: OpenClaw `v2026.8.2` (2026-09-01 16:00 UTC) — rilevato e tracciato.**
+- GitHub release live + npm `latest` convergato su 2026.8.2 il giorno stesso (dist-tags: `latest` 2026.8.2, `beta` 2026.9.1-beta.1, `extended-stable` 2026.6.34).
+- Release di consolidamento un giorno dopo 2026.8.1: nessuna breaking change per questa fleet (zero plugin OpenClaw custom; SDK subpath gates 2026-09-01 confermati non-evento).
+- **Artifact**: `docs/meta/upstream-updates/2026-09-02-v2026.8.2.md` — highlight: Linux desktop companion, Sharp 0.35.4 security bump, session visibility default change (watch item multi-agent), safer upgrades/recovery, reply completion, cron robustness, MCP response limits, fix tooling migrazione OpenClaw→Hermes (upstream mantiene attivamente il bridge).
+- **Tracker**: il run ha trovato `docs/meta/upstream-version.yaml` già modificato nel worktree (run interrotto 04:03 / Release Monitor). Ogni claim verificato contro API live prima del commit, come da lezione 2026-08-31: stable 2026.8.2 ✓, npm ✓, CLI 2026.6.8 ✓, advisories 100 (46H/50M/4L) ✓. **Correzione**: `hermes_main_behind` 656 → **658** (main avanzato di 2 commit dopo il check delle 04:03; origin/main tip `00b2e03c`, Sep 1 21:46 CDT). Behind-tag v0.21.0 confermato invariato a 359.
+
+**Upstream consistency check:**
+- OpenClaw beta fermo a `2026.9.1-beta.1` (Aug 28); nessun nuovo alpha (ultimo tag non-beta: v2026.6.19-alpha.2, stale).
+- Hermes Agent: 0.21.0 (v2026.8.31) resta latest release; locale 0.20.6 (359 behind-tag, 658 behind-main) — upgrade ancora pendente, raccomandazione invariata.
+- Docs site: tutte le 8 key pages HTTP 200.
+- GitHub API rate-limit 429 intermittente sul fetch tags di hermes-agent (upstream attivo, many requests) — dietro-count verificato via `rev-list` post-fetch, nessun impatto sui dati.
+
+### Self-assessment
+Run SKIP pulito con verifica approfondita del diff pre-esistente: il tracker era già aggiornato alle 04:03 da un job parallelo (Release Monitor) con i dati giusti ma un behind-count già stantio di poche ore (656 vs 658 live). Il contratto della skill impone di verificare ogni claim contro i dati live prima di committare — fatto, delta corretto, semantica esplicita (658 behind-main / 359 behind-tag / +299 su main da v0.21.0). Artifact stable-advance scritto con solo contenuto verificato dalle release notes ufficiali. Zero churn su docs/index.yaml come da contratto SKIP. `memories/` untracked lasciato fuori dal commit (artifact Release Monitor). Nota operativa: il 429 rate-limit sul fetch dei tag è ricorrente con l'upstream Hermes in piena attività post-Pantheon — accettabile finché `rev-list` resta affidabile su ref già fetched. Da segnalare a Rakki: l'upgrade Hermes 0.20.6→0.21.0 resta la pending action principale (cron memory + steering = feature usate daily da questa fleet).
+
 ## 2026-09-01 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
