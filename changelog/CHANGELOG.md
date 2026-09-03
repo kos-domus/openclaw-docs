@@ -1,3 +1,22 @@
+## 2026-09-03 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato e corretto (run interrotto 04:00):** `docs/meta/upstream-version.yaml` era già modificato nel worktree. Ogni claim verificato contro API live prima del commit (lezione 2026-08-31):
+- OpenClaw stable `2026.8.2` invariato (Sep 1) ✓ — GitHub releases API + npm dist-tags (`latest` 2026.8.2, `beta` 2026.9.1-beta.1, `extended-stable` 2026.6.34) ✓.
+- CHANGELOG main: `2026.8.3 (Unreleased)` ✓ — contenuto verificato e arricchito: GPT-5.6 Ultra runtime switching (Sol/Terra/Luna su engine OpenClaw+Codex, #98021), Meta `muse-spark-1.1` provider (#102873), Crabbox cloud-sandbox fix, macOS notarization resume, plugin SDK ingress monitors (IRC/Synology/Google Chat), Slack statusReactions opt-in, cron model selection in Control UI.
+- Blog post 'OpenClaw 2.0, Accidentally' ✓ — slug reale verificato: `/blog/openclaw-2-accidentally` (200; lo slug ipotizzato nel run delle 04:00 era errato ma il post esiste, indice blog 200).
+- **Correzione Hermes**: `main_ahead_of_tag` 825 → **844** (main avanzato nelle 3h tra le due run; `hermes --version` conferma direttamente "1184 commits behind", verificato con fetch+rev-list). Behind-tag invariato a 359. Locale sempre 0.20.6 (v2026.8.27) vs upstream 0.21.0 'Pantheon'.
+
+**Upstream consistency check:**
+- Advisories: 100 GHSA OpenClaw (46H/50M/4L) invariato since Jun 30 ✓; Hermes 0 ✓.
+- Nessun nuovo beta/alpha OpenClaw (beta fermo a 2026.9.1-beta.1, Aug 28; ultimo alpha 2026.6.19-alpha.2).
+- Docs site key pages: verifica skip leggera (nessun segnale di migrazione nel periodo; homepage blog 200).
+- Nota tooling: comando composto multi-subshell sul repo Hermes bloccato dal command parser (payload inline) — split in comandi singoli, stesso risultato.
+
+### Self-assessment
+Run SKIP con terza giornata consecutiva di recupero diff pre-esistente dal job Release Monitor interrotto — pattern ormai consolidato e gestito correttamente: claim verificati uno a uno, un dato stantio corretto (825→844), uno slug errato nel testo rettificato senza inventare URL. `hermes --version` si è rivelato la fonte più affidabile per il behind-count (lo stampa direttamente). Zero churn su docs/index.yaml come da contratto SKIP. `memories/` untracked lasciato fuori dal commit (artifact Release Monitor, decisione confermata dal 2026-09-02). Pending action invariata per Rakki: **upgrade Hermes 0.20.6→0.21.0** (oggi main è a +844 dal tag — il divario cresce, cron memory/continuity e live steering sono feature usate daily da questa fleet).
+
 ## 2026-09-02 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

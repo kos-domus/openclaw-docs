@@ -1,4 +1,4 @@
-last_check: '2026-09-02'
+last_check: '2026-09-03'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,13 +69,13 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-02T04:03:00+02:00'
+  checked_at: '2026-09-03T07:30:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 658
-  upgrade_notes: "2026-09-02: OpenClaw stable 2026.8.2 released (Sep 1, 16:00 UTC — after yesterday's check). Consolidation release: Linux desktop companion (.deb/AppImage, system tray Quick Chat), Sharp 0.35.4 security bump (image decoding vulns), safer upgrades/recovery, cron robustness fixes, reply completion after tool work, voice reliability, session visibility default change (unsandboxed same-agent sessions now see each other — set tools.sessions.visibility if shared-agent), MCP response size limits, Hermes migration tooling fix (upstream actively maintains OpenClaw→Hermes bridge). Local CLI stays 2026.6.8 (KB reference only). Hermes: still 0.20.6 installed vs 0.21.0 tag; local repo now 658 behind origin/main (main +299 commits since v0.21.0, fast pace post-Pantheon; behind-tag unchanged at 359). Upgrade pending — run 'hermes update' + gateway restart. No new security advisories (100 GHSA total: 46H/50M/4L unchanged since Jun 30)."
+  hermes_main_behind: 1184
+  upgrade_notes: "2026-09-03: OpenClaw stable 2026.8.2 unchanged (Sep 1). CHANGELOG main now shows 2026.8.3 (Unreleased): GPT-5.6 Ultra runtime switching, Meta muse-spark-1.1 provider, Crabbox cloud-sandbox fix. New blog post 'OpenClaw 2.0, Accidentally' (Aug 30, Hannes Rudolph). Hermes v0.21.0 'Pantheon' (v2026.8.31, Aug 31) still NOT installed locally: 0.20.6 (v2026.8.27), 'hermes update' reports 1184 behind (live-verified 07:30 CEST via fetch+rev-list; main +844 past tag, corrected from stale 825 written by interrupted 04:00 run; behind-tag 359). Pantheon highlights: Bot Mode desktop, hermes peer bot-to-bot DMs, cron persistent memory + continuity, delegate_task live steer/stop, MCP command center, security hardening (write approval on AGENTS.md/skills/memory). UPGRADE PENDING — hermes update + gateway restart, snapshot ~/.hermes first. No new security advisories (100 GHSA OpenClaw unchanged since Jun 30, breakdown 46H/50M/4L live-verified; Hermes 0)."
 github:
   last_known_version: 2026.8.2
   last_known_release_date: '2026-09-01'
@@ -85,4 +85,4 @@ hermes_agent:
   last_known_version: 0.21.0
   last_known_tag: v2026.8.31
   last_known_release_date: '2026-08-31'
-  alpha_tags: []
+  main_ahead_of_tag: 844
