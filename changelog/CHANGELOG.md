@@ -1,3 +1,24 @@
+## 2026-09-04 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato e corretto (run interrotto 04:00):** `docs/meta/upstream-version.yaml` era già modificato nel worktree alla partenza. Ogni claim verificato contro API live prima del commit (lezione 2026-08-31):
+- **STABLE ADVANCE `2026.9.1`** (Sep 3, 18:31 UTC) ✓ — GitHub releases list: `v2026.9.1` prima entry, `prerelease: false`; npm `latest` 2026.9.1 allineato. Curiosità: l'endpoint `releases/latest` restituiva ancora `v2026.8.2` (cache lag ~11h) — la lista paginata è autoritativa; incluso nelle note dell'artifact.
+- **1.195 PRs** ✓ — contato dal body della release (`grep -cE 'PR #[0-9]+'` → 1195).
+- Contenuto release verificato ✓: `openclaw update` auto-rollback su Doctor fail + nota operativa (utenti su 2026.8.2 senza service manager: `openclaw update --no-restart` una volta), personal skill libraries su shared Gateway (`openclaw skills library`), approval cards al canale originante (Telegram topics), WhatsApp unquoted replies su quote-cache miss, `blockedHostnames` SSRF, `cron.skipMissedJobs`, `openclaw memory reset` senza perdita sessioni, ingress/secrets fixes.
+- **Correzione claim errato**: "CLI local 2026.6.8 = 4 stable behind" era **falso** — la lista release mostra **11 stable releases** dopo la 2026.6.8 (6.11, 6.33, 6.34, 7.1, 7.1-1, 7.1-2, 8.1, 8.2, 9.1 + counting). Corretto nel tracker.
+- Blog Sep 3 ✓ — "OpenClaw improves user onboarding with a new installer on macOS, plus easier local model setup on Windows RTX" visibile su openclaw.ai/blog (200).
+- Hermes ✓: `hermes --version` → 0.20.6, 1293 behind (coerente con il draft); `git rev-list v2026.8.31..origin/main` → **934** (main_ahead_of_tag aggiornato 844→934). Commit main verificati: GLM-5.3 no-400 con thinking disabled su Nous/OpenRouter (provider di questa fleet!), mandatory-reasoning retry, delegate-child transcripts fuori dal FTS (schema v30).
+
+**Upstream consistency check:**
+- Advisories: 100 GHSA OpenClaw (46H/50M/4L) invariato since Jun 30 ✓; Hermes 0 ✓.
+- Docs site key pages: tutte e 8 HTTP 200 ✓ (nessuna migrazione di percorso).
+- npm `beta` dist-tag ora punta a 2026.9.1 stesso (nessun beta più nuovo della stable).
+- Nuovo artifact: `docs/meta/upstream-updates/2026-09-04-v2026.9.1.md` (una stable advance = un artifact, da convenzione repo).
+
+### Self-assessment
+Quarto giorno consecutivo di recupero diff pre-esistente dal job Release Monitor interrotto (04:00) — flusso consolidato: verifica totale dei claim, un errore reale trovato e corretto (4→11 stable behind, il draft delle 04:00 aveva contato solo le release dopo il suo ultimo fetch), zero churn su docs/index.yaml come da contratto SKIP. Punti notevoli di questo run: l'endpoint `releases/latest` GitHub era in cache lag sull'ex stable (v2026.8.2) mentre la lista paginata mostrava già v2026.9.1 — lezione registrata: mai fidarsi del singolo endpoint `latest` in fase di verifica release, usare sempre `releases?per_page`. `memories/` untracked lasciato fuori dal commit (artifact Release Monitor, dal 2026-09-02). Pending per Rakki invariata: **upgrade Hermes 0.20.6→0.21.0** (main ora a +934 dal tag, divario in crescita; GLM-5.3 fix su Nous/OpenRouter è direttamente rilevante per il nostro provider LLM).
+
 ## 2026-09-03 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

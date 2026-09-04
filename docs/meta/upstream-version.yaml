@@ -1,10 +1,10 @@
-last_check: '2026-09-03'
+last_check: '2026-09-04'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.8.2
-    last_known_release_date: '2026-09-01'
+    last_known_version: 2026.9.1
+    last_known_release_date: '2026-09-03'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.8.2
+    last_known_version: 2026.9.1
     last_known_beta: 2026.9.1-beta.1
     last_known_extended_stable: 2026.6.34
     permanent: true
@@ -69,20 +69,20 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-03T07:30:00+02:00'
+  checked_at: '2026-09-04T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 1184
-  upgrade_notes: "2026-09-03: OpenClaw stable 2026.8.2 unchanged (Sep 1). CHANGELOG main now shows 2026.8.3 (Unreleased): GPT-5.6 Ultra runtime switching, Meta muse-spark-1.1 provider, Crabbox cloud-sandbox fix. New blog post 'OpenClaw 2.0, Accidentally' (Aug 30, Hannes Rudolph). Hermes v0.21.0 'Pantheon' (v2026.8.31, Aug 31) still NOT installed locally: 0.20.6 (v2026.8.27), 'hermes update' reports 1184 behind (live-verified 07:30 CEST via fetch+rev-list; main +844 past tag, corrected from stale 825 written by interrupted 04:00 run; behind-tag 359). Pantheon highlights: Bot Mode desktop, hermes peer bot-to-bot DMs, cron persistent memory + continuity, delegate_task live steer/stop, MCP command center, security hardening (write approval on AGENTS.md/skills/memory). UPGRADE PENDING — hermes update + gateway restart, snapshot ~/.hermes first. No new security advisories (100 GHSA OpenClaw unchanged since Jun 30, breakdown 46H/50M/4L live-verified; Hermes 0)."
+  hermes_main_behind: 1293
+  upgrade_notes: "2026-09-04: OpenClaw stable 2026.9.1 OUT (Sep 3 18:31 UTC, npm latest aligned): beta promoted stable, 1.195 PRs. Key: openclaw update auto-rollback on Doctor fail, personal skill libraries on shared Gateways, approval cards delivered to originating channel (Telegram topics incl), WhatsApp unquoted replies on quote-cache miss, blockedHostnames SSRF policy, cron.skipMissedJobs, memory reset without session loss, ingress/secrets security fixes. CLI local 2026.6.8 = 11 stable releases behind (live-verified via releases list; 04:00 draft claimed 4 — wrong). New blog post Sep 3 (macOS installer + Windows RTX local AI onboarding). Hermes v0.21.0 Pantheon (Aug 31) still NOT installed: 0.20.6, 1.293 behind main (re-verified 07:35 CEST via hermes --version + fetch/rev-list; main +934 past tag). Upstream main focus: GLM-5.3 no-400 with thinking disabled on Nous/OpenRouter (our provider!), mandatory-reasoning retry, delegate-child transcripts out of FTS (schema v30). No new security advisories (100 GHSA OpenClaw unchanged since Jun 30; Hermes 0)."
 github:
-  last_known_version: 2026.8.2
-  last_known_release_date: '2026-09-01'
+  last_known_version: 2026.9.1
+  last_known_release_date: '2026-09-03'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
   last_known_version: 0.21.0
   last_known_tag: v2026.8.31
   last_known_release_date: '2026-08-31'
-  main_ahead_of_tag: 844
+  main_ahead_of_tag: 934
