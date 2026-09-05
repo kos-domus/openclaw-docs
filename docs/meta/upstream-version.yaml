@@ -1,4 +1,4 @@
-last_check: '2026-09-04'
+last_check: '2026-09-05'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,13 +69,13 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-04T07:35:00+02:00'
+  checked_at: '2026-09-05T16:20:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.20.6
   hermes_tag: v2026.8.27
-  hermes_main_behind: 1293
-  upgrade_notes: "2026-09-04: OpenClaw stable 2026.9.1 OUT (Sep 3 18:31 UTC, npm latest aligned): beta promoted stable, 1.195 PRs. Key: openclaw update auto-rollback on Doctor fail, personal skill libraries on shared Gateways, approval cards delivered to originating channel (Telegram topics incl), WhatsApp unquoted replies on quote-cache miss, blockedHostnames SSRF policy, cron.skipMissedJobs, memory reset without session loss, ingress/secrets security fixes. CLI local 2026.6.8 = 11 stable releases behind (live-verified via releases list; 04:00 draft claimed 4 — wrong). New blog post Sep 3 (macOS installer + Windows RTX local AI onboarding). Hermes v0.21.0 Pantheon (Aug 31) still NOT installed: 0.20.6, 1.293 behind main (re-verified 07:35 CEST via hermes --version + fetch/rev-list; main +934 past tag). Upstream main focus: GLM-5.3 no-400 with thinking disabled on Nous/OpenRouter (our provider!), mandatory-reasoning retry, delegate-child transcripts out of FTS (schema v30). No new security advisories (100 GHSA OpenClaw unchanged since Jun 30; Hermes 0)."
+  hermes_main_behind: 5599
+  upgrade_notes: "2026-09-05: No new upstream releases (OpenClaw stable 2026.9.1 Sep 3 confirmed unchanged via releases+tags+npm; Releasebot Sep 4 'release-publish' event was a re-publish of 9.1, NOT a new version). Security: zero new advisories both repos. MAIN SIGNAL: Hermes main exploded — epic whole-codebase refactor merged Sep 3-4 (campaign simp/r3-30..37, −34% source LOC, god files decomposed, zero behavior change claimed), delta vs v2026.8.31 tag jumped 934 → 5240 commits in 24h (+4306; v0.21.0 itself shipped with ~5800 → v0.22.0 clearly brewing). Also on main: GPT-6 Astra + Astra Pro added to Nous Portal and OpenRouter (Sep 4, fast/flex tiers — relevant to our chain v5 OpenRouter free tier), desktop fixes (macOS watchdog, dashboard PTY non-blocking, Hide tabs), browser packaged-Chromium fix. Hermes upgrade to v0.21.0 STILL PENDING 3rd day (recommended since 2026-09-02, local 0.20.6 = 5599 commits behind main (live-verified 16:20 CEST via hermes --version 5596 pre-fetch + fetch/rev-list 5599 post-fetch; the 04:05 interrupted run had claimed 6148 — corrected)). OpenClaw CLI 2026.6.8 = 11 stable releases behind (unchanged, no real impact — KB reference only)."
 github:
   last_known_version: 2026.9.1
   last_known_release_date: '2026-09-03'
@@ -85,4 +85,4 @@ hermes_agent:
   last_known_version: 0.21.0
   last_known_tag: v2026.8.31
   last_known_release_date: '2026-08-31'
-  main_ahead_of_tag: 934
+  main_ahead_of_tag: 5240

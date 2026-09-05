@@ -1,3 +1,21 @@
+## 2026-09-05 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato e corretto (run interrotto 04:05):** `docs/meta/upstream-version.yaml` era già modificato nel worktree alla partenza. Ogni claim verificato contro API live prima del commit (lezione 2026-08-31):
+- **OpenClaw stable `2026.9.1` invariato** ✓ — GitHub releases list: `v2026.9.1` (Sep 3, `prerelease: false`) prima entry; npm dist-tags: `latest` 2026.9.1, `beta` 2026.9.1 (nessun beta più nuovo della stable), `extended-stable` 2026.6.34; tags head `v2026.9.1`. L'evento Releasebot "release-publish" del Sep 4 era una re-publish della 9.1, non una nuova versione ✓.
+- **⚠️ Correzione claim impossibile: `hermes_main_behind` 6148 → 5599.** Un behind-count non può scendere senza upgrade locale (locale sempre 0.20.6) — il 6148 del draft delle 04:05 era un dato erroneo, non stantio. Live-verified 16:20 CEST: `hermes --version` → "5596 commits behind" (pre-fetch), `git fetch` + `rev-list HEAD..origin/main` → **5599** (+3 commit arrivati tra le due misure, delta coerente). Anche `main_ahead_of_tag` corretto 5237 → **5240** (`rev-list v2026.8.31..origin/main`).
+- **MAIN SIGNAL confermato**: refactor epico su Hermes main mergeato Sep 3-4 — campagna `simp/r3-30..37`, −34% source LOC, decomposizione god files, zero behavior change dichiarato. Delta vs tag v2026.8.31: 934 → 5240 in 24h (+4306). v0.22.0 in preparazione. Su main anche: GPT-6 Astra + Astra Pro su Nous Portal e OpenRouter (Sep 4, tier fast/flex — rilevante per chain v5 OpenRouter free tier), fix desktop (macOS watchdog, dashboard PTY non-blocking, Hide tabs), fix browser packaged-Chromium.
+
+**Upstream consistency check:**
+- Advisories: 100 GHSA OpenClaw (46H/50M/4L) invariati since Jun 30 ✓; Hermes 0 ✓.
+- Docs site key pages: tutte e 8 HTTP 200 ✓ (nessuna migrazione di percorso).
+- Hermes releases: `v2026.8.31` (0.21.0 'Pantheon') resta latest stable ✓.
+- OpenClaw CLI locale 2026.6.8 = 11 stable releases behind (invariato, KB reference only).
+
+### Self-assessment
+Quinta giornata consecutiva di recupero diff pre-esistente dal job Release Monitor interrotto (04:05) — e oggi la verifica ha pagato più del solito: il draft conteneva un claim **impossibile** (behind-count 6148 > misura live 5599 con locale fermo a 0.20.6). Un behind che scende senza upgrade non è dati stantii, è dati sbagliati — lezione registrata nella skill: quando un behind-count dichiarato eccede la misura live, non "aggiornare e via" ma correggere esplicitamente e segnalarlo (probabile misura su ref sbagliato o fetch parziale nella run interrotta). Semantica dei tre numeri ora esplicita nel tracker: 5599 behind-main (HEAD..origin/main), 5240 main-ahead-of-tag (v2026.8.31..origin/main), ~5596+ misurato da `hermes --version`. Zero churn su docs/index.yaml come da contratto SKIP, gitleaks PASS, solo changelog + tracker committati. `memories/` untracked lasciato fuori (artifact Release Monitor, dal 2026-09-02). Pending per Rakki invariata al 4° giorno: **upgrade Hermes 0.20.6→0.21.0** — ora con main a +5240 dal tag e v0.22.0 in arrivo, la finestra ideale si sta chiudendo (fare l'upgrade dopo v0.22.0 significherebbe saltare due minor).
+
 ## 2026-09-04 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
