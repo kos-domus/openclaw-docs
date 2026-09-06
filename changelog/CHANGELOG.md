@@ -1,3 +1,25 @@
+## 2026-09-06 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato (run interrotto 04:05):** `docs/meta/upstream-version.yaml` era già modificato nel worktree alla partenza. Ogni claim verificato contro API live prima del commit (lezione 2026-08-31):
+- **STABLE ADVANCE `2026.9.2`** (Sep 5, 20:00 UTC) ✓ — GitHub releases list: `v2026.9.2` prima entry, `prerelease: false`; npm `latest` 2026.9.2 allineato.
+- **1.247 PRs** ✓ — dal body della release ("1,247 in-range PRs", audit record nel body).
+- Contenuto release verificato ✓: GPT-6 Astra support (`openai/gpt-6-astra`, text+image input, Responses tool calls), Swarm default-on con opt-out espliciti (#136514), cross-agent session access default-on con `tools.sessions.visibility` per restringere (#136755), settings hot-reload senza restart (#138112), replies survive Gateway restarts, robust backups (NUL chars, Nix config links, corrupt header rejection), Telegram proxy media via SOCKS/HTTPS, experimental plugin UI (Settings → Labs), personal connected accounts.
+- **Deprecazione tracciata**: Plugin SDK untrusted-named context aliases removal eligible on/after **Sep 8 2026** → migrate a channel-named context fields + `buildChannelMetadata` (docs `/plugins/compatibility` → 200).
+- **UPGRADE LOCALE ESEGUITO ✓ (claim chiave del draft)**: Hermes 0.20.6 → **0.21.0 main-tracking** il Sep 5 15:53 CEST. Verificato: `git reflog` mostra `merge origin/main: Fast-forward` a `006b1beb` (Sep 5 15:53:25), gateway restartato 15:54:38, `systemctl is-active` → active. `hermes --version` → "v0.21.0 (2026.8.31) · upstream 245e4800 · 18 commits behind". Live-check di questo run: `git fetch` + `rev-list HEAD..origin/main` → **18** ✓, `rev-list v2026.8.31..origin/main` → **5340** ✓ (entrambi coincidono con il draft).
+- **Pending per Rakki CHIUSA** dopo 4 giorni: upgrade Hermes completato esternamente (verosimilmente da MC o Rakki) — il pending "upgrade to v0.21.0" segnalato dal 2026-09-02 non è più dovuto.
+- OpenClaw CLI locale 2026.6.8 = 12 stable releases behind ✓ (contato dalla lista release: 6.9→9.2; KB reference only).
+- npm `beta` dist-tag ora punta a 2026.9.1 (nessun beta più nuovo della stable — pattern già visto in passato) ✓.
+
+**Upstream consistency check:**
+- Advisories: 100 GHSA OpenClaw (46H/50M/4L) invariati since Jun 30 ✓; zero pubblicati dopo Sep 4 ✓; Hermes 0 ✓.
+- Docs site key pages: 7/8 HTTP 200; `/agents` resta 404 (migrazione nota → `/multi-agent`, già tracciata in `key_pages`).
+- `checked_at` del draft (04:05) aggiornato all'ora della verifica live di questo run (07:32 CEST).
+
+### Self-assessment
+Sesta giornata consecutiva di recupero diff pre-esistente dal job Release Monitor interrotto (04:05). Oggi il draft era **accurato al 100%** — nessuna correzione necessaria, solo `checked_at` riallineato. Verifica totale comunque eseguita: release body 2026.9.2 letto per intero (1358 righe) con ogni feature del draft trovata, numeri Hermes ricontrollati con fetch+rev-list (18 e 5340 confermati), reflog dell'upgrade ispezionato (fast-forward pulito Sep 5 15:53 + gateway restart 15:54 + servizio attivo). Nota di rilievo: la verificazione del claim "upgrade eseguito" richiede evidenza diversa dai soliti controlli version-count — reflog + timestamp servizio + `hermes --version` sono la triade giusta. Chiuso il pending più vecchio del tracker (upgrade Hermes, aperto 2026-09-02). `memories/` untracked lasciato fuori dal commit (artifact Release Monitor, dal 2026-09-02). Zero churn su docs/index.yaml come da contratto SKIP, gitleaks PASS, solo changelog + tracker committati.
+
 ## 2026-09-05 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
