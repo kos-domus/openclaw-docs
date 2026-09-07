@@ -1,4 +1,4 @@
-last_check: '2026-09-06'
+last_check: '2026-09-07'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-06T07:32:00+02:00'
+  checked_at: '2026-09-07T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 18
-  upgrade_notes: "2026-09-06: NEW STABLE OpenClaw 2026.9.2 (Sep 5, 20:00 UTC; 1247 PRs) — GPT-6 Astra support, Swarm default-on, cross-agent session access default-on (tools.sessions.visibility to restrict), settings hot-reload, replies survive Gateway restarts, robust backups, Telegram proxy media fix. DEPRECATION: Plugin SDK untrusted-named context aliases removal eligible ON/_AFTER Sep 8 2026 — migrate to channel-named context fields + buildChannelMetadata (docs /plugins/compatibility). No new security advisories either repo. Hermes: v0.21.0 still latest tag BUT LOCAL UPGRADE EXECUTED Sep 5 15:53 CEST (git reflog: fast-forward to main 006b1beb, gateway restarted 15:54, stable 12h+) — the 3-day-pending upgrade is DONE; local now main-tracking, only 18 commits behind origin/main (main = 5340 commits past v0.21.0 tag, v0.22.0 brewing). OpenClaw CLI 2026.6.8 now 12 stable releases behind (KB-reference only, no real impact)."
+  hermes_main_behind: 265
+  upgrade_notes: "2026-09-07: No new OpenClaw stable (2026.9.2 Sep 5 still latest; npm extended-stable 2026.6.34). SECURITY BACKLOG SURFACED: Jun-30 batch of 45 advisories (33 high) never hit a saved report — 4 affect local CLI 2026.6.8 (3 high: GHSA-7vrr plugin install persistence, GHSA-mm9g cron exec regain, GHSA-f6p7 Discord moderation authz; 1 medium: GHSA-wgq8 plugin install policy), all patched in 2026.6.9. Exposure LOW (CLI KB-reference only, no gateway running on host — verified). Recommend upgrade to >=2026.6.9 (extended-stable 2026.6.34). DEPRECATION T-1: Plugin SDK untrusted-named context aliases removal eligible ON/AFTER Sep 8 2026. Hermes: v0.21.0 still latest tag; local 006b1beb now 265 behind origin/main (main ~5.6k past tag, v0.22.0 brewing) — routine pull+restart suggested. ClawHub registry v0.23.3 (Aug 4), jumped 0.20->0.23 since June report. No Hermes advisories."
 github:
   last_known_version: 2026.9.2
   last_known_release_date: '2026-09-05'

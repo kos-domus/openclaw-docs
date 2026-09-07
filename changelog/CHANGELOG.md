@@ -1,3 +1,24 @@
+## 2026-09-07 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato e corretto (run interrotto 04:03):** `docs/meta/upstream-version.yaml` era già modificato nel worktree alla partenza (settimo giorno consecutivo di recupero dal job Release Monitor). Ogni claim verificato contro API live prima del commit:
+- **OpenClaw stable `2026.9.2` invariato** — GitHub releases list: `v2026.9.2` (Sep 5, `prerelease: false`) prima entry; npm dist-tags: `latest` 2026.9.2, `beta` 2026.9.1, `extended-stable` 2026.6.34 — tutti allineati al tracker.
+- **Correzione dato errato: batch Jun-30 "28 advisories (24 high)" → 45 advisories (33 high).** Live-verified via `gh api security-advisories` raggruppate per `published_at`: 2026-06-30 → 45 (33 high), su 100 totali invariati (46H/50M/4L). Il draft delle 04:03 sottostimava il batch di 17 unità.
+- **4 advisory colpiscono la CLI locale 2026.6.8** — verificato estraendo TUTTI i 100 `vulnerable_version_range` (51 range distinti): esattamente 4 hanno upper bound `< 2026.6.9` con lower bound che include la 2026.6.8. Le 4 (3 high GHSA-7vrr/mm9g/f6p7 + 1 medium GHSA-wgq8, tutte pubblicate Jun 30, tutte patchate in 2026.6.9) corrispondono esattamente a quelle citate nel draft.
+- **Exposure LOW confermata** — nessun processo/servizio OpenClaw attivo sull'host (`pgrep` + `systemctl --user` vuoti); CLI usata solo come KB reference.
+- **Hermes 265 behind** — `hermes --version` → "265 commits behind"; cross-check `git fetch` + `rev-list HEAD..origin/main` → 265; `rev-list v2026.8.31..origin/main` → 5587 (main ~5.6k past tag, v0.22.0 in preparazione). Locale fermo a `006b1beb` (Sep 5).
+- **ClawHub registry v0.23.3 (Aug 4)** — `gh api repos/openclaw/clawhub/releases/latest` → v0.23.3, 2026-08-04.
+- **Deprecation T-1**: Plugin SDK untrusted-named context aliases removal eligible ON/AFTER **Sep 8 2026** (domani) — docs `/plugins/compatibility` → 200.
+
+**Upstream consistency check:**
+- Advisories: 100 GHSA OpenClaw (46H/50M/4L) invariati since Jun 30, zero pubblicati dopo quella data; Hermes 0.
+- Docs site key pages: 8/8 tracciate HTTP 200 (`/agents` resta 404 per migrazione nota → `/multi-agent`, già registrata in `key_pages`).
+- `checked_at` del draft (04:03) riallineato all'ora della verifica live di questo run (07:35 CEST).
+
+### Self-assessment
+Settimo recupero consecutivo di diff pre-esistente dal Release Monitor interrotto. Oggi la verifica ha trovato un dato quantitativo sbagliato ma non inventato: il security backlog Jun-30 esiste davvero, solo sottestimato (28/24 vs 45/33 reali) — corretto esplicitamente nel tracker, come da lezione "wrong data → correggi e segnala, non aggiornare in silenzio". Metodo di verifica delle "4 advisory che colpiscono la locale" rafforzato: invece di fidarsi del conteggio del draft, estratti tutti i 100 version range e contati quelli il cui intervallo include la 2026.6.8 — il risultato (4) coincide, ma ora è ground-truth. Note strumentali: (1) `gh --jq -r` non esiste (gh passa argomenti extra a jq che fallisce con "accepts 1 arg(s), received 2") — il pattern affidabile resta `gh api ... > /tmp/x.json && jq -r '...' /tmp/x.json`; (2) heredoc terminal con emoji contenenti variation selector (ES. la sequenza warning-sign+VS16) viene bloccato dal security scanner in cron (pending approval che non arriva mai) — scrivere i blocchi changelog via tool `patch`, non via `cat >>`. Segnale operativo per Rakki: la CLI locale OpenClaw 2026.6.8 ha 4 CVE aperte (3 high) patchate da 2026.6.9 — esposizione bassa (nessun gateway attivo), ma l'upgrade a extended-stable 2026.6.34 è raccomandato quando comodo. Zero churn su docs/index.yaml come da contratto SKIP, gitleaks PASS, solo changelog + tracker committati. `memories/` untracked lasciato fuori (artifact Release Monitor, dal 2026-08-21).
+
 ## 2026-09-06 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
