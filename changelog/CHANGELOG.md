@@ -1,3 +1,19 @@
+## 2026-09-08 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato (diff Release Monitor 04:05):** `docs/meta/upstream-version.yaml` già modificato nel worktree alla partenza. Ogni claim verificato contro API live prima del commit:
+- **OpenClaw stable `2026.9.2` invariato** — GitHub releases: `v2026.9.2` (Sep 5, `prerelease: false`) ancora prima entry; npm dist-tags identici (`latest` 2026.9.2, `beta` 2026.9.1, `extended-stable` 2026.6.34).
+- **Hermes v0.21.1 (v2026.9.7, Sep 7)** — già catturato dal run Release Monitor di stamattina (commit 24bb6c4); confermato live (`releases?per_page=3` → v2026.9.7 prima entry). Locale ancora `006b1beb` / v0.21.0: `hermes --version` → **697 behind** (tracker aveva 678, aggiornato). Upgrade raccomandato: cron scheduling/delivery fix direttamente rilevanti per i nostri job schedulati.
+- **Advisories invariate** — 100 GHSA totali (46H/50M/4L), newest sempre Jun-30 (dotenv override). Le "4 advisory che colpiscono la CLI locale 2026.6.8" ri-verificate oggi con estrazione completa dei version range → confermato 4 (3H+1M, tutte patchate in 2026.6.9).
+- **Deprecation eligible da OGGI**: Plugin SDK untrusted-named context aliases removal on/after Sep 8 2026 — zero plugin custom nel nostro orbita, zero impatto.
+- **Docs site key pages**: upstream `docs/` tree raggiungibile via API (nessuna variazione strutturale).
+
+**Modifiche questo run:** solo `docs/meta/upstream-version.yaml` (behind 678→697, `checked_at` 07:35, note deprecation/behind riallineate al live) + questo changelog. Zero churn su docs/index.yaml.
+
+### Self-assessment
+SKIP run pulito, ottavo giorno consecutivo con worktree pre-modificato dal Release Monitor: il pattern di verifica è ormai consolidato — nessun claim del draft è stato preso per buono senza ricontrollo API live. L'unica deriva trovata era attesa (behind-count 678→697: cresce per costruzione senza upgrade locale, nessun dato sbagliato da correggere). Il segnale operativo resta lo stesso di ieri per Rakki: (1) Hermes v0.21.1 con fix cron scheduling/delivery in coda di upgrade — raccomandato `hermes update` + gateway restart; (2) CLI OpenClaw locale 2026.6.8 con 4 CVE (3 high) patchate da 2026.6.9, esposizione bassa ma upgrade a extended-stable consigliato quando comodo. gitleaks PASS, zero docs toccati, solo tracker + changelog committati. `memories/` untracked lasciato fuori (artifact Release Monitor, dal 2026-08-21).
+
 ## 2026-09-07 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

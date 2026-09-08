@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-08T04:05:00+02:00'
+  checked_at: '2026-09-08T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 678
-  upgrade_notes: "2026-09-08: No new OpenClaw stable (2026.9.2 Sep 5 still latest; npm extended-stable 2026.6.34). NEW: Hermes v0.21.1 (v2026.9.7) released Sep 7 22:17 UTC — patch rollup of main since v0.21.0 (5,139 non-merge commits, 632 PRs): codebase modularization, file-op/startup perf, provider/model updates, desktop session controls, MCP authz improvements, cron scheduling+delivery fixes, delegation reliability. Local 006b1beb now 678 behind origin/main AND 1 tag behind (v0.21.1). Recommend hermes update / git pull + gateway restart (cron fixes directly relevant to our scheduled jobs). DEPRECATION NOW ELIGIBLE: Plugin SDK untrusted-named context aliases removal eligible ON/AFTER Sep 8 2026 (today) — no custom plugins in our orbit, zero impact, but any future CLI upgrade includes the removal. Security backlog unchanged: 4 advisories affect local CLI 2026.6.8 (3 high, 1 medium; all patched in 2026.6.9; exposure LOW, CLI KB-reference only). No new advisories OpenClaw (newest still Jun-30 batch), none Hermes. ClawHub registry v0.23.3 (Aug 4) unchanged."
+  hermes_main_behind: 697
+  upgrade_notes: "2026-09-08 (live-verified 07:35 CEST by daily KB run): No new OpenClaw stable (2026.9.2 Sep 5 still latest; npm extended-stable 2026.6.34). Hermes v0.21.1 (v2026.9.7, Sep 7 22:17 UTC) still pending local upgrade: local 006b1beb now 697 behind origin/main (hermes --version) AND 1 tag behind (v0.21.1). Cron scheduling/delivery fixes in v0.21.1 are directly relevant to our scheduled jobs — recommend hermes update + gateway restart. DEPRECATION ELIGIBLE TODAY: Plugin SDK untrusted-named context aliases removal eligible ON/AFTER Sep 8 2026 — no custom plugins in our orbit, zero impact, but any future CLI upgrade includes the removal. Security backlog unchanged: 4 advisories affect local CLI 2026.6.8 (3 high, 1 medium; all patched in 2026.6.9; exposure LOW, CLI KB-reference only; re-verified today by full range extraction). No new advisories OpenClaw (newest still Jun-30 batch), none Hermes. ClawHub registry v0.23.3 (Aug 4) unchanged."
 github:
   last_known_version: 2026.9.2
   last_known_release_date: '2026-09-05'
