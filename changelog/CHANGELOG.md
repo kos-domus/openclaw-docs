@@ -1,3 +1,23 @@
+## 2026-09-09 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato (diff Release Monitor 04:05):** `docs/meta/upstream-version.yaml` già modificato nel worktree alla partenza (nono giorno consecutivo di recupero). Ogni claim verificato contro API live prima del commit:
+- **STABLE ADVANCE `2026.9.3`** (Sep 8, 14:15 UTC) ✓ — GitHub releases list: `v2026.9.3` prima entry, `prerelease: false`; npm `latest` 2026.9.3 allineato. Terza stable in 7 giorni (9.1→9.2→9.3).
+- **BREAKING Node floor** ✓ — release body: Node >=24.16.0 (24.x) o >=26.1.0 (26.x), Node 26 raccomandato; Node 22/25 e build precedenti non supportati; rischio SQLite text truncation se si upgrada OpenClaw prima di Node. Host locale verificato: Node v24.16.0 = esattamente il nuovo minimo, già OK.
+- **Sei SDK breakings + deprecation effective** ✓ — exec-policy, approval SDK, alias `buildChannelInboundMediaPayload`, search/dir result callbacks (`details.content`, `nextAfter`), agent-owned Workshop skills; rimozione untrusted-named context aliases (eligible Sep 8) ora EFFECTIVE. Zero impatto fleet (nessun plugin custom OpenClaw).
+- **"13 stables behind"** ✓ — contato dalla release list live (6.9→9.3 incluse 7.1-1/7.1-2).
+- **Hermes: due correzioni dati stantii (attese, non errati)** — draft 04:05 dichiarava 942 behind / 269 ahead-of-tag; live post-fetch 07:35 → **972 behind** / **299 ahead**. Drift ~30 commit in ~3.5h (push desktop-app upstream): numeri corretti nel tracker con semantica esplicita. v0.21.1 resta pending per l'upgrade locale — i fix cron scheduling/delivery sono direttamente rilevanti per i nostri job.
+- **"Main last 24h"** ✓ — tutti i claim trovati nei 213 commit delle ultime 36h su origin/main: GPT Image 2.5 (OpenAI + FAL), Group Chat rooms ordering, MCP OAuth refresh_token (#62333), cron/gateway systemd hardening (user D-Bus adoption, per-probe env), RSS/Reddit skills resi opzionali.
+- **Advisories invariate** ✓ — 100 GHSA (46H/50M/4L), newest sempre Jun-30; Hermes 0.
+- **ClawHub** ✓ — registry v0.23.3 (Aug 4) invariato; il caso scope-squatting Manifold è background giugno (unlisted Jun 19 + dispute), nessuna novità.
+- **Docs site**: 8/8 key pages HTTP 200.
+
+**Modifiche questo run:** `docs/meta/upstream-version.yaml` (stable 2026.9.3 GitHub/npm/github, `checked_at` 07:35, behind 942→972, main-ahead 269→299, note arricchite con verifica live e Node locale) + **nuovo artifact** `docs/meta/upstream-updates/2026-09-09-v2026.9.3.md` (stable advance con breaking changes operator-relevant, come da precedente v2026.8.1) + questo changelog. Zero churn su `docs/index.yaml` (artifact in `docs/meta/` non indicizzato, come da convenzione).
+
+### Self-assessment
+SKIP run pulito, nono giorno consecutivo di recupero diff pre-esistente dal Release Monitor: il pattern di verifica live è ormai routine. Oggi il draft era accurato sui fatti (stable advance, breakings, main-24h) con sole due derive numeriche attese (behind-counts cresciuti tra le 04:05 e le 07:35), corrette con semantica esplicita nel tracker. Scelta editoriale: v2026.9.3 riceve artifact dedicato perché ha breaking changes operator-relevant (Node floor + 6 SDK breakings), coerente col precedente v2026.8.1; v2026.9.2 (nessun breaking) era rimasta changelog-only — la convenzione ora è: artifact se e solo se breaking/operator-relevant. Segnali operativi per Rakki invariati: (1) Hermes v0.21.1 con fix cron in coda — raccomandato `hermes update` + gateway restart; (2) CLI OpenClaw locale 2026.6.8 a 13 stables di distanza, 4 CVE aperte patchate da 2026.6.9, esposizione bassa (KB-reference only). gitleaks PASS, zero docs Diátaxis toccati, tracker + artifact + changelog committati. `memories/` untracked lasciato fuori (artifact Release Monitor, dal 2026-08-21).
+
 ## 2026-09-08 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

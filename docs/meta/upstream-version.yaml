@@ -1,10 +1,10 @@
-last_check: '2026-09-08'
+last_check: '2026-09-09'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.9.2
-    last_known_release_date: '2026-09-05'
+    last_known_version: 2026.9.3
+    last_known_release_date: '2026-09-08'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.9.2
+    last_known_version: 2026.9.3
     last_known_beta: 2026.9.1
     last_known_extended_stable: 2026.6.34
     permanent: true
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-08T07:35:00+02:00'
+  checked_at: '2026-09-09T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,15 +77,15 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 697
-  upgrade_notes: "2026-09-08 (live-verified 07:35 CEST by daily KB run): No new OpenClaw stable (2026.9.2 Sep 5 still latest; npm extended-stable 2026.6.34). Hermes v0.21.1 (v2026.9.7, Sep 7 22:17 UTC) still pending local upgrade: local 006b1beb now 697 behind origin/main (hermes --version) AND 1 tag behind (v0.21.1). Cron scheduling/delivery fixes in v0.21.1 are directly relevant to our scheduled jobs — recommend hermes update + gateway restart. DEPRECATION ELIGIBLE TODAY: Plugin SDK untrusted-named context aliases removal eligible ON/AFTER Sep 8 2026 — no custom plugins in our orbit, zero impact, but any future CLI upgrade includes the removal. Security backlog unchanged: 4 advisories affect local CLI 2026.6.8 (3 high, 1 medium; all patched in 2026.6.9; exposure LOW, CLI KB-reference only; re-verified today by full range extraction). No new advisories OpenClaw (newest still Jun-30 batch), none Hermes. ClawHub registry v0.23.3 (Aug 4) unchanged."
+  hermes_main_behind: 972
+  upgrade_notes: "2026-09-09 (live-verified 07:35 CEST by daily KB run): NEW STABLE OpenClaw v2026.9.3 (Sep 8 14:15 UTC; third stable in 7 days). BREAKING: Node >=24.16.0 (24.x) or >=26.1.0 required (Node 26 recommended) — Node 22/25/older unsupported, SQLite text truncation risk; upgrade Node BEFORE OpenClaw (local host already at Node 24.16.0 = exactly the new minimum, OK). Six plugin-SDK breakings (exec-policy, approval, aliases, search/dir callbacks, agent-owned Workshop skills); untrusted-named context aliases removal now EFFECTIVE (zero impact — no custom OpenClaw plugins). Local CLI 2026.6.8 now 13 stables behind (KB-reference only). Hermes v0.21.1 (v2026.9.7, Sep 7) still pending local upgrade: 006b1beb now 972 behind origin/main (verified post-fetch 07:35; draft 04:05 said 942 — drift ~30 commits in ~3.5h, upstream desktop-app push) and 1 tag behind — v0.21.1 cron scheduling/delivery fixes directly relevant to our scheduled jobs; recommend hermes update + gateway restart. Main last 24h: GPT Image 2.5 (OpenAI+FAL), Group Chat rooms UI, MCP OAuth refresh_token fix (#62333), cron/gateway systemd hardening, RSS/Reddit skills optional. Security: no new advisories either repo (OpenClaw newest still Jun-30 batch, 100 total 46H/50M/4L; Hermes zero). ClawHub scope-squatting case (Manifold, 23 plugins under @openclaw//@clawhub scopes) is June-era background: all unlisted Jun 19 + dispute process; registry v0.23.3 unchanged."
 github:
-  last_known_version: 2026.9.2
-  last_known_release_date: '2026-09-05'
+  last_known_version: 2026.9.3
+  last_known_release_date: '2026-09-08'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
   last_known_version: 0.21.1
   last_known_tag: v2026.9.7
   last_known_release_date: '2026-09-07'
-  main_ahead_of_tag: 5340
+  main_ahead_of_tag: 299
