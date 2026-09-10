@@ -1,3 +1,20 @@
+## 2026-09-10 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker pre-esistente verificato (diff Release Monitor 06:15):** `docs/meta/upstream-version.yaml` già modificato nel worktree alla partenza (decimo giorno consecutivo di recupero). Ogni claim verificato contro API live prima del commit:
+- **Giornata tranquilla confermata** ✓ — nessuna nuova stable OpenClaw (releases list: `v2026.9.3` Sep 8 sempre prima entry, `prerelease: false`), nessuna nuova release Hermes (v0.21.1 / v2026.9.7 Sep 7 confermata live), zero nuovi advisories entrambi i repo (OpenClaw 100 totali 46H/50M/4L, newest Jun-30; Hermes zero).
+- **CORREZIONE DATO ERRATO — npm extended-stable**: draft dichiarava `2026.6.34`, live `npm view openclaw dist-tags` → **`2026.6.35`**. Corretto nel tracker con nota esplicita (classe di errore "wrong data", non stantio: 35 > 34, l'extended-stable è avanzato dopo il check del monitor).
+- **Hermes behind-counts riallineati (derive attese)**: draft 06:15 diceva 1291 behind / 618 ahead-of-tag; live post-fetch 07:35 → **1308 behind** / **635 ahead** (+17 / +17 in ~1.3h, push wave continua). Semantica esplicita: behind = `HEAD..origin/main` dal local 006b1beb; ahead = `v2026.9.7..origin/main`; dietro il tag: 673. Upgrade v0.21.1 ancora pending — urgenza crescente, i fix cron scheduling/delivery sono direttamente rilevanti per questi job.
+- **Adjacent CLIs** ✓ — claude-code 2.1.267 / codex 0.154.0 / gemini-cli 0.59.0 confermati live via `npm view`. Aggiornamento opportunistico, non bloccante.
+- **OpenClaw main last 24h** ✓ — commit del Sep 10 05:0x-05:2x UTC tutti routine (locales refresh, canonical OpenAI live default, audit summary refactor, Workshop review index repair): nessun segnale 2026.9.4.
+- **ClawHub** ✓ — registry invariato; catalog-curation push Sep 9 (withheld plugins esclusi dalla discovery, publisher badges) confermato come direzione positiva security/hygiene.
+
+**Modifiche questo run:** solo `docs/meta/upstream-version.yaml` (extended-stable corretto .34→.35, behind 1291→1308, main-ahead 618→635, `checked_at` 07:35, note arricchite con correzioni live) + questo changelog. Zero churn su `docs/index.yaml`.
+
+### Self-assessment
+SKIP run pulito, decimo giorno consecutivo di recupero diff pre-esistente dal Release Monitor. Il draft di stamattina era sostanzialmente accurato ("quiet day" confermato su tutti i fronti) con una sola correzione di dato errato (extended-stable .34 vs live .35 — dist-tag avanzato dopo il check del monitor, tipico caso "wrong data" da correggere esplicitamente, non deriva temporale) e le solite due derive numeriche attese sui behind-count Hermes. Segnali operativi per Rakki invariati: (1) Hermes v0.21.1 con fix cron ancora pending — drift ora 1308 commit, `hermes update` + gateway restart raccomandati con urgenza crescente; (2) CLI OpenClaw locale 2026.6.8 a 13 stables, KB-reference only, esposizione bassa. gitleaks PASS, zero docs Diátaxis toccati, solo tracker + changelog committati. `memories/` untracked lasciato fuori (artifact Release Monitor, dal 2026-08-21).
+
 ## 2026-09-09 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

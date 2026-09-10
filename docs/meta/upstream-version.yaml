@@ -1,4 +1,4 @@
-last_check: '2026-09-09'
+last_check: '2026-09-10'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-09T07:35:00+02:00'
+  checked_at: '2026-09-10T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 972
-  upgrade_notes: "2026-09-09 (live-verified 07:35 CEST by daily KB run): NEW STABLE OpenClaw v2026.9.3 (Sep 8 14:15 UTC; third stable in 7 days). BREAKING: Node >=24.16.0 (24.x) or >=26.1.0 required (Node 26 recommended) — Node 22/25/older unsupported, SQLite text truncation risk; upgrade Node BEFORE OpenClaw (local host already at Node 24.16.0 = exactly the new minimum, OK). Six plugin-SDK breakings (exec-policy, approval, aliases, search/dir callbacks, agent-owned Workshop skills); untrusted-named context aliases removal now EFFECTIVE (zero impact — no custom OpenClaw plugins). Local CLI 2026.6.8 now 13 stables behind (KB-reference only). Hermes v0.21.1 (v2026.9.7, Sep 7) still pending local upgrade: 006b1beb now 972 behind origin/main (verified post-fetch 07:35; draft 04:05 said 942 — drift ~30 commits in ~3.5h, upstream desktop-app push) and 1 tag behind — v0.21.1 cron scheduling/delivery fixes directly relevant to our scheduled jobs; recommend hermes update + gateway restart. Main last 24h: GPT Image 2.5 (OpenAI+FAL), Group Chat rooms UI, MCP OAuth refresh_token fix (#62333), cron/gateway systemd hardening, RSS/Reddit skills optional. Security: no new advisories either repo (OpenClaw newest still Jun-30 batch, 100 total 46H/50M/4L; Hermes zero). ClawHub scope-squatting case (Manifold, 23 plugins under @openclaw//@clawhub scopes) is June-era background: all unlisted Jun 19 + dispute process; registry v0.23.3 unchanged."
+  hermes_main_behind: 1308
+  upgrade_notes: "2026-09-10 (live-verified 06:15 CEST by release-monitor run): NO new releases, NO new advisories — quiet day. Stable OpenClaw 2026.9.3 (Sep 8) and Hermes v0.21.1 (v2026.9.7, Sep 7) both unchanged; npm dist-tags unchanged (latest 2026.9.3, extended-stable 2026.6.35 — corrected from draft's .34 by 07:35 KB run). Hermes local 006b1beb drift WORSENED: 972 -> 1308 commits behind origin/main post-fetch (live KB run 07:35 CEST; release-monitor 06:15 said 1291 — ongoing upstream push wave) — upgrade urgency rising, v0.21.1 cron scheduling/delivery fixes still pending locally. OpenClaw main last 24h routine fixes only (CLI update diagnostics, context-engine resource retention, doctor token recovery) — no 2026.9.4 signal. ClawHub registry still v0.23.3 but Sep 9 catalog-curation push: withheld plugins excluded from discovery, package-owned categories, official publisher badges, reviewed-category backfill operators — positive security/hygiene direction. Security: zero new advisories both repos (OpenClaw newest still Jun-30 batch; Hermes zero). Adjacent CLIs upstream moved: claude-code 2.1.267 / codex 0.154.0 / gemini-cli 0.59.0 vs local 2.1.76 / 0.114.0 / 0.36.0 — opportunist update, not blocking. Prior days' context (Node >=24.16.0 breaking in 2026.9.3, local Node exactly at minimum = OK; 6 plugin-SDK breakings, zero impact no custom plugins; local CLI 2026.6.8 = 13 stables behind, KB-reference only): see 2026-09-09 notes in git history of this file."
 github:
   last_known_version: 2026.9.3
   last_known_release_date: '2026-09-08'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.1
   last_known_tag: v2026.9.7
   last_known_release_date: '2026-09-07'
-  main_ahead_of_tag: 299
+  main_ahead_of_tag: 635
