@@ -1,10 +1,10 @@
-last_check: '2026-09-10'
+last_check: '2026-09-11'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.9.3
-    last_known_release_date: '2026-09-08'
+    last_known_version: 2026.9.4
+    last_known_release_date: '2026-09-11'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,9 +25,9 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.9.3
-    last_known_beta: 2026.9.1
-    last_known_extended_stable: 2026.6.34
+    last_known_version: 2026.9.4
+    last_known_beta: 2026.9.4
+    last_known_extended_stable: 2026.6.35
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-10T07:35:00+02:00'
+  checked_at: '2026-09-11T07:45:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,15 +77,36 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 1308
-  upgrade_notes: "2026-09-10 (live-verified 06:15 CEST by release-monitor run): NO new releases, NO new advisories — quiet day. Stable OpenClaw 2026.9.3 (Sep 8) and Hermes v0.21.1 (v2026.9.7, Sep 7) both unchanged; npm dist-tags unchanged (latest 2026.9.3, extended-stable 2026.6.35 — corrected from draft's .34 by 07:35 KB run). Hermes local 006b1beb drift WORSENED: 972 -> 1308 commits behind origin/main post-fetch (live KB run 07:35 CEST; release-monitor 06:15 said 1291 — ongoing upstream push wave) — upgrade urgency rising, v0.21.1 cron scheduling/delivery fixes still pending locally. OpenClaw main last 24h routine fixes only (CLI update diagnostics, context-engine resource retention, doctor token recovery) — no 2026.9.4 signal. ClawHub registry still v0.23.3 but Sep 9 catalog-curation push: withheld plugins excluded from discovery, package-owned categories, official publisher badges, reviewed-category backfill operators — positive security/hygiene direction. Security: zero new advisories both repos (OpenClaw newest still Jun-30 batch; Hermes zero). Adjacent CLIs upstream moved: claude-code 2.1.267 / codex 0.154.0 / gemini-cli 0.59.0 vs local 2.1.76 / 0.114.0 / 0.36.0 — opportunist update, not blocking. Prior days' context (Node >=24.16.0 breaking in 2026.9.3, local Node exactly at minimum = OK; 6 plugin-SDK breakings, zero impact no custom plugins; local CLI 2026.6.8 = 13 stables behind, KB-reference only): see 2026-09-09 notes in git history of this file."
+  hermes_main_behind: 1482
+  upgrade_notes: "2026-09-11 (live-verified 07:45 CEST by KB run): STABLE ADVANCE — OpenClaw v2026.9.4\
+    \ PUBLISHED 03:46 UTC Sep 11 (draft run 04:02 saw only the staged tag; superseded here).\
+    \ Fourth stable in 8 days. npm latest/beta both 2026.9.4. WRONG-DATA corrected: draft\
+    \ claimed '3 new medium GHSA' — live count is 75 new since Sep 10 run (30H/40M/5L),\
+    \ all published 00:58 UTC Sep 11 in one triage batch; 70 of 75 ranges include local\
+    \ CLI 2026.6.8 (5 exclude: >=6.9.x/>=7.x floors). REAL advisory total corrected:\
+    \ 722 (14C/249H/390M/69L) via --paginate — old '100' was first-page artifact. v2026.6.35\
+    \ Extended Stable published Sep 10 (final June-2026 LTS line, 166 merged PRs per\
+    \ release body; 30 direct commits on squashed history). Hermes drift WORSENED: 1308\
+    \ -> 1482 behind (main HEAD 05d705dd, +809 past tag, 168 commits in last 24h). Overnight\
+    \ wave = multi-profile credential scoping fixes (secondary-profile send_message via\
+    \ own bot, MCP children get routed profile's vault secrets, secret re-pull no empty-snapshot\
+    \ latch, media denylist all profiles, TWILIO scoping) — DIRECTLY our fleet topology\
+    \ (4 profiles, separate 1Password vaults) → upgrade now security priority. Also\
+    \ Nous free tier (NS-847, /login in chat, HERMES_GUEST_ONBOARDING gate). v2026.9.4\
+    \ highlights (KB-relevant): compatible-update rollback/recovery, unified Plugins\
+    \ workspace, cloud ready workers + snapshots, TUI question prompts, OPENCLAW_CONFIG_READONLY=1,\
+    \ SDK deprecation agent-harness-credential-prompt-string-argument (Nov 30 deadline).\
+    \ Adjacent CLIs: claude-code 2.1.268 / codex 0.154.0 / gemini-cli 0.59.0 vs local\
+    \ 2.1.76 / 0.114.0 / 0.36.0. Prior days' context (Node >=24.16.0 floor = we're at\
+    \ minimum exactly; 6 plugin-SDK breakings zero-impact; local CLI now 14 stables\
+    \ behind): see 2026-09-10 notes in git history of this file."
 github:
-  last_known_version: 2026.9.3
-  last_known_release_date: '2026-09-08'
+  last_known_version: 2026.9.4
+  last_known_release_date: '2026-09-11'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
   last_known_version: 0.21.1
   last_known_tag: v2026.9.7
   last_known_release_date: '2026-09-07'
-  main_ahead_of_tag: 635
+  main_ahead_of_tag: 809
