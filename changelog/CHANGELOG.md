@@ -1,3 +1,24 @@
+# Knowledge Base Changelog
+
+## 2026-09-12 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Tracker già committato dal Release Monitor (04:06, `a40f3be`):** dodicesimo giorno consecutivo in cui la KB run parte con il tracker già aggiornato — oggi però non c'era nemmeno diff pre-esistente da recuperare: il monitor ha committato direttamente (solo `docs/meta/upstream-version.yaml`, 11 insertions/32 deletions). La KB run ha ri-verificato ogni claim contro le API live alle 07:35:
+
+- **OpenClaw stable `2026.9.4` invariata** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); tags confermati; npm `latest`/`beta` 2026.9.4 e `extended-stable` 2026.6.35 allineati. Nessun nuovo prerelease/tag-only signal.
+- **Hermes v0.21.2 (v2026.9.11) confermata live** ✓ — Sep 11 19:20 UTC, `prerelease: false`. Il tracker del monitor era corretto.
+- **Advisories invariati** ✓ — totale 722 (14C/249H/390M/69L) via `--paginate`, newest sempre il batch Sep-11 00:58 UTC: zero nuovi GHSA nelle ultime ~27h.
+- **Hermes drift riallineato (deriva attesa)**: monitor 04:06 dichiarava 1719 behind / tag-ahead 60; live post-fetch 07:35 → **1752 behind** / **93 ahead** (+33/+33 in ~3.4h, push wave post-release continua a ~+270/day). Semantica: behind = `HEAD..origin/main` dal local 006b1beb (v0.21.0, Sep 5); ahead = `v2026.9.11..origin/main`. `hermes --version` cross-check: "1752 commits behind" ✓ combacia con rev-list. Upgrade v0.21.2 ancora pending e ora doppiamente motivato (security wave credential-scoping + state.db reliability, vedi blocco 09-11).
+- **CLI locale OpenClaw** ✓ — `openclaw --version` = 2026.6.8 (844f405), invariato da Jun 19. Nessun upgrade esterno rilevato tra le run.
+- **Docs site**: 8/8 key pages HTTP 200 ✓ (incluso `/agents`→`/multi-agent` e `/hooks`→`/automation/hooks` già tracciate come migrazioni).
+- **Nota integrità**: le note del tracker referenziano `memories/reports/release-monitor/2026-09-12.md` come full detail, ma il file NON esiste nel repo (memories/ è untracked dal 2026-08-21, contiene solo 2026-08-21.md). Chiarito nel tracker stesso ("treat as external") — il reference punta all'artifact di un altro job, non a un file di questo repo.
+
+**Modifiche questo run:** solo `docs/meta/upstream-version.yaml` (drift Hermes 1719→1752, tag-ahead 60→93, `checked_at` 07:35, nota integrità sul reference mancante) + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, nessun artifact upstream (nessun nuovo segnale release).
+
+### Self-assessment
+SKIP run pulito, dodicesimo giorno consecutivo di coordinamento col Release Monitor. Novità del pattern: oggi il monitor ha committato direttamente il tracker (nessun diff da recuperare), quindi questa run è stata pura verifica live + allineamento drift — e la verifica ha pagato: (1) il drift Hermes è cresciuto di 33 commit in 3.4h, confermando il trend +270/day che rende l'upgrade sempre più urgente; (2) il reference `memories/reports/release-monitor/2026-09-12.md` citato nelle note del monitor non esiste nel repo — corretto annotando nel tracker che va trattato come artifact esterno, per evitare che la prossima run lo cerchi invano. Segnali operativi per Rakki, invariati ma rafforzati: (1) **Hermes upgrade a v0.21.2 resta la priorità #1** — siamo su 0.21.0 (la versione con la fragile state.db rewrite) e v0.21.2 fixa esattamente la nostra esposizione gateway+cron (raw-open() lock cancellation sulle run cron) + la wave credential-scoping multi-profilo; drift ora 1752; (2) OpenClaw stable ferma a 2026.9.4 da ieri, CLI locale ferma a 2026.6.8 (KB-reference only). gitleaks PASS, solo tracker + changelog committati. `memories/` untracked lasciato fuori come da convenzione.
+
 ## 2026-09-11 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).

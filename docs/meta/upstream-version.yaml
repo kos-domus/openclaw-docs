@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-12T04:00:00+02:00'
+  checked_at: '2026-09-12T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 1719
-  upgrade_notes: "2026-09-12: HERMES v0.21.2 (v2026.9.11) published Sep 11 19:20 UTC — 'The state.db Patch Release'. Closes yesterday's security priority: full multi-profile credential-scoping wave (7 PRs: #107616 secondary-profile allow-lists, #107617 adapter credential routing, #107630 stdio MCP vault secrets, #107609 MEDIA: cross-profile attachments, #107611 sibling Nous bearer) + state.db reliability campaign (6 PRs, 44 issues: cron lifecycle guard raw-open() lock cancellation — our exact gateway+cron exposure; WAL wedge, FTS fail-closed, corrupt-row sessions list, one-shot write-lock 4-20s). Cron fixes: off-tick run-now no longer cancels next scheduled (#106306), killed manual run no 5-min block (#106733). Telegram bots_require_mention enforced (#106534). Password-blind 1Password vault (#106480). Scale: 947 commits, 312 PRs, 140 contributors in 4 days. WE ARE ON 0.21.0 — the version that introduced the fragile state.db rewrite. Upgrade path: stop gateway -> hermes update -> hermes doctor -> start -> verify cron list (7 jobs). Local drift: 1719 behind main (+237/day), tag +60 ahead of main HEAD. OpenClaw stable 2026.9.4 unchanged (main +701 past tag, macOS fix wave overnight); npm latest/beta 2026.9.4; ZERO new GHSA since Sep-11 00:58 UTC batch (total still 722 = 14C/249H/390M/69L). ClawHub: 5 security fixes on main Sep 11 19:14 UTC (registry still v0.23.3): #3684 anonymous quota identity auth, #3683 DNS pinning image fetches, #3682 changelog preview authz, #3681 moderator review before hiding skills, #3680 org skill ownership. Adjacent CLIs: claude-code 2.1.269 / codex 0.154.0 / gemini-cli 0.59.0 vs local 2.1.76 / 0.114.0 / 0.36.0. Full detail: memories/reports/release-monitor/2026-09-12.md. Prior days: git history of this file."
+  hermes_main_behind: 1752
+  upgrade_notes: "2026-09-12: HERMES v0.21.2 (v2026.9.11) published Sep 11 19:20 UTC — 'The state.db Patch Release'. Closes yesterday's security priority: full multi-profile credential-scoping wave (7 PRs: #107616 secondary-profile allow-lists, #107617 adapter credential routing, #107630 stdio MCP vault secrets, #107609 MEDIA: cross-profile attachments, #107611 sibling Nous bearer) + state.db reliability campaign (6 PRs, 44 issues: cron lifecycle guard raw-open() lock cancellation — our exact gateway+cron exposure; WAL wedge, FTS fail-closed, corrupt-row sessions list, one-shot write-lock 4-20s). Cron fixes: off-tick run-now no longer cancels next scheduled (#106306), killed manual run no 5-min block (#106733). Telegram bots_require_mention enforced (#106534). Password-blind 1Password vault (#106480). Scale: 947 commits, 312 PRs, 140 contributors in 4 days. WE ARE ON 0.21.0 — the version that introduced the fragile state.db rewrite. Upgrade path: stop gateway -> hermes update -> hermes doctor -> start -> verify cron list (7 jobs). Local drift refreshed 07:35 KB run: 1752 behind main (+270/day vs yesterday's 1482), tag +93 ahead of main HEAD (was 60 at 04:06). OpenClaw stable 2026.9.4 unchanged all day (verified live 07:35: releases list, tags, npm latest/beta 2026.9.4, extended-stable 2026.6.35); ZERO new GHSA (total 722 = 14C/249H/390M/69L, newest Sep-11 00:58 UTC batch, --paginate verified). ClawHub: 5 security fixes on main Sep 11 19:14 UTC (registry still v0.23.3): #3684 anonymous quota identity auth, #3683 DNS pinning image fetches, #3682 changelog preview authz, #3681 moderator review before hiding skills, #3680 org skill ownership. Adjacent CLIs: claude-code 2.1.269 / codex 0.154.0 / gemini-cli 0.59.0 vs local 2.1.76 / 0.114.0 / 0.36.0 (as of 04:06 monitor; not re-checked 07:35). Full detail: Release Monitor report 2026-09-12 (referenced as memories/reports/release-monitor/2026-09-12.md — file NOT present in repo at 07:35 check, memories/ untracked since 2026-08-21; treat as external). Prior days: git history of this file."
 github:
   last_known_version: 2026.9.4
   last_known_release_date: '2026-09-11'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.2
   last_known_tag: v2026.9.11
   last_known_release_date: '2026-09-11'
-  main_ahead_of_tag: 60
+  main_ahead_of_tag: 93
