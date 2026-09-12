@@ -1,4 +1,4 @@
-last_check: '2026-09-11'
+last_check: '2026-09-12'
 sources:
   github:
     repo: openclaw/openclaw
@@ -35,9 +35,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.21.1
-    last_known_tag: v2026.9.7
-    last_known_release_date: '2026-09-07'
+    last_known_version: 0.21.2
+    last_known_tag: v2026.9.11
+    last_known_release_date: '2026-09-11'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-11T07:45:00+02:00'
+  checked_at: '2026-09-12T04:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,36 +77,15 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 1482
-  upgrade_notes: "2026-09-11 (live-verified 07:45 CEST by KB run): STABLE ADVANCE — OpenClaw v2026.9.4\
-    \ PUBLISHED 03:46 UTC Sep 11 (draft run 04:02 saw only the staged tag; superseded here).\
-    \ Fourth stable in 8 days. npm latest/beta both 2026.9.4. WRONG-DATA corrected: draft\
-    \ claimed '3 new medium GHSA' — live count is 75 new since Sep 10 run (30H/40M/5L),\
-    \ all published 00:58 UTC Sep 11 in one triage batch; 70 of 75 ranges include local\
-    \ CLI 2026.6.8 (5 exclude: >=6.9.x/>=7.x floors). REAL advisory total corrected:\
-    \ 722 (14C/249H/390M/69L) via --paginate — old '100' was first-page artifact. v2026.6.35\
-    \ Extended Stable published Sep 10 (final June-2026 LTS line, 166 merged PRs per\
-    \ release body; 30 direct commits on squashed history). Hermes drift WORSENED: 1308\
-    \ -> 1482 behind (main HEAD 05d705dd, +809 past tag, 168 commits in last 24h). Overnight\
-    \ wave = multi-profile credential scoping fixes (secondary-profile send_message via\
-    \ own bot, MCP children get routed profile's vault secrets, secret re-pull no empty-snapshot\
-    \ latch, media denylist all profiles, TWILIO scoping) — DIRECTLY our fleet topology\
-    \ (4 profiles, separate 1Password vaults) → upgrade now security priority. Also\
-    \ Nous free tier (NS-847, /login in chat, HERMES_GUEST_ONBOARDING gate). v2026.9.4\
-    \ highlights (KB-relevant): compatible-update rollback/recovery, unified Plugins\
-    \ workspace, cloud ready workers + snapshots, TUI question prompts, OPENCLAW_CONFIG_READONLY=1,\
-    \ SDK deprecation agent-harness-credential-prompt-string-argument (Nov 30 deadline).\
-    \ Adjacent CLIs: claude-code 2.1.268 / codex 0.154.0 / gemini-cli 0.59.0 vs local\
-    \ 2.1.76 / 0.114.0 / 0.36.0. Prior days' context (Node >=24.16.0 floor = we're at\
-    \ minimum exactly; 6 plugin-SDK breakings zero-impact; local CLI now 14 stables\
-    \ behind): see 2026-09-10 notes in git history of this file."
+  hermes_main_behind: 1719
+  upgrade_notes: "2026-09-12: HERMES v0.21.2 (v2026.9.11) published Sep 11 19:20 UTC — 'The state.db Patch Release'. Closes yesterday's security priority: full multi-profile credential-scoping wave (7 PRs: #107616 secondary-profile allow-lists, #107617 adapter credential routing, #107630 stdio MCP vault secrets, #107609 MEDIA: cross-profile attachments, #107611 sibling Nous bearer) + state.db reliability campaign (6 PRs, 44 issues: cron lifecycle guard raw-open() lock cancellation — our exact gateway+cron exposure; WAL wedge, FTS fail-closed, corrupt-row sessions list, one-shot write-lock 4-20s). Cron fixes: off-tick run-now no longer cancels next scheduled (#106306), killed manual run no 5-min block (#106733). Telegram bots_require_mention enforced (#106534). Password-blind 1Password vault (#106480). Scale: 947 commits, 312 PRs, 140 contributors in 4 days. WE ARE ON 0.21.0 — the version that introduced the fragile state.db rewrite. Upgrade path: stop gateway -> hermes update -> hermes doctor -> start -> verify cron list (7 jobs). Local drift: 1719 behind main (+237/day), tag +60 ahead of main HEAD. OpenClaw stable 2026.9.4 unchanged (main +701 past tag, macOS fix wave overnight); npm latest/beta 2026.9.4; ZERO new GHSA since Sep-11 00:58 UTC batch (total still 722 = 14C/249H/390M/69L). ClawHub: 5 security fixes on main Sep 11 19:14 UTC (registry still v0.23.3): #3684 anonymous quota identity auth, #3683 DNS pinning image fetches, #3682 changelog preview authz, #3681 moderator review before hiding skills, #3680 org skill ownership. Adjacent CLIs: claude-code 2.1.269 / codex 0.154.0 / gemini-cli 0.59.0 vs local 2.1.76 / 0.114.0 / 0.36.0. Full detail: memories/reports/release-monitor/2026-09-12.md. Prior days: git history of this file."
 github:
   last_known_version: 2026.9.4
   last_known_release_date: '2026-09-11'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
-  last_known_version: 0.21.1
-  last_known_tag: v2026.9.7
-  last_known_release_date: '2026-09-07'
-  main_ahead_of_tag: 809
+  last_known_version: 0.21.2
+  last_known_tag: v2026.9.11
+  last_known_release_date: '2026-09-11'
+  main_ahead_of_tag: 60
