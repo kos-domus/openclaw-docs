@@ -1,5 +1,25 @@
 # Knowledge Base Changelog
 
+## 2026-09-13 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
+
+**Diff pre-esistente verificato (Release Monitor 04:00, non committato):** tredicesimo giorno consecutivo di coordinamento; oggi il monitor NON ha committato (worktree partito sporco). Ogni claim verificato contro API live alle 07:30-07:35 prima del commit:
+
+- **OpenClaw stable `2026.9.4` invariata** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); npm `latest`/`beta` 2026.9.4, `extended-stable` 2026.6.35 allineati. Nessun nuovo prerelease/tag-only signal, nessuna 2026.9.5.
+- **Hermes v0.21.2 (v2026.9.11) confermata live** ✓ — Sep 11 19:20 UTC, `prerelease: false`. Ancora la latest.
+- **Advisories invariati** ✓ — totale 722 (14C/249H/390M/69L) via `--paginate`, newest sempre il batch Sep-11 00:58 UTC: zero nuovi GHSA in ~55h.
+- **ClawHub `v0.23.3`** ✓ — ultima release registry confermata (security fixes #3680-#3684 solo su main).
+- **Adjacent CLIs** ✓ — claude-code 2.1.270 / codex 0.154.0 / gemini-cli 0.59.0 verificati live via `npm view` (coerenti col draft 04:00).
+- **Hermes drift riallineato (dato stale corretto)**: draft 04:00 dichiarava **2024 behind** / **365 ahead-of-tag**; live post-fetch 07:32 → **2101 behind** / **442 ahead** (+77/+77 in ~3.5h). Il 2024 era accurato vs il tip `205645ee` (Sep 12 18:35) misurato alle 04:00 — classe "stale" (timing), non "wrong": il tip è nel frattempo avanzato a `b6b53c69a6` (Sep 12 22:21). `hermes --version` cross-check: "2101 commits behind" ✓ combacia con rev-list. Trend 1291→1482→1752→2101 in 4 giorni, **accelerando**: ~270/day medio ma 349 push nelle sole ultime 24h (~370/day attuale).
+- **Spot-check contenuti last-24h** ✓ — commit citati dal draft trovati su `v2026.9.11..origin/main`: `560b6d2e81` (cron systemd-scope graceful degrade), `87b013b21e` (heartbeat fire-fence), `205645ee42` (gateway.multiplex_profiles), `acbecf588a` (profiles --clone-channels), `d1dbb0ac9e` (multiplexer hot-serve) + `f361971eed` (agent_loop_stopped hook, non citato dal draft). Claim del draft verificati.
+- **CORREZIONE — nota integrità del monitor**: il draft diceva "last file on disk is 2026-09-10" ma verifica diretta: nel repo l'ultimo file `memories/reports/release-monitor/` è 2026-08-21.md, e anche nel workspace hermes (`~/.hermes/memories/reports/release-monitor/`) l'ultimo è 2026-09-09.md — il report 2026-09-12 non è mai stato salvato da nessuna parte. Nota del tracker corretta (classe wrong-data lieve: puntatore a file inesistente).
+
+**Modifiche questo run:** solo `docs/meta/upstream-version.yaml` (drift Hermes 2024→2101, tag-ahead 365→442, `last_check` 09-13, nota integrità precisata) + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, nessun artifact upstream (nessun nuovo segnale release).
+
+### Self-assessment
+SKIP run pulito, tredicesimo giorno consecutivo di coordinamento col Release Monitor. Oggi il monitor non ha committato il tracker (diff pre-esistente nel worktree, pattern classico recuperato e verificato). La verifica live ha pagato ancora: due numeri stale corretti (drift 2024→2101, tag-ahead 365→442 — entrambi classe timing, misurati 3.5h prima) e una nota integrità imprecisa ("last file 2026-09-10" → in realtà 2026-09-09 nel workspace hermes, e 2026-08-21 nel repo; il report 09-12 non esiste da nessuna parte). Segnale operativo per Rakki, rafforzato: **Hermes upgrade a v0.21.2 è oltre la soglia critica** — drift 2101 e in accelerazione (~370/day attuale), siamo su 0.21.0 (state.db rewrite fragile) mentre v0.21.2 patcha esattamente la nostra esposizione gateway+cron (cron lifecycle guard, raw-open() lock cancellation) + credential-scoping multi-profilo per la nostra topologia 4-profili. `hermes update` + gateway restart appena possibile. OpenClaw stable ferma a 2026.9.4 da Sep 11, CLI locale 2026.6.8 (KB-reference only). gitleaks PASS, solo tracker + changelog committati. `memories/` untracked lasciato fuori come da convenzione.
+
 ## 2026-09-12 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
