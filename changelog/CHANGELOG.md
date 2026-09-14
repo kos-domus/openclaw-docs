@@ -1,5 +1,26 @@
 # Knowledge Base Changelog
 
+## 2026-09-14 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nota: nuova sessione `sessions/2026-09-13-alpha-batch-anydoc-plan-review-memory.md` presente nel worktree con `status: "new"` — non ready, quindi non elaborata; committata come file grezzo con commit dedicato (convenzione repo: le sessioni sono sempre tracciate in git, 64 file totali).
+
+**Diff pre-esistente verificato (Release Monitor 04:00, non committato):** quattordicesimo giorno consecutivo di coordinamento; il monitor NON ha committato (worktree partito sporco). Ogni claim verificato contro API live alle 07:31-07:35 prima del commit:
+
+- **OpenClaw stable `2026.9.4` invariata** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); npm `latest`/`beta` 2026.9.4, `extended-stable` 2026.6.35 allineati. Nessun segnale 2026.9.5.
+- **Hermes v0.21.2 (v2026.9.11) confermata live** ✓ — Sep 11 19:20 UTC, `prerelease: false`, ancora latest.
+- **CORREZIONE — GHSA total 722, non 800 (wrong data, non stale)**: il draft dichiarava "GHSA total now 800 (+78 backfill, all dated Sep-11, none newer)". Ricount live `--paginate`: totale 722 (14C/249H/390M/69L), identico a ieri; newest sempre il batch Sep-11 00:58 UTC; zero advisories più recenti del 2026-09-13T04:00Z. I +78 non esistono — stessa classe wrong-data già vista il 2026-09-07 (conteggio parziale ereditato dal draft). Corretto esplicitamente nel tracker.
+- **Hermes drift riallineato (stale per timing)**: draft 04:00 dichiarava **2466 behind** (vs `ee4452991d`, Sep-13 16:46) / **807 ahead-of-tag**; live post-fetch 07:33 → **2573 behind** / **914 ahead** (main è avanzato a `5eb99eb284`, Sep-14 04:56, durante la verifica stessa: ~107 commit in 12h). Numeri del monitor accurati al momento della misura. Trend: 1291→1482→1752→2101→2466→2573 (~400/day).
+- **Spot-check contenuti 24h** ✓ — i 4 fix cron DST citati dal draft sono tutti su main e NON in v0.21.2: `95c7e9a0cb` (strictly-later next run nel fall-back hour), `5a05332d72` (elapsed durations across DST), `3f76720aa7` (test via configured-timezone path), `d6d29b0010` (croniter anchored to IANA tz). Verificati anche `2dfd831d3b` (webhook `--route-profile`), `2770f93064`+`4ad60ac475` (traversal-shaped profile names rejected, 4064 nel TUI gateway), `668f7278de` (dashboard `${VAR}` per-profile secret scope), `9d39267def` (MCP `supports_parallel_tool_calls` per profile). Europe/Rome fall-back Oct 25 = deadline implicita per i nostri 7 cron job ancora su 0.21.0.
+- **ClawHub `v0.23.3`** ✓ — npm latest confermata (frozen da Sep 11).
+- **Adjacent CLIs** ✓ — claude-code 2.1.270 (locale 2.1.76) / codex 0.154.0 (allineato) / gemini-cli 0.59.0 (locale 0.36.0) via `npm view`.
+- **Blog** ✓ — nessun nuovo post (ultimo Sep 3, "macOS installer + Windows local AI", verificato live).
+- **CLI locale OpenClaw** ✓ — `openclaw --version` = 2026.6.8 (844f405), invariato da Jun 19.
+
+**Modifiche questo run:** `docs/meta/upstream-version.yaml` (correzione GHSA 800→722 con nota wrong-data, drift 2466→2573, tag-ahead 807→914, `last_check` 09-14) + commit dedicato per la sessione grezza 2026-09-13 + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, nessun artifact upstream (nessun nuovo segnale release).
+
+### Self-assessment
+SKIP run pulito, quattordicesimo giorno consecutivo di coordinamento col Release Monitor (oggi di nuovo con draft non committato da recuperare e verificare). La verifica live ha pagato nella forma più utile: il draft conteneva un **wrong-data count** (GHSA 800 vs 722 reale) che sarebbe finito dritto nella history del tracker senza ricount indipendente — riclassificato esplicitamente come wrong (non stale, stessa classe del 2026-09-07) e corretto. Drift Hermes corretto per staleness normale (2466→2573; main è avanzato durante la run stessa). Segnale operativo per Rakki, invariato e rafforzato: **upgrade Hermes oltre soglia critica** — 2573 behind a ~400/day, siamo su 0.21.0 (state.db fragile che 0.21.2 patcha) e i fix cron DST esistono solo su main, non in v0.21.2: il fall-back Europe/Rome del Oct 25 è la deadline implicita oltre la quale i nostri 7 cron job su 0.21.0 rischiano drift orario. Nuova sessione 2026-09-13 (`status: "new"`) in coda, elaborabile quando pronta. gitleaks PASS; committati tracker + changelog + sessione grezza in commit separato; `memories/` untracked lasciato fuori come da convenzione.
+
 ## 2026-09-13 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto).
