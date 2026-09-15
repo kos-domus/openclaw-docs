@@ -1,5 +1,24 @@
 # Knowledge Base Changelog
 
+## 2026-09-15 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). La sessione `2026-09-13-alpha-batch-anydoc-plan-review-memory.md` resta `status: "new"` in coda (committata ieri come file grezzo, convenzione repo).
+
+**Tracker già in HEAD (Release Monitor 05:45, commit diretto):** quindicesimo giorno consecutivo di coordinamento; il monitor oggi HA committato il tracker prima della run KB (worktree partito pulito). Nessun diff da recuperare né verificare — la run è quindi pura re-verification live + drift realignment. Ogni campo chiave ricontrollato contro API live alle 07:30-07:35:
+
+- **OpenClaw stable `2026.9.4` invariata** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); npm `latest`/`beta` 2026.9.4, `extended-stable` 2026.6.35; tags tip = `v2026.9.4`. Nessun segnale 2026.9.5.
+- **Hermes v0.21.3 (v2026.9.14) confermata live** ✓ — Sep 14 16:04 UTC, `prerelease: false`, ancora la latest.
+- **Advisories invariati** ✓ — totale 722 (14C/249H/390M/69L) via `--paginate` + `jq -s`, newest sempre il batch Sep-11 00:58 UTC: quarto giorno consecutivo zero nuovi GHSA. Coerente col claim del monitor ("UNCHANGED, 3rd day zero new").
+- **Docs pages** ✓ — `/releases`, `/multi-agent`, `/configuration` tutti HTTP 200 (nessuna migrazione di pagine da registrare).
+- **Hermes drift riallineato (stale per timing)**: monitor 05:45 dichiarava **2795 behind** / **main +97 past tag**; live post-fetch 07:30 → **2886 behind** / **+188 past tag** (+91 in ~2h, pacing normale; il main è avanzato a `db64ddb58e` Sep-15 10:50 IST). Behind-tag **2698 invariato** ✓ (tag fermo, local fermo). Coerenza interna verificata: 2698 + 188 = 2886 ✓. Cross-check `hermes --version`: "2795 commits behind" — il suo numero è pre-fetch, ≤ del post-fetch rev-list ✓.
+- **Segnale operativo invariato e rafforzato**: siamo su 0.21.0, **tre minor release dietro** (0.21.1/0.21.2/0.21.3). v0.21.3 porta nel tag i 4 fix cron DST + il fix state.db duplicate writer handle leak (#110934) — il fall-back Europe/Rome del Oct 25 è la deadline implicita oltre la quale i nostri 7 cron job su 0.21.0 rischiano drift orario. Un singolo upgrade chiude security multi-profilo + DST cron + handle leak.
+
+**Modifiche questo run:** solo `docs/meta/upstream-version.yaml` (drift 2795→2886, tag-ahead 97→188, `checked_at` 07:30, self-note drift riallineata) + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, nessun artifact upstream (nessun nuovo segnale release).
+
+### Self-assessment
+
+SKIP run pulito, quindicesimo giorno consecutivo di coordinamento col Release Monitor — oggi nella forma migliore: il monitor ha committato direttamente il tracker alle 05:45 (pattern 2026-09-12), quindi la run KB è partita da worktree pulito e ha fatto ciò che deve fare: re-verificare tutto contro API live e riallineare solo i numeri che effettivamente muovono (behind-count e tag-ahead crescono per costruzione). Tutti i claim del monitor confermati senza correzioni: nessun wrong-data oggi (dopo i due casi delle scorse settimane, il ricount indipendente GHSA via `--paginate` + `jq -s` resta la verifica che paga di più — oggi 722 esatto, quarto giorno zero nuovi). Coerenza aritmetica del drift verificata (2698+188=2886) e `hermes --version` cross-checkato contro rev-list post-fetch. Segnale per Rakki, invariato: **upgrade Hermes a v0.21.3** — tre minor dietro, deadline DST Oct 25 sempre più vicina, e il tag ora contiene tutto ciò che serve (fix DST cron + state.db handle leak + scoping credenziali multi-profilo). Sessione 2026-09-13 ancora `new` in coda. gitleaks PASS; committati solo tracker + changelog; `memories/` untracked lasciato fuori come da convenzione.
+
 ## 2026-09-14 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nota: nuova sessione `sessions/2026-09-13-alpha-batch-anydoc-plan-review-memory.md` presente nel worktree con `status: "new"` — non ready, quindi non elaborata; committata come file grezzo con commit dedicato (convenzione repo: le sessioni sono sempre tracciate in git, 64 file totali).
