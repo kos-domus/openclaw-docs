@@ -44,3 +44,14 @@ Il run Opus si è fermato a 310/4997 per credito API esaurito, dopo aver accumul
 **Result**: $155 → $28,69 stimati, $28,56 reali per 4.690 domande. Totale progetto $41,12 per 4.997/4.997 domande e 19.988 motivazioni. 2.129 domande con citazione dal corpus, 7 dissensi dalla risposta ufficiale aperti in Segnalazioni. 65 test verdi.
 
 **Lezione aggiuntiva**: in una generazione di massa lo schema di structured output è un costo fisso moltiplicato per ogni richiesta — va misurato con `count_tokens`, non stimato. E un run lungo deve distinguere errori transitori da errori di account, altrimenti "fallisce con successo" per migliaia di richieste.
+
+### 6. U15 — recupero fonti per le domande che non citano articoli + pagina Revisione
+Richiesta Rakki: "motore di ricerca semantico". **Misurato invece di assunto**, con ground truth le 2.154 coppie domanda→articolo note: BM25 su SQLite FTS5 recall top-10 **73%**, embedding multilingua piccoli (fastembed MiniLM ONNX) **46%**, fusione RRF **71%**. Sul lessico giuridico italiano il lessicale batte il semantico e la fusione peggiora → `fastembed` disinstallato, zero dipendenze nuove, indice FTS5 in 0,2 s. Filtro per materia: nessun guadagno (72% vs 73%). Candidati 4 invece di 6: −25% input, −3 punti recall.
+
+Architettura onesta: i candidati **non** diventano riferimenti. Entrano nel prompt in una sezione che dichiara che non sono citati nel quesito e possono essere fuori tema; il validatore accetta solo quelli forniti; se il modello ne cita davvero uno nasce un `question_references(origin='ai')` (badge "proposto da AI" già in UI), apribile e scartabile; uno scartato non torna fra i candidati. Prova reale su 6 domande: 4 ancorate con l'articolo esatto (art. 1936 c.c. fideiussione, art. 2409-bis c.c. revisione legale), 2 lasciate senza fonte perché nulla era pertinente.
+
+**Pagina Revisione** (`/curation`): cinque code ordinate per resa (dissensi 7 · confidenza <0,5 107 · tue errate 30 · senza fonte 2.864 · mai confermate) con filtro materia e percentuale di avanzamento sulle confermate. Il filtro serve perché 1.495 delle "senza fonte" sono di matematica, dove la norma non c'entra.
+
+**Result**: 70 test verdi. Batch B+D+E (931 domande, ~$5,20) inviati; resta C tributario (438, ~$4,83) in attesa di ricarica.
+
+**Gotcha**: il dev server Next non registrava la rotta nuova (404 anche dopo attesa) → riavvio necessario; verificato con una GET reale, non solo controllando che il file esistesse.
