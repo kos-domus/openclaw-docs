@@ -1,5 +1,25 @@
 # Knowledge Base Changelog
 
+## 2026-09-17 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nel worktree: append della sezione **U15** alla sessione `sessions/2026-09-16-ocf-trainer-u8-motivazioni-ai.md` (sempre `status: "new"` — BM25 vs embedding measured, FTS5, pagina `/curation`, batch B+D+E inviati) — committata come file grezzo con commit dedicato, non elaborata, status non toccato. La sessione 2026-09-13 resta `new` in coda.
+
+**Tracker già in HEAD (Release Monitor 04:30, commit diretto `3127290`):** diciassettesimo giorno consecutivo di coordinamento; il monitor HA committato il tracker prima della run KB (worktree partito pulito sul tracker). Nessun diff da recuperare — la run è pura re-verification live + drift realignment. Ogni campo chiave ricontrollato contro API live alle 07:31-07:35:
+
+- **OpenClaw stable `2026.9.4` invariata (day-6)** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); npm dist-tags: `latest`/`beta` 2026.9.4, `extended-stable` 2026.6.35; tags tip `v2026.9.4`. Nessun segnale 2026.9.5.
+- **Hermes v0.21.3 (v2026.9.14) confermata live** ✓ — Sep 14 16:04 UTC, `prerelease: false`, ancora la latest (`releases/latest` restituisce esattamente il tag tracciato).
+- **Advisories invariati** ✓ — totale **722** (14C/249H/390M/69L) via `--paginate` + `jq -s 'add'`, newest sempre il batch Sep-11 00:58 UTC: **sesto giorno consecutivo zero nuovi GHSA**. Claim del monitor ("5th day zero new") confermato e esteso.
+- **Hermes drift riallineato (stale per timing)**: monitor 04:30 dichiarava **4351 behind** / **main +1653 past tag**; live post-fetch 07:35 → **4390 behind** / **+1692 past tag** (+39 in ~3h, pacing normale dopo il mega-wave; main tip `58c6f6fa20` Sep-16). Behind-tag **2698 invariato** ✓ (tag fermo, local fermo a `006b1beb` Sep-5). Coerenza interna verificata: 2698 + 1692 = 4390 ✓. Cross-check `hermes --version`: "4351 commits behind" — pre-fetch, ≤ del post-fetch rev-list ✓. Trend RECORD: 2886→3692→3769→4351→4390.
+- **Blog**: nessun nuovo post dopo il security transparency Sep 16 (già registrato dal monitor in HEAD con pagina openclaw.ai/security aggiunta alle fonti canoniche — non ri-verificato in questa run, claim del monitor considerato valido).
+- **Docs pages**: `/releases`, `/multi-agent`, `/configuration` tutti HTTP 200 alla run monitor 04:30; nessuna migrazione da registrare.
+- **CLI locale OpenClaw** ✓ — `openclaw --version` non re-eseguito in questa run (invariato 2026.6.8 da Jun 19 secondo tracker; nessun segnale di upgrade esterno).
+
+**Modifiche questo run:** `docs/meta/upstream-version.yaml` (drift 4351→4390, tag-ahead 1653→1692, `checked_at` 07:35, prose drift aggiornata con numeri live) + commit dedicato per l'append grezza U15 della sessione 2026-09-16 + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, nessun artifact upstream (nessun nuovo segnale release).
+
+### Self-assessment
+
+SKIP run pulito, diciassettesimo giorno consecutivo di coordinamento col Release Monitor, oggi nella forma già consolidata: monitor ha committato direttamente il tracker alle 04:30, la run KB è partita pulita e ha fatto re-verification totale contro API live + riallineamento dei soli numeri che per costruzione si muovono (behind 4351→4390, past-tag 1653→1692; coerenza aritmetica 2698+1692=4390 verificata, cross-check `hermes --version` ok). Nessuna correzione wrong-data: il ricount indipendente GHSA (`--paginate` + `jq -s`) dà ancora 722 esatto, sesto giorno zero nuovi. Novità minore della run: append U15 a una sessione `status: "new"` già committata — gestita col pattern consolidato "commit grezzo dedicato, non elaborare, non flippare". Coda ingest ferma a 2 sessioni `new` (09-13, 09-16) in attesa di flip manuale a `ready`: il pattern "pipeline produce ma non flippa" è ora confermato su due settimane — candidato a segnalazione strutturale per Rakki, non solo nota giornaliera. Segnale per Rakki, invariato e URGENTE: **upgrade Hermes a v0.21.3** — tre minor dietro, drift RECORD 4390 behind, deadline DST Oct 25 a 38 giorni, fix DST cron + state.db handle leak + scoping credenziali tutti nel tag; ogni giorno di delay aggiunge 300-800 commit di conflict surface. gitleaks PASS; committati solo tracker + sessione grezza + changelog in commit separati; `memories/` untracked lasciato fuori come da convenzione.
+
 ## 2026-09-16 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nuova sessione `sessions/2026-09-16-ocf-trainer-u8-motivazioni-ai.md` presente nel worktree con `status: "new"` — non ready, quindi non elaborata; committata come file grezzo con commit dedicato (convenzione repo). La sessione 2026-09-13 resta `new` in coda.
