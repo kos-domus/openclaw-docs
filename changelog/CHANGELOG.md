@@ -1,5 +1,27 @@
 # Knowledge Base Changelog
 
+## 2026-09-18 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nessuna nuova sessione nel worktree (coda ingest ferma a 2 sessioni `new`: 09-13, 09-16). Nel worktree: solo il diff pre-esistente del tracker lasciato dal Release Monitor 04:05 (non committato, da recuperare e verificare).
+
+**Diff pre-esistente verificato (Release Monitor 04:05, non committato):** diciottesimo giorno consecutivo di coordinamento; ogni claim verificato contro API live alle 07:31-07:40 prima del commit:
+
+- **OpenClaw stable `2026.9.4` invariata (day-7)** ✓ — GitHub releases list: `v2026.9.4` Sep 11 03:46 UTC sempre prima entry (`prerelease: false`); npm `latest`/`beta` 2026.9.4. Nessun segnale 2026.9.5.
+- **SEGNALE NUOVO — npm extended-stable avanzato `2026.6.35` → `2026.7.33`** (July LTS line). npm publish 05:10 UTC, GitHub release `v2026.7.33` 05:33 UTC Sep-18 (126 PR: security/credential hardening, channel delivery integrity, UTF-16 boundaries). **Il monitor 04:05 non poteva vederlo** (pubblicato 3h dopo). Catturato da questa run alle 07:31 via npm dist-tags; release page GitHub live pochi minuti dopo il primo check (404 → confermata via `releases?per_page=30`). Artifact creato: `docs/meta/upstream-updates/2026-09-18-v2026.7.33-extended-stable.md`; tracker `last_known_extended_stable` aggiornato.
+- **Hermes v0.21.3 (v2026.9.14) confermata live** ✓ — Sep 14 16:04 UTC, `prerelease: false`, ancora la latest.
+- **Advisories invariati** ✓ — totale **722** (14C/249H/390M/69L) via `--paginate` + `jq -s 'add'`, newest sempre il batch Sep-11 00:58 UTC: **settimo giorno consecutivo zero nuovi GHSA**. Correzione wrong-data: il draft del monitor diceva "6th day zero new" — è il 7° (conteggio giorni del monitor scentrato di uno; la sostanza invariata).
+- **Hermes drift riallineato + undercount corretto**: monitor 04:05 dichiarava **4703 behind** / **2005 past tag** / "main 24h 100+ commits (API-capped)". Live post-fetch 07:33 → **4705 behind** / **+2007 past tag** (stale per timing, +2 in 3.5h). Ma il claim "100+ commits in 24h" è **WRONG data (undercount)**: `rev-list --since=24h` dà **315 commit** — draft corretto esplicitamente nel tracker. Coerenza interna verificata: 2698 + 2007 = 4705 ✓. Cross-check `hermes --version`: "4705 commits behind" — match esatto col post-fetch rev-list ✓. Trend RECORD: 2886→3692→3769→4351→4390→4705.
+- **Adjacent CLIs** ✓ — upstream live: claude-code **2.1.276** (draft diceva 2.1.275, +1 durante la giornata — aggiornato), codex 0.155.0, gemini-cli 0.60.0. Locali invariati (2.1.76 / 0.154.0 / 0.59.0).
+- **ClawHub** ✓ — #3777 + #3776 Sep-17 confermati live via commits API; registry v0.23.3 invariato.
+- **Docs pages** ✓ — `/`, `/multi-agent`, `/channels`, `/security`, `/releases`, `/mcp`, `/automation/hooks` tutti HTTP 200; `/agents` 404 (migrazione nota, già tracciata).
+- **CLI locale OpenClaw** ✓ — `openclaw --version` = 2026.6.8 (844f405), invariato.
+
+**Modifiche questo run:** `docs/meta/upstream-version.yaml` (drift 4703→4705, tag-ahead 2005→2007, extended-stable 2026.6.35→2026.7.33, `checked_at` 07:35, prose: 7° giorno GHSA, undercount 100+→315 corretto, claude-code 2.1.276, segnale extended-stable aggiunto) + nuovo artifact `docs/meta/upstream-updates/2026-09-18-v2026.7.33-extended-stable.md` + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati. `memories/` untracked lasciato fuori come da convenzione.
+
+### Self-assessment
+
+SKIP run con una scoperta reale: l'avanzamento del canale npm **extended-stable alla July LTS line (2026.7.33)** è stato pubblicato alle 05:10-05:33 UTC, in mezzo fra la run del monitor (04:05) e questa run (07:31) — nessuno dei due job l'avrebbe visto da solo nella stessa posizione; il timing incrociato dei due cron l'ha catturato. Gestito per intero: verificato su npm + GitHub (con la solita propagation lag sul release-by-tag 404), artifact dedicato scritto, tracker aggiornato, changelog. Due correzioni wrong-data al draft del monitor: conteggio giorni GHSA scentrato (6°→7°) e undercount "100+ commits API-capped"→315 reale via rev-list — entrambe corrette esplicitamente, classe failure diversa dal solito stale-per-timing. Il resto è riallineamento standard di drift (4703→4705, identità 2698+2007=4705 verificata, cross-check `hermes --version` esatto). Segnale per Rakki, URGENTE e invariato: **upgrade Hermes a v0.21.3** — drift RECORD 4705 behind main (+315/giorno), sesto giorno dalla raccomandazione del Sep 13 non eseguita, deadline DST Oct 25 a 37 giorni; fix DST cron + state.db handle leak + credential scoping tutti nel tag. gitleaks PASS; committati solo tracker + artifact + changelog.
+
 ## 2026-09-17 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Nel worktree: append della sezione **U15** alla sessione `sessions/2026-09-16-ocf-trainer-u8-motivazioni-ai.md` (sempre `status: "new"` — BM25 vs embedding measured, FTS5, pagina `/curation`, batch B+D+E inviati) — committata come file grezzo con commit dedicato, non elaborata, status non toccato. La sessione 2026-09-13 resta `new` in coda.
