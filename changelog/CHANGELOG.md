@@ -1,5 +1,26 @@
 # Knowledge Base Changelog
 
+## 2026-09-21 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Coda ingest ferma a 2 sessioni `new` (09-13, 09-16) + 1 template draft. Nel worktree: diff pre-esistente del tracker lasciato dal Release Monitor 04:30 (non committato) — ventesimo giorno consecutivo di coordinamento monitor→KB.
+
+**Diff pre-esistente verificato (Release Monitor 04:30, non committato):** ogni claim verificato contro API live alle 07:30-07:40 prima del commit:
+
+- **SEGNALE NUOVO — extended-stable FLIP-FLOP: 2026.7.34 de-taggata, dist-tag torna a `2026.6.35`** (seconda de-tag in 48h: advance 2026.7.33 Sep-18 → retraction Sep-19 → re-publish 2026.7.34 Sep-20 → de-tag Sep-21). Evidenza live: `npm dist-tags` → `extended-stable: 2026.6.35`; `npm versions` conferma i tarball 2026.7.33/2026.7.34 ancora nel registry (orfani, untagged); `releases?per_page=10` senza alcuna entry 2026.7.x (la release page GitHub di 2026.7.34 non è mai andata live). Classificazione: **instabilità della lane**, non terza retraction formale (nessuna verifica live precedente della release page 2026.7.34). La lane July LTS è dichiarata **do-not-pin**: due rollback in 48h. Artifact: `docs/meta/upstream-updates/2026-09-21-extended-stable-flip-flop-detag.md`.
+- **Correzione field/prose drift nel tracker:** il draft monitor descriveva correttamente il flip nella prose ma lasciava `npm.last_known_extended_stable: 2026.7.34` (stale). Corretto a `2026.6.35` dalla run KB e annotato nel tracker.
+- **OpenClaw stable `2026.9.5` day-3 invariata** ✓ — npm `latest`/`beta` 2026.9.5; `releases?per_page=10` conferma v2026.9.5 prima entry (`prerelease: false`, Sep 19 01:55 UTC); tag list allineata (v2026.9.5 in cima).
+- **Hermes v0.21.3 (v2026.9.14) day-7** ✓ — nessuna nuova release NousResearch/hermes-agent (latest sempre v2026.9.14, Sep 14 16:04 UTC).
+- **Advisories invariati** ✓ — totale **722** (14C/249H/390M/69L) via `--paginate` + `jq -s add` (il conteggio single-page restituisce 100 = capped: ricount paginato obbligatorio), newest sempre batch Sep-11 00:58 UTC: **decimo giorno consecutivo zero nuovi GHSA** ✓.
+- **Hermes drift riallineato (monitor draft stale, non wrong):** monitor 04:30 dichiarava **7570 behind / 4872 past tag / 1107 commits 24h**. Live post-fetch 07:35 → **7646 behind** / **+4948 past tag**, identità verificata 2698 behind-tag + 4948 = 7646 ✓ (behind-tag invariato, local fermo a `006b1beb` Sep-5). 24h commits **1110 live** (664 fix / 171 test / 82 chore / 52 feat — il draft 1107/640/161/91 era accurato alla sua misurazione). Trend RECORD: 2886→3692→3769→4351→4390→4705→5616→6536→7646 (+1110/giorno, in accelerazione). **Upgrade rec dal Sep 13 ANCORA non eseguito (nono giorno)** — oltre 7.6k commit di conflict surface.
+- **Early warning unreleased invariato:** default flip `tools.message.crossContext.allowAcrossProviders` → allow al prossimo stable Hermes (#149875) — decidere `false` esplicito PRIMA dell'upgrade. Codex fix background memory narratives (#151658).
+- **CLI adiacenti** ✓ — claude-code 2.1.278 (local 2.1.76), codex 0.155.1 (local 0.154.0), gemini-cli 0.60.0 (local 0.59.0). Docs upstream: key pages campionate 200. ClawHub v0.23.3 invariato, nessun commit 48h.
+
+**Modifiche questo run:** 1 nuovo artifact (`2026-09-21-extended-stable-flip-flop-detag.md`) + `docs/meta/upstream-version.yaml` (extended-stable 2026.6.35 con nota correzione campo, drift 7646, tag-ahead 4948, prose allineata ai numeri live) + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, `memories/` untracked escluso come da convenzione.
+
+### Self-assessment
+
+Run SKIP con terzo atto della saga extended-stable in 4 giorni: la lane July LTS ha ora il profilo advance→retract→republish→de-tag, e la classificazione odierna ha applicato correttamente la distinzione del skill — nessuna verifica live precedente della release page 2026.7.34 esisteva, quindi la de-tag è instabilità di lane (watch), non una retraction formale da artifact-verboso; l'artifact resta comunque dedicato perché due rollback in 48h cambiano la raccomandazione operativa (do-not-pin esplicito). Novità di processo rilevata: **field/prose drift del monitor** — la prose del draft descriveva il flip ma il campo `last_known_extended_stable` era rimasto a 2026.7.34; la verifica live della run KB l'ha colto perché ogni campo del tracker viene confrontato contro le API, non solo la prose. Lezione che si somma a changelog-vs-tracker drift (2026-08-30): verificare sempre campi E prose indipendentemente. Drift Hermes a RECORD 7646 (+1110/giorno, accelerando), nono giorno di raccomandazione upgrade non eseguita; con 4948 commit main oltre il tag, il prossimo release Hermes accumula già un quarto della distanza fra 0.21.2 e 0.21.3. gitleaks PASS atteso pre-commit; committati solo artifact + tracker + changelog.
+
 ## 2026-09-20 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Coda ingest ferma a 2 sessioni `new` (09-13, 09-16) + 1 template draft. Nel worktree: diff pre-esistente del tracker lasciato dal Release Monitor 04:05 (non committato, da recuperare e verificare) — diciannovesimo giorno consecutivo di coordinamento monitor→KB.
