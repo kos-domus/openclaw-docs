@@ -518,3 +518,23 @@ Run SKIP ma non no-op: il tracker era indietro di quasi due mesi e nascondeva du
 ### Self-assessment
 Clean SKIP run on 2026-08-28. Documentation Engine healthy and idle. No sessions in queue; KB remains fully consistent with upstream references, Diátaxis framework, and official Hermes Agent documentation. Git commit + push completed successfully with metadata-only change. No errors, no manual intervention required. Waiting for fresh ready sessions from active agents (Master Control, Kai, etc.). Workflow executed autonomously per cron job as per SOUL.md.
 
+
+## 2026-09-24 — Daily elaboration (KB run)
+
+**Sessions**: 0 ready (SKIP for session ingestion; no status flips).
+
+**Upstream — OpenClaw STABLE ADVANCE**: 2026.9.5 → **2026.9.6** (published 2026-09-23 23:21 UTC, `prerelease: false`). npm `latest`/`beta` both 2026.9.6; `extended-stable` 2026.7.35 unchanged. New upstream artifact: `docs/meta/upstream-updates/2026-09-24-v2026.9.6.md`. Headlines (verified against release body + full changelog): Claude Opus 5.5 ($4/$20 per M, 1M ctx), GPT-6 Sol/Luna (Luna $0.10/$0.50 vs Sol $2/$10), Grok 4.7, TypeSafe Jev decision-models plugin (`@openclaw/typesafe`, opt-in), 18 MiB smaller npm install, recovery of unfinished work after restarts. **macOS app withdrawn** from update feed (launch crash #156861, 2026.9.7 hotfix incoming) — npm/Gateway package unaffected, our Linux path safe. Release scale: 178 direct commits / 2,614 PRs / ~350 contributors. Android APK skipped this release (watch signal for mobile only).
+
+**Pre-existing tracker diff folded (sibling monitor)**: monitor drafted the 2026.9.6 advance in `upstream-version.yaml` before this run (worktree diff present at start). KB verified every claim live: release page, npm dist-tags, changelog pricing/feature grep, GHSA, blog, key docs pages — all confirmed. Two corrections applied:
+1. Hermes drift: monitor said 9266 behind main / post-tag wave 1395 → live post-fetch **9308 behind / 1437 past-tag** (stale, not wrong; identity 7871+1437=9308 checks out). 13th day upgrade pending; no new Hermes tag after v2026.9.21 (day-3), post-tag wave accelerating → next Hermes release likely imminent.
+2. OpenClaw main 24h activity: monitor said "~100+ commits, HEAD 82a518c" → KB paginated recount = **512 commits since Sep 23 05:30 UTC, HEAD 9ce7d581** (single-page API-capped undercount — wrong data class, not stale; wave continues).
+
+**GHSA**: 0 new advisories since the Sep-11 batch (12th day). Full paginated count 722 = 14 critical / 249 high / 390 medium / 69 low. Note: single-page query without `--paginate` returns exactly 100 (page cap) — pitfall re-confirmed live.
+
+**Blog**: no new posts (newest still "Decision models in OpenClaw", Sep 22). Docs key pages all HTTP 200 (/ /multi-agent /automation /skills /plugins).
+
+**Docs touched**: `docs/meta/upstream-version.yaml` (refresh + corrections), new `docs/meta/upstream-updates/2026-09-24-v2026.9.6.md`. **Diátaxis docs and `docs/index.yaml` untouched** (no session content; no index churn on SKIP).
+
+**Self-assessment**: Clean run. Zero ready sessions → session pipeline idle, statuses untouched. Pre-existing monitor diff recovered per the established fold protocol: every field re-verified against live API data before commit, two corrections (one stale, one wrong-data) applied and classified explicitly. Stable advance ingested with one artifact + tracker refresh, matching repo conventions (previous artifact count 118 → 119). YAML validated with yaml.safe_load post-edit. gitleaks clean. Untracked `memories/` left untracked (external, per convention).
+
+**Upgrade recommendation (unchanged, now concrete)**: upgrade local OpenClaw CLI 2026.6.8 → 2026.9.6 via `npm i -g openclaw@latest` (Node 24.16.0 OK) AFTER setting `allowAcrossProviders: false` (cross-provider default flip #149875 still unreleased — last window before the default changes). Verified pre-upgrade backup mandatory (schema 21). Hermes: wait for next tag (post-tag wave 1437 suggests imminent).

@@ -1,10 +1,10 @@
-last_check: '2026-09-23'
+last_check: '2026-09-24'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.9.5
-    last_known_release_date: '2026-09-19'
+    last_known_version: 2026.9.6
+    last_known_release_date: '2026-09-23'
     last_known_beta_version: 2026.9.1-beta.1
     last_known_beta_release_date: '2026-08-28'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,8 +25,8 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.9.5
-    last_known_beta: 2026.9.5
+    last_known_version: 2026.9.6
+    last_known_beta: 2026.9.6
     last_known_extended_stable: 2026.7.35
     permanent: true
     check_methods:
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-22T04:15:00+02:00'
+  checked_at: '2026-09-24T06:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,15 +77,15 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 8359
-  upgrade_notes: "2026-09-23: NO new releases OC/Hermes (day-4 stable 2026.9.5, day-2 Hermes v2026.9.21). HERMES local 006b1beb now 7871 behind tag v2026.9.21, 8359 behind main LIVE@07:32 (tag->main gap 488 = post-tag wave continues, draft 8342@04:05 stale-not-wrong; 12th day upgrade pending since Sep 13; recommendation UNCHANGED target v2026.9.21 via hermes update). GHSA DISCLOSURE: 27 audit advisories went PUBLIC Sep 11 batch (30 total listed; sample verified: rx8p-qcpv-c7vr prometheus operator.read @openclaw/diagnostics-prometheus patch>=2026.9.3 MEDIUM, xvwp-wmh2-fq48 discord media policy @openclaw/discord patch>=2026.9.3 MEDIUM, 5j57-84cx-r295 iOS deep-link creds patch>=2026.8.11 MEDIUM; all patched BEFORE disclosure, zero Crit per audit recap) - earlier zero-new-GHSA reading was correct (none published SINCE Sep 11; batch was the audit going public). Our OC 2026.6.8 = vulnerable range for 2 of 3 sampled advisories BUT zero gateway processes locally (re-verified 0 today), CLI/docs consumer only - exposure theoretical. OpenClaw main 24h: 516 commits KB-live@07:33 (draft 396@04:05 stale; wave day-3; MEGA-WAVE totals since Sep 21 ~07:00 UTC: 1115 commits in ~48h KB-paginated); HEAD f66f682 fix: avoid attributing slow SQLite steps to lock contention #155607 (draft 1dd82fa stale). feat(decisions) f9e969c: explicit evaluation + Labs opt-in foundation - first decisions-models code landing main (follows Sep 22 blog Josh Lehman: Jev decision models plugin-first, typed answers choice/score/probability, shared interface for contributors). Unreleased unchanged (3 items): Codex fix #151658, sandbox owner pruning policy, cross-provider default flip #149875 (set allowAcrossProviders: false BEFORE next stable). Blog NEW Sep 22: Decision models in OpenClaw (Graham McBain interview w/ Josh Lehman). ClawHub v0.23.3, 3rd active day: #3794 lead homepage with Plugins/Featured (Sep 22), #3793 plugin icons, #3792 voice mic icon. npm dist-tags: latest/beta 2026.9.5 unchanged (day-4), extended-stable 2026.7.35 stable. CLI drift: claude-code 2.1.280 latest (local 2.1.76, -204 chronic), codex 0.156.1 (local 0.154.0, -2), gemini 0.60.0 (local 0.59.0, -1). OC stable window day-4, upgrade ~Sep 26 w/ backup schema 21. linux-stable rolling lane last build Sep 19."
+  hermes_main_behind: 9308
+  upgrade_notes: "2026-09-24: STABLE 2026.9.6 released Sep 23 23:21 UTC (2614 PR, ~350 contributors). npm latest/beta 2026.9.6. macOS app WITHDRAWN from update feed (crash #156861, hotfix 2026.9.7 incoming) but npm/Gateway unaffected - our Linux CLI path safe. Highlights: Claude Opus 5.5 ($4/$20, 1M ctx), GPT-6 Sol/Luna (Luna $0.10/$0.50 batch candidate), Grok 4.7, TypeSafe Jev decision-models plugin (@openclaw/typesafe, opt-in), -18MiB npm install, recovery of unfinished work after restart. Unreleased unchanged (3 items): Codex fix #151658, sandbox owner pruning, cross-provider default flip #149875 (set allowAcrossProviders: false BEFORE next stable). GHSA: zero new advisories since Sep 11 batch (30 total, all pre-patched, 0 Critical). ClawHub v0.23.3 + 5 PRs merged overnight incl quarantine-propagation fix #3770. Hermes: no new tag after v2026.9.21 (day-3); local 006b1beb 7871 behind tag, 9308 behind main LIVE@07:31 CEST (post-tag wave 488->1437; release likely imminent; draft 9266/1395 was 04:05 stale-not-wrong). RECOMMENDATION: upgrade OC to 2026.9.6 now (npm i -g openclaw@latest, Node 24.16.0 ok) after setting allowAcrossProviders:false; Hermes wait next tag. Blog: no new posts (last Sep 22 decision models). OpenClaw main 24h 512 commits KB-paginated@07:31 (draft ~100+ single-page API-capped undercount - wrong data; wave continues), HEAD 9ce7d581 fix: gateway stalls while reading stored messages (#156772)."
 github:
-  last_known_version: 2026.9.5
-  last_known_release_date: '2026-09-19'
+  last_known_version: 2026.9.6
+  last_known_release_date: '2026-09-23'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
   last_known_version: 0.21.4
   last_known_tag: v2026.9.21
   last_known_release_date: '2026-09-21'
-  main_ahead_of_tag: 488
+  main_ahead_of_tag: 1437
