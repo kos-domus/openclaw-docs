@@ -1,4 +1,4 @@
-last_check: '2026-09-24'
+last_check: '2026-09-25'
 sources:
   github:
     repo: openclaw/openclaw
@@ -35,9 +35,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.21.4
-    last_known_tag: v2026.9.21
-    last_known_release_date: '2026-09-21'
+    last_known_version: 0.21.5
+    last_known_tag: v2026.9.24
+    last_known_release_date: '2026-09-24'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-24T06:00:00+02:00'
+  checked_at: '2026-09-25T07:31:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,15 +77,15 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 9308
-  upgrade_notes: "2026-09-24: STABLE 2026.9.6 released Sep 23 23:21 UTC (2614 PR, ~350 contributors). npm latest/beta 2026.9.6. macOS app WITHDRAWN from update feed (crash #156861, hotfix 2026.9.7 incoming) but npm/Gateway unaffected - our Linux CLI path safe. Highlights: Claude Opus 5.5 ($4/$20, 1M ctx), GPT-6 Sol/Luna (Luna $0.10/$0.50 batch candidate), Grok 4.7, TypeSafe Jev decision-models plugin (@openclaw/typesafe, opt-in), -18MiB npm install, recovery of unfinished work after restart. Unreleased unchanged (3 items): Codex fix #151658, sandbox owner pruning, cross-provider default flip #149875 (set allowAcrossProviders: false BEFORE next stable). GHSA: zero new advisories since Sep 11 batch (30 total, all pre-patched, 0 Critical). ClawHub v0.23.3 + 5 PRs merged overnight incl quarantine-propagation fix #3770. Hermes: no new tag after v2026.9.21 (day-3); local 006b1beb 7871 behind tag, 9308 behind main LIVE@07:31 CEST (post-tag wave 488->1437; release likely imminent; draft 9266/1395 was 04:05 stale-not-wrong). RECOMMENDATION: upgrade OC to 2026.9.6 now (npm i -g openclaw@latest, Node 24.16.0 ok) after setting allowAcrossProviders:false; Hermes wait next tag. Blog: no new posts (last Sep 22 decision models). OpenClaw main 24h 512 commits KB-paginated@07:31 (draft ~100+ single-page API-capped undercount - wrong data; wave continues), HEAD 9ce7d581 fix: gateway stalls while reading stored messages (#156772)."
+  hermes_main_behind: 11605
+  upgrade_notes: "2026-09-25 (KB live-verified 07:31 CEST): NO hotfix 2026.9.7 - macOS crash #156861 risolto con rebuild della 2026.9.6 stessa (Sep 24 09:52 UTC, notarized, fix #156881 - confirmed verbatim in release body; npm invariato, percorso Linux safe). Stable OC resta 2026.9.6 (2nd day). HERMES v0.21.5 (v2026.9.24) released Sep 24 10:09 UTC - the imminent release landed: rollup confirmed by release body = 460 PRs / 1610 non-merge commits / 4828 changed files measured at f97608f178 (rev-list tag-to-tag 1638 incl. merges), curated notes deferred to v0.22.0; includes GPT-6 Sol/Terra/Luna + Claude Opus 5.5 catalogs, gateway.standalone, per-profile stop/start/restart, webhook mirror to chat, Desktop plugin SDK wave, Connectors page. Local 006b1beb 9509 behind tag, 11605 behind main LIVE (identity 9509+2096=11605 verified; draft 11548 was 04:05 stale). Unreleased unchanged (3 items) BUT verified allowAcrossProviders NOT set in local ~/.openclaw/openclaw.json - MUST set tools.message.crossContext.allowAcrossProviders:false BEFORE next OC upgrade (default flips true on upgrade, #149875). OC main +1239 past v2026.9.6 LIVE (draft +1151 stale); 24h wave 506 commits KB-paginated - next stable accumulating fast, HEAD d65bc76d. GHSA 722 total unchanged (51 high/44 medium/5 low, newest Sep 11 - 14th day zero new). Blog frozen (last Sep 22). Adjacent CLIs all behind: codex 0.154.0 vs 0.157.0 (draft 0.156.1 stale), gemini-cli 0.59.0 vs 0.61.0, claude-code 2.1.76 vs 2.1.282 (-206). RECOMMENDATION: (1) Hermes upgrade 0.21.0->0.21.5 NOW (target tag f97608f1, not main 69948c00; hermes doctor -> stop gateway -> update -> start -> verify 7 cron jobs); (2) set allowAcrossProviders:false THEN npm i -g openclaw@latest (2026.9.6); (3) batch-upgrade 3 CLIs alongside. Stars: OC 390448, Hermes 248771."
 github:
   last_known_version: 2026.9.6
   last_known_release_date: '2026-09-23'
   last_known_beta_version: 2026.9.1-beta.1
   last_known_beta_release_date: '2026-08-28'
 hermes_agent:
-  last_known_version: 0.21.4
-  last_known_tag: v2026.9.21
-  last_known_release_date: '2026-09-21'
-  main_ahead_of_tag: 1437
+  last_known_version: 0.21.5
+  last_known_tag: v2026.9.24
+  last_known_release_date: '2026-09-24'
+  main_ahead_of_tag: 2096

@@ -538,3 +538,26 @@ Clean SKIP run on 2026-08-28. Documentation Engine healthy and idle. No sessions
 **Self-assessment**: Clean run. Zero ready sessions → session pipeline idle, statuses untouched. Pre-existing monitor diff recovered per the established fold protocol: every field re-verified against live API data before commit, two corrections (one stale, one wrong-data) applied and classified explicitly. Stable advance ingested with one artifact + tracker refresh, matching repo conventions (previous artifact count 118 → 119). YAML validated with yaml.safe_load post-edit. gitleaks clean. Untracked `memories/` left untracked (external, per convention).
 
 **Upgrade recommendation (unchanged, now concrete)**: upgrade local OpenClaw CLI 2026.6.8 → 2026.9.6 via `npm i -g openclaw@latest` (Node 24.16.0 OK) AFTER setting `allowAcrossProviders: false` (cross-provider default flip #149875 still unreleased — last window before the default changes). Verified pre-upgrade backup mandatory (schema 21). Hermes: wait for next tag (post-tag wave 1437 suggests imminent).
+
+## 2026-09-25 — Daily elaboration (KB run)
+
+**Sessions**: 0 ready (SKIP for session ingestion; no status flips; queue unchanged: 2 `new` + 1 template draft). Pre-existing tracker diff from sibling Release Monitor folded — 24th consecutive day of monitor→KB coordination.
+
+**Upstream — HERMES v0.21.5 (v2026.9.24) LANDED**: the release flagged "likely imminent" yesterday landed Sep 24 10:09 UTC (`prerelease: false`, verified via paginated releases). Rollup numbers confirmed **verbatim from the release body**: 460 PRs / 1,610 non-merge commits / 4,828 changed files measured at `f97608f178` (live `rev-list` tag-to-tag: 1,638 incl. merges — consistent). Curated notes deferred to v0.22.0. Headlines: Desktop plugin SDK wave, Connectors page replacing MCP tab, per-profile stop/start/restart + `gateway.standalone`, webhook mirror to chat, GPT-6 Sol/Terra/Luna + Claude Opus 5.5 catalogs, Blender Lab integration. New artifact: `docs/meta/upstream-updates/2026-09-25-v0.21.5-hermes-agent.md`.
+
+**Upstream — OC macOS saga CLOSED (no 2026.9.7)**: yesterday's watch signal "hotfix 2026.9.7 incoming" resolved differently — upstream rebuilt 2026.9.6 itself (assets re-uploaded Sep 24 09:52 UTC, release body verbatim: "replaced at 09:52 UTC by a rebuilt, notarized 2026.9.6 build with the fix #156881"; "The npm package is unchanged"). Stable OC stays 2026.9.6 (day-2), npm `latest`/`beta` 2026.9.6, `extended-stable` 2026.7.35 unchanged. Our Linux/npm path never affected.
+
+**Monitor diff folded with live corrections (all fields re-verified 07:31-07:40 CEST):**
+1. Hermes drift: draft 11548 behind / +2039 past-tag → live post-fetch **11605 behind / +2096 past-tag** (stale, +57 in ~3.5h; identity 9509+2096=11605 verified). 13th day of pending upgrade rec; target now v0.21.5 tag `f97608f1`.
+2. OC main ahead: draft +1151 → live **+1239 past v2026.9.6**; 24h wave 506 commits KB-paginated (draft ~499, consistent), HEAD `d65bc76d`. Next stable accumulating fast.
+3. Adjacent CLI: codex draft 0.156.1 → live **0.157.0** (stale again, second consecutive day of codex motion; local 0.154.0). gemini-cli 0.61.0, claude-code 2.1.282 unchanged. Stars OC 390448 / Hermes 248771 (draft +24/+29 stale-minor).
+
+**Action item verified**: `tools.message.crossContext.allowAcrossProviders` NOT set in local `~/.openclaw/openclaw.json` — MUST be set to `false` BEFORE the next OC upgrade (default flips to true, #149875).
+
+**GHSA**: 722 total unchanged, 14th consecutive day zero new (newest Sep 11 00:58 UTC). **Docs key pages**: all 8 tracked pages HTTP 200. **Blog**: frozen (last Sep 22).
+
+**Docs touched**: `docs/meta/upstream-version.yaml` (Hermes 0.21.5 fields, drift 11605/2096, corrections, checked_at) + new artifact + this changelog. **Diátaxis docs and `docs/index.yaml` untouched** (no session content; no index churn on SKIP). Untracked `memories/` left untracked per convention.
+
+### Self-assessment
+
+Run SKIP pulito con doppia chiusura upstream: la previsione "release imminente" di ieri si è avverata (v0.21.5 atterrata 16h dopo la previsione — il pattern wave-acceleration→release regge anche questa volta) e la watch-signal macOS si è chiusa senza hotfix (rebuild in-place, npm mai toccato — classificazione "Linux safe" di ieri confermata upstream verbatim). Qualità del fold: 5 campi stale corretti con ricount indipendente (behind-main, past-tag, OC-ahead, codex, stars), zero wrong-data oggi — il draft del monitor era solo in ritardo di ~3h, nessun undercount API-capped. Rollup v0.21.5 verificato contro la fonte primaria (release body) e non contro il compare API (che tronca i file a 300 — misura inaffidabile per i file-count, usata solo per cross-check commit). Il debito tecnico principale resta l'upgrade Hermes pendente da 13 giorni (drift record 11605) con target ora v0.21.5, più la pre-condizione `allowAcrossProviders:false` per OC: entrambe azioni da operatore umano, non forzate da cron. gitleaks atteso PASS pre-commit; committati solo tracker + artifact + changelog.
