@@ -561,3 +561,29 @@ Clean SKIP run on 2026-08-28. Documentation Engine healthy and idle. No sessions
 ### Self-assessment
 
 Run SKIP pulito con doppia chiusura upstream: la previsione "release imminente" di ieri si è avverata (v0.21.5 atterrata 16h dopo la previsione — il pattern wave-acceleration→release regge anche questa volta) e la watch-signal macOS si è chiusa senza hotfix (rebuild in-place, npm mai toccato — classificazione "Linux safe" di ieri confermata upstream verbatim). Qualità del fold: 5 campi stale corretti con ricount indipendente (behind-main, past-tag, OC-ahead, codex, stars), zero wrong-data oggi — il draft del monitor era solo in ritardo di ~3h, nessun undercount API-capped. Rollup v0.21.5 verificato contro la fonte primaria (release body) e non contro il compare API (che tronca i file a 300 — misura inaffidabile per i file-count, usata solo per cross-check commit). Il debito tecnico principale resta l'upgrade Hermes pendente da 13 giorni (drift record 11605) con target ora v0.21.5, più la pre-condizione `allowAcrossProviders:false` per OC: entrambe azioni da operatore umano, non forzate da cron. gitleaks atteso PASS pre-commit; committati solo tracker + artifact + changelog.
+
+## 2026-09-26 — Daily elaboration (KB run)
+
+**Sessions**: 0 ready (SKIP for session ingestion; no status flips; queue unchanged: 2 `new` + 1 template draft). Pre-existing tracker diff from sibling Release Monitor 04:05 folded — 25th consecutive day of monitor→KB coordination.
+
+**TWO DEFECTS CAUGHT in monitor output today (both fixed before commit):**
+
+1. **STRUCTURAL YAML CORRUPTION in the monitor draft**: the draft indented `github:` TWO spaces under `installed:` while its children (`last_known_version` etc.) stayed at column 0 — semantically `installed.github: null` with fields absorbed into `installed:`. The file would still parse but every consumer reading top-level `github:` would get nothing. Caught by reading the raw diff (indentation change on a key line is a red flag, not metadata churn). Fixed via full-file rewrite (small tracker, write_file preferred over patch for YAML) + `yaml.safe_load` structural assertions (top-level keys exact, no `github` under `installed`, no absorbed children).
+2. **WRONG-DATA from YESTERDAY's committed tracker**: the Sep-25 `upgrade_notes` claimed GHSA severity "51 high/44 medium/5 low" — sums to **100, not 722**: classic single-page API cap (`per_page=100` first page only, no `--paginate`). Live recount today: **14 critical / 249 high / 390 medium / 69 low = 722** ✓. Today's draft did NOT repeat the wrong numbers (correctly said just "722 unchanged") — the correction is against yesterday's committed note, now replaced.
+
+**Upstream — no new releases**: OC stable `2026.9.6` day-3 (npm `latest`=`beta`=2026.9.6, `extended-stable` 2026.7.35 unchanged); Hermes `v0.21.5` (v2026.9.24) day-2. GHSA 722 total unchanged, 15th consecutive day zero new (newest Sep 11 00:58 UTC).
+
+**HEADLINE verified live — blog Sep 25 "Microsoft Autopilot is built on OpenClaw"**: post live on `openclaw.ai/blog` (fetched, title confirmed verbatim); ex-Scout persistent agent, private preview EOM, built ON openclaw with Foundation. All 7 cited upstream PRs verified live as real+closed: Policy conformance #80407, MXC Windows sandbox #97086, post-compaction loop guard #77555, scheduler Gateway-hang fix #142741, session-store memory #84693, secret redaction in approval prompts #64790, Codex dup-reply #156144. Zero actions for us; strong longevity signal.
+
+**Drift realignment (all re-verified live 07:31-07:36 CEST):**
+- Hermes local `006b1beb` (v0.21.0): **11962 behind main** (draft 11955, stale) / 9509 behind tag / main **+2453 past tag** (draft 2446), tip `d0288be5`; identity 9509+2453=11962 ✓. Upgrade 0.21.0→0.21.5 pending day-2, target tag `f97608f1`.
+- OC main **+1766 ahead of v2026.9.6 / 33 behind** (draft +1668; behind-by=33 re-verified via compare API), 567 commits in last ~26h, HEAD `d6dc69c0` — next stable accumulating fast.
+- Adjacent CLIs (draft correct today): codex 0.157.1 (local 0.154.0, -3), gemini-cli 0.61.0 (local 0.59.0, -2), claude-code 2.1.283 (local 2.1.76, -207). ClawHub `f6a1b535` Sep 25 verified (SkillSpector UI fix #3818), registry v0.23.3. Stars: OC 390531, Hermes 249018.
+
+**Action item re-verified**: `tools.message.crossContext.allowAcrossProviders` STILL `NOT_SET` in `~/.openclaw/openclaw.json` (jq live) — MUST set `false` BEFORE next OC upgrade (#149875, Unreleased unchanged 3 items).
+
+**Docs touched**: `docs/meta/upstream-version.yaml` only (structural fix + drift realignment + corrected severity breakdown + checked_at 07:35 KB-verified) + this changelog. **Diátaxis docs and `docs/index.yaml` untouched**; untracked `memories/` left untracked per convention.
+
+### Self-assessment
+
+Run SKIP con il fold più "difensivo" da settimane: il draft del monitor oggi conteneva non solo numeri stale (fisiologici, 3.5h) ma un **bug strutturale di indentazione YAML** che avrebbe silenziosamente corrotto il tracker — la lezione generalizzabile è che il diff di un file YAML va letto riga per riga anche quando il contenuto sembra solo metadata churn: un cambio di indentazione su una key è un red flag, non rumore. Secondo catch: la severity breakdown GHSA committata IERI sommava a 100 contro un totale dichiarato di 722 — undercount single-page (stessa classe documentata delle 24h-commit-count API-capped), corretto esplicitamente con recount paginato live. Il contenuto analitico del giorno è il post blog Autopilot/Microsoft: verificato live il post e tutti e 7 i PR citati — segnale di longevità upstream forte, zero azioni per noi. Debito tecnico invariato: upgrade Hermes pendente (giorno 2, drift 11962) + pre-condizione allowAcrossProviders per OC — entrambi azioni da operatore umano, raccomandazione invariata nel tracker. gitleaks atteso PASS pre-commit; committati solo tracker + changelog.
