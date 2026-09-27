@@ -587,3 +587,22 @@ Run SKIP pulito con doppia chiusura upstream: la previsione "release imminente" 
 ### Self-assessment
 
 Run SKIP con il fold più "difensivo" da settimane: il draft del monitor oggi conteneva non solo numeri stale (fisiologici, 3.5h) ma un **bug strutturale di indentazione YAML** che avrebbe silenziosamente corrotto il tracker — la lezione generalizzabile è che il diff di un file YAML va letto riga per riga anche quando il contenuto sembra solo metadata churn: un cambio di indentazione su una key è un red flag, non rumore. Secondo catch: la severity breakdown GHSA committata IERI sommava a 100 contro un totale dichiarato di 722 — undercount single-page (stessa classe documentata delle 24h-commit-count API-capped), corretto esplicitamente con recount paginato live. Il contenuto analitico del giorno è il post blog Autopilot/Microsoft: verificato live il post e tutti e 7 i PR citati — segnale di longevità upstream forte, zero azioni per noi. Debito tecnico invariato: upgrade Hermes pendente (giorno 2, drift 11962) + pre-condizione allowAcrossProviders per OC — entrambi azioni da operatore umano, raccomandazione invariata nel tracker. gitleaks atteso PASS pre-commit; committati solo tracker + changelog.
+
+## 2026-09-27 — Daily KB Processing (automated)
+
+**Sessions processed**: 0 (queue: 61 processed / 2 `new` non ready / 0 ready) → SKIP docs. Nessun tocco a `docs/` Diátaxis né a `docs/index.yaml` (zero churn).
+
+**Upstream tracker** (`docs/meta/upstream-version.yaml`): fold del draft monitor 04:05 + live re-verification 07:40 CEST.
+
+**Updated**
+- `docs/meta/upstream-version.yaml` — drift realignment completo: Hermes behind-main 11962→12682, main-past-tag 2453→3173, OC main +2288/33 vs v2026.9.6 (draft +2219), OC HEAD 3b9ca80b, Hermes tip b4410b4b, stars OC 390610 / Hermes 249279, checked_at/last_check 2026-09-27.
+- **Wrong-data correction**: draft ClawHub "5 commits Sep 26" → live **7** (#3826/#3825/#3829/#3823/#3822 + #3820 featured-catalog ordering, #3821 skills.sh entries non contati dal monitor). Anche Sep 25: #3816/#3817 (SkillSpector/AIG UI) oltre il #3818 già noto.
+- **Verifica live completa**: releases OC (2026.9.6, prerelease=false, 4° giorno) e Hermes (v0.21.5/v2026.9.24, 3° giorno) — nessun nuovo rilascio; npm dist-tags invariati (latest=beta=2026.9.6, ext-stable 2026.7.35); GHSA 722 (16° giorno zero nuovi, newest Sep 11; severity 14/249/390/69 somma 722 ✓); blog nessun nuovo post (Autopilot Sep 25 ancora in cima); Unreleased changelog 3 item invariato; `allowAcrossProviders` NOT_SET riconfermato via jq.
+- **Sfumatura critica su #149875**: l'Unreleased ora esplicita che le config che omettono `allowAcrossProviders` adottano il default permissivo all'upgrade — NOT_SET = cross-provider sends ABILITATI post-upgrade. Nota rafforzata nel tracker: impostare `tools.message.crossContext.allowAcrossProviders: false` PRIMA di `npm i -g openclaw@latest`.
+- Numeri stale (fisiologici, ~3h, timing non wrong-data): OC 24h commits 519 (draft 551), Hermes 24h 711 (draft 664), stars +9/+26.
+
+**Docs touched**: `docs/meta/upstream-version.yaml` + `changelog/CHANGELOG.md` soltanto.
+
+### Self-assessment
+
+Run SKIP pulito con un wrong-data catch: il monitor ha sottocontato i commit ClawHub del 26 settembre (5 vs 7). Non è il classico stale da timing — è la stessa classe dell'undercount API-capped documentata per GHSA e 24h-commit-counts: fonte singola-pagina letta parzialmente. Lezione: quando un draft conta "N commits [data]" senza paginazione esplicita, ricontare sempre via API paginata prima di committare il numero. Il resto del fold è riallineamento standard: tutti i drift numbers riverificati live uno a uno (releases, dist-tags, GHSA, behind/past-tag, stars, tip SHAs, blog, Unreleased) — zero sorprese oltre lo stale fisiologico. Upstream quieto: nessun nuovo release OC/Hermes, GHSA fermo a 722 da 16 giorni, blog fermo. Il vero contenuto del giorno rimane il debito tecnico: Hermes 12682 behind main (giorno 3 di finestra "weekend" scaduta ieri, raccomandazione upgrade confermata), OC main che accelera verso il prossimo stable (+2288, 519 commits/24h — giorni, non settimane), e la pre-condizione `allowAcrossProviders:false` ora più urgente perché l'Unreleased #149875 chiarisce che l'omissione della key = default permissivo all'upgrade, non conservazione del comportamento attuale. gitleaks atteso PASS pre-commit; committati solo tracker + changelog; nessuna index/docs churn.
