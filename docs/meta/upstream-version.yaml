@@ -1,4 +1,4 @@
-last_check: '2026-09-27'
+last_check: '2026-09-28'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-27T07:40:00+02:00'
+  checked_at: '2026-09-28T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 12682
-  upgrade_notes: "2026-09-27 (KB live-verified 07:40 CEST, monitor draft 04:05 folded): NO new releases - OC stable 2026.9.6 4th day (npm latest=beta=2026.9.6, ext-stable 2026.7.35 unchanged), HERMES v0.21.5 (v2026.9.24) 3rd day. GHSA 722 unchanged (16th day zero new, newest Sep 11), severity recount OK (14 crit/249 high/390 med/69 low, sums 722). Blog: no new post (Autopilot Sep 25 still top). ClawHub: draft claimed 5 commits Sep 26 - WRONG-DATA undercount, live = 7 (missed #3820 featured-catalog ordering, #3821 skills.sh entries) plus 2 more Sep 25 (#3816/#3817 SkillSpector-AIG UI) beyond #3818; registry 0.23.3. OC main +2288 ahead of v2026.9.6 / 33 behind (draft +2219 stale ~3h), 519 commits/24h (draft 551 stale), HEAD 3b9ca80b - next stable imminent. HERMES local 006b1beb: 9509 behind tag, 12682 behind main (draft 12628 stale; ~+720/24h), main +3173 past tag, tip b4410b4b (MCP pageable-text fix; draft 188261f4 stale), 711 commits/24h (draft 664). allowAcrossProviders STILL NOT_SET (jq re-verified live) - Unreleased #149875 now EXPLICIT: configs omitting the key adopt the permissive cross-provider default ON UPGRADE, so NOT_SET = cross-provider sends enabled post-upgrade; set tools.message.crossContext.allowAcrossProviders:false BEFORE npm i -g openclaw@latest (Unreleased unchanged, 3 items). CLIs all behind: codex 0.154.0 vs 0.157.1 (-3), gemini-cli 0.59.0 vs 0.61.0 (-2), claude-code 2.1.76 vs 2.1.283 (-207). Stars: OC 390610, Hermes 249279. RECOMMENDATION: (1) Hermes upgrade overdue (day 3, drift 12682) target tag v2026.9.24 f97608f1; (2) allowAcrossProviders:false then OC upgrade; (3) batch 3 CLIs with Hermes session."
+  hermes_main_behind: 13360
+  upgrade_notes: "2026-09-28 (KB live-verified 07:35 CEST, monitor draft 04:30 folded): NO new releases - OC stable 2026.9.6 5th day (npm latest=beta=2026.9.6, ext-stable 2026.7.35 unchanged), HERMES v0.21.5 (v2026.9.24) 4th day. GHSA zero new 17th day (newest Sep 11). Blog: no new post (Autopilot Sep 25 still top). ClawHub: 8 commits Sep 26-28 - draft said 7, WRONG-DATA undercount AGAIN (#3825 homepage Trending pagination missed, 2nd consecutive day of single-page undercounts; full list #3820-#3826/#3829/#3832 - Trending 24h window, discovery curation + Computer use in catalog, skills.sh featured entries, inline Markdown in headers), registry 0.23.3. OC main +2749 ahead of v2026.9.6 / 33 behind (draft 2682 stale), 461 commits/24h (draft 422), HEAD be535fd2. HERMES local 006b1beb: 9509 behind tag, 13360 behind main (draft 13346 stale), main +3851 past tag (wave growing, next tag expected within days; identity 9509+3851=13360 verified), tip 4569bb8d (test lsp managed-Node runner seam; draft bfda74c7 stale), 678 commits/24h. allowAcrossProviders STILL NOT_SET (grep live on ~/.hermes/config.yaml) - Unreleased #149875 explicit: configs omitting the key adopt permissive cross-provider default ON UPGRADE; set tools.message.crossContext.allowAcrossProviders:false BEFORE npm i -g openclaw@latest. Unreleased unchanged, 3 items (verified via split CHANGELOG/Unreleased.md). CLIs all behind: codex 0.154.0 vs 0.158.0 (-4, draft said 0.157.1 - advanced again overnight), gemini-cli 0.59.0 vs 0.61.0 (-2), claude-code 2.1.76 vs 2.1.283 (-207). Stars: OC 390671, Hermes 249556. RECOMMENDATION: single maintenance window - (1) allowAcrossProviders:false, (2) OC upgrade to 2026.9.6, (3) Hermes roll-forward to tag v2026.9.24 via CLI updater, (4) batch 3 CLI bumps."
 github:
   last_known_version: 2026.9.6
   last_known_release_date: '2026-09-23'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24
   last_known_release_date: '2026-09-24'
-  main_ahead_of_tag: 3173
+  main_ahead_of_tag: 3851
