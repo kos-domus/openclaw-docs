@@ -1,4 +1,4 @@
-last_check: '2026-09-28'
+last_check: '2026-09-29'
 sources:
   github:
     repo: openclaw/openclaw
@@ -27,7 +27,7 @@ sources:
     url: https://www.npmjs.com/package/openclaw
     last_known_version: 2026.9.6
     last_known_beta: 2026.9.6
-    last_known_extended_stable: 2026.7.35
+    last_known_extended_stable: 2026.8.33
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-28T07:35:00+02:00'
+  checked_at: '2026-09-29T07:35:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 13360
-  upgrade_notes: "2026-09-28 (KB live-verified 07:35 CEST, monitor draft 04:30 folded): NO new releases - OC stable 2026.9.6 5th day (npm latest=beta=2026.9.6, ext-stable 2026.7.35 unchanged), HERMES v0.21.5 (v2026.9.24) 4th day. GHSA zero new 17th day (newest Sep 11). Blog: no new post (Autopilot Sep 25 still top). ClawHub: 8 commits Sep 26-28 - draft said 7, WRONG-DATA undercount AGAIN (#3825 homepage Trending pagination missed, 2nd consecutive day of single-page undercounts; full list #3820-#3826/#3829/#3832 - Trending 24h window, discovery curation + Computer use in catalog, skills.sh featured entries, inline Markdown in headers), registry 0.23.3. OC main +2749 ahead of v2026.9.6 / 33 behind (draft 2682 stale), 461 commits/24h (draft 422), HEAD be535fd2. HERMES local 006b1beb: 9509 behind tag, 13360 behind main (draft 13346 stale), main +3851 past tag (wave growing, next tag expected within days; identity 9509+3851=13360 verified), tip 4569bb8d (test lsp managed-Node runner seam; draft bfda74c7 stale), 678 commits/24h. allowAcrossProviders STILL NOT_SET (grep live on ~/.hermes/config.yaml) - Unreleased #149875 explicit: configs omitting the key adopt permissive cross-provider default ON UPGRADE; set tools.message.crossContext.allowAcrossProviders:false BEFORE npm i -g openclaw@latest. Unreleased unchanged, 3 items (verified via split CHANGELOG/Unreleased.md). CLIs all behind: codex 0.154.0 vs 0.158.0 (-4, draft said 0.157.1 - advanced again overnight), gemini-cli 0.59.0 vs 0.61.0 (-2), claude-code 2.1.76 vs 2.1.283 (-207). Stars: OC 390671, Hermes 249556. RECOMMENDATION: single maintenance window - (1) allowAcrossProviders:false, (2) OC upgrade to 2026.9.6, (3) Hermes roll-forward to tag v2026.9.24 via CLI updater, (4) batch 3 CLI bumps."
+  hermes_main_behind: 14042
+  upgrade_notes: "2026-09-29 (KB live-verified 07:35 CEST, monitor draft 04:05 folded): OC stable 2026.9.6 7th day (npm latest=beta=2026.9.6), HERMES v2026.9.24 (0.21.5) 6th day. EXTENDED-STABLE ADVANCED 2026.7.35 -> 2026.8.33 (npm Sep 28 22:37 UTC, GH release live Sep 29 03:12 UTC prerelease:false - landed in monitor-blind window ~1h after draft; August LTS line + security rollup incl. Nodemailer 9.1.1 override; artifact 2026-09-29-v2026.8.33-extended-stable.md). GHSA zero new 18th day (newest Sep 11). Blog: no new post (Autopilot Sep 25 still top). ClawHub: 1 new commit (#3843 Sep 28, searchable skill/plugin catalogs); registry endpoint NOT re-verified this run (blocked by security scanner, .dev lookalike-TLD guard), last known 0.23.3. OC main +3385 ahead of v2026.9.6 / 33 behind (draft 3288 stale), ~640 commits/24h (accelerating), HEAD 945c4e6f. Unreleased 4 items (verified: split typecheck graphs, Codex background memory #151658, sandbox pruning policies, cross-provider messaging default flip #149875). HERMES local 006b1beb: 9509 behind tag, 14042 behind main (draft 14020 stale), main +4533 past tag (wave growing, next tag expected within days; identity 9509+4533=14042 verified), tip 39faafb6 (draft 36dfe585 stale), 679 commits/24h. allowAcrossProviders STILL NOT_SET (grep live on ~/.hermes/config.yaml) - Unreleased #149875 explicit: configs omitting the key adopt permissive cross-provider default ON UPGRADE; set tools.message.crossContext.allowAcrossProviders:false BEFORE npm i -g openclaw@latest. CLIs all behind: codex 0.154.0 vs 0.158.0 (-4), gemini-cli 0.59.0 vs 0.61.0 (-2), claude-code 2.1.76 vs 2.1.284 (-208). Stars: OC 390754, Hermes 249866. RECOMMENDATION unchanged: single maintenance window - (1) allowAcrossProviders:false, (2) OC upgrade to 2026.9.6, (3) Hermes roll-forward to tag v2026.9.24, (4) batch 3 CLI bumps."
 github:
   last_known_version: 2026.9.6
   last_known_release_date: '2026-09-23'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24
   last_known_release_date: '2026-09-24'
-  main_ahead_of_tag: 3851
+  main_ahead_of_tag: 4533
