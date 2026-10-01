@@ -1,4 +1,4 @@
-last_check: '2026-09-30'
+last_check: '2026-10-01'
 sources:
   github:
     repo: openclaw/openclaw
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-09-30T07:50:00+02:00'
+  checked_at: '2026-10-01T04:05:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 14414
-  upgrade_notes: "2026-09-30 (KB live-verified 07:50 CEST, monitor draft 05:00 folded): OC STABLE ADVANCED 2026.9.6 -> 2026.9.7 (npm latest + beta alias both 2026.9.7, GH release live Sep 30 04:44 UTC prerelease:false - 3rd blind-window catch: landed ~1h45m AFTER monitor draft which still said 'stable 8th day'; body 106KB read in full: update-safety backup/rollback before migrations, OpenAI Agents API plugin, Sign in with ChatGPT beta, Gateway main-thread offload, worktree sessions #100788, ${VAR:-default} config fallback #155164, requireMentionInBotThreads #157713; KNOWN ISSUE: Windows update from 2026.9.6 silent exit code 13, rerun openclaw update; PLUGIN SDK DEPRECATION REMOVALS due Sep 30 + Oct 1 (config-runtime, channel barrels, infra-runtime, media-understanding facades, legacy media projection, 10 compat-alias flags) - watch plugin breakage wave; artifact 2026-09-30-v2026.9.7.md). Local CLI 2026.6.8 now 2 stables behind. EXTENDED-STABLE 2026.8.33 2nd day. HERMES v2026.9.24 (0.21.5) 7th day; local 006b1beb: 9509 behind tag, 14414 behind main (draft 14361 stale), main +4905 past tag (draft 4852 stale; identity 9509+4905=14414 verified), tip f42f579c (draft 38d3dbce stale), 337 commits/24h. OC main +515 ahead / 10 behind NEW tag v2026.9.7, HEAD ed9d2c16, 459 commits/24h (draft +3735/33 was vs OLD tag v2026.9.6 - baseline switched with tag move, ~412 stale). Unreleased 4 items unchanged (typecheck split, Codex bg memory #151658, sandbox pruning, cross-provider #149875 - NOT in 2026.9.7, still upcoming). allowAcrossProviders STILL NOT_SET (grep live config). GHSA 722 zero new 19th day (newest Sep 11; 14 crit/249 high/390 med/69 low, sums verified = 722). CLIs: codex 0.154.0 vs 0.159.2 (-5), gemini-cli 0.59.0 vs 0.62.0 (-3), claude-code 2.1.76 vs 2.1.285 (-209). ClawHub: 3 NEW commits Sep 30 #3847/#3848/#3849 (draft '0 new' STALE not wrong - commits landed 06:45-07:05 CEST after the 05:00 draft: Plugin Inspector memory/disk bounds, curl rate-limit headers, transitive dep advisory patches); registry 0.23.3 NOT re-verified (cron scanner .dev TLD guard). OCE (OpenClaw Enterprise) blog verified live on openclaw.ai/blog (Kevin Lin); repo openclaw/openclaw-enterprise created Aug 29, MIT, 131 stars (draft 87 stale). Stars: OC 390811, Hermes 250126. RECOMMENDATION: maintenance window now URGENT before any OC upgrade - (1) allowAcrossProviders:false, (2) OC -> 2026.9.7, (3) Hermes roll-forward to v2026.9.24, (4) batch 3 CLI bumps. WATCH: plugin-sdk removals executing Sep 30/Oct 1; OCE reference architecture blog upcoming."
+  hermes_main_behind: 14500
+  upgrade_notes: "2026-10-01 (live-verified 04:05 CEST): CORRECTION to Sep 30 note - cross-provider flip #149875 is NOT upcoming: PR merged 2026-09-16, default allowAcrossProviders:true is ALREADY in stable 2026.9.6 and 2026.9.7 (verified at code: src/infra/outbound/outbound-policy.ts:226 @ v2026.9.7, '!== false' => default true). Local flag STILL NOT_SET (jq live config) - set false BEFORE any OC upgrade, harmless on 2026.6.8. CHANGELOG/Unreleased.md now EMPTY (14 bytes): former 4 items absorbed, #151658 (Codex bg memory) merged 2026-09-18 -> in 9.6+. OC stable 2026.9.7 2nd day; npm latest/beta 2026.9.7, extended-stable 2026.8.33. OC main bd113879 +1005 ahead/10 behind tag, 598 commits/24h (notable: fix cron duplicate one-shot delivery after restart #159873). Local CLI 2026.6.8 now 13 stables + 2 extended behind. HERMES v0.21.5 7th day; local 006b1beb 9509 behind tag, 14500 behind main (post-fetch; identity 9509+4991=14500 verified), main +4991 past tag, tip eb8d21f4, 134 commits/24h (approval/cron parser hardening). 4th day of deferred Hermes upgrade - window overdue. GHSA 722 zero new 20th day (14 crit/249 high/390 med/69 low verified). CVE-2026-32046 (fix 2026.2.21) + CVE-2026-28472 (fix 2026.2.2) both historical, local 2026.6.8 NOT affected. CLIs: codex 0.154.0 vs 0.159.3 (-5), gemini-cli 0.59.0 vs 0.62.0 (-3), claude-code 2.1.76 vs 2.1.286 (-210). ClawHub: 6 commits Sep 30 evening, v0.24.0 release PREPARED #3873 (tag not yet cut), canary scan worker CI #3875, live feed host #3876. Blog: OpenClaw Enterprise post Sep 29 (Kevin Lin). Stars: OC 390995, Hermes 250363. RECOMMENDATION unchanged + more urgent: (1) allowAcrossProviders:false TODAY, (2) Hermes roll-forward v2026.9.24 TODAY/tomorrow, (3) OC -> 2026.9.7 after flag, (4) batch 3 CLI bumps. WATCH: plugin-sdk removals wave 2 due Oct 1; ClawHub v0.24.0 tag imminent."
 github:
   last_known_version: 2026.9.7
   last_known_release_date: '2026-09-30'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24
   last_known_release_date: '2026-09-24'
-  main_ahead_of_tag: 4905
+  main_ahead_of_tag: 4991
