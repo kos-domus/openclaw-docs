@@ -674,3 +674,23 @@ Run SKIP con l'evento upstream piu' sostanzioso della settimana: l'avanzamento L
 
 Run SKIP con terzo stable/blind-window catch in 13 giorni (2026-09-18, 09-29, 09-30): il pattern e' ormai sistematico — le release OC atterrano nella finestra tra monitor e KB run, e la regola "mai fidarsi del no-new-releases di un draft" si e' pagata ancora una volta. Zero wrong-data oggi, e la classificazione e' stata fatta col rigore dovuto: il "0 new ClawHub" del draft era corretto al momento della lettura (stale per timing, NON undercount come i due giorni precedenti — la differenza e' documentata nel tracker). Tutti i drift riverificati live con identity check (9509+4905=14414); il +3735/33 del draft OC e' stato correttamente re-basato sul nuovo tag (+515/10) invece che aggiornato acriticamente. Segnali operativi del giorno: (1) local CLI ora 2 stable behind e le removal delle deprecations plugin-sdk scadono OGGI/domani — la maintenance window raccomandata passa da "in ritardo" a URGENT, con la sequenza allowAcrossProviders:false -> OC 2026.9.7 -> Hermes v2026.9.24 -> 3 CLI bumps; (2) il flip #149875 resta Unreleased, quindi la pre-condizione config resta l'unico passo obbligatorio PRE-upgrade. Lacuna dichiarata (terzo giorno consecutivo): registry.clawhub.dev non riverificabile per il guard dello scanner cron — last known 0.23.3 marcato nel tracker. gitleaks atteso PASS pre-commit; committati solo tracker + artifact + changelog; zero index/docs churn; memories/ resta untracked per convenzione.
 
+
+## 2026-10-01 — Daily KB Processing (automated)
+
+**Run SKIP (0 sessioni ready)** — coda sessioni vuota per il 4° giorno; elaborazione Diátaxis non richiesta.
+
+### Upstream re-verification (live, 07:31 CEST)
+- OC stable **2026.9.7** confermato (2° giorno): npm latest/beta + GH release page (pub 2026-09-30T04:44Z, prerelease=false) + paginated list. Extended-stable **2026.8.33** invariato.
+- **Correzione metodologica (self-catch)**: primo fetch di Unreleased.md sul path `docs/releases/Unreleased.md` → body 404 di esattamente 14 byte ("404: Not Found"), indistinguibile by-size dal file vuoto verificato ieri (heading "## Unreleased", anch'esso 14 byte). Path corretto: `CHANGELOG/Unreleased.md` (via link in CHANGELOG.md index). Claim del monitor confermato; pattern documentato nel tracker.
+- OC main **1fbf9a46** +1103/10 vs v2026.9.7, **589 commits/24h** (recount paginato; single-page dava 100=cap). Notabili: #162411 chat viewport, #162426 agentsapi identity, #158000 catalogs w/o restart, #162366 CI main-thread SQLite block, sessions import da Claude Code/Codex, MCP transport alias migration.
+- Hermes v0.21.5 7° giorno; local 006b1beb **9509 behind tag / 14645 behind main** (identity 9509+5136=14645 ✓), tip cf4ba6a3, 225 c/24h. Upgrade rinviato da 5 giorni.
+- GHSA **722** (14 crit/249 high/390 med/69 low, sum=722 ✓ paginata) — **zero nuovi, 21° giorno**.
+- CLI: codex -5, gemini-cli -3, claude-code -210 (invariati). ClawHub: 5 commit Sep 30 sera verificati (3872-3876), **v0.24.0 preparato** (#3873), tag non ancora tagliato (ultimo v0.23.3 Aug 4). Stars: OC 391036, Hermes 250397. `allowAcrossProviders` locale: NOT_SET (ri-verificato).
+- Key pages docs.openclaw.ai: 8/8 HTTP 200.
+
+### Changes
+- `docs/meta/upstream-version.yaml`: drift realignment (OC +1103/10, 589 c/24h, Hermes 14645/5136, stars, checked_at) + note Unreleased.md 14-byte coincidence.
+- Zero docs/index churn, zero sessioni elaborate.
+
+### Self-assessment
+Run SKIP pulito, 4° giorno consecutivo. La parte interessante: quasi-wrong-data evitato per un pelo — il 404 di GitHub raw e' esattamente 14 byte come il file vuoto legittimo, quindi l'heuristic "14 bytes = empty" di ieri si rompera' il giorno in cui il path cambiera' di nuovo (e il path e' GIA' cambiato una volta: docs/releases/ -> CHANGELOG/). Ora verifico sempre via index link o contents API, mai by-size. Drift realigned integralmente con identity check (9509+5136=14645); 589 c/24h misurati con paginazione obbligatoria (single-page=cap 100). Monitor claims verificati uno a uno: Unreleased-empty CORRETTO (al path giusto), ClawHub-5-commits CORRETTO (timestamped 22:56-23:14 UTC, zero dopo), allowAcrossProviders-NOT_SET riconfermato live. Raccomandazioni invariate e piu' urgenti: flag allowAcrossProviders:false pre-upgrade, Hermes roll-forward, poi OC 2026.9.7 e i 3 CLI bump — la maintenance window e' oltre scaduta (5° giorno Hermes deferred). gitleaks PASS; committati solo tracker + changelog; memories/ untracked per convenzione; zero index/docs churn.

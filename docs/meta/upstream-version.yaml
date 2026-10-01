@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-10-01T04:05:00+02:00'
+  checked_at: '2026-10-01T07:31:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,8 +77,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 14500
-  upgrade_notes: "2026-10-01 (live-verified 04:05 CEST): CORRECTION to Sep 30 note - cross-provider flip #149875 is NOT upcoming: PR merged 2026-09-16, default allowAcrossProviders:true is ALREADY in stable 2026.9.6 and 2026.9.7 (verified at code: src/infra/outbound/outbound-policy.ts:226 @ v2026.9.7, '!== false' => default true). Local flag STILL NOT_SET (jq live config) - set false BEFORE any OC upgrade, harmless on 2026.6.8. CHANGELOG/Unreleased.md now EMPTY (14 bytes): former 4 items absorbed, #151658 (Codex bg memory) merged 2026-09-18 -> in 9.6+. OC stable 2026.9.7 2nd day; npm latest/beta 2026.9.7, extended-stable 2026.8.33. OC main bd113879 +1005 ahead/10 behind tag, 598 commits/24h (notable: fix cron duplicate one-shot delivery after restart #159873). Local CLI 2026.6.8 now 13 stables + 2 extended behind. HERMES v0.21.5 7th day; local 006b1beb 9509 behind tag, 14500 behind main (post-fetch; identity 9509+4991=14500 verified), main +4991 past tag, tip eb8d21f4, 134 commits/24h (approval/cron parser hardening). 4th day of deferred Hermes upgrade - window overdue. GHSA 722 zero new 20th day (14 crit/249 high/390 med/69 low verified). CVE-2026-32046 (fix 2026.2.21) + CVE-2026-28472 (fix 2026.2.2) both historical, local 2026.6.8 NOT affected. CLIs: codex 0.154.0 vs 0.159.3 (-5), gemini-cli 0.59.0 vs 0.62.0 (-3), claude-code 2.1.76 vs 2.1.286 (-210). ClawHub: 6 commits Sep 30 evening, v0.24.0 release PREPARED #3873 (tag not yet cut), canary scan worker CI #3875, live feed host #3876. Blog: OpenClaw Enterprise post Sep 29 (Kevin Lin). Stars: OC 390995, Hermes 250363. RECOMMENDATION unchanged + more urgent: (1) allowAcrossProviders:false TODAY, (2) Hermes roll-forward v2026.9.24 TODAY/tomorrow, (3) OC -> 2026.9.7 after flag, (4) batch 3 CLI bumps. WATCH: plugin-sdk removals wave 2 due Oct 1; ClawHub v0.24.0 tag imminent."
+  hermes_main_behind: 14645
+  upgrade_notes: "2026-10-01 (live-verified 07:31 CEST, KB re-check): CORRECTION to Sep 30 note - cross-provider flip #149875 is NOT upcoming: PR merged 2026-09-16, default allowAcrossProviders:true is ALREADY in stable 2026.9.6 and 2026.9.7 (verified at code: src/infra/outbound/outbound-policy.ts:226 @ v2026.9.7, '!== false' => default true). Local flag STILL NOT_SET (jq live config, re-verified 07:31) - set false BEFORE any OC upgrade, harmless on 2026.6.8. CHANGELOG/Unreleased.md EMPTY (14 bytes, heading only; NOTE: GitHub raw 404 body '404: Not Found' is ALSO exactly 14 bytes - verify via docs/releases/index.md link or repo contents API, never by size alone). OC stable 2026.9.7 2nd day, npm latest/beta 2026.9.7, extended-stable 2026.8.33 all unchanged. OC main 1fbf9a46 +1103 ahead/10 behind tag, 589 commits/24h (notable: #162411 chat viewport jump fix, #162426 agentsapi identify OC in requests, #158000 model catalogs apply w/o Gateway restart, #162366 CI blocks new main-thread SQLite calls, sessions import Claude Code/Codex transcripts, MCP transport alias pre-runtime migration). Local CLI 2026.6.8 now 13 stables + 2 extended behind. HERMES v0.21.5 7th day; local 006b1beb 9509 behind tag, 14645 behind main (post-fetch; identity 9509+5136=14645 verified), main +5136 past tag, tip cf4ba6a3, 225 commits/24h (approval/cron parser hardening). 5th day of deferred Hermes upgrade - window overdue. GHSA 722 zero new 21st day (14 crit/249 high/390 med/69 low verified, paginated identity sum=722). CVE-2026-32046 (fix 2026.2.21) + CVE-2026-28472 (fix 2026.2.2) both historical, local 2026.6.8 NOT affected. CLIs: codex 0.154.0 vs 0.159.3 (-5), gemini-cli 0.59.0 vs 0.62.0 (-3), claude-code 2.1.76 vs 2.1.286 (-210) all unchanged. ClawHub: 5 commits Sep 30 22:56-23:14 UTC all verified (3872-3876), v0.24.0 PREPARED #3873, tag NOT yet cut (last release v0.23.3 Aug 4), zero new commits after 23:14 UTC. Blog: OpenClaw Enterprise post Sep 29 (Kevin Lin). Stars: OC 391036 (+41), Hermes 250397 (+34). RECOMMENDATION unchanged + more urgent: (1) allowAcrossProviders:false TODAY, (2) Hermes roll-forward v2026.9.24 TODAY/tomorrow, (3) OC -> 2026.9.7 after flag, (4) batch 3 CLI bumps. WATCH: plugin-sdk removals wave 2 due Oct 1; ClawHub v0.24.0 tag imminent."
 github:
   last_known_version: 2026.9.7
   last_known_release_date: '2026-09-30'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24
   last_known_release_date: '2026-09-24'
-  main_ahead_of_tag: 4991
+  main_ahead_of_tag: 5136
