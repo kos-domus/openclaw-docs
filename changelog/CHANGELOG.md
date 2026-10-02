@@ -694,3 +694,22 @@ Run SKIP con terzo stable/blind-window catch in 13 giorni (2026-09-18, 09-29, 09
 
 ### Self-assessment
 Run SKIP pulito, 4° giorno consecutivo. La parte interessante: quasi-wrong-data evitato per un pelo — il 404 di GitHub raw e' esattamente 14 byte come il file vuoto legittimo, quindi l'heuristic "14 bytes = empty" di ieri si rompera' il giorno in cui il path cambiera' di nuovo (e il path e' GIA' cambiato una volta: docs/releases/ -> CHANGELOG/). Ora verifico sempre via index link o contents API, mai by-size. Drift realigned integralmente con identity check (9509+5136=14645); 589 c/24h misurati con paginazione obbligatoria (single-page=cap 100). Monitor claims verificati uno a uno: Unreleased-empty CORRETTO (al path giusto), ClawHub-5-commits CORRETTO (timestamped 22:56-23:14 UTC, zero dopo), allowAcrossProviders-NOT_SET riconfermato live. Raccomandazioni invariate e piu' urgenti: flag allowAcrossProviders:false pre-upgrade, Hermes roll-forward, poi OC 2026.9.7 e i 3 CLI bump — la maintenance window e' oltre scaduta (5° giorno Hermes deferred). gitleaks PASS; committati solo tracker + changelog; memories/ untracked per convenzione; zero index/docs churn.
+
+## 2026-10-02 — Daily KB Processing (automated)
+
+**Run SKIP (0 sessioni ready)** — coda vuota 5° giorno; elaborazione Diátaxis non richiesta. Zero docs/index churn.
+
+### Upstream re-verification (live, 07:33 CEST, post-monitor blind window)
+- **Extended-stable 2026.8.34 VERIFICATO live** (4° blind-window advance documentato): npm dist-tag + GH release page `prerelease=false` (pub 2026-10-02T00:12:39Z). Body letto per intero: gateway-only LTS, 113 audit-selected backport units (rollup completo 2026.8.33 + lineage 2026.7.35), #142589 (WhatsApp group allowlists) e #140083 (cron paced checks) confermati nel body. Claim monitor: CORRETTO.
+- **ClawHub v0.24.0 TAG CUT nel blind window** (monitor 04:05: "prepared, tag NOT cut"; live 07:35: tag → cacf5ec Sep 30 23:02Z). Release page 404 → **tag-only signal**, nessuna release note. Regola già in skill: release page che appare = segnale fresco, ri-verificare da zero.
+- **Undercount ClawHub, 3ª ricorrenza documentata**: finestra Oct 1 21:32–Oct 2 00:46 UTC = **7 commit live** (#3877/#3885/#3891/#3878/#3879/#3893/#3894) vs "5" del monitor. Ricorrenze: 09-27 (5→7), 09-28 (7→8), oggi (5→7). Comportamento sistematico → fix monitor da prioritizzare.
+- OC stable **2026.9.7** 3° giorno (latest=beta=2026.9.7). OC main **b21e522e +1821/10** vs v2026.9.7 (era +1715 monitor), **719 c/24h** (paginato). Tip: i18n locales refresh #163219.
+- Hermes v0.21.5 8° giorno; local 006b1beb **9509 behind tag / 15162 behind main** (identity 9509+5653=15162 ✓; +20 vs monitor in 3.5h), 517 c/24h, tip e9d7a18d. Upgrade rinviato da 6 giorni — window oltre scaduta.
+- GHSA **722 zero nuovi** (max `published_at` 2026-09-11; 14 crit/249 high/390 med/69 low, sum=722 paginata). Unreleased.md **vuoto via contents API** (contenuto letto = "## Unreleased"; mai by-size). Key pages 8/8 HTTP 200. Stars OC 391182 (+15), Hermes 250648 (+30). `allowAcrossProviders` locale NOT_SET (2° giorno).
+
+### Changes
+- `docs/meta/upstream-version.yaml`: KB re-check note (v0.24.0 tag cut, undercount 3ª ricorrenza, drift +1821/10 e 15162/5653 con identity, 719/517 c/24h, stars) via rewrite completo + assert strutturali. Monitor commit `cbd72c3` recuperato in HEAD, nessun diff da fondere.
+- Zero docs/index churn, zero sessioni elaborate.
+
+### Self-assessment
+Run SKIP pulito, 5° giorno consecutivo. Valore della giornata: il blind window ha prodotto DUE scoperte che il monitor non poteva vedere — il tag ClawHub v0.24.0 tagliato (senza release page) e la conferma live dell'ext-stable 2026.8.34 con body integro (i due fix citati dal monitor sono nel body, verificati parola per parola). Undercount ClawHub ormai e' patologio ricorrente (3 casi in 6 giorni): ogni per-date count del monitor va trattato wrong-until-recount. Identity check dietro-tag/past-tag/behind-main applicato su tutte le misure Hermes. Raccomandazioni invariate ma oltre-urgenti: allowAcrossProviders:false PRIMA di qualsiasi upgrade OC, Hermes roll-forward a main recente, poi OC 2026.9.7 e i 3 CLI bump (claude-code -211 e' il gap piu' grande). gitleaks PASS; committati solo tracker + changelog; memories/ untracked per convenzione.
