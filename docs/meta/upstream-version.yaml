@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-10-03T07:30:00+02:00'
+  checked_at: '2026-10-04T07:45:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -76,8 +76,8 @@ installed:
   hermes_local_commit: 006b1beb
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 16234
-  upgrade_notes: '2026-10-04 monitor (live 04:00-04:25 CEST): OC STABLE v2026.9.8 CONFIRMED first daily-report day (was Oct 3 03:21:47Z blind-window advance, already folded into KB yesterday; npm latest/beta=2026.9.8; contents: GPT-6.1 Sol via OpenAI provider, delegated results tied to requesting conversation, lower memory large Codex setups, failed-updates/Windows-startup fixes, Control UI tab retention #163478; Telegram checks waived, Android APK skipped). NO new releases in last 24h (ext-stable stays 2026.8.35). OC main 357b7247 +2900 ahead/68 behind vs NEW tag v2026.9.8, 551 c/24h (paginated), wave = repo-wide deslop refactor campaign (runtime/media/agents/channels/infra) + Telegram streamed-reply fix #164649 + worker heap reclaim #164567. Unreleased.md EMPTY (14 bytes). HERMES local 006b1beb 9509 behind tag v2026.9.24 / 16234 behind main (identity 9509+6725=16234 verified via compare API; hermes --version says 15733 stale, pre-fetch), main +6725 (yesterday +6224: +501 net vs my +556 flow measure, both paginated), HEAD c225c4a0 fix(cli) one-shot Relay sessions #79471; 10th day deferred upgrade, ~550 c/day debt. ClawHub v0.24.0 tag confirmed, release page STILL 404 (2nd day); 4 commits Oct 3 #3902-#3905 GA4 analytics privacy hardening. GHSA 722 zero new 24th day (14 crit/249 high/390 med/69 low, paginated sum=722; max published_at 2026-09-11). No new October CVEs (all historical: CVE-2026-32046 <2026.2.21, CVE-2026-25253 <2026.1.30, CVE-2026-24763 <2026.1.29, Claw Chain <2026.4.22 — none affect local 2026.6.8). Blog: no new posts (Tencent AIG Oct 2 remains). Key pages docs.openclaw.ai 8/8 HTTP 200. allowAcrossProviders local STILL NOT_SET (4th day, grep live 0 matches both configs) — hard prerequisite before any OC upgrade. claude-code upstream now 2.1.289 (local 2.1.76, -213). Gateway active 0 errors 24h. Full report: memories/reports/release-monitor/2026-10-04.md'
+  hermes_main_behind: 16259
+  upgrade_notes: '2026-10-04 monitor (live 04:00-04:25 CEST, committed 458982a) + KB re-verification (live 07:31-07:45 CEST): versions UNCHANGED both runs — stable/latest/beta 2026.9.8, ext-stable 2026.8.35 (npm dist-tags + paginated releases; newest release still v2026.9.8 Oct 3 03:21:47Z). Stable contents per monitor: GPT-6.1 Sol, delegated results binding, Control UI tab retention #163478. Drift realigned by KB run: OC main +2955/68 vs v2026.9.8 (was +2900 at 04:00), 521 c/24h paginated (monitor 551 — windows differ amid deslop rebase churn; KB number is the live measure). Hermes local 006b1beb unchanged, 9509 behind tag v2026.9.24 / 16259 behind main (identity 9509+6750=16259 VERIFIED live; monitor had 16234 = 9509+6725), 523 c/24h via git rev-list. ClawHub v0.24.0 tag-only, release page 404 THIRD day (top release still v0.23.3); 4 commits Oct 3 GA4 privacy hardening per monitor. GHSA 722 zero new, 24th day (max published_at 2026-09-11; severity split 14/249/390/69 per monitor paginated). No October CVEs affect local 2026.6.8 (historical ranges only). Blog: no new posts. Key pages 8/8 HTTP 200 per monitor. allowAcrossProviders local STILL NOT_SET per monitor grep 04:00 (4th day; NOT re-grepped by KB run) — hard prerequisite before any OC upgrade. claude-code upstream 2.1.289 vs local 2.1.76 (-213) per monitor. Hermes upgrade deferred 10th day (~550 c/day debt). Full reports: memories/reports/release-monitor/2026-10-04.md (external, untracked)'
 github:
   last_known_version: 2026.9.8
   last_known_release_date: '2026-10-03'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24
   last_known_release_date: '2026-09-24'
-  main_ahead_of_tag: 6725
+  main_ahead_of_tag: 6750

@@ -730,3 +730,25 @@ Run SKIP pulito, 5° giorno consecutivo. Valore della giornata: il blind window 
 ### Self-assessment
 
 Run SKIP con il massimo valore upstream da una settimana: DUE blind-window catch in un solo run (stable 9.8 e i 5 commit ClawHub post-draft) — il pattern "mai fidarsi del draft, riverifica live dist-tags + paginated releases + commits" ora ha 4 casi documentati e resta la regola più redditizia del KB cycle. Il draft era stavolta UNCOMMITTED (non il solito sibling-commit): protocollo fold-and-verify applicato correttamente, ogni numero del draft è stato o confermato o corretto con misure live. Identity check Hermes (9509 behind-tag + 6224 past-tag = 15733 behind-main, cross-check `hermes --version`) passato al primo colpo. Scritti 3 artifact upstream (9.8, 8.35, backfill 8.34) chiudendo anche il gap di ieri. Raccomandazioni oltre-urgenti e invariate: allowAcrossProviders:false PRIMA dell'upgrade OC (flag NOT_SET 4° giorno), Hermes roll-forward (9° giorno deferred, 15733 behind), poi OC→2026.9.8 e i 3 CLI bump (claude-code -212). gitleaks PASS; committati solo tracker + artifact + changelog; `memories/` untracked per convenzione.
+
+## 2026-10-04 — Daily KB Processing (automated)
+
+**SKIP elaborazione sessioni**: 0 sessioni `status: ready` (2 `new` in coda, non elegibili; 61 processed). Nessun tocco a `docs/` Diátaxis né a `docs/index.yaml`.
+
+### Upstream — nessuna new release, drift realignment post-monitor
+
+- **Versioni FERME** (riverifica live 07:31-07:45 CEST): stable/latest/beta OC **2026.9.8** (2° giorno; newest release page sempre v2026.9.8, Oct 3 03:21:47Z), ext-stable **2026.8.35** (npm dist-tags live). Pattern sibling-monitor (classe 2026-09-12): tracker già committato dal monitor (`458982a`) — run KB = riverifica live + solo drift realignment.
+- **OC main +2955/68** vs v2026.9.8 (monitor ore 04:00: +2900/68), **521 c/24h** paginati KB vs 551 monitor — finestre a 3,5h di distanza in piena campagna deslop/rebase; entrambe paginate, il numero KB è la misura live più recente.
+- **Hermes**: local 006b1beb immutato (Sep 5), **9509 behind tag v2026.9.24 / 16259 behind main** — identity 9509+6750=16259 verificata live via rev-list post-fetch (monitor: 16234=9509+6725; drift +25 in 3,5h coerente con 523 c/24h misurati). Upgrade rinviato 10° giorno.
+- **ClawHub v0.24.0**: release page ancora 404, **3° giorno** tag-only (top release sempre v0.23.3, Aug 4). Watch signal, non agire.
+- **GHSA 722, zero nuovi, 24° giorno** (spot-check live: max `published_at` 2026-09-11; split 14/249/390/69 per aggregato monitor paginato, non ri-aggregato in questa run).
+- `allowAcrossProviders` locale NOT_SET (4° giorno, grep monitor ore 04:00) — prerequisito duro pre-upgrade OC; non ri-verificato dal KB run (claim dichiarato, non misurato).
+
+### Changes
+
+- `docs/meta/upstream-version.yaml`: solo drift realignment (checked_at, hermes_main_behind 16234→16259, main_ahead_of_tag 6725→6750, upgrade_notes) via full rewrite + assert strutturali (top-level keys esatti, nessuna assorbzione, identity check). Diff netto: 4 righe.
+- Zero docs/index churn, zero sessioni elaborate, zero nuovi artifact upstream (nessuna release nuova da documentare).
+
+### Self-assessment
+
+Run SKIP disciplinato, 6° giorno consecutivo senza sessioni ready. Il monitor aveva GIÀ committato il tracker (`458982a`): protocollo sibling applicato correttamente — riverifica live completa (dist-tags npm, paginated releases, compare API, rev-list post-fetch, advisory spot-check) e aggiornati SOLO i numeri driftati, senza inventare artifact per release inesistenti. Identity check Hermes passato al primo colpo (9509+6750=16259). Scostamento 551 vs 521 c/24h OC: finestre misurate a 3,5h di distanza durante rebase massivo — nessuna delle due è wrong data, entrambe documentate con semantica esplicita. Questione operativa invariata e oltre-urgente: `allowAcrossProviders:false` PRIMA di qualsiasi upgrade OC, poi Hermes roll-forward (16259 behind, ~550 c/day di debito) e OC→2026.9.8. gitleaks PASS; committati solo tracker + changelog; `memories/` untracked per convenzione.
