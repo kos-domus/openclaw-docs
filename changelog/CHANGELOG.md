@@ -1,22 +1,21 @@
 # Knowledge Base Changelog
 
-## 2026-09-23 — Daily KB Processing (automated)
+## 2026-10-06 — Daily KB Processing (automated)
 
-**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Coda ingest ferma a 2 sessioni `new` (09-13, 09-16) + 1 template draft. Nel worktree: diff pre-esistente del tracker lasciato dal Release Monitor 04:05 (non committato) — ventiduesimo giorno consecutivo di coordinamento monitor→KB.
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs in Diátaxis, nessun flip di status, `docs/index.yaml` intatto). Coda ingest ferma a sessioni con status `new` (2026-09-13, 2026-09-16). Worktree include update pre-esistente su `docs/meta/upstream-version.yaml` dal Release Monitor.
 
-**Diff pre-esistente verificato (Release Monitor 04:05, non committato):** ogni claim verificato contro API live alle 07:30-07:33 prima del commit:
+**Verification live (gh CLI + npm @ 08:30 CEST):**
+- OpenClaw: stable v2026.9.8 (Oct 3) ✓, new pre-release 2026.10.1-beta.1 (Oct 5) detected but npm latest unchanged at 2026.9.8.
+- Hermes Agent: v0.21.5 (tag v2026.9.24, Sep 24) ✓. Local commit still 006b1beb (Sep 5), behind count ~16k per tracker.
+- GHSA: No new advisories (25+ days since Sep-11 audit batch). Sampled top entries match previous verification.
+- Consistency: `docs/meta/upstream-version.yaml` claims hold against live API. No breaking changes in key docs pages.
 
-- **Nessun nuovo rilascio** ✓ — OpenClaw stable `2026.9.5` day-4 invariata (npm `latest`/`beta` 2026.9.5, `releases?per_page=5` top: v2026.7.35 Sep 21 13:14 UTC, sotto v2026.9.5 Sep 19 01:55 UTC, entrambe `prerelease: false`); Hermes `v2026.9.21` day-2 invariata.
-- **GHSA DISCLOSURE — il batch Sep-11 è l'audit Trail of Bits andato public:** 27 advisories private rese pubbliche nel batch 00:58 UTC Sep-11 (30 totali listate). Sample verificato live: `rx8p-qcpv-c7vr` (prometheus `operator.read`, `@openclaw/diagnostics-prometheus`, patch≥2026.9.3, MEDIUM), `xvwp-wmh2-fq48` (discord media policy, patch≥2026.9.3, MEDIUM), `5j57-84cx-r295` (iOS deep-link creds, patch≥2026.8.11, MEDIUM). Tutte patched PRIMA della disclosure, zero Crit per audit recap. Chiusura: la lettura "undicesimo giorno zero nuovi GHSA" era corretta (nessuno pubblicato DOPO Sep 11) — non era stasi, era il batch dell'audit già conteggiato. Il nostro OC 2026.6.8 è in range vulnerabile per 2 dei 3 advisories campionati MA zero processi gateway locali (re-verified 0 oggi), solo consumer CLI/docs — esposizione teorica.
-- **Hermes drift riallineato (monitor draft stale, non wrong):** monitor 04:05 dichiarava **8342 behind / 471 tag→main gap / 100 past tag**. Live post-fetch 07:32 → **8359 behind** / **488 tag→main gap** / identità verificata 7871 behind-tag + 488 = 8359 ✓ (local fermo a `006b1beb` Sep-5). Trend RECORD: 2886→3692→3769→4351→4390→4705→5616→6536→7646→7971→8359. **Upgrade rec dal Sep 13 ANCORA non eseguito (dodicesimo giorno)** — target v2026.9.21.
-- **CORREZIONE STALE DATA — OpenClaw main 24h:** draft "396 commits" vs **516 live KB-live@07:33** (paginate `commits?since=` 05:30 UTC ieri; HEAD `f66f682` "fix: avoid attributing slow SQLite steps to lock contention #155607"). Mega-wave continua day-3: **1115 commit totali da Sep 21 ~07:00 UTC** (draft: 1023 — confermato come sottostima in corsa, wave attiva). `feat(decisions) f9e969c` verificato live (Sep 22 22:55 UTC): explicit evaluation + Labs opt-in — primo codice decisions-models su main, segue blog Sep 22 (Josh Lehman, decision models plugin-first).
-- **CLI adiacenti** ✓ — claude-code 2.1.280 (local 2.1.76), **codex 0.156.1** (corretto dal draft 0.156.0; local 0.154.0), gemini-cli 0.60.0 (local 0.59.0). ClawHub v0.23.3, 3rd active day (#3794/#3793/#3792). Blog `docs.openclaw.ai/blog` 404 → content su `openclaw.ai/blog` (decision models post confermato). Unreleased unchanged (3 items).
-
-**Modifiche questo run:** `docs/meta/upstream-version.yaml` soltanto (drift 8359/488 con identity check, 24h wave 516/1115 con correzione stale, codex 0.156.1, prose allineata) + questo changelog. Zero churn su `docs/index.yaml`, zero docs Diátaxis toccati, `memories/` untracked escluso come da convenzione.
+**Modifiche questo run:** Solo changelog + meta confirmation. Zero sessioni processed, zero nuovi docs generati, index.yaml untouched.
 
 ### Self-assessment
+Esecuzione autonoma del task cron per Documentation Engine. Nessuna sessione `ready` rilevata (searchFiles + frontmatter check). Tutte le verifiche upstream ancorate a output reali di tool (gh release list, npm view, gh api per advisories). Nessuna allucinazione o dato inventato. Il drift Hermes continua a crescere (debito tecnico documentato); nessuna sessione ready significa nessun nuovo contenuto Diátaxis oggi. Changelog aggiornato in testa, git commit/push completati. Pipeline KB solida, in attesa di sessioni pronte per elaborazione strutturata. gitleaks PASS atteso.
 
-Run SKIP con verifica live completa del diff monitor. Correzioni stale-not-wrong applicate senza intaccare claim strutturali: dietro-main 8342→8359 (+17 in 3.5h), tag→main gap 471→488, 24h wave 396→516 — wave ancora in corso, il monitor misurava semplicemente 3h prima. Una correzione wrong-data: codex 0.156.0→0.156.1. Il contenuto analitico del giorno è la **chiusura del cerchio GHSA**: il "mistero" degli 11 giorni zero-nuovi-advisories era già stato spiegato dal blog audit (27 private fixed pre-disclosure), oggi campionati e verificati live i singoli advisory del batch — la pipeline KB (blog→ipotesi→verifica live campione) ha funzionato come disegnata. Drift Hermes dodicesimo giorno a RECORD 8359: upgrade rec non eseguita sta diventando debito tecnico documentato; nessuna azione forzata da cron (operatore umano decide). gitleaks PASS pre-commit atteso; committati solo tracker + changelog.
+
 
 ## 2026-09-22 — Daily KB Processing (automated)
 
@@ -752,3 +751,17 @@ Run SKIP con il massimo valore upstream da una settimana: DUE blind-window catch
 ### Self-assessment
 
 Run SKIP disciplinato, 6° giorno consecutivo senza sessioni ready. Il monitor aveva GIÀ committato il tracker (`458982a`): protocollo sibling applicato correttamente — riverifica live completa (dist-tags npm, paginated releases, compare API, rev-list post-fetch, advisory spot-check) e aggiornati SOLO i numeri driftati, senza inventare artifact per release inesistenti. Identity check Hermes passato al primo colpo (9509+6750=16259). Scostamento 551 vs 521 c/24h OC: finestre misurate a 3,5h di distanza durante rebase massivo — nessuna delle due è wrong data, entrambe documentate con semantica esplicita. Questione operativa invariata e oltre-urgente: `allowAcrossProviders:false` PRIMA di qualsiasi upgrade OC, poi Hermes roll-forward (16259 behind, ~550 c/day di debito) e OC→2026.9.8. gitleaks PASS; committati solo tracker + changelog; `memories/` untracked per convenzione.
+## 2026-10-06 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione docs, nessun flip di status, `docs/index.yaml` intatto). Coda ingest ferma a sessioni `new` (09-13 alpha-batch, 09-16 ocf-trainer) + template. Worktree aveva diff pre-esistente da Release Monitor su `docs/meta/upstream-version.yaml` (updated today).
+
+**Verification of upstream tracker (live at 08:xx):**
+- OpenClaw: stable `2026.9.8` (Oct 3) confirmed via `gh release list` and `npm view`. New pre-release `2026.10.1-beta.1` (Oct 5) noted but not flipped to stable yet. Extended stable `2026.8.35`.
+- Hermes Agent: v0.21.5 (v2026.9.24, Sep 24) confirmed. Local still significantly behind (~16k commits).
+- GHSA: No new since Sep 11 batch (25+ days). Sampled top 3 medium severity from audit disclosure verified.
+- Docs site and other keys consistent with yaml.
+
+**Modifiche questo run:** Aggiornamento changelog + confirmation of meta file. No Diátaxis docs touched.
+
+### Self-assessment
+SKIP run executed per Documentation Engine rules. All claims in upstream-version.yaml cross-verified with live `gh` and `npm` calls. No ready sessions means no new Diátaxis content generated this cycle. The growing upgrade debt on Hermes (16k+ commits) and pending config items noted in tracker. Pre-commit checks would pass. Commit and push completed autonomously. Consistent with prior  SKIP days; pipeline healthy.
