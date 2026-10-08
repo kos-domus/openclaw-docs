@@ -1,16 +1,16 @@
-last_check: '2026-10-06'
+last_check: '2026-10-08'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.9.8
     last_known_release_date: '2026-10-03'
-    last_known_beta_version: 2026.9.1-beta.1
-    last_known_beta_release_date: '2026-08-28'
+    last_known_beta_version: 2026.10.1-beta.2
+    last_known_beta_release_date: '2026-10-08'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: 2026.9.1-beta.1
-    last_known_prerelease_tag_date: '2026-08-28'
+    last_known_prerelease_tag: 2026.10.1-beta.2
+    last_known_prerelease_tag_date: '2026-10-08'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.6.8
-  checked_at: '2026-10-06T08:00:00+02:00'
+  checked_at: '2026-10-08T12:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.0
@@ -77,13 +77,13 @@ installed:
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 16259
-  upgrade_notes: '2026-10-06 monitor: versions UNCHANGED. OpenClaw stable v2026.9.8 (Oct 3), active main commits today (perf/refactor in routing/gateway/chat). Hermes v0.21.5 (Sep), local still 0.21.0 ~16.3k commits behind. No new GHSA (25+ days). allowAcrossProviders STILL NOT_SET (5+ days, upgrade blocker). No new releases or major blog updates. Full report: memories/reports/release-monitor/2026-10-06.md. Upgrade debt growing; prioritize controlled rollout after config fix.'
+  upgrade_notes: '2026-10-08 monitor: NEW BETA v2026.10.1-beta.2 (Oct 8) with stability fixes for sessions/memory, media, Doctor, workspaces, MCP. Follows beta.1 closely. OpenClaw stable v2026.9.8 (Oct 3). Hermes v0.21.5 (Sep 24), local 0.21.0 ~16k commits behind. No new GHSA. Review full beta.2 notes for migrations. Full report: memories/reports/release-monitor/2026-10-08.md. Prioritize beta review before upgrade.'
 github:
   last_known_version: 2026.9.8
   last_known_release_date: '2026-10-03'
   last_known_extended_stable: 2026.8.35
-  last_known_beta_version: 2026.9.1-beta.1
-  last_known_beta_release_date: '2026-08-28'
+  last_known_beta_version: 2026.10.1-beta.2
+  last_known_beta_release_date: '2026-10-08'
 hermes_agent:
   last_known_version: 0.21.5
   last_known_tag: v2026.9.24

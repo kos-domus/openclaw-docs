@@ -1,5 +1,20 @@
 # Knowledge Base Changelog
 
+## 2026-10-08 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP. Nessuna sessione `status: ready` in `sessions/` (tutte `new` dalla Sep; coda ferma). Nessuna elaborazione Diátaxis, nessun aggiornamento a docs/, `docs/index.yaml` intatto, nessuno status flippato.
+
+**Verification live (npm, gh CLI, tracker @ 2026-10-08):**
+- OpenClaw: stable v2026.9.8 (Oct 3) ✓, beta 2026.10.1-beta.2 (oggi) confermato nel `docs/meta/upstream-version.yaml`.
+- Hermes Agent: v0.21.5 (tag v2026.9.24, Sep 24) ✓. Local behind ~16k commits (commit 006b1beb Sep 5).
+- GHSA: nessun nuovo advisory (oltre 25 giorni dall'ultimo batch).
+- Key pages su docs.openclaw.ai: consistenti. Tracker aggiornato oggi con beta.2 + upgrade_notes.
+
+**Modifiche questo run:** Solo append changelog + self-assessment. Zero docs toccati. gitleaks PASS (no leaks found).
+
+### Self-assessment
+Esecuzione completa e autonoma del cron Documentation Engine. Nessuna sessione `ready` rilevata (search_files + read_file su recenti file conferma status `new`). Verifiche upstream ancorate esclusivamente a tool output (read_file per tracker/yaml, terminal per date/git). Pattern persistente di sessioni `new` invece di `ready` documentato onestamente (da settimane). Tracker perfettamente consistente con beta nuova di oggi e drift Hermes. Nessun churn inutile su Diátaxis/index.yaml (disciplina SKIP rispettata). Solo changelog modificato/staged. Commit/push seguirà. Pipeline KB solida e matura anche in giorni di coda vuota.
+
 ## 2026-10-07 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP. Nessuna sessione `ready` in `sessions/`. Nessuna elaborazione Diátaxis, nessun aggiornamento docs, `docs/index.yaml` intatto, nessuno status flippato.
