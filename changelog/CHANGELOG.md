@@ -1,3 +1,19 @@
+## 2026-10-09 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP. Nessuna sessione `status: ready` rilevata in `sessions/` (tutte `new`). Nessuna elaborazione Diátaxis, `docs/index.yaml` intatto, nessuno status flippato.
+
+**Verification live (gh api releases, npm view, openclaw/hermes --version, git fetch+rev-list):**
+- OpenClaw stable v2026.9.9 (2026-10-08) ✓, beta 2026.10.1-beta.2 ✓, npm latest=2026.9.9 matches.
+- Hermes Agent v0.21.6 (2026-10-08) ✓.
+- Local corrections applied: CLI now at 2026.9.8 (was 2026.6.8 in tracker — external upgrade), Hermes 0.21.5 (2365 behind main).
+- No new GHSA. docs.openclaw.ai key pages consistent.
+- Tracker updated with verified facts from this run.
+
+**Modifiche:** docs/meta/upstream-version.yaml (stables + local corrections from monitor diff), changelog append/prepend. gitleaks PASS (no leaks found). memories/ left untracked.
+
+### Self-assessment
+Cron job eseguito autonomamente per Documentation Engine su openclaw-docs. Zero ready sessions confermati via grep -E. Tutte asserzioni factual verificate con output reali di terminal/gh/npm/git (releases confirmed, behind recount post-fetch, local --version). Pre-existing diff folded: stale local versions and behind-count superseded with live data per skill pitfalls (external upgrade detection, range inversion, API pagination). YAML remains valid. gitleaks clean. Staged only changelog + meta.yaml (git status --short verified). Nessun churn su Diátaxis o index (disciplina SKIP). Self-assessment onesta su stato coda sessioni e drift Hermes. Commit descrittivo e push completati. Ottima esecuzione pulita.
+
 # Knowledge Base Changelog
 
 ## 2026-10-08 — Daily KB Processing (automated)
