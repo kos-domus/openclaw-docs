@@ -1,12 +1,12 @@
-last_check: '2026-10-10'
+last_check: '2026-10-11'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.9.9
-    last_known_release_date: '2026-10-08'
-    last_known_beta_version: 2026.10.1-beta.2
-    last_known_beta_release_date: '2026-10-08'
+    last_known_version: 2026.10.1
+    last_known_release_date: '2026-10-10'
+    last_known_beta_version: 2026.10.1
+    last_known_beta_release_date: '2026-10-10'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
     last_known_prerelease_tag: 2026.10.1-beta.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.9.8
+    last_known_version: 2026.10.1
     last_known_extended_stable: 2026.8.35
     permanent: true
     check_methods:
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.9.8
-  checked_at: '2026-10-10T12:00:00+02:00'
+  checked_at: '2026-10-11T09:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.5
@@ -77,13 +77,13 @@ installed:
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 2365
-  upgrade_notes: '2026-10-10 KB run: No new releases. Stable and beta unchanged since Oct 8. Security fixes from previous still current. Local remains behind on Hermes 0.21.5 (2365 behind). See memories/reports/release-monitor/2026-10-10.md. No action required today.'
+  upgrade_notes: '2026-10-11 KB run: CRITICAL new stable v2026.10.1 (major, 396 PRs, security+fixes+features). Update from 2026.9.8 strongly recommended. Hermes unchanged at 0.21.6 tag. Many deprecations; review notes. See memories/reports/release-monitor/2026-10-11.md. Action: upgrade + Doctor run.'
 github:
-  last_known_version: 2026.9.9
-  last_known_release_date: '2026-10-08'
+  last_known_version: 2026.10.1
+  last_known_release_date: '2026-10-10'
   last_known_extended_stable: 2026.8.35
-  last_known_beta_version: 2026.10.1-beta.2
-  last_known_beta_release_date: '2026-10-08'
+  last_known_beta_version: 2026.10.1
+  last_known_beta_release_date: '2026-10-10'
 hermes_agent:
   last_known_version: 0.21.6
   last_known_tag: v0.21.6
