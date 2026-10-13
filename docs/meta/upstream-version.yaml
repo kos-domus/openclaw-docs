@@ -1,16 +1,16 @@
-last_check: '2026-10-11'
+last_check: '2026-10-13'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.1
-    last_known_release_date: '2026-10-10'
-    last_known_beta_version: 2026.10.1
-    last_known_beta_release_date: '2026-10-10'
+    last_known_version: 2026.10.2
+    last_known_release_date: '2026-10-12'
+    last_known_beta_version: 2026.10.5-beta.1
+    last_known_beta_release_date: '2026-10-11'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: 2026.10.1-beta.2
-    last_known_prerelease_tag_date: '2026-10-08'
+    last_known_prerelease_tag: v2026.10.5-beta.1
+    last_known_prerelease_tag_date: '2026-10-11'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.1
+    last_known_version: 2026.10.2
     last_known_extended_stable: 2026.8.35
     permanent: true
     check_methods:
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.21.6
-    last_known_tag: v0.21.6
-    last_known_release_date: '2026-10-08'
+    last_known_version: 0.21.7
+    last_known_tag: v0.21.7
+    last_known_release_date: '2026-10-12'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.9.8
-  checked_at: '2026-10-11T09:00:00+02:00'
+  checked_at: '2026-10-12T09:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.5
@@ -77,15 +77,15 @@ installed:
   hermes_local_commit_date: '2026-09-05'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 2365
-  upgrade_notes: '2026-10-11 KB run: CRITICAL new stable v2026.10.1 (major, 396 PRs, security+fixes+features). Update from 2026.9.8 strongly recommended. Hermes unchanged at 0.21.6 tag. Many deprecations; review notes. See memories/reports/release-monitor/2026-10-11.md. Action: upgrade + Doctor run.'
+  upgrade_notes: '2026-10-13 release-monitor: New stable OpenClaw v2026.10.2 (reliability, update/Doctor fixes, redaction, cache stability) and Hermes v0.21.7 (tagged-release updates, channel selector, resume reasoning). Local CLI 2026.9.8 and Hermes 0.21.5 behind. See memories/reports/release-monitor/2026-10-13.md. Action: upgrade both + run doctor.'
 github:
-  last_known_version: 2026.10.1
-  last_known_release_date: '2026-10-10'
+  last_known_version: 2026.10.2
+  last_known_release_date: '2026-10-12'
   last_known_extended_stable: 2026.8.35
-  last_known_beta_version: 2026.10.1
-  last_known_beta_release_date: '2026-10-10'
+  last_known_beta_version: 2026.10.5-beta.1
+  last_known_beta_release_date: '2026-10-11'
 hermes_agent:
-  last_known_version: 0.21.6
-  last_known_tag: v0.21.6
-  last_known_release_date: '2026-10-08'
+  last_known_version: 0.21.7
+  last_known_tag: v0.21.7
+  last_known_release_date: '2026-10-12'
   main_ahead_of_tag: 6750
