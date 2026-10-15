@@ -1,4 +1,4 @@
-last_check: '2026-10-14'
+last_check: '2026-10-15'
 sources:
   github:
     repo: openclaw/openclaw
@@ -34,8 +34,8 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.22.0
-    last_known_tag: v0.22.0
+    last_known_version: 0.22.1
+    last_known_tag: v0.22.1
     last_known_release_date: '2026-10-14'
     permanent: true
     check_methods:
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.9.8
-  checked_at: '2026-10-12T09:00:00+02:00'
+  checked_at: '2026-10-15T04:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.6
@@ -77,7 +77,7 @@ installed:
   hermes_local_commit_date: '2026-09-24'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 857
-  upgrade_notes: '2026-10-14 release-monitor: New stable OpenClaw v2026.10.3 and Hermes Agent v0.22.0 (major release today). Local CLI still 2026.9.8 behind; Hermes 0.21.6 dirty + 857 commits behind main. Urgent: run `hermes update` + doctor. See changelog for details. New MCP and skills improvements expected.'
+  upgrade_notes: '2026-10-15 release-monitor: Hermes Agent v0.22.1 patch (new plugins, model improvements) released Oct 14; OpenClaw v2026.10.3 stable from Oct 13. Local CLI 2026.9.8 and Hermes 0.21.6 still behind. Urgent upgrade recommended: `hermes update` + doctor. New language packs, providers, fixes in Hermes. Review full release notes for plugin/SKD impacts.'
 github:
   last_known_version: 2026.10.3
   last_known_release_date: '2026-10-13'
@@ -85,7 +85,7 @@ github:
   last_known_beta_version: 2026.10.5-beta.1
   last_known_beta_release_date: '2026-10-11'
 hermes_agent:
-  last_known_version: 0.22.0
-  last_known_tag: v0.22.0
-  last_known_release_date: '2026-10-12'
+  last_known_version: 0.22.1
+  last_known_tag: v0.22.1
+  last_known_release_date: '2026-10-14'
   main_ahead_of_tag: 6750
