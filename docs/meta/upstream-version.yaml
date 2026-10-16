@@ -1,10 +1,10 @@
-last_check: '2026-10-15'
+last_check: '2026-10-16'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.3
-    last_known_release_date: '2026-10-13'
+    last_known_version: 2026.10.4
+    last_known_release_date: '2026-10-16'
     last_known_beta_version: 2026.10.5-beta.1
     last_known_beta_release_date: '2026-10-11'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.3
+    last_known_version: 2026.10.4
     last_known_extended_stable: 2026.8.35
     permanent: true
     check_methods:
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.22.1
-    last_known_tag: v0.22.1
-    last_known_release_date: '2026-10-14'
+    last_known_version: 0.22.2
+    last_known_tag: v0.22.2
+    last_known_release_date: '2026-10-15'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -77,15 +77,15 @@ installed:
   hermes_local_commit_date: '2026-09-24'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 857
-  upgrade_notes: '2026-10-15 release-monitor: Hermes Agent v0.22.1 patch (new plugins, model improvements) released Oct 14; OpenClaw v2026.10.3 stable from Oct 13. Local CLI 2026.9.8 and Hermes 0.21.6 still behind. Urgent upgrade recommended: `hermes update` + doctor. New language packs, providers, fixes in Hermes. Review full release notes for plugin/SKD impacts.'
+  upgrade_notes: '2026-10-16 release-monitor: CRITICAL - Hermes Agent v0.22.2 (Oct 15, gateway reboot fix + plugins) and OpenClaw v2026.10.4 stable (Oct 16, stability patch with 61 PRs). Local CLI 2026.9.8 and Hermes 0.21.6 significantly behind. Run `hermes update` + `openclaw upgrade` + doctor immediately. Many new plugins, gateway fixes, profile improvements. Test fleet after upgrade.'
 github:
-  last_known_version: 2026.10.3
-  last_known_release_date: '2026-10-13'
+  last_known_version: 2026.10.4
+  last_known_release_date: '2026-10-16'
   last_known_extended_stable: 2026.8.35
   last_known_beta_version: 2026.10.5-beta.1
   last_known_beta_release_date: '2026-10-11'
 hermes_agent:
-  last_known_version: 0.22.1
-  last_known_tag: v0.22.1
-  last_known_release_date: '2026-10-14'
+  last_known_version: 0.22.2
+  last_known_tag: v0.22.2
+  last_known_release_date: '2026-10-15'
   main_ahead_of_tag: 6750
