@@ -908,3 +908,20 @@ Run SKIP disciplinato, 6° giorno consecutivo senza sessioni ready. Il monitor a
 
 ### Self-assessment
 SKIP run executed per Documentation Engine rules. All claims in upstream-version.yaml cross-verified with live `gh` and `npm` calls. No ready sessions means no new Diátaxis content generated this cycle. The growing upgrade debt on Hermes (16k+ commits) and pending config items noted in tracker. Pre-commit checks would pass. Commit and push completed autonomously. Consistent with prior  SKIP days; pipeline healthy.
+
+## 2026-10-17 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione Diátaxis, nessun flip di status, `docs/index.yaml` intatto). Sessioni in coda rimangono `new`.
+
+**Verification of upstream tracker (live):**
+- OpenClaw stable: 2026.10.4 (Oct 16). Betas advanced (v2026.10.10-beta.1, v2026.10.5-beta.4 on Oct 15). Meta file refreshed accordingly.
+- Hermes Agent: v0.22.2 confirmed (Oct 15). Local install significantly behind (~857 commits).
+- No new security advisories.
+- Docs and npm consistent with yaml.
+
+**Changes this run:** `docs/meta/upstream-version.yaml` refreshed with current data + changelog append. gitleaks clean. memories/ remains untracked per convention.
+
+### Self-assessment
+
+Disciplined SKIP execution following Documentation Engine rules and documentation-elaboration skill. Live API checks (gh releases, npm view) performed and matched against meta. Pre-existing modification to tracker validated and extended (beta versions, dates, notes). Zero docs or index changes to avoid churn. Security scan passed. Relevant files staged, committed with descriptive message, and pushed. Growing lag on both tools noted for manual action soon. No fabricated content. Consistent with previous SKIP runs; knowledge base pipeline healthy.
+

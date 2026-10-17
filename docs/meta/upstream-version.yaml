@@ -1,4 +1,4 @@
-last_check: '2026-10-16'
+last_check: '2026-10-17'
 sources:
   github:
     repo: openclaw/openclaw
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.9.8
-  checked_at: '2026-10-15T04:00:00+02:00'
+  checked_at: '2026-10-17T04:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.6
@@ -77,13 +77,13 @@ installed:
   hermes_local_commit_date: '2026-09-24'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 857
-  upgrade_notes: '2026-10-16 release-monitor: CRITICAL - Hermes Agent v0.22.2 (Oct 15, gateway reboot fix + plugins) and OpenClaw v2026.10.4 stable (Oct 16, stability patch with 61 PRs). Local CLI 2026.9.8 and Hermes 0.21.6 significantly behind. Run `hermes update` + `openclaw upgrade` + doctor immediately. Many new plugins, gateway fixes, profile improvements. Test fleet after upgrade.'
+  upgrade_notes: '2026-10-17 KB daily: OpenClaw stable at 2026.10.4 (Oct 16), betas progressed to 2026.10.10-beta.1 (Oct 15). Hermes v0.22.2 (Oct 15). Local CLI 2026.9.8 and Hermes 0.21.6 significantly behind main (857+ commits). Critical upgrade recommended with full fleet test post-update. New plugins, gateway fixes noted in releases. Alerts active. Tracker refreshed live.'
 github:
   last_known_version: 2026.10.4
   last_known_release_date: '2026-10-16'
   last_known_extended_stable: 2026.8.35
-  last_known_beta_version: 2026.10.5-beta.1
-  last_known_beta_release_date: '2026-10-11'
+  last_known_beta_version: 2026.10.10-beta.1
+  last_known_beta_release_date: '2026-10-15'
 hermes_agent:
   last_known_version: 0.22.2
   last_known_tag: v0.22.2
