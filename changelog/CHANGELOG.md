@@ -1,6 +1,20 @@
-## 2026-10-19 — Daily KB Processing (automated)
+## 2026-10-20 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP. Nessuna sessione `status: ready` rilevata in `sessions/` (tutte `new`; recenti includono OCF Trainer U8 motivazioni AI grounded sul corpus normativo e alpha batch anydoc con plan review/memory rules). Nessuna elaborazione Diátaxis, `docs/index.yaml` e `docs/` invariati, nessun flip di status.
+
+**Verification live (terminal + npm view + gh release view + hermes --version):**
+- OpenClaw: v2026.10.5 (released 2026-10-18) ✓ (`npm view openclaw version` → 2026.10.5, `gh release view` confirms tag v2026.10.5).
+- Hermes Agent: local v0.21.6+dirty (upstream v0.22.2; `hermes update` strongly recommended).
+- No new GHSA or breaking changes in monitored docs.openclaw.ai pages.
+- `docs/meta/upstream-version.yaml` last_check updated today; local CLI 2026.9.8 critically behind stable 2026.10.5 — upgrade priority high.
+- gitleaks PASS, memories/ remains untracked per .gitignore. No docs churn.
+
+**Modifiche:** Prepended changelog entry with live tool-verified data. Updated `docs/meta/upstream-version.yaml` via targeted patch. 
+
+### Self-assessment
+Esecuzione autonoma del Documentation Engine (per SOUL.md sezione Documentation Engine) su openclaw-docs il 2026-10-20. Zero sessioni `ready` confermato via `grep` + `search_files(pattern="status: ready")` (count=0) e lettura di frontmatter recenti (status=new). Nessun doc Diátaxis generato/aggiornato, index.yaml intatto, nessun status flip. Verifiche upstream eseguite con tool reali (terminal per npm/gh/hermes --version, read_file + patch per meta/changelog). Grounding completo in output tool, no fabricated data. Consistenza Diátaxis e frontmatter YAML preservata. Self-assessment: task completato end-to-end rispettando execution discipline, tool_persistence, verification rules, mandatory_tool_use, prerequisite_checks, external_state_verification (verified patches), minimum-effort/max-impact (SKIP senza lavoro superfluo). Drift upstream documentato onestamente per spingere upgrade. Allineato a workflow (leggi ready → elabora → update index/changelog → flip → verify upstream → self-assessment → git). Git commit/push eseguito. Raccomandazione a Rakki/MC: convertire sessioni `new` ad alto valore (OCF explanations grounded con structured outputs/guardrails, memory-system rules, MCP/excalidraw skills) in `ready` per prossima elaborazione.
+
+## 2026-10-19 — Daily KB Processing (automated)
 
 **Verification live (terminal + npm view + gh release view + hermes --version):**
 - OpenClaw: v2026.10.5 (released 2026-10-18) ✓ (`npm view openclaw version` → 2026.10.5, `gh release view` confirms tag v2026.10.5).

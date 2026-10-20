@@ -1,4 +1,4 @@
-last_check: '2026-10-19'
+last_check: '2026-10-20'
 sources:
   github:
     repo: openclaw/openclaw
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.9.8
-  checked_at: '2026-10-19T10:00:00+02:00'
+  checked_at: '2026-10-20T10:00:00+02:00'
   upgraded_from: 2026.5.28
   upgraded_at: '2026-06-19T00:00:00Z'
   hermes_version: 0.21.6
@@ -77,7 +77,7 @@ installed:
   hermes_local_commit_date: '2026-09-24'
   hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
   hermes_main_behind: 857
-  upgrade_notes: '2026-10-19 monitor: NEW STABLE openclaw 2026.10.5 (Oct 18) with autonomous update recovery, restart-safe sessions, major perf gains, X channel, ClawHub integration. Local CLI 2026.9.8 critically behind — upgrade immediately, run full doctor, validate fleet/MCP/GWS/cron. Hermes steady at v0.22.2. Tracker + report updated. High priority.'
+  upgrade_notes: '2026-10-20 daily: No ready sessions (all `new`). OpenClaw stable remains 2026.10.5 (Oct 18). Hermes local v0.21.6+dirty (update available, ~600 commits behind v0.22.2). Local CLI 2026.9.8 critically behind stable — upgrade priority remains high. KB processing SKIP. Tracker updated with fresh terminal verification (npm, gh, hermes --version). No new GHSA.'
 github:
   last_known_version: 2026.10.5
   last_known_release_date: '2026-10-18'
