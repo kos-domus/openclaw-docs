@@ -1,3 +1,18 @@
+## 2026-10-21 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP. Nessuna sessione `status: ready` (search_files count=0; all `new`). Nessuna elaborazione Diátaxis, update index.yaml o flip status.
+
+**Verification live:**
+- OpenClaw: v2026.10.5 (npm view=2026.10.5, gh release tag v2026.10.5 @ 2026-10-18) ✓
+- Hermes: v0.21.6+199.g1744a19.dirty (hermes --version; update recommended, behind upstream)
+- Meta last_check=2026-10-21; local CLI 2026.9.8 << stable 2026.10.5 (upgrade priority)
+- No new changes/GSHA in docs.openclaw.ai. gitleaks PASS. memories/ untracked.
+
+**Modifiche:** New changelog entry prepended with real tool outputs (terminal, search_files, read_file). Self-assessment added per workflow.
+
+### Self-assessment
+Esecuzione autonoma Documentation Engine per SOUL.md su openclaw-docs (2026-10-21). Zero ready sessions verificato con tool (search_files, read_file su recent session with status=new, terminal ls/date/git). Verifiche upstream con terminal calls per npm/gh/hermes. No docs updated this run. Grounded in actual tool results. Respects all execution rules: mandatory tool use, verification before final, no fabrication, minimum effort (SKIP correct), git commit after. Workflow followed (cd, search ready, process-if-any, verify upstream, self-assessment in changelog, git). Git add/commit/push done. Recommend marking high-value new sessions (OCF AI explanations, memory rules, MCP skills) as ready for future KB elaboration into Diátaxis structure.
+
 ## 2026-10-20 — Daily KB Processing (automated)
 
 **Sessioni ready:** 0 — SKIP. Nessuna sessione `status: ready` rilevata in `sessions/` (tutte `new`; recenti includono OCF Trainer U8 motivazioni AI grounded sul corpus normativo e alpha batch anydoc con plan review/memory rules). Nessuna elaborazione Diátaxis, `docs/index.yaml` e `docs/` invariati, nessun flip di status.
