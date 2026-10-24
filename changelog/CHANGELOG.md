@@ -989,3 +989,22 @@ Disciplined SKIP execution following Documentation Engine rules and documentatio
 
 Disciplined SKIP execution following SOUL.md Documentation Engine rules and loaded documentation-elaboration skill. Pre-existing tracker modification from monitor sibling was read, every factual claim cross-verified live via `gh api` on releases (stable + betas + Hermes), `hermes --version`, and date checks before committing. Zero Diátaxis docs or index.yaml changes to prevent churn. Security scan passed cleanly. Only expected files (meta yaml + changelog) staged; git commit and push completed autonomously. Critical upgrade urgency for Hermes (v0.22.4) and OpenClaw CLI highlighted in notes. Consistent with previous SKIP runs; knowledge base pipeline healthy. No content fabricated.
 
+
+## 2026-10-24 — Daily KB Processing (automated)
+
+**Sessioni ready:** 0 — SKIP run (nessuna elaborazione Diátaxis, nessun flip di status, `docs/index.yaml` intatto). Coda: 61 processed, 2 `new` (già tracciate, non elaborate), 1 draft (template).
+
+**Verification of upstream tracker (live):**
+- OpenClaw stable: 2026.10.6 (Oct 22, `prerelease: false`) — advance da 2026.10.5. npm `latest` allineato; `extended-stable` avanzato 2026.8.35 → 2026.9.33 (GH release page esiste, Oct 15 — no blind window). Beta invariato: 2026.10.10-beta.3 (Oct 21).
+- Hermes Agent: v0.22.5 confirmed (Oct 23; `releases/latest` concorda con la lista paginata — no cache lag). main-ahead-of-tag 471 verificato via fetch+rev-list; identità 197 (tag..HEAD) + 274 (HEAD..origin/main) = 471 ✓.
+- Upgrade locale CLI verificato (evidence triad): `openclaw --version` → 2026.10.6 (fe06181), upgraded da 2026.9.8; gateway restart Fri 2026-10-23 16:40:34 CEST confermato via `systemctl --user show`; commit locale cb757fac59c9 coerente con la label v0.22.5+197.
+- Claim doctor verificato direttamente: `openclaw doctor` si ferma su `session-entry-state (step-refused)` + codex plugin settings migration pending → azione suggerita: `openclaw update status`.
+- Node note confermato dall'output CLI: PATH node 26.7.0 fallisce runtime admission, fallback `/usr/bin/node`.
+- Security advisories: nessuna nuova (newest published 2026-09-11).
+
+**Changes this run:** Fold del diff pre-esistente del monitor sibling in `docs/meta/upstream-version.yaml` — ogni claim verificato live prima del commit, zero correzioni necessarie (draft accurato al 100%). Changelog append. gitleaks clean. memories/ resta untracked per convenzione. Nessun artifact upstream-update: convenzione corrente (run 2026-10-17/10-22) = tracker refresh only.
+
+### Self-assessment
+
+Disciplined SKIP execution following SOUL.md Documentation Engine rules and the loaded documentation-elaboration skill. The pre-existing tracker diff from the monitor sibling was verified claim-by-claim against live data (paginated GitHub releases, npm dist-tags, openclaw/hermes --version, fetch+rev-list with the behind/past-tag identity check, systemctl restart timestamp, direct `openclaw doctor` reproduction) — every field matched, zero corrections folded, which is notable given the documented history of monitor undercounts. Zero Diátaxis docs or index.yaml changes to prevent churn on a SKIP run. Local issue (doctor migration refusal) verified and kept flagged for manual action. gitleaks passed; only expected files (meta yaml + changelog) staged; commit and push verified against origin/main. No content fabricated. Knowledge base pipeline healthy.
+

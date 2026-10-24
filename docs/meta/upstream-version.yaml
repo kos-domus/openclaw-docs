@@ -1,10 +1,10 @@
-last_check: '2026-10-22'
+last_check: '2026-10-24'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.5
-    last_known_release_date: '2026-10-18'
+    last_known_version: 2026.10.6
+    last_known_release_date: '2026-10-22'
     last_known_beta_version: 2026.10.10-beta.3
     last_known_beta_release_date: '2026-10-21'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,8 +25,8 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.5
-    last_known_extended_stable: 2026.8.35
+    last_known_version: 2026.10.6
+    last_known_extended_stable: 2026.9.33
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.22.4
-    last_known_tag: v0.22.4
-    last_known_release_date: '2026-10-21'
+    last_known_version: 0.22.5
+    last_known_tag: v0.22.5
+    last_known_release_date: '2026-10-23'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -67,25 +67,25 @@ sources:
     - path: /automation/hooks
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
-  local_cli_version: 2026.9.8
-  checked_at: '2026-10-22T09:00:00+02:00'
-  upgraded_from: 2026.5.28
-  upgraded_at: '2026-06-19T00:00:00Z'
-  hermes_version: 0.21.6
+  local_cli_version: 2026.10.6
+  checked_at: '2026-10-24T04:03:00+02:00'
+  upgraded_from: 2026.9.8
+  upgraded_at: '2026-10-23T00:00:00Z'
+  hermes_version: 0.22.5+197.gcb757fa
   hermes_channel: main-tracking
-  hermes_local_commit: 1744a19
-  hermes_local_commit_date: '2026-09-24'
-  hermes_upgraded_at: '2026-09-05T15:53:00+02:00'
-  hermes_main_behind: 857
-  upgrade_notes: '2026-10-22 cron: CRITICAL - New Hermes v0.22.3 (major rollup ~2911 commits/620 PRs) and v0.22.4 (patch) on Oct 21. OpenClaw beta.3 also released. Local CLI 2026.9.8 & Hermes 0.21.6 significantly behind. No new security advisories. yaml updated with latest versions, report generated+uploaded to Drive. Upgrade now urgent priority.'
+  hermes_local_commit: cb757fac
+  hermes_local_commit_date: '2026-10-23'
+  hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
+  hermes_main_behind: 274
+  upgrade_notes: '2026-10-24 cron: NO critical alerts. Local CLI upgraded to 2026.10.6 (fe06181) = latest stable; local Hermes on main-tracking v0.22.5+197 (cb757fac, gateway restarted 2026-10-23 16:40) — both current. New upstream: Hermes v0.22.5 (2026-10-23, 81 PRs: pluggable delegation backends, usage-window plans, OpenClaw migration importer, Singularity out of core, hermes mcp serve). npm extended-stable advanced 2026.8.35 -> 2026.9.33. Advisory watch: none new. LOCAL ISSUE: openclaw doctor fails with session-entry-state migration refusal on agent database + codex plugin settings migration pending — run openclaw update status. Node note: PATH node 26.7.0 fails OpenClaw runtime admission, /usr/bin/node v24.22.1 used (meets TLS patch floor).'
 github:
-  last_known_version: 2026.10.5
-  last_known_release_date: '2026-10-18'
-  last_known_extended_stable: 2026.8.35
+  last_known_version: 2026.10.6
+  last_known_release_date: '2026-10-22'
+  last_known_extended_stable: 2026.9.33
   last_known_beta_version: 2026.10.10-beta.3
   last_known_beta_release_date: '2026-10-21'
 hermes_agent:
-  last_known_version: 0.22.4
-  last_known_tag: v0.22.4
-  last_known_release_date: '2026-10-21'
-  main_ahead_of_tag: 6750
+  last_known_version: 0.22.5
+  last_known_tag: v0.22.5
+  last_known_release_date: '2026-10-23'
+  main_ahead_of_tag: 471
