@@ -1,13 +1,13 @@
 meta:
-  generated_at: '2026-06-06T05:32:52Z'
-  total_docs: 29
+  generated_at: '2026-10-27T06:45:00Z'
+  total_docs: 34
   categories:
-    concepts: 5
+    concepts: 6
     getting-started: 3
-    guides: 9
+    guides: 12
     reference: 9
-    troubleshooting: 3
-  sources_processed: 140
+    troubleshooting: 4
+  sources_processed: 147
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -67,6 +67,22 @@ docs:
   last_updated: '2026-03-30'
   version: 2
   path: docs/concepts/semantic-data-layer.md
+- title: 'Unified Agent Memory: Federate First, Consolidate Later'
+  slug: unified-agent-memory
+  category: concepts
+  tags:
+  - memory
+  - multi-agent
+  - mcp
+  - sqlite
+  - fts5
+  - security
+  - design
+  sources:
+  - sessions/2026-10-27-deco-backhaul-printer-audio-memory-plan.md
+  last_updated: '2026-10-27'
+  version: 1
+  path: docs/concepts/unified-agent-memory.md
 - title: Workspace Isolation
   slug: workspace-isolation
   category: concepts
@@ -140,6 +156,23 @@ docs:
   last_updated: '2026-04-01'
   version: 4
   path: docs/guides/1password-secrets-management.md
+- title: Ad-Free Media Playback Controlled by Agents
+  slug: agent-media-playback
+  category: guides
+  tags:
+  - youtube
+  - mpv
+  - yt-dlp
+  - firefox
+  - policies
+  - audio
+  - bluetooth
+  sources:
+  - sessions/2026-10-26-minipc-ops-printer-youtube-docker-security-scan.md
+  - sessions/2026-10-27-deco-backhaul-printer-audio-memory-plan.md
+  last_updated: '2026-10-27'
+  version: 1
+  path: docs/guides/agent-media-playback.md
 - title: Cron Jobs, Sub-Agents, and Automation
   slug: cron-jobs-and-automation
   category: guides
@@ -219,6 +252,22 @@ docs:
   last_updated: '2026-03-30'
   version: 2
   path: docs/guides/google-workspace-cli.md
+- title: 'Home Server Container Updates Safely (Immich, n8n, Home Assistant)'
+  slug: home-server-container-updates
+  category: guides
+  tags:
+  - docker
+  - containers
+  - home-assistant
+  - n8n
+  - immich
+  - backup
+  - rollback
+  sources:
+  - sessions/2026-10-26-minipc-ops-printer-youtube-docker-security-scan.md
+  last_updated: '2026-10-27'
+  version: 1
+  path: docs/guides/home-server-container-updates.md
 - title: 'Remote Access: SSH, xRDP, and Tailscale'
   slug: remote-access
   category: guides
@@ -287,6 +336,21 @@ docs:
   last_updated: '2026-03-30'
   version: 2
   path: docs/guides/whatsapp-bot.md
+- title: Weekly Deterministic Security Scan for a Home Server
+  slug: security-weekly-scan
+  category: guides
+  tags:
+  - security
+  - trivy
+  - osv
+  - exposure
+  - inventory
+  - cron
+  sources:
+  - sessions/2026-10-26-minipc-ops-printer-youtube-docker-security-scan.md
+  last_updated: '2026-10-27'
+  version: 1
+  path: docs/guides/security-weekly-scan.md
 - title: 1Password Integration Reference
   slug: 1password-integration-reference
   category: reference
@@ -517,3 +581,18 @@ docs:
   last_updated: '2026-06-02'
   version: 4
   path: docs/troubleshooting/integration-issues.md
+- title: Network Printer Intermittently Unreachable and Silently Canceled Jobs
+  slug: network-printer-intermittent-dropout
+  category: troubleshooting
+  tags:
+  - cups
+  - printing
+  - mesh-network
+  - deco
+  - diagnostics
+  sources:
+  - sessions/2026-10-26-minipc-ops-printer-youtube-docker-security-scan.md
+  - sessions/2026-10-27-deco-backhaul-printer-audio-memory-plan.md
+  last_updated: '2026-10-27'
+  version: 1
+  path: docs/troubleshooting/network-printer-intermittent-dropout.md

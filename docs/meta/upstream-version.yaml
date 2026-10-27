@@ -1,16 +1,16 @@
-last_check: '2026-10-25'
+last_check: '2026-10-27'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.10.7
     last_known_release_date: '2026-10-24'
-    last_known_beta_version: 2026.10.10-beta.3
-    last_known_beta_release_date: '2026-10-21'
+    last_known_beta_version: 2026.10.10-beta.4
+    last_known_beta_release_date: '2026-10-27'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: v2026.10.10-beta.3
-    last_known_prerelease_tag_date: '2026-10-21'
+    last_known_prerelease_tag: v2026.10.10-beta.4
+    last_known_prerelease_tag_date: '2026-10-27'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -26,7 +26,7 @@ sources:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
     last_known_version: 2026.10.7
-    last_known_extended_stable: 2026.9.34
+    last_known_extended_stable: 2026.9.35
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-10-25T04:02:00+02:00'
+  checked_at: '2026-10-27T04:00:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.22.5+197.gcb757fa
@@ -76,16 +76,16 @@ installed:
   hermes_local_commit: cb757fac
   hermes_local_commit_date: '2026-10-23'
   hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
-  hermes_main_behind: 587
-  upgrade_notes: '2026-10-25 cron: NEW stable OpenClaw 2026.10.7 (2026-10-24, continuity/recovery + Gemini 4 Argon) — local CLI on 2026.10.6, 1 behind, upgrade low-risk pending openclaw doctor fix. SECURITY: zod GHSA-mrhx-c7xc-m3w5 (HIGH, <4.6.6) NOT patched in latest channel — openclaw@2026.10.6 AND @2026.10.7 pin zod 4.6.5 (verified registry + local node_modules); patch (#181341, +body-parser) only in extended-stable 2026.9.34 (2026.9.33 -> 2026.9.34). 2026.9.34 also raises Node floors to >=24.22.1 <25 || >=26.12.1 (#181073) — PATH node 26.7.0 fails the NEW floor too; /usr/bin/node 24.22.1 exactly meets it. Local exposure low (CLI docs/KB only). Watch for zod >=4.6.6 bump in next latest. Hermes: v0.22.5 unchanged, main drift 274 -> 587 commits (burst ~250+/day, likely v0.23.0 prep) — plan hermes update in maintenance window. Blog: no new posts. No new repo advisories.'
+  hermes_main_behind: 1655
+  upgrade_notes: '2026-10-27 KB run (monitor draft folded, every claim live-verified): NEW extended-stable 2026.9.35 (2026-10-27 02:20 UTC) — gateway-only LTS confirmed verbatim in release body, 78 backported fixes (77 PRs + 3 branch repairs, audit of 3595 main commits), zod 4.6.7 confirmed in registry. Latest UNCHANGED: stable 2026.10.7 (2026-10-24). BLIND WINDOW: beta advanced 2026.10.10-beta.3 -> 2026.10.10-beta.4 (2026-10-27 05:39 UTC, after the 04:00 monitor check) — zod still 4.6.5 in beta.4 and in 2026.10.7, GHSA-mrhx-c7xc-m3w5 watch continues. Local CLI 2026.10.6 (fe06181), 1 behind stable; node floor OK (/usr/bin/node 24.22.1 meets >=24.22.1 <25 exactly). Hermes v0.22.5 unchanged; live drift post-fetch: HEAD..origin/main 1655, tag..origin/main 1852, identity 197+1655=1852 (monitor 1629/1826 was hours-stale, not wrong). Advisories 722 total unchanged (14 critical / 249 high / 390 medium / 69 low, sum verified), zero new since 23/10. Key pages 8/8 HTTP 200. Blog no-new-posts kept as monitor watch signal (listing lacks machine-readable dates, not re-verified). ClawHub v0.23.3 per monitor, not re-verified this run.'
 github:
   last_known_version: 2026.10.7
   last_known_release_date: '2026-10-24'
-  last_known_extended_stable: 2026.9.34
-  last_known_beta_version: 2026.10.10-beta.3
-  last_known_beta_release_date: '2026-10-21'
+  last_known_extended_stable: 2026.9.35
+  last_known_beta_version: 2026.10.10-beta.4
+  last_known_beta_release_date: '2026-10-27'
 hermes_agent:
   last_known_version: 0.22.5
   last_known_tag: v0.22.5
   last_known_release_date: '2026-10-23'
-  main_ahead_of_tag: 784
+  main_ahead_of_tag: 1852

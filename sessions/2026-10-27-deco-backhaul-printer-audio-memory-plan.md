@@ -2,7 +2,7 @@
 title: "Mini PC di casa: stampante che cade per colpa del backhaul Wi-Fi del Deco, doppia cassa via sdoppiatore, piano della memoria unificata per gli agenti"
 date: "2026-10-27"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["troubleshooting", "configuration", "memory", "multi-agent", "security"]
 session_type: "openclaw"
 client: ""

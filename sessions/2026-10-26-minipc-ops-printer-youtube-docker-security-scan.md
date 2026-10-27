@@ -2,7 +2,7 @@
 title: "Mini PC di casa: CUPS che annullava i lavori, player YouTube senza ads per agenti, update Docker (HA/Immich/n8n), controllo di sicurezza settimanale"
 date: "2026-10-26"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["automation", "security", "cron", "troubleshooting", "configuration", "setup"]
 session_type: "openclaw"
 client: ""
