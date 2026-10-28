@@ -1,10 +1,10 @@
-last_check: '2026-10-27'
+last_check: '2026-10-28'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.7
-    last_known_release_date: '2026-10-24'
+    last_known_version: 2026.10.8
+    last_known_release_date: '2026-10-27'
     last_known_beta_version: 2026.10.10-beta.4
     last_known_beta_release_date: '2026-10-27'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.7
+    last_known_version: 2026.10.8
     last_known_extended_stable: 2026.9.35
     permanent: true
     check_methods:
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-10-27T04:00:00+01:00'
+  checked_at: '2026-10-28T07:40:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.22.5+197.gcb757fa
@@ -76,11 +76,11 @@ installed:
   hermes_local_commit: cb757fac
   hermes_local_commit_date: '2026-10-23'
   hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
-  hermes_main_behind: 1655
-  upgrade_notes: '2026-10-27 KB run (monitor draft folded, every claim live-verified): NEW extended-stable 2026.9.35 (2026-10-27 02:20 UTC) — gateway-only LTS confirmed verbatim in release body, 78 backported fixes (77 PRs + 3 branch repairs, audit of 3595 main commits), zod 4.6.7 confirmed in registry. Latest UNCHANGED: stable 2026.10.7 (2026-10-24). BLIND WINDOW: beta advanced 2026.10.10-beta.3 -> 2026.10.10-beta.4 (2026-10-27 05:39 UTC, after the 04:00 monitor check) — zod still 4.6.5 in beta.4 and in 2026.10.7, GHSA-mrhx-c7xc-m3w5 watch continues. Local CLI 2026.10.6 (fe06181), 1 behind stable; node floor OK (/usr/bin/node 24.22.1 meets >=24.22.1 <25 exactly). Hermes v0.22.5 unchanged; live drift post-fetch: HEAD..origin/main 1655, tag..origin/main 1852, identity 197+1655=1852 (monitor 1629/1826 was hours-stale, not wrong). Advisories 722 total unchanged (14 critical / 249 high / 390 medium / 69 low, sum verified), zero new since 23/10. Key pages 8/8 HTTP 200. Blog no-new-posts kept as monitor watch signal (listing lacks machine-readable dates, not re-verified). ClawHub v0.23.3 per monitor, not re-verified this run.'
+  hermes_main_behind: 2139
+  upgrade_notes: '2026-10-28 KB run (monitor draft folded, every claim live-verified before commit): NEW stable 2026.10.8 (2026-10-27 11:56:59 UTC, prerelease false, npm latest aligned; body verified verbatim: 162 in-range PRs = 162 unique, zero breaking mentions, 6 security-hardening PRs #180880 #179880 #178742 #179249 #178877 #177536, headline fixes confirmed with descriptions: Telegram/Mattermost default tokens #183618, 1Password group-writable #181127, Ubuntu umask state dir #179538, post-update Doctor Gateway restart #180668). Extended-stable 2026.9.35 and beta 2026.10.10-beta.4 unchanged (paginated releases list + dist-tags live). zod watch GHSA-mrhx-c7xc-m3w5 (high, <4.6.6, patched_versions null): GLOBAL advisory against the zod package, NOT in the openclaw repo advisories list (0 matches over 722) — check via gh api /advisories/GHSA-mrhx-c7xc-m3w5, not the repo endpoint. 2026.10.8 ships zod 4.6.5 (npm verified), main has 4.6.7 (package.json). Local CLI 2026.10.6 (fe06181) now 2 stables behind; node floor OK (/usr/bin/node 24.22.1 meets >=24.22.1 <25 exactly; engines now also allow >=26.12.1). Advisories 722 unchanged (14 critical / 249 high / 390 medium / 69 low, sum verified), zero new since 23/10. Docs key pages 8/8 HTTP 200. Blog kept as monitor watch signal (listing lacks machine-readable dates, not re-verified). Hermes v0.22.5 unchanged (hermes --version cross-checked, local cb757fac59c9); live drift post-fetch 07:33 CET: HEAD..origin/main 2139, tag..origin/main 2336, identity 197+2139=2336 (monitor 2098/2295 hours-stale, not wrong). Monitor report path memories/reports/release-monitor/2026-10-28.md is EXTERNAL (monitor profile workspace; local untracked memories/ holds only 2026-08-21.md — do not hunt for it in this repo). No upstream-update artifact: current convention since 2026-10-17 runs = tracker refresh only.'
 github:
-  last_known_version: 2026.10.7
-  last_known_release_date: '2026-10-24'
+  last_known_version: 2026.10.8
+  last_known_release_date: '2026-10-27'
   last_known_extended_stable: 2026.9.35
   last_known_beta_version: 2026.10.10-beta.4
   last_known_beta_release_date: '2026-10-27'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.22.5
   last_known_tag: v0.22.5
   last_known_release_date: '2026-10-23'
-  main_ahead_of_tag: 1852
+  main_ahead_of_tag: 2336
