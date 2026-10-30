@@ -1,16 +1,16 @@
-last_check: '2026-10-29'
+last_check: '2026-10-30'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.8
-    last_known_release_date: '2026-10-27'
-    last_known_beta_version: 2026.10.10-beta.4
-    last_known_beta_release_date: '2026-10-27'
+    last_known_version: 2026.10.9
+    last_known_release_date: '2026-10-29'
+    last_known_beta_version: 2026.10.10-beta.5
+    last_known_beta_release_date: '2026-10-30'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: v2026.10.10-beta.4
-    last_known_prerelease_tag_date: '2026-10-27'
+    last_known_prerelease_tag: v2026.10.10-beta.5
+    last_known_prerelease_tag_date: '2026-10-30'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,8 +25,8 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.8
-    last_known_extended_stable: 2026.9.35
+    last_known_version: 2026.10.9
+    last_known_extended_stable: 2026.9.36
     permanent: true
     check_methods:
       npm_view: npm view openclaw version
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-10-29T07:31:00+01:00'
+  checked_at: '2026-10-30T07:31:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.22.5+197.gcb757fa
@@ -76,16 +76,16 @@ installed:
   hermes_local_commit: cb757fac
   hermes_local_commit_date: '2026-10-23'
   hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
-  hermes_main_behind: 2687
-  upgrade_notes: '2026-10-29 monitor run (every claim live-verified): NO new releases — stable 2026.10.8, extended-stable 2026.9.35, beta 2026.10.10-beta.4, npm dist-tags all unchanged; Hermes v0.22.5 unchanged. Advisories 722 unchanged (14 crit / 249 high / 390 med / 69 low, jq sum verified), zero new since 23/10. zod watch GHSA-mrhx-c7xc-m3w5 unchanged (high, <4.6.6, patched_versions null; stable 2026.10.8 ships 4.6.5, main 4.6.7). Community feedback on 2026.10.8 at ~39h: 13 open issues, NONE red for our Linux+Telegram+1Password stack — the 2 update-failure reports are non-blocking (#186072 = dev-channel target, recovery verified OK; #186995 = same-version update refusal, already fixed by merged #187020); #181078 session-reader bug spans 2026.10.5+ so current 2026.10.6 already exposed; 3 Windows-specific issues not ours. Docs 8/8 HTTP 200, ClawHub 200, blog unchanged (last post 21/10). Local CLI still 2026.10.6 = 2 stables behind; recommendation: proceed with upgrade in calm window (48-72h window closing without red flags). Hermes drift re-measured by 2026-10-29 KB run post-fetch 07:33 CET: HEAD..origin/main 2687, v0.22.5..origin/main 2884, identity 197+2687=2884 OK (monitor 2380/2577 measured ~04:11 was hours-stale, not wrong; all other monitor claims re-verified live by the KB run: releases paginated, dist-tags, CLI 2026.10.6 fe06181, advisories 722 sum OK, key pages 8/8, PR #187020 merged + issue #186995 open). No upstream-update artifact: current convention since 2026-10-17 runs = tracker refresh only.'
+  hermes_main_behind: 2805
+  upgrade_notes: '2026-10-30 KB run (monitor draft folded, every claim live-reverified): NEW stable 2026.10.9 (2026-10-29 15:54:35Z, prerelease false, body read in full — 48 unique PRs verbatim; security-deps maintenance: fast-uri 4.2.3, zod oversized-collections code mitigation (zod stays 4.6.5 in stable, main 4.6.7), nodemailer 10.1.4, MSAL 7.1.1; tools.fs.workspaceOnly on Gateway-built tools #185094; credentials out of MCP CLI inspection + Google OAuth secrets masked; safe update rollbacks #185201/#184887/#185160/#184889 fixing the 2026.10.8 update-failure class; SQLite tokenizer recovery; full-disk recovery #176902). NEW extended-stable 2026.9.36 (2026-10-29 20:19:38Z, prerelease false, gateway-only backports of same hardening). npm dist-tags live: latest 2026.10.9 / extended-stable 2026.9.36 / beta 2026.10.10-beta.5. MONITOR CORRECTION (stale, blind window — not wrong): draft said beta 2026.10.10-beta.4 unchanged, but v2026.10.10-beta.5 was published 2026-10-30 03:57:14Z, 53 min AFTER the monitor check (03:04 UTC), and is already live on the npm beta dist-tag; body highlights: Node >=24.16.0<25||>=26.1.0 compat, Gateway streaming-stall fixes (#181397/#183252), npm rollback no-strand + cron startup catch-up (#179928). Watch signal only (prerelease). Advisories 722 unchanged (14 crit / 249 high / 390 med / 69 low, sum verified over paginated pages). zod GHSA-mrhx-c7xc-m3w5 unchanged (global advisory live: high, <4.6.6, patched null). Key pages 8/8 HTTP 200 on the tracked path list (first-pass 404s on /guides /reference /concepts were KB-guessed wrong paths, NOT migrations — tracked list untouched). Local CLI 2026.10.6 (fe06181) = 3 stables behind; hermes --version prints "Up to date" (stable-tag semantics: local is v0.22.5+197, past-tag) while true main drift re-measured 07:35 CET post-fetch: HEAD..origin/main 2805, v0.22.5..origin/main 3002, identity 197+2805=3002 OK. Recommendation: upgrade CLI directly to 2026.10.9 (skips .8 update-failure exposure, gains rollback-safety + security-deps patches; zod watch persists — stable still ships 4.6.5). Tracker refresh only, no upstream-update artifact (convention since 2026-10-17).'
 github:
-  last_known_version: 2026.10.8
-  last_known_release_date: '2026-10-27'
-  last_known_extended_stable: 2026.9.35
-  last_known_beta_version: 2026.10.10-beta.4
-  last_known_beta_release_date: '2026-10-27'
+  last_known_version: 2026.10.9
+  last_known_release_date: '2026-10-29'
+  last_known_extended_stable: 2026.9.36
+  last_known_beta_version: 2026.10.10-beta.5
+  last_known_beta_release_date: '2026-10-30'
 hermes_agent:
   last_known_version: 0.22.5
   last_known_tag: v0.22.5
   last_known_release_date: '2026-10-23'
-  main_ahead_of_tag: 2884
+  main_ahead_of_tag: 3002
