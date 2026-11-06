@@ -1,10 +1,10 @@
-last_check: '2026-11-05'
+last_check: '2026-11-06'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.10.10
-    last_known_release_date: '2026-11-03'
+    last_known_version: 2026.11.1
+    last_known_release_date: '2026-11-05'
     last_known_beta_version: 2026.11.5-beta.1
     last_known_beta_release_date: '2026-11-04'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.10.10
+    last_known_version: 2026.11.1
     last_known_extended_stable: 2026.9.36
     permanent: true
     check_methods:
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.22.7
-    last_known_tag: v0.22.7
-    last_known_release_date: '2026-11-03'
+    last_known_version: 0.23.0
+    last_known_tag: v0.23.0
+    last_known_release_date: '2026-11-05'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-05T07:45:00+01:00'
+  checked_at: '2026-11-06T04:04:33+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.22.5+197.gcb757fa
@@ -76,16 +76,16 @@ installed:
   hermes_local_commit: cb757fac
   hermes_local_commit_date: '2026-10-23'
   hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
-  hermes_main_behind: 4212
-  upgrade_notes: '2026-11-05 KB run (monitor draft folded, every claim live-reverified 07:30-07:47 CET): SKIP 9th consecutive no-ready day, zero docs/index churn; NO new releases — stable 2026.10.10 (releases/latest 11-03T03:22:35Z pre=false), beta 2026.11.5-beta.1 (11-04T04:51:56Z newest in paginated list, pre=true), ext-stable 2026.9.36, npm dist-tags match exactly; monitor forward-port claims verified AT its window via 100-commit window (reaches 02:07 UTC): #192378 02:39:25Z storage SQLite admission/lease, #191830 02:39:12Z codex thread ownership, #192379 03:00:47Z cron startup deferral, #192380 02:59:32Z plugin allowlist widening — ALL exact; newest-12 (06:13-06:30Z same-day burst) had already moved on = window shift, not wrong; compare v2026.10.10...main live +14760/-1150 (monitor +14681 hours-stale, behind 1150 exact); ClawHub resume INDEPENDENTLY VERIFIED via npm registry time JSON (bypasses the .dev TLD cron scanner block — first ClawHub re-verification possible since the block was documented): 0.24.1 2026-10-28T06:13:10Z, 0.25.0 2026-11-01T06:24:15Z (BREAKING for publishers, Claw packages renamed Templates — zero impact, we do not publish), 0.25.1 2026-11-03T13:55:45Z, npm latest 0.25.1 — monitor dates exact; zod: stable tag package.json re-verified zod 4.6.5 + undici 8.12.2 + engines >=24.16.0 <25 || >=26.1.0 (local node v24.22.2 OK), GHSA-mrhx-c7xc-m3w5 live high <4.6.6 first_patched 4.6.6 — monitor prose typo FIXED (draft said range >=4.6.6; it is <4.6.6) — watch persists on stable until 2026.11.x ships; HERMES v0.22.7 confirmed latest (11-03T21:53:16Z pre=false), local v0.22.5+197.gcb757fa.dirty unchanged (Update available prints, 2 tags behind); NEW canary tag v0.22.7+canary.20261104T064347Z fetched — canary signal only, not a stable, no action; main_ahead_of_tag realigned 193 -> 338 (+145 window shift in ~4.5h, drift identity 3874+338=4212 OK), hermes_main_behind 3997 -> 4212 post-fetch (+215/24h); advisories pagination break DAY 6 (page1==page2, first GHSA-rx8p-qcpv-c7vr last GHSA-4xwj-mcc7-x7x5, visible split 51H/44M/5L sum 100, newest visible 2026-09-11T00:58:59Z = zero-new proxy, baseline 722 stands not re-verifiable); docs key pages 8/8 HTTP 200; blog newest Oct 21 (no new post, re-fetched this run). MONITOR 04:00-04:10 CET (folded): every factual claim verified exact at its timestamp (releases, dist-tags, zod+engines at tag, ClawHub dates, forward-ports at window, hermes main-ahead +193); two corrections folded: zod range prose typo, drift numbers realigned live. PRIOR (2026-11-04 KB): beta 2026.11 line opened v2026.11.5-beta.1 mid-cut resolved in 46min; zod GHSA resolved on 2026.11 line open on stable .10; hermes v0.22.7 confirmed; main_ahead_of_tag field-fix recurrence 679->123; advisories break day 5.'
+  hermes_main_behind: 4867
+  upgrade_notes: '2026-11-06 monitor run (every claim live-verified 04:04 CET): DOUBLE stable day — openclaw v2026.11.1 (11-05T09:48:37Z pre=false, npm latest matches) and hermes v0.23.0 Hearth (11-05T21:32:33Z pre=false, rollup of v0.22.1-7, ~10k commits since v0.22.0, 666 contributors); OC local 2026.10.6 now 5 stables behind (10.7/10.8/10.9/10.10/11.1; draft said 4 and omitted 10.7 — npm lists it stable, corrected by KB run) and 11.1 fixes auto-migration crashes for exactly our upgrade span 10.7-10.9 (#189713) plus Telegram reply reliability and secret-egress hardening (emSign ECC G3 root rejection, gateway restart advised post-update, #179249) and ClawHub/ClickClack private-redirect rejection (#190944/#190939); HERMES local 0.22.5+197.gcb757fa.dirty = 3 releases behind (0.22.6/0.22.7/0.23.0), main +4816 over local (+604/24h), main +134 over new tag v0.23.0; pre-upgrade checklist: grep workspaces for removed browser_* tools (we use browser_exec only = expected OK), hermes mcp serve renamed mcp-serve (unused here), Office skills merged into microsoft-office (58->44 built-in, old copies stay on disk), webapp off by default, Electron 44 desktop irrelevant (headless Linux); fleet payoff: cron prompt-cache sharing, -1570 prompt tokens/run one-shot, hermes cron cancel + catch-up policy, Bot Mode group chats, pluggable delegation; zod watch STILL OPEN on new stable: v2026.11.1 package.json pins zod 4.6.5 < first_patched 4.6.6 (GHSA-mrhx-c7xc-m3w5 high 7.5, npm latest 4.6.7; beta line 2026.11.5-beta.1 already ships 4.6.7 = fix exists upstream, awaiting stable forward-port), engines unchanged >=24.16.0 <25 || >=26.1.0, local node v24.22.2 OK; beta 2026.11.5-beta.1 unchanged (11-04), ext-stable 2026.9.36 unchanged, ClawHub npm 0.25.1 unchanged (11-03, verified via registry time JSON); NO new advisories (OC batch all 2026-09-11 historical, hermes zero); repo advisories API pagination break PERSISTS day 7 — draft wrongly claimed normal, live page1==page2 identical again (first GHSA-rx8p-qcpv-c7vr / last GHSA-4xwj-mcc7-x7x5, visible split 51H/44M/5L sum 100, newest visible 2026-09-11T00:58:59Z zero-new proxy, baseline 722 stands); blog NEW Nov 5 Shattering Silos with OpenClaw Multiplayer (agent collaboration announcement); OC main burst 11-06 02:16-03:00 UTC routine (UI/migrations/postgres authority/CI, nothing critical). KB run 07:30-08:10 CET (monitor draft folded, every claim re-verified live): double-stable claims ALL exact — v2026.11.1 and v0.23.0 timestamps/pre-flags/npm match, release-body PRs verbatim (#189713 migration-recovery span exactly 10.7-10.9, #179249 emSign ECC G3 with post-update restart advisory, #190944/#190939 private-redirect rejection), Hearth rollup v0.22.1-7 / ~10080 commits / 666 contributors / cron prompt-cache sharing + 1570 fewer prompt tokens / Bot Mode / pluggable delegation / mcp-serve rename / Office skills 58->44 / webapp off-by-default all confirmed in body; zod 4.6.5 re-verified at 11.1 tag, beta tag ships 4.6.7, engines >=24.16.0 <25 || >=26.1.0, node OK; blog Nov 5 exact; OC CLI local 2026.10.6 unchanged (fe06181). THREE corrections folded: (1) stables-behind 4->5, draft omitted 10.7 (npm lists it stable); (2) advisories pagination NOT normal — break persists day 7, page1==page2 identical live, zero-new proxy 2026-09-11T00:58:59Z stands, baseline 722; (3) drift realigned hermes_main_behind 4816->4867 and main_ahead_of_tag 134->185 (+51 window shift in ~3.5h, identity 4682+185=4867 OK). NO field-fix recurrence: draft 134 was correctly v0.23.0-relative, the 2-day monitor tag-reference bug appears fixed.'
 github:
-  last_known_version: 2026.10.10
-  last_known_release_date: '2026-11-03'
+  last_known_version: 2026.11.1
+  last_known_release_date: '2026-11-05'
   last_known_extended_stable: 2026.9.36
   last_known_beta_version: 2026.11.5-beta.1
   last_known_beta_release_date: '2026-11-04'
 hermes_agent:
-  last_known_version: 0.22.7
-  last_known_tag: v0.22.7
-  last_known_release_date: '2026-11-03'
-  main_ahead_of_tag: 338
+  last_known_version: 0.23.0
+  last_known_tag: v0.23.0
+  last_known_release_date: '2026-11-05'
+  main_ahead_of_tag: 185
