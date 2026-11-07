@@ -23,8 +23,9 @@ sources:
 - sessions/2026-05-01-spesabot-image-library-and-mc-todo-fixes.md
 - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
 - sessions/2026-05-03-spesabot-orcharch-p1-spesify-ui-overhaul.md
-last_updated: '2026-05-04'
-version: 9
+- sessions/2026-11-06-decisore-locale-spesabot-pipeline-fase-v.md
+last_updated: '2026-11-07'
+version: 10
 ---
 
 # Cron Jobs, Sub-Agents, and Automation
@@ -214,6 +215,20 @@ The durable pattern is:
 That protects you from the ugly case where Telegram, WhatsApp, or some other delivery layer is down at the same moment as the real failure. If you write the marker too early, the alert is lost and the next poll stays silent.
 
 Related deployment rule: when you install a new watcher against a service that is **already failed**, pre-seed the watcher state with the current failure marker so the first poll does not spam a fake "new" incident.
+
+### Long-running pipelines under systemd: SIGTERM can be recorded as success
+
+When systemd kills a timer-driven script on timeout (`TimeoutSec`), it sends `SIGTERM` to the process group — and a bash wrapper with an `EXIT` trap can still report **success**. The mechanism: the killed step was followed by `|| echo "non-fatal"`, so the shell's last command completes with rc=0 and the `EXIT` trap records a clean finish while the pipeline was actually killed mid-flight.
+
+**Fix:** install an explicit `TERM`/`INT` trap that neutralizes the `EXIT` trap and records the kill with a conventional exit code:
+
+```bash
+trap 'trap - EXIT; record_finish timeout; exit 143' TERM INT
+```
+
+143 = 128 + 15 (SIGTERM). Record the run-window start timestamp too, so the pipeline can scope work to rows touched by the current pass instead of rescanning the whole backlog.
+
+Diagnostic hint: a batch step that logs its last progress line and then sits with **near-zero CPU until timeout** is a slow query loop, not a hang — profile the database, not the script (see [PostgreSQL Trigram Indexes and Function-Call Pitfalls](../troubleshooting/postgres-trigram-function-pitfalls.md)).
 
 ## Sub-Agents
 

@@ -2,7 +2,7 @@
 title: "Decision model locale (LLM + embedding) messo alla prova, pipeline SpesaBot sbloccata, Fase V con riferimento e mutanti"
 date: "2026-11-06"
 author: "kos-domus"
-status: "ready"
+status: "processed"
 tags: ["multi-agent", "performance", "testing", "debugging", "automation", "security", "cron"]
 session_type: "openclaw"
 client: ""
