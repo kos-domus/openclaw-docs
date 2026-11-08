@@ -1,4 +1,4 @@
-last_check: '2026-11-07'
+last_check: '2026-11-08'
 sources:
   github:
     repo: openclaw/openclaw
@@ -22,6 +22,9 @@ sources:
     - docs/
     - package.json
     - src/config/
+    last_known_pending_tag: v2026.11.2
+    last_known_pending_tag_date: '2026-11-08'
+    last_known_pending_tag_note: sealed 2026-11-08T01:51:42Z (RomneyDa), commit 11-07T10:02Z, 166 commits over 2026.11.1, backport-only fixes, zero BREAKING; release-by-tag 404 + npm latest still 2026.11.1 = publication imminent; zod in tag STILL 4.6.5
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
@@ -68,7 +71,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-07T04:01:02+01:00'
+  checked_at: '2026-11-08T04:03:54+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.22.5+197.gcb757fa
@@ -76,8 +79,8 @@ installed:
   hermes_local_commit: cb757fac
   hermes_local_commit_date: '2026-10-23'
   hermes_upgraded_at: '2026-10-23T16:40:00+02:00'
-  hermes_main_behind: 5296
-  upgrade_notes: '2026-11-07 monitor run (every claim live-verified 04:01 CET): NO new releases — OC stable 2026.11.1 (11-05) / beta 2026.11.5-beta.1 (11-04) / ext-stable 2026.9.36 / ClawHub npm 0.25.1 (11-03) / hermes v0.23.0 Hearth (11-05) all unchanged, npm dist-tags match; HEADS-UP 2026.11.2 in prep on main (Kova waiver #194379 + attribution gate #194364, 11-07T00:35Z; tag NOT published, release-by-tag 404 at run time) — on release FIRST check zod >= 4.6.6 (closes watch); queued for it: fix(cron) one-shot finalization on PostgreSQL 16 (#194384), gateway snapshot refresh after stale publication (#194421), apple chat large attachments on slow uplinks (#194214), update recovery (#194325); zod watch day 3 STILL OPEN: stable 11.1 pins zod 4.6.5 (GHSA-mrhx-c7xc-m3w5 high 7.5, first_patched 4.6.6, npm latest 4.6.7), beta line ships 4.6.7 = forward-port pending; OC local 2026.10.6 = 5 stables behind (10.7/10.8/10.9/10.10/11.1), 11.1 fixes migration crashes for exactly 10.7-10.9 (#189713), option: wait days for 2026.11.2 and jump once; HERMES local 0.22.5+197.gcb757fa.dirty = 3 releases behind (0.22.6/0.22.7/0.23.0), main +5190 over local (+374/24h) and +508 over tag v0.23.0 (+374/24h, was +134), both repos >=100 commits/24h (API cap); advisories zero new (newest visible 2026-09-11, hermes 0), pagination break PERSISTS day 8 (page1==page2, first3 GHSA-rx8p-qcpv-c7vr identical; note: 11-06 latest-versions.json wrongly said normal — corrected); blog NEW Nov 6 Use new models in OpenClaw without an update (Ayaan Zaidi): hosted model catalog + provider account + installed Codex decouple model launches from OC releases = OC upgrade loses urgency for model support. KB run 07:30-08:15 CET (draft folded, every claim re-verified live): NO new releases confirmed — npm dist-tags (latest 2026.11.1 / beta 2026.11.5-beta.1 / ext 2026.9.36) and releases+tags lists all unchanged; 2026.11.2 still in prep (release-by-tag 404 live, Kova waiver #194379 exact in commits?since=2026-11-07); drift realigned hermes_main_behind 5190->5296 and main_ahead_of_tag 508->614 (pure window shift ~3.5h on a hot repo, identity 4682+614=5296 OK, NO field-fix recurrence); advisories pagination break day 8 CONFIRMED live (page1==page2 identical first/last GHSA, visible split 51H/44M/5L sum 100, newest visible 2026-09-11T00:58:59Z zero-new proxy, baseline 722 stands); zod watch day 3 re-verified at tag v2026.11.1 (4.6.5, engines >=24.16.0 <25 || >=26.1.0); blog Nov 6 exact (HTTP 200); new canary tag v0.23.0+canary.20261106T064428Z fetched, watch signal only. First ready session in 11 days elaborated: 4 new Diataxis docs + 1 guide update (see changelog).'
+  hermes_main_behind: 5914
+  upgrade_notes: '2026-11-08 monitor run (every claim live-verified 04:03 CET): NO new published releases — OC stable 2026.11.1 (11-05) / beta 2026.11.5-beta.1 (11-04) / ext-stable 2026.9.36 / ClawHub npm 0.25.1 (11-03) / hermes v0.23.0 Hearth (11-05) all unchanged, npm dist-tags match. TAG v2026.11.2 SEALED tonight (annotated 2026-11-08T01:51:42Z, commit 11-07T10:02Z): 166 commits over 11.1, backport-only (gateway worker inventory/admission budget/MCP grants, cron self-removal+running sessions, telegram table-replies-stall #183217 + init-cancel #193452, whatsapp LID DM retry #193052, msteams, update/recovery interrupted-updates/custody-aliases, memory recall bound #110898); release-by-tag 404 + npm latest still 11.1 = publication IMMINENT (hours/days). ZOD WATCH day 4 ANSWERED NEGATIVE: package.json @ v2026.11.2 pins zod 4.6.5 (GHSA-mrhx-c7xc-m3w5 HIGH, first_patched 4.6.6, npm latest 4.6.7) -> watch does NOT close with 11.2; first chance 11.3+ or beta line (11.5-beta.1 ships 4.6.7). The 4 fixes queued Nov 7 (#194384 cron one-shot PostgreSQL, #194421 gateway snapshot refresh, #194214 apple chat attachments, #194325 update recovery) NOT in 11.2 tag (grep verified) -> 11.3+. OC local 2026.10.6 = 5 stables behind -> plan SINGLE HOP 10.6->11.2 on publication (no known breaking, 11.1 fixes migration crashes 10.7-10.9 #189713). HERMES local 0.22.5+197.gcb757fa.dirty = 3 releases behind (0.22.6/0.22.7/0.23.0), main +1199 over tag v0.23.0 (+585/24h, was +614) and +5887 over local; main activity = plugin catalog flood (Showreel, prediction-market-scout, oddsradar, privacy-xray, precedent-log 0.4.2, hermes-secret-gate, solana-token-facts); gateway active; v0.23.0 IS the awaited upgrade trigger -> schedule maintenance window. Advisories zero new (newest visible 2026-09-11, hermes 0; pagination anomaly not retested, page-1 first-5 unchanged). BLOG CATCH-UP: Nov 5 ''Shattering Silos with OpenClaw Multiplayer'' (Joe Pishgar, Announcement) never reported in saved reports — shared multi-user agent, docs.openclaw.ai/start/multiplayer, pattern relevant for fleet (note for MC); Nov 6 ''Use new models in OpenClaw without an update'' already known. OC main 11-08: GPT Image 2.6 Sunburst/Flare in model catalog (follows Nov-6 blog), fix(update) #194949 unblock deploys after retained repair, fix(gateway) #194957 sandbox saves sync. Node engines on 11.2 tag >=24.16.0 <25 || >=26.1.0, local v24.22.2 OK. Next run: if v2026.11.2 published -> verify npm latest flips, zod in shipped package, then execute single-hop upgrade decision. KB run 2026-11-08 07:30-08:05 CET (draft folded, every claim re-verified live): SKIP elaboration (0 ready sessions), zero docs/index churn. v2026.11.2 STILL tag-only at 08:00 CET (release-by-tag 404 live, npm latest 11.1, tag confirmed in tags list) — publication window open, next run decides. zod 4.6.5 @ 11.2 re-verified via contents API. Drift realigned hermes_main_behind 5887->5914 and hermes main_ahead_of_tag 1199->1232 (+616 commits/24h; identity 4682+1232=5914 EXACT, pure window shift, no field-fix recurrence). FIELD FIX: draft added main_ahead_of_tag 1199 under github: section — misplaced (the number is hermes-relative per the draft prose itself); removed there, hermes_agent.main_ahead_of_tag updated 614->1232 instead. Advisories pagination break RETESTED live day 9: page1==page2 identical (first GHSA-rx8p-qcpv-c7vr / last GHSA-4xwj-mcc7-x7x5, 100 entries each), visible split 51H/44M/5L sum 100, newest visible 2026-09-11T00:58:59Z zero-new proxy, baseline 722 stands. Blog Nov 5 Multiplayer exact (openclaw.ai/blog HTTP 200 + docs.openclaw.ai/start/multiplayer 200); nuance: already cited in the 11-06 changelog block, now in tracker (the draft never-reported claim refers to external memories/reports). OC main claims spot-checked live: #194949/#194957 present in commits since 11-07, GPT Image Sunburst present, #194384/#194421/#194214/#194325 confirmed ABSENT from the 11.2 compare (166 commits, queued 11.3+). New hermes canary tag v0.23.0+canary.20261107T064357Z fetched, watch signal only.'
 github:
   last_known_version: 2026.11.1
   last_known_release_date: '2026-11-05'
@@ -88,4 +91,4 @@ hermes_agent:
   last_known_version: 0.23.0
   last_known_tag: v0.23.0
   last_known_release_date: '2026-11-05'
-  main_ahead_of_tag: 614
+  main_ahead_of_tag: 1232
