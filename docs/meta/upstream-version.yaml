@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-10T04:10:00+01:00'
+  checked_at: '2026-11-10T07:35:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.23.0
@@ -76,8 +76,8 @@ installed:
   hermes_local_commit: 2bd378ed1b8d
   hermes_local_commit_date: '2026-11-08'
   hermes_upgraded_at: '2026-11-08T14:59:49+01:00'
-  hermes_main_behind: 2616
-  upgrade_notes: '2026-11-10 monitor run (~04:10 CET): HERMES v0.23.1 OUT today 01:42Z (patch; main +12 over tag; rolls up ~618 PRs / 2578 non-merge commits since 0.23.0. KEY FIX: plugin-catalog.json exceeded client 2MiB cap since Nov 9 site deploy -> silent fallback to bundled catalog on <=0.23.0 installs, hermes plugins install misses newest entries/pins/removed; 0.23.1 raises cap to 16MiB (#151860 fixes #151856). Curated notes deferred to v0.24.0. LOCAL still v0.23.0 2bd378ed -> upgrade recommended today (fetch tags + checkout v0.23.1 + gateway unit restart in a window clear of crons). OC: NO new stable (2026.11.2 of 11-08 remains latest, npm latest match); NEW SEALED TAG v2026.11.5-beta.2 (commit c0f42f6 dated 2026-11-07, no release obj / npm beta dist-tag still .1); zod at beta.2 = 4.6.7 confirmed via contents API. ZOD WATCH day 6 STILL OPEN: stable 11.2 pins zod 4.6.5 (GHSA-mrhx-c7xc-m3w5 HIGH), closure chance 11.3+/beta promo. OC local 2026.10.6 verified live this morning: single hop 10.6->11.2 GO day 2, not yet executed. Advisories zero new both repos (newest 2026-09-11). Blog unchanged (newest Nov 6). ClawHub npm 0.25.1 unchanged. npm dist-tags unchanged (latest 11.2 / beta 11.5-beta.1 / extended 9.36).'
+  hermes_main_behind: 2653
+  upgrade_notes: '2026-11-10 monitor run (~04:10 CET): HERMES v0.23.1 OUT today 01:42Z (patch; main +12 over tag; rolls up ~618 PRs / 2578 non-merge commits since 0.23.0. KEY FIX: plugin-catalog.json exceeded client 2MiB cap since Nov 9 site deploy -> silent fallback to bundled catalog on <=0.23.0 installs, hermes plugins install misses newest entries/pins/removed; 0.23.1 raises cap to 16MiB (#151860 fixes #151856). Curated notes deferred to v0.24.0. LOCAL still v0.23.0 2bd378ed -> upgrade recommended today (fetch tags + checkout v0.23.1 + gateway unit restart in a window clear of crons). OC: NO new stable (2026.11.2 of 11-08 remains latest, npm latest match); NEW SEALED TAG v2026.11.5-beta.2 (commit c0f42f6 dated 2026-11-07, no release obj / npm beta dist-tag still .1); zod at beta.2 = 4.6.7 confirmed via contents API. ZOD WATCH day 6 STILL OPEN: stable 11.2 pins zod 4.6.5 (GHSA-mrhx-c7xc-m3w5 HIGH), closure chance 11.3+/beta promo. OC local 2026.10.6 verified live this morning: single hop 10.6->11.2 GO day 2, not yet executed. Advisories zero new both repos (newest 2026-09-11). Blog unchanged (newest Nov 6). ClawHub npm 0.25.1 unchanged. npm dist-tags unchanged (latest 11.2 / beta 11.5-beta.1 / extended 9.36). KB run 07:35 CET live re-verified: NO new OC releases (11.2 still newest stable, beta.2 still tag-only no release obj), hermes v0.23.1 confirmed stable 01:42Z, no newer; drift realigned 2616->2653 behind main / 12->49 ahead-of-tag (identity 2604+49=2653 exact, tag dereferenced via ^{commit}); advisories zero new (newest 2026-09-11), pagination break day 11 persists (page1==page2 GHSA-rx8p); blog/clawhub not re-verified this run (monitor 04:10 said unchanged); hermes 0.23.0->0.23.1 upgrade STILL PENDING, OC 10.6->11.2 GO still not executed.'
 github:
   last_known_version: 2026.11.2
   last_known_release_date: '2026-11-08'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.23.1
   last_known_tag: v0.23.1
   last_known_release_date: '2026-11-10'
-  main_ahead_of_tag: 12
+  main_ahead_of_tag: 49
