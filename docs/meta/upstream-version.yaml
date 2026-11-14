@@ -1,4 +1,4 @@
-last_check: '2026-11-13'
+last_check: '2026-11-14'
 sources:
   github:
     repo: openclaw/openclaw
@@ -68,16 +68,16 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-13T07:35:00+01:00'
+  checked_at: '2026-11-14T07:40:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
-  hermes_version: 0.23.0
+  hermes_version: 0.23.1
   hermes_channel: stable
-  hermes_local_commit: 2bd378ed1b8d
-  hermes_local_commit_date: '2026-11-05'
-  hermes_upgraded_at: '2026-11-08T14:59:49+01:00'
-  hermes_main_behind: 7033
-  upgrade_notes: '2026-11-13 monitor run (~04:00 CET): NO new stable, NO new beta, NO new advisories, NO breaking. OC channels unchanged (stable 11.3 11-10, extended 9.37 11-10, beta 11.5-beta.2 11-12; npm dist-tags live match; docs/releases newest 11.3, no 11.4 yet). MAIN NEWS: ClawHub CLI 0.26.0 npm-published 2026-11-13T02:58:14Z (from 0.25.1 of 11-03; GH release v0.26.0 02:58:33Z, changelog dated 11-12): VIRUSTOTAL FULLY RETIRED (no uploads/polling/UI/API/audit data; repair-vt-pending removed) -> ClawScan is now the SOLE pre-publication gate (in-publish static scan also removed: OOM on large plugins + dup of ClawScan); token hardening (saved token never sent cross-origin, Bun passes token to curl via stdin, device-flow no autofill + read-write scope only); Undici 7.30.1 for upstream transport advisories; Convex 1.49 requires Node 22+ (we on 24, ok); CLAW.md templates accept agent.tools + top-level skills/plugins deps; new cmd: clawhub package publication (name, version); Plugin Inspector pinned 0.4.3 so large @openclaw/matrix + @openclaw/whatsapp publishes stay under 512MiB Node action limit. No direct impact on us (skills via extraDirs, no ClawHub CLI in prod) but catalog trust now rests on ClawScan alone. ZOD WATCH day 9 unchanged: stable 11.3 STILL zod 4.6.5 (re-verified at tag via contents API) = stable line exposed; beta.2 = 4.6.7; extended 9.37 = 4.6.7; closes at stable 11.4+/11.5 promo. Advisories zero new (newest 2026-09-11 cluster; pagination break day 14, page1==page2 via .ghsa_id). Blog unchanged (newest Nov 6). HERMES: v0.23.1 still latest (no 0.24); merge wave day 3 of acceleration: tag->main 3030 -> 4429 (draft measured 4394 at 04:00, KB realign +35 by 07:33; 24h series +49 -> +1074 -> +1145 -> +1364); identity exact 2604 (local->tag) + 4429 (tag->main) = 7033 local vs main, re-verified live via git fetch + rev-list. GO upgrades STILL PENDING: OC 10.6->11.3 single hop day 5 NOT executed (7 stables behind; draft said day 4, stale copy of 11-12 counter); Hermes ->v0.23.1 day 4 NOT executed (draft said day 3, same stale copy; plugin-catalog 2MiB->16MiB cap fix #151860 awaits checkout + gateway restart). KB note: hermes-agent tags API [0] is UNRELIABLE — 36 legacy CalVer tags (v2026.7.20 -> v2026.9.24) surface first in ordering (repo switched CalVer->SemVer ~Oct 2026); releases API is authoritative for latest tag. KB run 11-13 07:30 CET live re-verified ALL draft claims: OC releases list unchanged (beta.2 11-12T00:43Z newest prerelease, stable 11.3, extended 9.37, no 11.4); npm dist-tags exact match; ClawHub 0.26.0 npm time 02:58:14.960Z + GH release 02:58:33Z both verified to the second; zod 4.6.5 at v2026.11.3 tag re-confirmed via contents API; advisories zero new (newest 2026-09-11T00:58:59Z) + pagination break day 14 CONFIRMED (p1==p2 identical first/last via .ghsa_id, n=100 each); blog 200; local OC 2026.10.6 fe06181 unchanged, 7 stables behind recounted vs npm versions list; tags-API CalVer-ordering note verified live (first 5 tags all v2026.9.x legacy); drift realigned to live 4429/7033; day-count stale-copy fixed (day 5 / day 4)'
+  hermes_local_commit: 3b4215785882
+  hermes_local_commit_date: '2026-11-09'
+  hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
+  hermes_main_behind: 6428
+  upgrade_notes: '2026-11-14 monitor run (~04:00 CET): NO new stable/beta/advisories/breaking. OC channels unchanged (stable 11.3 11-10, extended 9.37 11-10, beta 11.5-beta.2 11-12; npm dist-tags match; docs newest 11.3). EXECUTED 11-13 14:56 CET: Hermes upgrade to v0.23.1 (checkout tag commit 3b4215785882 == HEAD verified via ^{commit}, gateway restarted, hermes --version reports Up to date) -> plugin-catalog 16MiB cap fix (#151860) ACTIVE, live catalog no longer ignored. STILL PENDING: OC 10.6->11.3 single hop GO day 6 NOT executed (7 stables behind; no intermediate stable shipped, hop clean). NEW: Hermes canary channel first release ever v0.23.1+canary.20261113T064447Z (11-13T08:06Z; desktop bundled builds macOS DMG/Win MSIX + native smoke) - no impact on us (git stable channel). NEW blog post 11-13 ''OpenClaw is coming to Shenzhen'': Claw Hack hackathon + ClawCon, Dec 4-6 2026 (community/events, no product impact). ZOD WATCH day 10: stable 11.3 still zod 4.6.5 = exposed; beta.2/extended 4.6.7; closes at 11.4+/11.5 promo. Advisories zero new (newest 2026-09-11 cluster; pagination break day 15, page1==page2 via .ghsa_id). HERMES main acceleration day 4 RECORD: tag->main 4429 -> 6416 at 04:00 (+1987/24h; series +49/+1074/+1145/+1364/+1987); local == tag; v0.24 shaping huge. ClawHub 0.26.0 unchanged (ClawScan sole gate). KB run 11-14 07:30 CET live re-verified ALL draft claims 100%, ZERO defects: upgrade evidence triad exact (hermes --version v0.23.1 local 3b4215785882 Up to date; gateway ActiveEnterTimestamp 11-13 14:56:00 CET == hermes_upgraded_at; HEAD == v0.23.1^{commit} deref, behind-tag 0); drift realigned 6416->6428 (+12 in ~3.5h, identity 0+6428=6428 exact post-fetch); OC releases list unchanged (beta.2 11-12T00:43:25Z newest prerelease, no 11.4; npm dist-tags live match); canary v0.23.1+canary.20261113T064447Z confirmed 11-13T08:06:48Z prerelease:true; zod 4.6.5 pinned at openclaw@2026.11.3 npm deps; advisories newest 2026-09-11T00:58:59Z + pagination break day 15 CONFIRMED (p1==p2 identical first/last GHSA-rx8p-qcpv-c7vr/GHSA-4xwj-mcc7-x7x5 via .ghsa_id, n=100/page, severity 51h/44m/5l sums 100); blog h2 "OpenClaw is coming to Shenzhen" + Dec 4-6 2026 Claw Hack verified verbatim (openclaw.ai/blog 200); docs.openclaw.ai/releases 200 newest 11.3; ClawHub 0.26.0 npm time 2026-11-13T02:58:14.960Z; local OC 2026.10.6 fe06181 unchanged 7 stables behind; ALL day counters monotonic vs committed history (GO 6, zod 10, break 15, accel day 4).'
 github:
   last_known_version: 2026.11.3
   last_known_release_date: '2026-11-10'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.23.1
   last_known_tag: v0.23.1
   last_known_release_date: '2026-11-10'
-  main_ahead_of_tag: 4429
+  main_ahead_of_tag: 6428
