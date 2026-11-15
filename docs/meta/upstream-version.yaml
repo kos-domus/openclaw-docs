@@ -1,16 +1,16 @@
-last_check: '2026-11-14'
+last_check: '2026-11-15'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.11.3
     last_known_release_date: '2026-11-10'
-    last_known_beta_version: 2026.11.5-beta.2
-    last_known_beta_release_date: '2026-11-12'
+    last_known_beta_version: 2026.11.5-beta.3
+    last_known_beta_release_date: '2026-11-15'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: v2026.11.5-beta.2
-    last_known_prerelease_tag_date: '2026-11-07'
+    last_known_prerelease_tag: v2026.11.5-beta.3
+    last_known_prerelease_tag_date: '2026-11-15'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-14T07:40:00+01:00'
+  checked_at: '2026-11-15T04:02:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.23.1
@@ -76,16 +76,16 @@ installed:
   hermes_local_commit: 3b4215785882
   hermes_local_commit_date: '2026-11-09'
   hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
-  hermes_main_behind: 6428
-  upgrade_notes: '2026-11-14 monitor run (~04:00 CET): NO new stable/beta/advisories/breaking. OC channels unchanged (stable 11.3 11-10, extended 9.37 11-10, beta 11.5-beta.2 11-12; npm dist-tags match; docs newest 11.3). EXECUTED 11-13 14:56 CET: Hermes upgrade to v0.23.1 (checkout tag commit 3b4215785882 == HEAD verified via ^{commit}, gateway restarted, hermes --version reports Up to date) -> plugin-catalog 16MiB cap fix (#151860) ACTIVE, live catalog no longer ignored. STILL PENDING: OC 10.6->11.3 single hop GO day 6 NOT executed (7 stables behind; no intermediate stable shipped, hop clean). NEW: Hermes canary channel first release ever v0.23.1+canary.20261113T064447Z (11-13T08:06Z; desktop bundled builds macOS DMG/Win MSIX + native smoke) - no impact on us (git stable channel). NEW blog post 11-13 ''OpenClaw is coming to Shenzhen'': Claw Hack hackathon + ClawCon, Dec 4-6 2026 (community/events, no product impact). ZOD WATCH day 10: stable 11.3 still zod 4.6.5 = exposed; beta.2/extended 4.6.7; closes at 11.4+/11.5 promo. Advisories zero new (newest 2026-09-11 cluster; pagination break day 15, page1==page2 via .ghsa_id). HERMES main acceleration day 4 RECORD: tag->main 4429 -> 6416 at 04:00 (+1987/24h; series +49/+1074/+1145/+1364/+1987); local == tag; v0.24 shaping huge. ClawHub 0.26.0 unchanged (ClawScan sole gate). KB run 11-14 07:30 CET live re-verified ALL draft claims 100%, ZERO defects: upgrade evidence triad exact (hermes --version v0.23.1 local 3b4215785882 Up to date; gateway ActiveEnterTimestamp 11-13 14:56:00 CET == hermes_upgraded_at; HEAD == v0.23.1^{commit} deref, behind-tag 0); drift realigned 6416->6428 (+12 in ~3.5h, identity 0+6428=6428 exact post-fetch); OC releases list unchanged (beta.2 11-12T00:43:25Z newest prerelease, no 11.4; npm dist-tags live match); canary v0.23.1+canary.20261113T064447Z confirmed 11-13T08:06:48Z prerelease:true; zod 4.6.5 pinned at openclaw@2026.11.3 npm deps; advisories newest 2026-09-11T00:58:59Z + pagination break day 15 CONFIRMED (p1==p2 identical first/last GHSA-rx8p-qcpv-c7vr/GHSA-4xwj-mcc7-x7x5 via .ghsa_id, n=100/page, severity 51h/44m/5l sums 100); blog h2 "OpenClaw is coming to Shenzhen" + Dec 4-6 2026 Claw Hack verified verbatim (openclaw.ai/blog 200); docs.openclaw.ai/releases 200 newest 11.3; ClawHub 0.26.0 npm time 2026-11-13T02:58:14.960Z; local OC 2026.10.6 fe06181 unchanged 7 stables behind; ALL day counters monotonic vs committed history (GO 6, zod 10, break 15, accel day 4).'
+  hermes_main_behind: 7750
+  upgrade_notes: '2026-11-15 monitor run (~04:00 CET): NO new stable/advisories/breaking. NEW BETA openclaw 2026.11.5-beta.3 (published 2026-11-15T00:31:00Z, ~3.5h pre-run; npm dist-tag beta updated): large-session reliability (transcript indexing/trimming/compaction memory pressure, selective hydration, configurable summary limits), restart & delivery safety (queued-message permission ceilings through restarts, final-write drain, delivery ownership to RPC settle), recovery/setup (cold-start, interrupted workspaces, installer perms); 50 PRs beta.2..7f4704ec; ships zod 4.6.7; includes cron fixes #193970 (idle workers disabled) + #196750 (cron replies out of closed plugin scopes) - relevant to our cron-heavy stack when it reaches stable; no WhatsApp-specific changes. Stable 11.3 (11-10) day 5, extended 9.37, alpha unchanged. STILL PENDING: OC 10.6->11.3 single hop GO day 7 NOT executed (openclaw --version live 2026.10.6 fe06181; 7 stables behind; no intermediate stable shipped, hop clean; risk of waiting: 11.4 may land soon given beta cadence). HERMES: local v0.23.1 == tag commit 3b4215785882 (verified via ^{commit} deref + fetch 11-15), gateway active, Up to date; main vs tag +7746 (+1330/24h, FIRST DECELERATION after record series +49/+1074/+1145/+1364/+1987; tag->main 6416->7746; v0.24 shaping huge); canary channel now DAILY: 2nd release v0.23.1+canary.20261114T064334Z (11-14T07:46:34Z) desktop builds+smoke, no impact (git stable). ZOD WATCH day 11: stable 11.3 still zod 4.6.5 = exposed (re-verified at tag 11-15); beta.3/extended 4.6.7; closes at 11.4+/11.5 promo. Advisories zero new (newest 2026-09-11 cluster; pagination break day 16, page1==page2 via .ghsa_id). ClawHub 0.26.0 unchanged (ClawScan sole gate). Blog unchanged (newest 11-13 Shenzhen Claw Hack+ClawCon Dec 4-6). KB run 11-15 07:30 CET live re-verified ALL draft claims 100%, ZERO defects: beta.3 GH release page read IN FULL (official counter verbatim 50 in-range PRs = 50 unique PRs; cron fixes #193970 + #196750 both present and correctly described; highlights exact; no WhatsApp changes), npm time beta.3 00:06:26Z -> GH 00:31:00Z npm-first ~25min gap; zod beta.3 4.6.7 via npm deps (absent from body, source noted); drift realigned 7746->7750 (+4 in ~3.5h, identity 0+7750=7750 exact post-fetch, ^{commit} deref, HEAD==tag 3b4215785882); decel +1330/24h arithmetic exact vs monitor baseline 6416; canary 2nd release confirmed on releases API; advisories newest 2026-09-11T00:58:59Z zero new + pagination break day 16 CONFIRMED (p1==p2 identical first/last via .ghsa_id, n=100/page, severity 51h/44m/5l sums 100); blog Shenzhen h2 + docs.openclaw.ai/releases both 200; ALL day counters monotonic vs committed history (GO 7, zod 11, break 16, accel decel day 5).'
 github:
   last_known_version: 2026.11.3
   last_known_release_date: '2026-11-10'
   last_known_extended_stable: 2026.9.37
-  last_known_beta_version: 2026.11.5-beta.2
-  last_known_beta_release_date: '2026-11-12'
+  last_known_beta_version: 2026.11.5-beta.3
+  last_known_beta_release_date: '2026-11-15'
 hermes_agent:
   last_known_version: 0.23.1
   last_known_tag: v0.23.1
   last_known_release_date: '2026-11-10'
-  main_ahead_of_tag: 6428
+  main_ahead_of_tag: 7750
