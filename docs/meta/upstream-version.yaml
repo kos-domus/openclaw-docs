@@ -1,4 +1,4 @@
-last_check: '2026-11-16'
+last_check: '2026-11-17'
 sources:
   github:
     repo: openclaw/openclaw
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.23.1
-    last_known_tag: v0.23.1
-    last_known_release_date: '2026-11-10'
+    last_known_version: 0.23.2
+    last_known_tag: v0.23.2
+    last_known_release_date: '2026-11-16'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-16T07:30:00+01:00'
+  checked_at: '2026-11-17T04:00:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.23.1
@@ -76,8 +76,8 @@ installed:
   hermes_local_commit: 3b4215785882
   hermes_local_commit_date: '2026-11-09'
   hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
-  hermes_main_behind: 8034
-  upgrade_notes: '2026-11-16 KB run 07:30 CET, folding monitor draft (~04:00 CET) with 100% live re-verification; draft written BEFORE two blind-window events it could not see. (1) NEW STABLE openclaw 2026.11.4: npm publish 2026-11-16T04:06:42Z, GH release page 04:17:42Z (npm-first ~11min), both AFTER monitor run + tracker draft write (03:05Z) -> draft said NO new stable, superseded. Body read IN FULL: official counter verbatim "99 in-range PRs + 0 retained seed-only PRs = 99 unique PRs" (range v2026.11.3..09aa6442a3a260aa93b335039a9d775b46e28fbd); release SHA d843d6af39a42cd3c30084edbeabeece732fd93a. Highlights: large-conversation memory bounds (trimming/exports/Doctor repairs), large-store startup, reliable replies across restarts (WhatsApp/Signal), private conversation data, safer upgrades (DB migration protection), Safe Files saves. RELEVANT TO OUR STACK, now in stable: #196750 cron/system-event session-targeted replies + background replies (#196749/#197434/#197323/#197305), Telegram inline controls #196217/#126950, stable plugin selectors #194812 (stop beta flapping), large-session memory #194066/#196158. CORRECTION vs 11-15 notes: #193970 (idle cron workers disabled) NOT in 11.4 body, still beta-track only. (2) beta.4 draft claim "NPM-ONLY, GH release MISSING 404, content opaque" SUPERSEDED: release page live 03:12:26Z (npm-first ~31min; npm time 02:41:24Z verified exact; annotated tag object dbe4ef2183c2 deref chain OK, release commit SHA 2c173a37). Body read IN FULL: official counter verbatim 55 unique PRs (beta.3..8649a8f54001); Telegram widgets #196991, automation continuity (late scheduled jobs #197658/#197484/#197606, in-flight jobs across config changes #188105), automation privacy #198697, provider recovery (OpenAI compaction conflicts #198357, Claude OAuth client retry #199451, OpenRouter endpoint #196693), update safety (rollback releases failing Doctor #197851, plugin lifecycle lease #188404 also in 11.4), bounded paged memory export, Telegram inline buttons, Bonjour in npm installs #199156, Control UI fixes, DB recovery/backups, compaction memory bounds; zod 4.6.7 via npm deps. (3) GO CORRECTED: draft day counters were stale copies (said "day 7 = TOMORROW / day 6 all green"; committed history 11-14=day 6, 11-15=day 7 -> today day 8; day-counter stale-copy variant RECURRENCE) and the plan is OVERTAKEN BY EVENTS: 11.4 landed 17min post-monitor, single-hop target is now 10.6->11.4 = 8 stables behind (recounted live from npm versions list: 10.7/10.8/10.9/10.10/11.1/11.2/11.3/11.4); openclaw --version live = 2026.10.6 fe06181 unchanged; decision for MC/Rakki: jump to 11.4 now (0 soak days, but 99-PR body fully audited) vs wait green window. (4) ZOD WATCH day 12 OPEN, draft assumption "closes at 11.4+ promo" DISPROVEN: stable 11.4 ships zod 4.6.5 (npm deps re-verified live) -> still exposed; closes only when a stable ships 4.6.7 (11.5 promo candidate; beta.3/beta.4/extended 9.37 all 4.6.7). (5) HERMES: v0.23.1, HEAD == tag commit 3b4215785882 (^{commit} deref, post-fetch), Up to date; drift realigned 8023->8034 (+11 in ~3.5h post-monitor, +284/24h vs 7750 = THIRD consecutive deceleration, series +49/+1074/+1145/+1364/+1987/+1330/+284; tag->main 6416->7746->8023->8034; identity behind-tag 0 + 8034 = behind-main 8034 exact); canary 3rd release v0.23.1+canary.20261115T064406Z (11-15T07:52:37Z) confirmed via releases API, today canary not yet out at 07:30 CET (publish pattern ~07:46-08:06Z); no new hermes stable. (6) Advisories zero new (newest 2026-09-11T00:58:59Z); pagination break day 17 re-verified (p1==p2 identical first/last via .ghsa_id, n=100/page, severity 51h/44m/5l sums 100). ClawHub 0.26.0 unchanged (npm bypass path). Blog unchanged (newest 11-13 Shenzhen Claw Hack+ClawCon Dec 4-6, marketing domain). Unreleased on main: exactly 1 Control UI fix #172176 (canonical path via CHANGELOG.md index link, read live, matches draft). WEEKLY 11-09..11-16 CORRECTED: 3 stable (11.3 + ext 9.37 both 11-10, 11.4 on 11-16) + 3 beta (beta.2 11-12, beta.3 11-15, beta.4 11-16); hermes v0.23.1 stable 11-10 + canary daily since 11-13; security zero new both repos; trend = reliability/restart-safety hardening + large-session memory. Sessions queue empty day 8; zero docs/index churn by convention (stable advances since October fold into tracker+changelog only).'
+  hermes_main_behind: 12
+  upgrade_notes: '2026-11-17 monitor run 04:00 CET. NEW STABLE hermes-agent v0.23.2 (published 2026-11-16T20:59:18Z, measured at commit ae2a81ccc00): patch rollup of 1,989 PRs since v0.23.1 (7,918 non-merge commits, 5,211 files, +239,733/-22,788, 940 issues closed); curated notes deferred to v0.24.0. Undocumented-on-purpose highlights RELEVANT TO US: durable subagents surviving gateway restart (delegate_task/fleet), fallback-chain readiness check CLI command (chain v5), forced-stop mass gateway restart flag, one-time browser_vault codes from Telegram, per-job cron options (wrap_response, fresh thread per run), plugin APIs ctx.fork_session/ctx.redact_text()/ctx.register_idle_task, compat shims across module moves. RC fixes: Telegram edit-streaming crash no duplicate Recovered reply, Desktop input resume, CLI exit lingering git. NOT upgraded yet (run 0.23.1, local 3b4215785882): recommended CLI self-upgrade in a cron-free window. openclaw: NO new releases vs 11-16 07:30 KB check (stable 2026.11.4 + beta.4 unchanged, npm latest 2026.11.4); main 100+ commits in ~22h post-11.4 all fixes, zero BREAKING; notable security-relevant #200353 stop retained sends after device revocation. ZOD WATCH GHSA-mrhx-c7xc-m3w5 STILL OPEN day 12: stable 2026.11.4 ships zod 4.6.5 (needs >=4.6.6; beta.4 has 4.6.7 patched; npm latest 4.6.7). No new security advisories (openclaw last 3 medium 2026-09-11 unchanged; hermes 0). Blog unchanged since 2026-11-13 (ClawCon Shenzhen).'
 github:
   last_known_version: 2026.11.4
   last_known_release_date: '2026-11-16'
@@ -85,7 +85,7 @@ github:
   last_known_beta_version: 2026.11.5-beta.4
   last_known_beta_release_date: '2026-11-16'
 hermes_agent:
-  last_known_version: 0.23.1
-  last_known_tag: v0.23.1
-  last_known_release_date: '2026-11-10'
-  main_ahead_of_tag: 8034
+  last_known_version: 0.23.2
+  last_known_tag: v0.23.2
+  last_known_release_date: '2026-11-16'
+  main_ahead_of_tag: 12
