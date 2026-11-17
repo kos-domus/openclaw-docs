@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.10.6
-  checked_at: '2026-11-17T04:00:00+01:00'
+  checked_at: '2026-11-17T07:30:00+01:00'
   upgraded_from: 2026.9.8
   upgraded_at: '2026-10-23T00:00:00Z'
   hermes_version: 0.23.1
@@ -76,8 +76,8 @@ installed:
   hermes_local_commit: 3b4215785882
   hermes_local_commit_date: '2026-11-09'
   hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
-  hermes_main_behind: 12
-  upgrade_notes: '2026-11-17 monitor run 04:00 CET. NEW STABLE hermes-agent v0.23.2 (published 2026-11-16T20:59:18Z, measured at commit ae2a81ccc00): patch rollup of 1,989 PRs since v0.23.1 (7,918 non-merge commits, 5,211 files, +239,733/-22,788, 940 issues closed); curated notes deferred to v0.24.0. Undocumented-on-purpose highlights RELEVANT TO US: durable subagents surviving gateway restart (delegate_task/fleet), fallback-chain readiness check CLI command (chain v5), forced-stop mass gateway restart flag, one-time browser_vault codes from Telegram, per-job cron options (wrap_response, fresh thread per run), plugin APIs ctx.fork_session/ctx.redact_text()/ctx.register_idle_task, compat shims across module moves. RC fixes: Telegram edit-streaming crash no duplicate Recovered reply, Desktop input resume, CLI exit lingering git. NOT upgraded yet (run 0.23.1, local 3b4215785882): recommended CLI self-upgrade in a cron-free window. openclaw: NO new releases vs 11-16 07:30 KB check (stable 2026.11.4 + beta.4 unchanged, npm latest 2026.11.4); main 100+ commits in ~22h post-11.4 all fixes, zero BREAKING; notable security-relevant #200353 stop retained sends after device revocation. ZOD WATCH GHSA-mrhx-c7xc-m3w5 STILL OPEN day 12: stable 2026.11.4 ships zod 4.6.5 (needs >=4.6.6; beta.4 has 4.6.7 patched; npm latest 4.6.7). No new security advisories (openclaw last 3 medium 2026-09-11 unchanged; hermes 0). Blog unchanged since 2026-11-13 (ClawCon Shenzhen).'
+  hermes_main_behind: 8168
+  upgrade_notes: '2026-11-17 monitor run 04:00 CET. NEW STABLE hermes-agent v0.23.2 (published 2026-11-16T20:59:18Z, measured at commit ae2a81ccc00): patch rollup of 1,989 PRs since v0.23.1 (7,918 non-merge commits, 5,211 files, +239,733/-22,788, 940 issues closed); curated notes deferred to v0.24.0. Undocumented-on-purpose highlights RELEVANT TO US: durable subagents surviving gateway restart (delegate_task/fleet), fallback-chain readiness check CLI command (chain v5), forced-stop mass gateway restart flag, one-time browser_vault codes from Telegram, per-job cron options (wrap_response, fresh thread per run), plugin APIs ctx.fork_session/ctx.redact_text()/ctx.register_idle_task, compat shims across module moves. RC fixes: Telegram edit-streaming crash no duplicate Recovered reply, Desktop input resume, CLI exit lingering git. NOT upgraded yet (run 0.23.1, local 3b4215785882): recommended CLI self-upgrade in a cron-free window. openclaw: NO new releases vs 11-16 07:30 KB check (stable 2026.11.4 + beta.4 unchanged, npm latest 2026.11.4); main 100+ commits in ~22h post-11.4 all fixes, zero BREAKING; notable security-relevant #200353 stop retained sends after device revocation. ZOD WATCH GHSA-mrhx-c7xc-m3w5 STILL OPEN day 13 (KB-run fix 2026-11-17: monitor wrote day 12, stale-copy recurrence; 11.4 zod 4.6.5 re-verified live via npm deps): stable 2026.11.4 ships zod 4.6.5 (needs >=4.6.6; beta.4 has 4.6.7 patched; npm latest 4.6.7). No new security advisories (openclaw last 3 medium 2026-09-11 unchanged; hermes 0). Blog unchanged since 2026-11-13 (ClawCon Shenzhen). KB run 07:30 CET: v0.23.2 body counters verified verbatim (1,989 PRs / 7,918 non-merge / 5,211 files / +239,733 -22,788 / 940 issues, curated -> v0.24.0); FIELD FIX hermes_main_behind 12->8168 (monitor copied main-past-tag value into behind-main after tag move; identity 8154 behind-v0.23.2 + 14 main-past-tag = 8168 behind-main exact, yesterday 8034 = +134/27h decel); main_ahead_of_tag realign 12->14; openclaw GO 10.6->11.4 day 9 NOT executed (8 stables behind, omitted from monitor notes); advisories pagination break day 18 (p1==p2 byte-identical, 51h/44m/5l sums 100); OC main 100+ commits post-11.4 all fixes zero BREAKING (page-capped); canary 11-17 not yet out at 06:33Z (pattern ~07:46Z+).'
 github:
   last_known_version: 2026.11.4
   last_known_release_date: '2026-11-16'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.23.2
   last_known_tag: v0.23.2
   last_known_release_date: '2026-11-16'
-  main_ahead_of_tag: 12
+  main_ahead_of_tag: 14
