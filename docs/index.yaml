@@ -1,13 +1,13 @@
 meta:
-  generated_at: '2026-11-07T07:45:00Z'
-  total_docs: 38
+  generated_at: '2026-11-21T07:45:00Z'
+  total_docs: 39
   categories:
     concepts: 7
     getting-started: 3
-    guides: 13
+    guides: 14
     reference: 10
     troubleshooting: 5
-  sources_processed: 148
+  sources_processed: 155
 docs:
 - title: Agent Fleet Design
   slug: agent-fleet-design
@@ -95,8 +95,9 @@ docs:
   - design
   sources:
   - sessions/2026-10-27-deco-backhaul-printer-audio-memory-plan.md
-  last_updated: '2026-10-27'
-  version: 1
+  - sessions/2026-11-21-memoria-release-a-k2-firecrawl-mcp.md
+  last_updated: '2026-11-21'
+  version: 2
   path: docs/concepts/unified-agent-memory.md
 - title: Workspace Isolation
   slug: workspace-isolation
@@ -216,6 +217,21 @@ docs:
   last_updated: '2026-11-07'
   version: 10
   path: docs/guides/cron-jobs-and-automation.md
+- title: Hardening Database Credentials on a Multi-Agent Host
+  slug: db-credential-hardening
+  category: guides
+  tags:
+  - security
+  - postgres
+  - credentials
+  - mcp
+  - hardening
+  - secrets
+  sources:
+  - sessions/2026-11-21-memoria-release-a-k2-firecrawl-mcp.md
+  last_updated: '2026-11-21'
+  version: 1
+  path: docs/guides/db-credential-hardening.md
 - title: Deep Research Pipeline
   slug: deep-research-pipeline
   category: guides
@@ -531,8 +547,9 @@ docs:
   - sessions/2026-03-22-top-skills-and-updates.md
   - sessions/2026-03-25-setup-complete-drive-skills-testing.md
   - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
-  last_updated: '2026-05-03'
-  version: 2
+  - sessions/2026-11-21-memoria-release-a-k2-firecrawl-mcp.md
+  last_updated: '2026-11-21'
+  version: 3
   path: docs/reference/mcp-servers.md
 - title: Third-Party CLI Tool Evaluation and Vendor Gate
   slug: third-party-cli-tool-gate

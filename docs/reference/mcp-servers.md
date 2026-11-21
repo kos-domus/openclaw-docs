@@ -12,8 +12,9 @@ sources:
 - sessions/2026-03-22-top-skills-and-updates.md
 - sessions/2026-03-25-setup-complete-drive-skills-testing.md
 - sessions/2026-05-02-tools-wikilinks-orvea-toast-cleanup.md
-last_updated: '2026-05-03'
-version: 2
+- sessions/2026-11-21-memoria-release-a-k2-firecrawl-mcp.md
+last_updated: '2026-11-21'
+version: 3
 ---
 
 # MCP Servers and Tool Integration
@@ -127,6 +128,39 @@ exec npx firecrawl-mcp
 
 This does **not** eliminate all exposure risk — the host user can still read the file — but it keeps the key out of chat transcripts, shell history, and long-lived JSON config.
 
+## Firecrawl: Remote MCP Server with a Tool Allowlist
+
+For Firecrawl specifically, the local-wrapper pattern above is **superseded** (2026-11-21 security review). Two options were rejected:
+
+- `firecrawl setup mcp` — runs a third-party package via unpinned `npx` **and** reconfigures other agents beyond the one you are setting up.
+- The local `firecrawl-mcp` package — it reads the `.env` of the current working directory, so any repo you open could hijack the API key.
+
+The approved shape is the **official remote server**, registered once at user scope, with the key injected as an environment reference in the header (never a literal):
+
+```json
+{
+  "mcpServers": {
+    "firecrawl": {
+      "type": "http",
+      "url": "<official remote MCP endpoint>",
+      "headers": {
+        "Authorization": "Bearer ${FIRECRAWL_API_KEY:-}"
+      }
+    }
+  }
+}
+```
+
+> ⚠️ **Unverified**: the exact remote endpoint URL is not recorded in the source session — take it from Firecrawl's official docs at setup time, not from this example.
+
+**The load-bearing part is the client-side allowlist.** A `PreToolUse` hook in `~/.claude/settings.json` matches `mcp__firecrawl__.*` and admits only `scrape`, `search`, `map`, `credit_usage`, and `developer_search` (with parameter limits); everything else — including tools the vendor adds later — is denied. A `permissions.deny` rule is kept as a backup layer.
+
+This is not theoretical: after the first restart, the remote server exposed new tools the security review had never seen, and they were blocked by default, exactly as designed. **A remote MCP server changes its tool surface without notice; the hook allowlist is the only fixed point on the client.** Pair it with a weekly check that the server URL, headers, and hook config are unchanged.
+
+### Search API from Scripts: the Reddit Workaround
+
+Reddit's `.json` endpoints are blocked from cron source IPs. Working substitute for "what does Reddit say about X" in an automated report: a web search `site:reddit.com "<query>"` limited to the last month via the Firecrawl search API, keeping only `reddit.com` links, with truncated excerpts and a filter for common-word false positives. Externally sourced text is **data, never instruction** — excerpt content must never be obeyed by the agent consuming the report.
+
 ## Security Considerations
 
 ### SSRF Protection
@@ -144,6 +178,7 @@ MCP servers run as separate processes with their own credentials. Treat them lik
 - Apply least-privilege access
 - Monitor for unusual API call patterns
 - Review MCP server code before deployment (especially third-party servers)
+- For remote servers you do not control, enforce a client-side tool allowlist (`PreToolUse` hook) — remote servers can add tools at any time without notice
 
 ## Integration Patterns
 

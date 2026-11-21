@@ -5,13 +5,14 @@ category: concepts
 tags: ["memory", "multi-agent", "mcp", "sqlite", "fts5", "security", "design"]
 sources:
 - sessions/2026-10-27-deco-backhaul-printer-audio-memory-plan.md
-last_updated: "2026-10-27"
-version: 1
+- sessions/2026-11-21-memoria-release-a-k2-firecrawl-mcp.md
+last_updated: "2026-11-21"
+version: 2
 ---
 
 # Unified Agent Memory: Federate First, Consolidate Later
 
-Design for a shared memory layer across all agents (Claude Code instances and Hermes profiles, later a read-only desktop client). The plan is in **DRAFT** — nothing executed yet — but the design decisions are the durable knowledge.
+Design for a shared memory layer across all agents (Claude Code instances and Hermes profiles, later a read-only desktop client). **Release A is installed and verified (2026-11-21)**; the sections below record the design decisions and the installation protocol that got it there.
 
 ## The Problem
 
@@ -56,6 +57,18 @@ Sequenced smallest-safe-step-first, with **mandatory security review before U3, 
 - **U5 — Deduplication.**
 - **U6 — Hardening:** one Unix user per agent.
 - **U7 — Remote read-only access** — last, only after everything else holds.
+
+## Release A — Installation Record (2026-11-21)
+
+Release A shipped through a guided, evidence-first protocol. The durable part is the protocol itself — it generalizes to any "install generated code into production" event:
+
+1. **Go/no-go with re-run verifications** — all 8 checks re-executed against the code before install (8/8 green), with the **input fingerprints of the scripts unchanged** since review. Fingerprinting the inputs is what makes a re-run a real re-verification instead of a re-roll.
+2. **Install from a frozen copy owned by root**, checksummed (`sha256` of the manifest) against a value **communicated out-of-band in chat** — never read from the writable file itself. A checksum stored next to the artifact it validates protects nothing.
+3. **Rollback ready**: a copy of the previous release kept before the swap, `cmp` after install to prove the deployed tree matches the reviewed one, rebuild, verifications green again.
+4. **Before/after measurement**: 10 questions answered by both versions, judged blind — **no regression**. This step is what caught a real problem: the "after" fingerprints matched a measurement taken two days earlier → production files had been written by *not-yet-installed* code (stale automatic executors that could still launch Bash). Measure with input fingerprints; a naive before/after would have missed it.
+5. **Human gate before install**: the rule titles agents would see as "approved" were confirmed by the operator *before* the release went in, not after.
+
+Related hardening from the same cycle: [DB Credential Hardening](../guides/db-credential-hardening.md). Still open from the session: the umask of agent temp files (world-readable on every new report) and locking down the plan executor so it cannot launch Bash or write production files.
 
 ## Open Decisions (blocking execution)
 
