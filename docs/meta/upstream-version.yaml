@@ -1,4 +1,4 @@
-last_check: '2026-11-21'
+last_check: '2026-11-22'
 sources:
   github:
     repo: openclaw/openclaw
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.11.4
-  checked_at: '2026-11-21T07:36:00+01:00'
+  checked_at: '2026-11-22T04:02:00+01:00'
   upgraded_from: 2026.10.6
   upgraded_at: '2026-11-19T05:30:00+01:00'
   hermes_version: 0.23.1
@@ -76,8 +76,8 @@ installed:
   hermes_local_commit: 3b4215785882
   hermes_local_commit_date: '2026-11-09'
   hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
-  hermes_main_behind: 10158
-  upgrade_notes: '2026-11-21 monitor run 04:00 CET, full live re-verification (gh api + npm live). UPSTREAM STEADY: no new openclaw stable/beta since 2026.11.6 + 2026.11.10-beta.1 (11-19); hermes v0.23.3 confirmed (11-20), npm hermes-agent NOW 0.23.3 (yesterday blind window closed: registry aligned with tag). DEV live 07:36: openclaw main +8761/-943 vs v2026.11.6 (draft 8714 stale, main hot +47 in 3.5h; +364/24h vs committed 8397), zero BREAKING last 100 commits re-checked; hermes main +329 on tag (draft 318 stale); local hermes behind main 10158 (+223/24h vs committed 9935); identity 9829 (HEAD..v0.23.3) + 329 (v0.23.3..main) = 10158 EXACT; first 0.23.3-based canaries: v0.23.3+canary.20261120T064609Z + sibling tag canary.20261120T173138Z-v0.23.3 (reverse naming, draft missed it). SECURITY: repo advisories unchanged (newest GHSA-pw3x 11-19, CVE still unassigned, updated_at frozen); third-party press = historical echo only (NVD CVE-2026-27007 sandbox config-hash Feb patched 2026.2.15; CSA note = Sept 9-CVE batch; hermes CVE-7396/7397 fixed pre-0.23). Local zod 4.6.5 closes with 11.6 hop (zod 4.6.7 re-verified via npm today). BLOG: NEW 2026-11-20 post OpenClaw Isnt Free (economics, no operational impact; KB-verified live: Joe Pishgar, 7 min read, openclaw.ai/blog/openclaw-isnt-free, newest listing entry). UPGRADES STILL PENDING: openclaw 11.4 (day 2, 2 stable behind) + hermes 0.23.1 (day 5, 2 patch behind) — both single-hop now, GO recommendation repeated 5th consecutive run. KB fold 07:36: every draft claim re-verified live (releases paginated FIRST — no blind-window event; npm dist-tags; gh compare; rev-list identity; advisories p1==p2 break day 22, severity 52h/43m/5l=100; zod 4.6.7 at both 11.5 and 11.6); ahead/behind fields realigned stale-to-live; 1 ready session elaborated (queue reopens after 12 empty days).'
+  hermes_main_behind: 10459
+  upgrade_notes: '2026-11-22 monitor run 04:00 CET + KB fold 07:45 CET, full live re-verification (gh api + npm + git fetch). UPSTREAM STEADY 2nd day: no new openclaw stable/beta since 2026.11.6 + 2026.11.10-beta.1 (11-19); hermes v0.23.3 confirmed (11-20), npm hermes-agent 0.23.3 aligned. DEV live 07:45: openclaw main +9058/-943 vs v2026.11.6 (draft 9034 stale, +24 in 3.7h); hermes main +630 on tag (draft 621 stale, +9); local hermes behind main 10459 = 9829 (HEAD..v0.23.3) + 630 (v0.23.3..main) EXACT — drift fields realigned stale-to-live. CANARY CLAIM CORRECTED (draft was WRONG): canary.20261121T064420Z-v0.23.3 (pub 11-21 06:44 UTC, ~20h BEFORE the 04:00 CET check) and canary.20261122T000948Z-v0.23.3 (pub 01:09 CET) both exist — cadence INTACT, 4 canaries in 3 days; root cause: gh api /tags page 1 does not list canary tags, verify via local git fetch + for-each-ref only. SECURITY: repo advisories unchanged (newest GHSA-pw3x 11-19, CVE unassigned); pagination break p1==p2 persists day 23, severity 52h/43m/5l=100; CVE-2026-100541 Matrix auth bypass verified live (high, >=2026.2.2 <2026.8.1 in summary text, vulnerabilities[] ranges empty, local 11.4 out of range) but pub date is 2026-09-26 not Oct 1 (draft wrong-minor). Local zod 4.6.5 exposure closes with 11.6 hop (zod 4.6.7 in openclaw@2026.11.6 deps, npm-verified). BLOG: no new posts (latest still 11-20 "OpenClaw Isnt Free" = first listing entry; grep pitfall: apostrophe is HTML-encoded so plain-text grep false-negatives). UPGRADES STILL PENDING: openclaw 11.4 (day 3, 2 stable behind) + hermes 0.23.1 (day 6, 2 patch behind) — both single-hop, GO recommendation repeated 6th consecutive run. KB fold: zero ready sessions (SKIP, no docs/index churn); every draft claim re-verified live; 2 corrections (canary wrong, CVE date wrong-minor) + 2 stale realignments; 2 status-new sessions tracked but left untouched; memories/ untracked per convention.'
 github:
   last_known_version: 2026.11.6
   last_known_release_date: '2026-11-19'
@@ -88,4 +88,4 @@ hermes_agent:
   last_known_version: 0.23.3
   last_known_tag: v0.23.3
   last_known_release_date: '2026-11-20'
-  main_ahead_of_tag: 329
+  main_ahead_of_tag: 630
