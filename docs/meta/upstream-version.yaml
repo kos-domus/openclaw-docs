@@ -1,10 +1,10 @@
-last_check: '2026-11-22'
+last_check: '2026-11-23'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.11.6
-    last_known_release_date: '2026-11-19'
+    last_known_version: 2026.11.7
+    last_known_release_date: '2026-11-23'
     last_known_beta_version: 2026.11.10-beta.1
     last_known_beta_release_date: '2026-11-19'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.11.6
+    last_known_version: 2026.11.7
     last_known_extended_stable: 2026.10.33
     permanent: true
     check_methods:
@@ -68,19 +68,20 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.11.4
-  checked_at: '2026-11-22T04:02:00+01:00'
+  checked_at: '2026-11-23T04:00:00+01:00'
   upgraded_from: 2026.10.6
   upgraded_at: '2026-11-19T05:30:00+01:00'
-  hermes_version: 0.23.1
+  hermes_version: 0.23.3
   hermes_channel: stable
-  hermes_local_commit: 3b4215785882
-  hermes_local_commit_date: '2026-11-09'
-  hermes_upgraded_at: '2026-11-13T14:56:00+01:00'
-  hermes_main_behind: 10459
-  upgrade_notes: '2026-11-22 monitor run 04:00 CET + KB fold 07:45 CET, full live re-verification (gh api + npm + git fetch). UPSTREAM STEADY 2nd day: no new openclaw stable/beta since 2026.11.6 + 2026.11.10-beta.1 (11-19); hermes v0.23.3 confirmed (11-20), npm hermes-agent 0.23.3 aligned. DEV live 07:45: openclaw main +9058/-943 vs v2026.11.6 (draft 9034 stale, +24 in 3.7h); hermes main +630 on tag (draft 621 stale, +9); local hermes behind main 10459 = 9829 (HEAD..v0.23.3) + 630 (v0.23.3..main) EXACT — drift fields realigned stale-to-live. CANARY CLAIM CORRECTED (draft was WRONG): canary.20261121T064420Z-v0.23.3 (pub 11-21 06:44 UTC, ~20h BEFORE the 04:00 CET check) and canary.20261122T000948Z-v0.23.3 (pub 01:09 CET) both exist — cadence INTACT, 4 canaries in 3 days; root cause: gh api /tags page 1 does not list canary tags, verify via local git fetch + for-each-ref only. SECURITY: repo advisories unchanged (newest GHSA-pw3x 11-19, CVE unassigned); pagination break p1==p2 persists day 23, severity 52h/43m/5l=100; CVE-2026-100541 Matrix auth bypass verified live (high, >=2026.2.2 <2026.8.1 in summary text, vulnerabilities[] ranges empty, local 11.4 out of range) but pub date is 2026-09-26 not Oct 1 (draft wrong-minor). Local zod 4.6.5 exposure closes with 11.6 hop (zod 4.6.7 in openclaw@2026.11.6 deps, npm-verified). BLOG: no new posts (latest still 11-20 "OpenClaw Isnt Free" = first listing entry; grep pitfall: apostrophe is HTML-encoded so plain-text grep false-negatives). UPGRADES STILL PENDING: openclaw 11.4 (day 3, 2 stable behind) + hermes 0.23.1 (day 6, 2 patch behind) — both single-hop, GO recommendation repeated 6th consecutive run. KB fold: zero ready sessions (SKIP, no docs/index churn); every draft claim re-verified live; 2 corrections (canary wrong, CVE date wrong-minor) + 2 stale realignments; 2 status-new sessions tracked but left untouched; memories/ untracked per convention.'
+  hermes_local_commit: caafe5389ae5
+  hermes_local_commit_equals_tag: v0.23.3
+  hermes_local_commit_date: '2026-11-19'
+  hermes_upgraded_at: '2026-11-22T08:15:44+01:00'
+  hermes_main_behind: 1019
+  upgrade_notes: '2026-11-23 monitor run 04:00 CET + KB fold 07:35 CET (Monday weekly recap), full live re-verification (gh api + npm + git fetch + reflog + systemd). NEW STABLE openclaw 2026.11.7 (pub 2026-11-23T01:33:51Z, prerelease=false, npm latest aligned): release body counters VERBATIM "390 in-range PRs + 0 = 390 unique PRs" (draft 390 CORRECT); highlights verified verbatim (conversation recovery across Gateway restarts #198905, owner-repairable automations, smoother updates through schema changes, live ChatGPT catalog discovery); 3 BREAKING are plugin-SDK only (setActiveEmbeddedRun -> runAttempt, chatAbortControllers/chatQueuedTurns -> dispatchGatewayMethod, observe() expiresAtMs -> startDeadlineAtMs; migration docs/plugins/sdk-migration.md) — zero local impact, no custom plugins; fixes relevant to us verified in body: Telegram large media uploads (#151923) + subagent sibling results (#200873). HERMES UPGRADE v0.23.1->0.23.3 EXECUTED AND VERIFIED KB-fold: git reflog checkout 3b4215785882->caafe5389ae5 11-22 08:15:44 CET; gateway ActiveEnterTimestamp 08:16:32 CET, NRestarts=0 (~47h); hermes --version v0.23.3 Up to date; npm hermes-agent 0.23.3; backup zip 08:13:57 + unused rollback procedure; timers re-enabled; 6-run alert CLOSED; HEAD == tag commit caafe5389ae5 (annotated tag dereferenced via caret-commit). DRIFT live 07:35: openclaw main +9293/-1679 vs v2026.11.7 (draft +9262 stale +31/3.5h; behind_by 1679 stable = release-branch commits in tag not on main); hermes main +1019 on tag (draft 984 stale, +35/3.5h); behind-main 1019 = behind-tag 0 + past-tag 1019 EXACT identity. CANARY via local git for-each-ref only (gh /tags is blind to canaries): 2 on 11-22 (06:44:29Z, 00:09:48Z), none yet today at 06:35 UTC (06:44 due) — cadence intact. SECURITY: advisories unchanged, newest GHSA-pw3x 11-19 (CVE unassigned), local 11.4 out of ranges; pagination break p1==p2 day 24, severity 52h/43m/5l=100; zod 4.6.7 npm-verified in 11.7 deps -> GHSA-mrhx closes on hop. BLOG: no new posts (latest 11-20; verify via href/h2 extraction, apostrophes arrive HTML-encoded). UPGRADES PENDING: openclaw 11.4 only — 3 stables behind (11.5/11.6/11.7), day 4, single npm hop, GO 7th consecutive run; upstream-audit-ALERT.txt (11-16, 8037-behind) superseded by 0.23.3 — 09:00 audit today should clear it.'
 github:
-  last_known_version: 2026.11.6
-  last_known_release_date: '2026-11-19'
+  last_known_version: 2026.11.7
+  last_known_release_date: '2026-11-23'
   last_known_extended_stable: 2026.10.33
   last_known_beta_version: 2026.11.10-beta.1
   last_known_beta_release_date: '2026-11-19'
@@ -88,4 +89,4 @@ hermes_agent:
   last_known_version: 0.23.3
   last_known_tag: v0.23.3
   last_known_release_date: '2026-11-20'
-  main_ahead_of_tag: 630
+  main_ahead_of_tag: 1019

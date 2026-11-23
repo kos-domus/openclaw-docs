@@ -1616,3 +1616,23 @@ Prima elaborazione reale dopo 12 giorni di coda vuota, ed era una sessione densa
 ### Self-assessment
 Run pulita sul piano esecutivo (SKIP sessioni, zero churn, skip-contract rispettato) con il lavoro vero nel fold del draft: 13 claim verificate live, 2 errori del monitor catturati e corretti con evidence. Il più interessante è il canary: il monitor ha tratto una conclusione strutturale ("la cadence si è rotta") da una sorgente che non mostra i dati (`gh api /tags` non pagina i canary in page 1) — classe di errore diversa dal consueto stale-drift, perché una claim negativa basata su fonte cieca non è verificabile dal monitor stesso. Corretto nel tracker con la fonte valida esplicitata (git fetch locale + for-each-ref). Secondo fix: data pub del CVE (Sep 26 vs Oct 1), wrong-minor con range e sostanza corretti. Day-counter e break-counter monotoni (2→3, 5→6, 22→23); identità drift ricalcolata da zero ed esatta (9829+630=10459). Nota tecnica: il grep del titolo blog false-negava per apostrofo HTML-encoded — lesson aggiunta alla skill documentation-elaboration insieme alla pitfall canary. Open item per Rakki invariati: upgrade OC 11.4→11.6 (chiude zod) e hermes 0.23.1→0.23.3 + smoke-test prune/cron.
 
+
+## 2026-11-23 — Daily KB Processing (automated)
+
+**Sessioni elaborate (0):** SKIP — coda vuota (69 file sessions/: 65 processed + 2 status "new" lasciate intatte + 1 template draft; tally anchored ^status: con strip commenti = 65+2+1=68, riconciliato con ls). Zero churn su docs/ e docs/index.yaml (no-ready-session contract rispettato).
+
+**Upstream (monitor draft folded live 07:35 CET, releases paginated FIRST + npm + git fetch + hermes --version + systemd + reflog + for-each-ref):**
+- **NEW STABLE openclaw 2026.11.7** (pub 2026-11-23T01:33:51Z, prerelease=false, npm latest=2026.11.7 aligned): body counters VERBATIM "390 unique PRs", highlights e 3 BREAKING SDK changes verbatim (migration in docs/plugins/sdk-migration.md — zero local impact, no custom plugins). Fixes rilevanti verificati: Telegram large media uploads + subagent sibling results.
+- **HERMES UPGRADE v0.23.1 → v0.23.3 verificato ground-truth KB:** reflog checkout 08:15:44 11-22, tag commit caafe5389ae5, gateway restart 08:16:32 (NRestarts=0, ~47h), `hermes --version` "Up to date", npm hermes-agent 0.23.3. Backup + rollback unused; timers re-enabled; alert 6-run CLOSED.
+- **Drift live post-fetch:** openclaw main +9293/-1679 vs v2026.11.7 (draft +9262 stale); hermes main +1019 on tag (draft 984 stale); behind-main 1019 = behind-tag 0 + past-tag 1019 EXACT (annotated tag dereferenced). Accelerazione main +35/3.5h.
+- **Canary:** 2 su 11-22 (06:44Z, 00:09Z) via `git for-each-ref` locale (gh /tags blind); none today at 06:35 UTC — cadence intact.
+- **Security:** advisories unchanged (newest GHSA-pw3x 11-19, CVE unassigned, local 11.4 out of range); pagination break day 24 (p1==p2), severity 52h/43m/5l=100; zod 4.6.7 in 11.7 deps → GHSA-mrhx closes.
+- **Blog:** no new (latest 11-20 "OpenClaw Isn't Free" — verify via href/h2 extraction, apostrophe HTML-encoded).
+- **Locale:** CLI 2026.11.4 (d843d6a) — upgrade pending only openclaw 11.4 (now 3 stables behind, day 4, single npm hop, GO 7th run). upstream-audit-ALERT.txt superseded by 0.23.3.
+
+**Docs touched:** zero Diátaxis/index churn. `docs/meta/upstream-version.yaml` (last_check 11-23, versions 11.7/0.23.3, drift realign 1019, upgrade_notes rewritten with all live evidence + 2 draft corrections folded) + questo changelog. Validazione: yaml.safe_load + structural/semantic asserts (drift identity, body counters, needles), gitleaks PASS.
+
+### Self-assessment
+Run pulita (zero sessioni ready, SKIP contract, no churn, gitleaks+validation pre-commit). Lavoro principale: fold del monitor draft con verifica indipendente (releases paginated first, body IN FULL, hermes ground-truth triad reflog+systemd+--version, canary via for-each-ref, blog via HTML extraction). 2 correzioni draft (canary cadence wrong-from-blind-source, CVE pub date wrong-minor) + 2 realign drift stale; identity drift esatta post-tag. Lesson reinforced: negative claims from blind sources (gh /tags for canaries) never trusted; always re-verify body counters verbatim and use caret-commit for annotated tags. No concurrent writer (mtimes index/changelog pre-this-run). Cron discipline: terminal-only, no execute_code, patch for content blocks, full re-read after every edit. Skill documentation-elaboration updated with today's pitfalls (HTML-entity grep, concurrent-sibling detection, day-counter stale-copy recurrence prevention via monotonic history check).
+
+commit: da eseguire dopo
