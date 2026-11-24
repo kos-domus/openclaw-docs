@@ -1636,3 +1636,16 @@ Run pulita sul piano esecutivo (SKIP sessioni, zero churn, skip-contract rispett
 Run pulita (zero sessioni ready, SKIP contract, no churn, gitleaks+validation pre-commit). Lavoro principale: fold del monitor draft con verifica indipendente (releases paginated first, body IN FULL, hermes ground-truth triad reflog+systemd+--version, canary via for-each-ref, blog via HTML extraction). 2 correzioni draft (canary cadence wrong-from-blind-source, CVE pub date wrong-minor) + 2 realign drift stale; identity drift esatta post-tag. Lesson reinforced: negative claims from blind sources (gh /tags for canaries) never trusted; always re-verify body counters verbatim and use caret-commit for annotated tags. No concurrent writer (mtimes index/changelog pre-this-run). Cron discipline: terminal-only, no execute_code, patch for content blocks, full re-read after every edit. Skill documentation-elaboration updated with today's pitfalls (HTML-entity grep, concurrent-sibling detection, day-counter stale-copy recurrence prevention via monotonic history check).
 
 commit: da eseguire dopo
+
+## 2026-11-24 — Daily KB Processing (automated)
+
+- **Sessions:** 0 ready (SKIP contract respected). 65 processed + 2 new + 1 template = 68 (tally reconciled with ls + anchored ^status: grep; new sessions already git-tracked).
+- **Upstream fold:** docs/meta/upstream-version.yaml refreshed live (beta.3 blind-window advance 04:28 CET after 04:00 draft; hermes drift 1134→1142 exact identity post-fetch; canary via for-each-ref only; zod 4.6.7 confirmed in 11.7 deps; advisories unchanged, pagination-break day 25, severity 52/43/5=100, newest 11-19; blog no new).
+- **Draft corrections folded:** beta.2→beta.3, drift stale +8, canary creatordate vs release-page publication clarified, lexicographic sort trap on stables recount fixed (now sort -V).
+- **Docs touched:** zero Diátaxis/index churn. Only tracker + this changelog.
+- **Validation:** yaml.safe_load + structural asserts (drift identity, ranges verbatim, body counters), gitleaks PASS (no secrets), git status clean except memories/ untracked.
+- **Git:** commit after this block.
+
+### Self-assessment
+Run pulita su zero ready sessions (no docs/index churn, tracker-only refresh, gitleaks+validation pre-commit). Lavoro principale: blind-window beta.3 caught by releases-paginated-first (draft fermo a beta.2), full body read, hermes ground-truth triad (hermes --version + git rev-parse caret-commit + drift identity), canary via for-each-ref (gh /tags blind-source negative claim), blog extraction (HTML-entity apostrophe pitfall). 3 draft corrections + realign drift; identity exact. Lesson reinforced: negative claims from blind sources never trusted; always re-verify body counters verbatim, use caret-commit for annotated tags, recount stables with sort -V, check mtimes to detect concurrent writers. No sibling interference today. Cron discipline: terminal-only, no execute_code, patch for content blocks, full re-read after every edit, monotonic-history check for day-counters. Skill documentation-elaboration updated with today's pitfalls (blind-window beta timing, lexicographic version sort trap, canary timestamp semantics, concurrent-sibling detection, HTML-entity grep).
+
