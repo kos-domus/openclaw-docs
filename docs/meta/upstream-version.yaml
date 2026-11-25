@@ -1,10 +1,10 @@
-last_check: '2026-11-24'
+last_check: '2026-11-25'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
-    last_known_version: 2026.11.7
-    last_known_release_date: '2026-11-23'
+    last_known_version: 2026.11.10
+    last_known_release_date: '2026-11-25'
     last_known_beta_version: 2026.11.10-beta.3
     last_known_beta_release_date: '2026-11-24'
     last_known_alpha_version: 2026.6.19-alpha.2
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.11.7
+    last_known_version: 2026.11.10
     last_known_extended_stable: 2026.10.33
     permanent: true
     check_methods:
@@ -34,9 +34,9 @@ sources:
   hermes_agent:
     repo: NousResearch/hermes-agent
     url: https://github.com/NousResearch/hermes-agent
-    last_known_version: 0.23.3
-    last_known_tag: v0.23.3
-    last_known_release_date: '2026-11-20'
+    last_known_version: 0.23.4
+    last_known_tag: v0.23.4
+    last_known_release_date: '2026-11-24'
     permanent: true
     check_methods:
       releases_api: gh api repos/NousResearch/hermes-agent/releases/latest
@@ -68,7 +68,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.11.4
-  checked_at: '2026-11-24T04:00:00+01:00'
+  checked_at: '2026-11-25T04:00:00+01:00'
   upgraded_from: 2026.10.6
   upgraded_at: '2026-11-19T05:30:00+01:00'
   hermes_version: 0.23.3
@@ -77,16 +77,16 @@ installed:
   hermes_local_commit_equals_tag: v0.23.3
   hermes_local_commit_date: '2026-11-19'
   hermes_upgraded_at: '2026-11-22T08:15:44+01:00'
-  hermes_main_behind: 1142
-upgrade_notes: '2026-11-24 monitor run 04:00 CET + KB fold 07:35 CET, full live re-verification (gh api + npm + git fetch + for-each-ref + npm deps). NO new stable: 2026.11.7 stands (pub 11-23T01:33:51Z, npm latest aligned). BLIND-WINDOW BETA: draft saw beta.2 (pub 11-23T12:48:59Z); v2026.11.10-beta.3 landed 11-24T03:28:03Z = 04:28 CET, 28min AFTER the 04:00 draft check (releases-paginated-first rule caught it); npm beta dist-tag aligned. beta.3 body read IN FULL at KB fold: highlights update recovery across schema changes/reboots (#200273+), reliable delegated work across Gateway restarts/sibling activity (#200279+), responsive long-running chats (memory/main-thread compaction, #201304+), SecretRef credentials + Signal view-once (#200539+), provider sign-in OpenCode Console/Go (#202949); hooks to 1 MiB + batched Gmail (#200514); MCP server changes without Gateway stop (#200582); ChatGPT catalog refresh independent of releases (#201130+). Beta-only, NO action, do not adopt. HERMES: v0.23.3 still latest tag (11-20), local HEAD == tag commit caafe5389ae5 VERIFIED live (hermes --version v0.23.3 Up to date; annotated tag dereferenced via caret-commit); drift live 07:35: behind-tag 0 + past-tag 1142 = behind-main 1142 EXACT identity (draft 1134 stale +8; was 1019 on 11-23). CANARY via local git for-each-ref only (gh /tags structurally blind to canaries): NEW canary.20261123T065600Z-v0.23.3, creatordate 11-23 06:56:01Z (release-page publication 08:05:01Z — tag-name timestamp is the build stamp, not the publish time); cadence intact, none today at 06:35 UTC (06:56 due). SECURITY: advisories unchanged, newest GHSA-pw3x 11-19 (CVE unassigned); ranges verified live verbatim ">= 2026.9.2, < 2026.10.33" and ">= 2026.11.1, < 2026.11.4" -> local 11.4 OUT; pagination break p1==p2 day 25, severity 52h/43m/5l=100; zod 4.6.7 npm-verified in 11.7 deps -> GHSA-mrhx closes on hop. DRIFT live 07:35: openclaw main +9501/-1679 vs v2026.11.7 (draft +9451 stale +50; was 9293 on 11-23; behind_by 1679 stable = release-branch commits in tag not on main). BLOG: no new posts (latest 11-20 OpenClaw Isnt Free; verified via listing extraction, apostrophes HTML-encoded). UPGRADES PENDING: openclaw CLI 11.4 — day 5, 3 stables behind (11.5/11.6/11.7, recount via sort -V not string-compare), single npm hop, GO 8th consecutive run; also closes zod GHSA-mrhx. upstream-audit-ALERT.txt (memories/, untracked-external) rewritten 11-23 09:00 (behind-main > threshold 150) — posture by-design stable-channel (HEAD == latest tag), flag threshold/skip logic to MC; treat as external, do not hunt in repo.'
+  hermes_main_behind: 1584
+upgrade_notes: '2026-11-25 monitor run 04:00 CET + KB fold 07:30 CET, full live re-verification (gh api releases paginated + compare + advisories, npm dist-tags/versions/deps, local git fetch/rev-list/for-each-ref, systemctl, blog listing+post bodies, docs key_pages HTTP). BLIND-WINDOW STABLE x3 (il draft ne vedeva 2): v2026.11.8 (11-24T11:54:30Z, reliability patch: K8s seeding fail-fast, Docker SDK-alias/EACCES/buildah, TLS bootstrap, WebUI batch) + v2026.11.9 (11-25T00:47:32Z, 13 commits/15 PR/14 contributori: prompt caching fork sessione Anthropic+OpenAI, fix re-auth che sovrascriveva model rows/thinking in openclaw.json, Tool Search chat-completions anti-prefill, Claude CLI bg secret fd, ACP truncated replies, headed Chrome bg-tab screenshots, self-hosted redirect guard) + v2026.11.10 (11-25T05:42:47Z = 06:42:47 CET, ~2h42m DOPO il check 04:00 del draft, 48min prima del fold - releases-paginated-first rule, beccata ancora). 11.10 = mega-rollup: 7.671 PR / 633 direct commits / 349 contributori (body verbatim, 8.309 commits totali); highlights: Deep Research ON di default (engine portable, report citati, resume cross-restart), Knowledge plugin opt-in (plugins.slots.memory = knowledge, vault Markdown locale + timelines + scribes Granola, hot-reload senza restart), Browser handoff (Take control su 2FA/CAPTCHA/sensitive forms, 5min auto-release), Quick Start background service. npm latest=2026.11.10 allineato (versions list inclusa), beta dist-tag punta allo stable 11.10 (ultimo prerelease GH resta beta.3 11-24). Zero breaking in 11.8/11.9/11.10 (10 grep hits breaking/deprecat nel changelog 11.10 = tutte frasi-fix without-breaking, 0 regressioni). Local CLI 11.4 -> 6 stables behind (11.5..11.10, recount live per segmenti con sort -V + range sed, NON awk string-compare che droppa 11.10 = lexicographic trap 11-18 ricorrente), day 6, GO 9th run; hop singolo npm chiude anche zod GHSA-mrhx (4.6.7 in deps 11.10 verificato live). HERMES: v0.23.4 verificato body IN FULL (229 PR / 1.122 non-merge commits / 1.316 files +96.873 -6.703, ref 8fc03744473; curated notes con v0.24.0; body dichiara Nov 23 ma GH publish 11-24T08:17:06Z, publish canonico). Local 0.23.3 == tag caafe5389ae5; drift live al fold: behind-tag 1143 + main-past-tag 441 = behind-main 1584 IDENTITA ESATTA (draft 1550/407, stale +34 classe attesa; assorbimento 1143 del draft esatto). hermes --version oggi stampa Update available (quirk Up to date del draft 11-24 non riprodotto, check refreshed). CANARY via for-each-ref: ultimo canary.20261124T064706Z-v0.23.3 (11-24 06:47Z); nessuno oggi visibile al fold 06:30 UTC, atteso ~06:45 = pre-due, NON cadence break. SECURITY openclaw: advisories unchanged (newest GHSA-pw3x 11-19, CVE unassigned), local 11.4 OUT of ranges, residuo zod 4.6.5 fino a hop; pagination break p1==p2 PERSISTE day 26 (il draft lo omissionava, re-aggiunto), severity 52h/43m/5l=100 con sum==page items. SECURITY hermes: GHSA-p22p-9ph6-gmrh / CVE-2026-130164 HIGH (pub 11-19T15:18:44Z, env-file con env vars arbitrarie via Bot Desktop screen/terminal) VERIFICATO live nel repo advisories (global /advisories 404 = inverse case gia documentato 11-19), range ">= 0.21.6, < 0.23.2" -> local 0.23.3 NON affetto; retifica vs report 11-23 (0 advisory) confermata corretta. DRIFT openclaw: BASELINE SWITCH col tag move - live vs v2026.11.10: main +2633/-1061 diverged (draft +9826/-2006 era vs vecchio tag 11.9, il nuovo tag ha assorbito ~7.193 commit main; classe baseline-switch 09-30, non errore). BLOG 2 post 11-24 verificati via listing+body: A year of the Claw (120.000 PR, 58 anni-uomo verbatim) + Introducing ShellBench (benchmark real-world con OpenClaw Foundation/Parsewave/HF/RedHat/UC Berkeley, 10M interazioni anonimizzate, 12 modelli x 5 harness: Claude Code, Codex, HERMES, OpenClaw, Pi - GPT-6 Astra 62.5%, Fable 5.2 61.9%, Sol 61.4% verbatim); nessun post piu nuovo. DOCS: key_pages tutte 200 incl. /releases/2026.11.10 live; nessuna migrazione pagine. GATEWAY: active da 11-24 08:36:46 CET (systemctl live = draft), stop SIGTERM pulito. CORREZIONI al draft: (1) stables = 3 non 2 (blind-window 11.10); (2) stables-behind 6 non 5; (3) hermes_main_behind 1550 -> 1584; (4) report+json gap chiuso oggi = FALSO: memories/reports/release-monitor ultimo .md = 2026-11-16, latest-versions.json mtime 11-16 04:04, il monitor continua a scrivere solo la yaml in-repo, memories/ esterna non tracciata; (5) pagination-break status omesso, re-aggiunto day 26.'
 github:
-  last_known_version: 2026.11.7
-  last_known_release_date: '2026-11-23'
+  last_known_version: 2026.11.10
+  last_known_release_date: '2026-11-25'
   last_known_extended_stable: 2026.10.33
   last_known_beta_version: 2026.11.10-beta.3
   last_known_beta_release_date: '2026-11-24'
 hermes_agent:
-  last_known_version: 0.23.3
-  last_known_tag: v0.23.3
-  last_known_release_date: '2026-11-20'
-  main_ahead_of_tag: 1142
+  last_known_version: 0.23.4
+  last_known_tag: v0.23.4
+  last_known_release_date: '2026-11-24'
+  main_ahead_of_local_head: 1584
