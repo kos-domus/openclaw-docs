@@ -1,16 +1,16 @@
-last_check: '2026-11-27'
+last_check: '2026-11-28'
 sources:
   github:
     repo: openclaw/openclaw
     url: https://github.com/openclaw/openclaw
     last_known_version: 2026.11.10
     last_known_release_date: '2026-11-25'
-    last_known_beta_version: 2026.11.10-beta.3
-    last_known_beta_release_date: '2026-11-24'
+    last_known_beta_version: 2026.12.1-beta.1
+    last_known_beta_release_date: '2026-11-28'
     last_known_alpha_version: 2026.6.19-alpha.2
     last_known_alpha_release_date: '2026-06-19'
-    last_known_prerelease_tag: v2026.11.10-beta.3
-    last_known_prerelease_tag_date: '2026-11-24'
+    last_known_prerelease_tag: v2026.12.1-beta.1
+    last_known_prerelease_tag_date: '2026-11-28'
     permanent: true
     check_methods:
       releases_api: gh api repos/openclaw/openclaw/releases/latest
@@ -25,7 +25,7 @@ sources:
   npm:
     package: openclaw
     url: https://www.npmjs.com/package/openclaw
-    last_known_version: 2026.11.10
+    last_known_version: 2026.11.11
     last_known_extended_stable: 2026.10.34
     last_known_extended_stable_date: '2026-11-26'
     permanent: true
@@ -69,7 +69,7 @@ sources:
       tracks: lifecycle hooks, event hooks, automation (migrated from /hooks)
 installed:
   local_cli_version: 2026.11.4
-  checked_at: '2026-11-27T04:00:00+01:00'
+  checked_at: '2026-11-28T04:00:00+01:00'
   upgraded_from: 2026.10.6
   upgraded_at: '2026-11-19T05:30:00+01:00'
   hermes_version: 0.23.3
@@ -78,16 +78,16 @@ installed:
   hermes_local_commit_equals_tag: v0.23.3
   hermes_local_commit_date: '2026-11-19'
   hermes_upgraded_at: '2026-11-22T08:15:44+01:00'
-  hermes_main_behind: 2230
-upgrade_notes: '2026-11-27 monitor run 04:00 CET + KB fold 07:35 CET, full live re-verification (gh api releases per_page=15 + advisories p1/p2 su entrambi i repo + global GHSA-mrhx, npm dist-tags/time-versions sort -V/deps zod su 3 versioni, local git fetch/describe/rev-list identity/for-each-ref canary/branch -r salvage, systemctl + journalctl 26h, blog href listing, docs key_pages HTTP x8, npm-global zod installato, clawhub via npm). QUIET DAY confermato live: NESSUNA nuova release nella finestra 04:00 11-26 -> fold 07:35 11-27 (newest resta v2026.11.10 11-25T05:42:47Z, extended-stable v2026.10.34 11-26T01:37:32Z invariata, ultimo prerelease beta.3 11-24; dist-tag beta -> 11.10, nessun beta.4; npm time-versions max 2026.11.10). Local CLI 2026.11.4 (d843d6a) invariato, 6 stables behind (11.5..11.10, recount sort -V position-based), day 8, GO 11th run (monotonic vs 11-26 day 7/10th). zod: GHSA-mrhx HIGH live globale (range < 4.6.6), locale installato 4.6.5 esposto, latest 11.10 ships 4.6.7 (chiusa sul canale), extended 10.34 ships 4.6.5 (LTS NON chiude) -> hop 11.10 resta la via di chiusura. SECURITY openclaw: zero nuovi advisories (newest visibile GHSA-pw3x 11-19T02:01:59Z, range >= 2026.9.2 < 2026.10.33 -> locale 11.4 fuori range), severity visibile 52h/43m/5l = 100 con sum == page items; RETTIFICA draft: claim "33 totali" = WRONG-METRIC (33 = count del bucket range < 2026.8.1, NON il totale: pagina visibile 100 item, totale vero non re-verificabile sotto break); pagination break p1==p2 PERSISTE day 28 (omesso dal draft TERZO giorno consecutivo, omissione sistematica counter 3). SECURITY hermes: GHSA-p22p-9ph6-gmrh HIGH unica (range >= 0.21.6 < 0.23.2 -> locale 0.23.3 fuori). HERMES: v0.23.4 invariata 3rd day, locale 0.23.3 == tag (describe --exact-match, commit caafe5389ae5); drift live post-fetch (main avanzata 45e9584..ab7e19a7): behind-tag 1143 + main-past-tag 1087 = behind-main 2230 IDENTITA ESATTA (draft 2218 = stale +12 in 3h35m classe attesa; draft field hermes_agent.main_ahead_of_local_head lasciato a 1833 = field-stale, corretto -> 2230). CANARY: cadence intatta, ultimo canary.20261126T064809Z-v0.23.4 (base v0.23.4 2nd day); canary di OGGI atteso ~06:44-06:56Z = DOPO il fold 06:35Z, pre-due NON cadence break (pattern 11-25 riconfermato). Branch upstream origin/salvage/160298-telegram-flush-rehold verificato live (fix Telegram in lavorazione, watch). GATEWAY: attivo da 11-25 14:16:27 CET, draft ~38h al check 04:00 CORRETTO stavolta (37h43m; ~41h al fold), zero crash VERO ma claim draft solo-Telegram incompleto recurrence 2: grep 26h = transient Telegram 02:11-02:12 + blocked unauthorized user 03:00 + tool_executor noise dei cron notturni (read_file not found 04:00/05:00/06:00, script-execution BLOCKED 04:05, write_file refuse 05:01, skill_manage fail 05:11, terminal 06:32) = rumore cron non guasti gateway, piu /plan command collision warning 07:18. BLOG: fermo (latest 11-24 a-year-of-the-claw + shellbench, verificato via href listing). DOCS: key_pages 8/8 HTTP 200, nessuna migrazione. ClawHub 0.27.0 (npm). GO: openclaw hop 11.10 + hermes 0.23.4, standard procedure.'
+  hermes_main_behind: 2435
+upgrade_notes: '2026-11-28 monitor run 04:00 CET + KB fold 07:40 CET, full live re-verification (gh api releases per_page=15 + beta body IN FULL, advisories p1/p2 entrambi i repo + global GHSA-mrhx, npm dist-tags/versions/time sort -V/deps zod su 4 versioni, local git fetch/describe/rev-list identity/ls-remote salvage/PR 160298 live, systemctl + journalctl 24h, blog href listing, docs key_pages HTTP x8, clawhub via npm, upstream CHANGELOG index raw + Unreleased, tag ref + compare 11.10...11.11). EVENTO NOTTE 1: NUOVA BETA v2026.12.1-beta.1 GH 2026-11-28T00:21:04Z (01:21 CET; npm 27/11 22:56:55Z, npm-first anche per la beta), primo tag linea 2026.12, 1891 PR verificati verbatim sul body; highlights: update Gateway senza stop (prepared releases + resident launcher), prompt-cache reuse cross-route + auto-compaction 85% context, Lean Gateways (worker condiviso + memory budget, riduce pressione small machine), ClawHub catalog browse per categoria, Session Share WSS; ~45 deprecation doctor-* con deadline 2026-11-29/11-30/12-01 (dmPolicy/allowFrom, TTS aliases, MCP transport/timeout, gateway.bind, cron delivery.to) = config-level migrabili via doctor, impatto runtime nostro ZERO (agent runtime = Hermes), materiale KB /releases. EVENTO NOTTE 2 (KB-FOLD CATCH, blind window monitor 04:00 -> fold 07:40): NUOVO STABLE 2026.11.11 NPM-FIRST, npm publish 2026-11-28T04:05:49Z (05:05:49 CET = 1h05m DOPO il check monitor, ~2h30m prima del fold): dist-tag latest -> 2026.11.11 MOVED, tag git v2026.11.11 STAGED (5a26c348), MA GH release page 404 + releases/latest ancora v2026.11.10 + CHANGELOG index upstream senza 11.11 + raw CHANGELOG/2026.11.11.md 404 = pagina GH pending (propagation npm-first, pattern 09-18/09-29), NON ritrattazione (nessuna verifica live precedente della pagina 11.11); compare v2026.11.10...v2026.11.11 = 134 commit (files 300 = cap API, non conteggio affidabile); body da leggere IN FULL al prossimo run appena la pagina va live. RETTIFICHE FOLD sul contesto draft: stables-behind 6 -> 7 (11.5..11.11, recount npm versions sort -V), HOP TARGET SLITTA 11.10 -> 11.11 (zod 11.11 ships 4.6.7 verificato live su deps: GHSA-mrhx chiude anche a 11.11), GO resta 12th run (monotonic 11th ieri, draft e fold stesso giorno). npm: beta dist-tag -> 2026.12.1-beta.1 MOVED; extended-stable 2026.10.34 INVARIATA; pagina GH 11.11 pending. Local CLI 2026.11.4 (d843d6a) invariato day 9, zod locale 4.6.5 esposto day 9, 4.6.5 anche su extended 10.34. SECURITY: zero nuovi advisories entrambi i repo (newest openclaw GHSA-pw3x 11-19T02:01:59Z range >= 2026.9.2 < 2026.10.33 -> locale 11.4 fuori; hermes GHSA-p22p unica 11-19 range < 0.23.2 -> locale 0.23.3 fuori); severity visibile 52h/43m/5l = 100 con sum == page items; pagination break p1==p2==100 PERSISTE day 29 (riferita dal draft stavolta: streak di 3 omissioni consecutive INTERROTTA, il monitor ora la riporta); terze parti Check Point CPAI-2026-17985 (22 Nov, versioni storiche 2026.2.x/3.x fuori dal nostro 11.4) + CSA SG ad-2026-005 (generico) = nessun impatto (monitor-reported, non riverificate); zod global invariato (updated 2026-10-23). HERMES: v0.23.4 invariata 4th day, locale 0.23.3 == tag (describe --exact-match, commit caafe5389ae5); drift REALIGN al fold post-fetch: behind-tag 1143 + main-past-tag 1292 = behind-main 2435 IDENTITA ESATTA (draft 04:00: 1143+1279=2422 self-consistente ma +13 commit in 3h40m; tip main d71a65744c 04:35:57Z 11-28, PR 154578 appimage). CANARY: cadence intatta, ultimo canary.20261127T064803Z-v0.23.4 = base v0.23.4 3rd day (draft 4th = off-by-one vs convenzione 11-26 2nd day, corretto); canary 11-28 atteso ~06:44-06:56Z = DOPO il fold 07:40, pre-due NON break (pattern 11-25 riconfermato). RETTIFICA KB sul draft (claim negativo falsificato live): branch salvage/160298-telegram-flush-rehold NON rimosso dal remote (draft claim RIMOSSO = wrong: ls-remote live 07:40 lo mostra ancora, sha 56dcad72; famiglia blind-source-negative 11-22 estesa ai claim di rimozione), PR #160298 fix(gateway) re-hold buffered Telegram events su pre-accept failures ANCORA OPEN (updated 27/11 02:49:36Z, rebase in corso, fix NON atterrata) -> fix Telegram resta in attesa. GATEWAY: attivo dal 25 14:16:27 CET, ~65h al fold (draft ~62h al check 04:00 corretto: 61h44m), zero restart/SIGTERM/crash; journal 24h: transient Telegram 02:11-02:12 (3a notte consecutiva, pattern benigno coerente con PR 160298 aperta) + blocked unauthorized user 03:00 + tool_executor cron noise (read_file not-found, script-execution block, skill_manage) = rumore cron, non guasti. BLOG: fermo 11-24 (a-year-of-the-claw + shellbench, href listing). DOCS: key_pages 8/8 HTTP 200, nessuna migrazione. ClawHub npm 0.27.0 invariato. Zero BREAKING markers ultimi 100 commit main openclaw (grep live). GO: openclaw hop 11.11 (target slittato da 11.10 per la stable npm-first) + hermes 0.23.4, standard procedure.'
 github:
   last_known_version: 2026.11.10
   last_known_release_date: '2026-11-25'
   last_known_extended_stable: 2026.10.34
-  last_known_beta_version: 2026.11.10-beta.3
-  last_known_beta_release_date: '2026-11-24'
+  last_known_beta_version: 2026.12.1-beta.1
+  last_known_beta_release_date: '2026-11-28'
 hermes_agent:
   last_known_version: 0.23.4
   last_known_tag: v0.23.4
   last_known_release_date: '2026-11-24'
-  main_ahead_of_local_head: 2230
+  main_ahead_of_local_head: 2435
